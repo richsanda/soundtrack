@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
 /**
- * Hello world!
  *
  */
 
