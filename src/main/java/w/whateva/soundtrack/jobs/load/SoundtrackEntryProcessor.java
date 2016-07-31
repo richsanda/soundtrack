@@ -11,9 +11,6 @@ public class SoundtrackEntryProcessor implements ItemProcessor<Entry, Entry> {
     @Override
     public Entry process(Entry entry) throws Exception {
 
-        // convert file to season, scoring period, and team
-        // game.init();
-
         return entry;
     }
 }

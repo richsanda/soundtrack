@@ -3,8 +3,11 @@ package w.whateva.soundtrack.domain;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.namespace.QName;
 import java.util.List;
 
 /**
@@ -108,5 +111,21 @@ public class Entry {
 
     public void setYoutube(String youtube) {
         this.youtube = youtube;
+    }
+
+    public static void print(Entry entry) throws Exception {
+
+        JAXBContext jc = JAXBContext.newInstance(Entry.class);
+
+        QName qname = new QName("entry");
+        JAXBElement<Entry> jaxbElement = new JAXBElement<Entry>(qname, Entry.class, entry);
+
+        Marshaller marshaller = jc.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshaller.marshal(jaxbElement, System.out);
+    }
+
+    public void print() throws Exception {
+        print(this);
     }
 }

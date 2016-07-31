@@ -11,17 +11,21 @@ import java.util.List;
  */
 public class SoundtrackEntryWriter implements ItemWriter<Entry> {
 
-    private EntryRepository gameRepository;
+    private EntryRepository entryRepository;
 
-    public void setGameRepository(EntryRepository entryRepository) {
-        this.gameRepository = entryRepository;
+    public void setEntryRepository(EntryRepository entryRepository) {
+        this.entryRepository = entryRepository;
     }
 
     @Override
     public void write(List<? extends Entry> entries) throws Exception {
         for (Entry entry : entries) {
-            System.out.println(entry.toString());
-            gameRepository.save(entry);
+            if (null != entry.getTitle()) {
+                System.out.println(entry.getTitle());
+                entryRepository.save(entry);
+            } else {
+                Entry.print(entry);
+            }
         }
     }
 }

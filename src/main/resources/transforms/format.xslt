@@ -55,7 +55,7 @@
 
         <entry>
             <xsl:copy-of select="@id"/>
-            <playlist id="{MixReference/@id}"/>
+            <playlist-ref id="{MixReference/@id}"/>
             <title><xsl:value-of select="Title"/></title>
             <artist><xsl:value-of select="Artist"/></artist>
             <story><xsl:value-of select="Story"/></story>
@@ -67,7 +67,7 @@
     </xsl:template>
 
     <xsl:template match="MarkerReference" mode="entry">
-        <person id="{@id}"/>
+        <person-ref id="{@id}"/>
     </xsl:template>
 
     <xsl:template match="Marker" mode="person">
@@ -146,7 +146,7 @@
     </xsl:template>
 
     <xsl:template match="EntryReference" mode="playlist">
-        <entry id="{@id}"/>
+        <entry-ref id="{@id}"/>
     </xsl:template>
 
 </xsl:stylesheet>

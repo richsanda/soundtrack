@@ -1,14 +1,13 @@
 package w.whateva.soundtrack.jobs;
 
+import com.google.common.collect.Lists;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.configuration.annotation.*;
 import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.launch.NoSuchJobException;
 import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
 import org.springframework.batch.item.xml.StaxEventItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.repositories.EntryRepository;
@@ -25,7 +23,6 @@ import w.whateva.soundtrack.jobs.load.SoundtrackEntryProcessor;
 import w.whateva.soundtrack.jobs.load.SoundtrackEntryWriter;
 import w.whateva.soundtrack.jobs.load.SoundtrackLoadJobRunner;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
@@ -83,6 +80,7 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     @StepScope
     protected ResourceAwareItemReaderItemStream<Entry> soundtrackEntryReader() {
         StaxEventItemReader<Entry> reader = new StaxEventItemReader<Entry>();
+        //reader.setFragmentRootElementNames(new String[]{"entry", "person", "playlist"});
         reader.setFragmentRootElementName("entry");
         Resource resource = resourceLoader.getResource("data/data.formatted.xml");
         reader.setResource(resource);
@@ -93,13 +91,14 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     @Bean
     @StepScope
     protected ItemProcessor<Entry, Entry> soundtrackEntryProcessor() {
-        SoundtrackEntryProcessor writer = new SoundtrackEntryProcessor();
-        return writer;
+        SoundtrackEntryProcessor processor = new SoundtrackEntryProcessor();
+        return processor;
     }
 
     @Bean
     protected Jaxb2Marshaller entryUnmarshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
+        //marshaller.setClassesToBeBound(Entry.class, Person.class, Playlist.class);
         marshaller.setClassesToBeBound(Entry.class);
         return marshaller;
     }
@@ -107,7 +106,7 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     @Bean
     protected ItemWriter<Entry> soundtrackEntryWriter() {
         SoundtrackEntryWriter writer = new SoundtrackEntryWriter();
-        writer.setGameRepository(entryRepository);
+        writer.setEntryRepository(entryRepository);
         return writer;
     }
 
