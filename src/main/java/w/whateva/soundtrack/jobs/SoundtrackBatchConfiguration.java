@@ -1,11 +1,9 @@
 package w.whateva.soundtrack.jobs;
 
-import com.google.common.collect.Lists;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.configuration.annotation.*;
 import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobLauncher;
-import org.springframework.batch.core.launch.NoSuchJobException;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
@@ -16,15 +14,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import org.springframework.transaction.PlatformTransactionManager;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.repositories.EntryRepository;
 import w.whateva.soundtrack.jobs.load.SoundtrackEntryProcessor;
 import w.whateva.soundtrack.jobs.load.SoundtrackEntryWriter;
 import w.whateva.soundtrack.jobs.load.SoundtrackLoadJobRunner;
 
-import java.util.List;
-import java.util.Set;
+import javax.persistence.EntityManagerFactory;
 
 /**
  * Created by rich on 4/3/16.
@@ -43,6 +42,9 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     private JobLauncher jobLauncher;
 
     @Autowired
+    private JobExplorer jobExplorer;
+
+    @Autowired
     private EntryRepository entryRepository;
 
     @Autowired
@@ -50,6 +52,20 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
 
     @Autowired
     private EntryRepository playlistRepository;
+
+    @Autowired
+    private EntityManagerFactory entityManagerFactory;
+
+    // this is, like, super crucial to tying the start job to the jpa entity manager used in the controller
+    @Bean
+    public PlatformTransactionManager platformTransactionManager() {
+         return new JpaTransactionManager(entityManagerFactory);
+    }
+
+    @Override
+    public PlatformTransactionManager getTransactionManager() {
+        return platformTransactionManager();
+    }
 
     @Bean
     public SoundtrackLoadJobRunner soundtrackLoadJobRunner() throws Exception {
@@ -108,57 +124,5 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
         SoundtrackEntryWriter writer = new SoundtrackEntryWriter();
         writer.setEntryRepository(entryRepository);
         return writer;
-    }
-
-
-    @Override
-    public JobExplorer getJobExplorer() {
-        return new JobExplorer() {
-
-            @Override
-            public List<JobInstance> getJobInstances(String jobName, int start, int count) {
-                return null;
-            }
-
-            @Override
-            public JobExecution getJobExecution(Long executionId) {
-                return null;
-            }
-
-            @Override
-            public StepExecution getStepExecution(Long jobExecutionId, Long stepExecutionId) {
-                return null;
-            }
-
-            @Override
-            public JobInstance getJobInstance(Long instanceId) {
-                return null;
-            }
-
-            @Override
-            public List<JobExecution> getJobExecutions(JobInstance jobInstance) {
-                return null;
-            }
-
-            @Override
-            public Set<JobExecution> findRunningJobExecutions(String jobName) {
-                return null;
-            }
-
-            @Override
-            public List<String> getJobNames() {
-                return null;
-            }
-
-            @Override
-            public List<JobInstance> findJobInstancesByJobName(String jobName, int start, int count) {
-                return null;
-            }
-
-            @Override
-            public int getJobInstanceCount(String jobName) throws NoSuchJobException {
-                return 0;
-            }
-        };
     }
 }

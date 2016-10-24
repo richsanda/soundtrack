@@ -45,7 +45,8 @@ public class Entry {
 
     private DateTime created;
 
-    private int ordinal;
+    private Integer year;
+    private Integer ordinal;
 
     private String title;
     private String artist;
@@ -64,6 +65,18 @@ public class Entry {
 
     private String spotify;
     private String youtube;
+
+    public Integer getYear() { return year; }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public Integer getOrdinal() { return ordinal; }
+
+    public void setOrdinal(Integer ordinal) {
+        this.ordinal = ordinal;
+    }
 
     public String getTitle() {
         return title;

@@ -53,9 +53,16 @@
 
         -->
 
+        <xsl:variable name="mix" select="$mixes[@id = current()/MixReference/@id]"/>
+        <xsl:variable name="theme" select="$themes[@id = $mix/ThemeReference/@id]"/>
+        <xsl:variable name="refs" select="$mix/Entries/EntryReference"/>
+        <xsl:variable name="ref" select="$refs[@id = current()/@id]"/>
+
         <entry>
             <xsl:copy-of select="@id"/>
             <playlist-ref id="{MixReference/@id}"/>
+            <year><xsl:value-of select="$theme/Title"/></year>
+            <ordinal><xsl:value-of select="count($ref/preceding-sibling::*) + 1"/></ordinal>
             <title><xsl:value-of select="Title"/></title>
             <artist><xsl:value-of select="Artist"/></artist>
             <story><xsl:value-of select="Story"/></story>

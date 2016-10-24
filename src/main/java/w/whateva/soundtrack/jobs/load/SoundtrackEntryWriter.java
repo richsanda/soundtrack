@@ -21,7 +21,7 @@ public class SoundtrackEntryWriter implements ItemWriter<Entry> {
     public void write(List<? extends Entry> entries) throws Exception {
         for (Entry entry : entries) {
             if (null != entry.getTitle()) {
-                System.out.println(entry.getTitle());
+                System.out.println("here's an entry: " + entry.getTitle());
                 entryRepository.save(entry);
             } else {
                 Entry.print(entry);
