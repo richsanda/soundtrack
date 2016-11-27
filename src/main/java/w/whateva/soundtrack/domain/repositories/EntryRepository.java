@@ -16,4 +16,6 @@ public interface EntryRepository extends PagingAndSortingRepository<Entry, Long>
     List<Entry> findByTitle(String title);
 
     Entry findByYearAndOrdinal(Integer year, Integer ordinal);
+
+    List<Entry> findByYear(Integer year);
 }

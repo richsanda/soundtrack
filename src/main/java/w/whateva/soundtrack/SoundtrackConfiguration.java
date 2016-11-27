@@ -2,7 +2,6 @@ package w.whateva.soundtrack;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -14,7 +13,8 @@ import java.util.List;
 /**
  * Created by rich on 10/23/16.
  */
-@Configuration
+// TODO: figure out how to set up this indentation so it doesn't blow away default support for web mvc config
+//@Configuration
 public class SoundtrackConfiguration extends WebMvcConfigurationSupport {
 
     protected void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
