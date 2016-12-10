@@ -6,26 +6,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.List;
 
 /**
  * Created by rich on 10/23/16.
  */
-// TODO: figure out how to set up this indentation so it doesn't blow away default support for web mvc config
-//@Configuration
-public class SoundtrackConfiguration extends WebMvcConfigurationSupport {
+@Configuration
+public class SoundtrackConfiguration extends WebMvcConfigurerAdapter {
 
-    protected void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(converter());
-        addDefaultHttpMessageConverters(converters);
+        super.configureMessageConverters(converters);
     }
 
     @Bean
     MappingJackson2HttpMessageConverter converter() {
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        //do your customizations here...
         converter.setObjectMapper(objectMapper());
         return converter;
     }
