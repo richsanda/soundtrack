@@ -66,6 +66,10 @@ public class Entry {
     private String spotify;
     private String youtube;
 
+    public String getKey() {
+        return id.toString();
+    }
+
     public Integer getYear() { return year; }
 
     public void setYear(Integer year) {

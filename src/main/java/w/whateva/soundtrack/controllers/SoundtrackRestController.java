@@ -3,7 +3,7 @@ package w.whateva.soundtrack.controllers;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.CollectionUtils;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.repositories.EntryRepository;
@@ -25,14 +25,21 @@ public class SoundtrackRestController {
     @Autowired
     SoundtrackLoadJobRunner soundtrackLoadJobRunner;
 
-    @RequestMapping(value = "/entry", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/entry/{key}", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public Entry giveMeAnEntry(@RequestParam String title) {
-        List<Entry> entries = entryRepository.findByTitle(title);
-        if (!CollectionUtils.isEmpty(entries)) {
-            return entries.iterator().next();
-        }
-        return null;
+    public Entry retrieveEntry(@PathVariable("key") String key) {
+        Entry entry = entryRepository.findById(new Long(key));
+        return entry;
+    }
+
+    @Transactional(value = "transactionManager")
+    @RequestMapping(value = "/entry/{key}", method= RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    public Entry updateEntry(@PathVariable("key") String key, @RequestBody Entry update) {
+        Entry entry = entryRepository.findById(new Long(key));
+        entry.setStory(update.getStory());
+        entryRepository.save(entry);
+        return entry;
     }
 
     @RequestMapping(value = "/entries", method= RequestMethod.GET, produces = "application/json")

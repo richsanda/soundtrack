@@ -2,7 +2,6 @@ package w.whateva.soundtrack.domain.repositories;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import w.whateva.soundtrack.domain.Entry;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 @Component
 public interface EntryRepository extends PagingAndSortingRepository<Entry, Long> {
 
-    List<Entry> findByTitle(String title);
+    Entry findById(Long id);
 
     Entry findByYearAndOrdinal(Integer year, Integer ordinal);
 
