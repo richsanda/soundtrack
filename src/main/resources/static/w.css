@@ -1,0 +1,41 @@
+div.title {
+    background-color: lavenderblush;
+    font-weight: bold;
+}
+
+div.story {
+   padding-top: 4px;
+}
+
+div.title, div.story {
+
+}
+
+div.entry {
+    color: saddlebrown;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 4px;
+}
+
+div.year {
+    color: saddlebrown;
+    background-color: #ddd0d8;
+
+    font-weight: bold;
+
+    display: inline-block;
+    zoom: 1;
+
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+
+    text-align: center;
+
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    border: 1px solid saddlebrown;
+}

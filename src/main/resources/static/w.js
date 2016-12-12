@@ -32,8 +32,8 @@ function regionClick (e, behaviorMap) {
 function actionsClick(e) {
 
     var actions = {
-        'start-game' : function ($$) {
-            startGame($$);
+        'edit-entry' : function ($$) {
+            editEntry($$);
         }
     };
 
@@ -47,12 +47,21 @@ function actionsBehavior(root) {
     return root
 }
 
+function editEntry($$) {
+
+}
+
 function showEntries(entries) {
 
     var entriesDiv = $("<div class='entries'></div>");
 
     $.each(entries, function() {
-        var entryDiv = $("<div class='entry'>" + this.title + "</div>");
+        var titleDiv = $("<div class='title'><div class='year'>" + this.year + "</div><div class='year'>" + (this.ordinal < 10 ? "0" : "") + this.ordinal + "</div> " + this.title + " -- " + this.artist + "</div>");
+        var storyDiv = $("<div class='story'>" + this.story + "</div>");
+        var entryDiv = $("<div class='entry' id='" + this.key + "'/>");
+        entryDiv.append(titleDiv);
+        entryDiv.append(storyDiv);
+        entryDiv.append("<hr/>");
         entriesDiv.append(entryDiv);
     });
 
