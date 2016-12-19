@@ -1,8 +1,8 @@
-package w.whateva.soundtrack.jobs.load;
+package w.whateva.soundtrack.job.load;
 
 import org.springframework.batch.item.ItemWriter;
 import w.whateva.soundtrack.domain.Entry;
-import w.whateva.soundtrack.domain.repositories.EntryRepository;
+import w.whateva.soundtrack.domain.repository.EntryRepository;
 
 import java.util.List;
 

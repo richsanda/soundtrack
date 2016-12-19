@@ -1,8 +1,7 @@
-package w.whateva.soundtrack.jobs;
+package w.whateva.soundtrack.job;
 
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.configuration.annotation.*;
-import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemWriter;
@@ -18,10 +17,10 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.transaction.PlatformTransactionManager;
 import w.whateva.soundtrack.domain.Entry;
-import w.whateva.soundtrack.domain.repositories.EntryRepository;
-import w.whateva.soundtrack.jobs.load.SoundtrackEntryProcessor;
-import w.whateva.soundtrack.jobs.load.SoundtrackEntryWriter;
-import w.whateva.soundtrack.jobs.load.SoundtrackLoadJobRunner;
+import w.whateva.soundtrack.domain.repository.EntryRepository;
+import w.whateva.soundtrack.job.load.SoundtrackEntryProcessor;
+import w.whateva.soundtrack.job.load.SoundtrackEntryWriter;
+import w.whateva.soundtrack.job.load.SoundtrackLoadJobRunner;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -42,16 +41,7 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     private JobLauncher jobLauncher;
 
     @Autowired
-    private JobExplorer jobExplorer;
-
-    @Autowired
     private EntryRepository entryRepository;
-
-    @Autowired
-    private EntryRepository personRepository;
-
-    @Autowired
-    private EntryRepository playlistRepository;
 
     @Autowired
     private EntityManagerFactory entityManagerFactory;

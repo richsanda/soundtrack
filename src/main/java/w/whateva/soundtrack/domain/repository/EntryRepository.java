@@ -1,4 +1,4 @@
-package w.whateva.soundtrack.domain.repositories;
+package w.whateva.soundtrack.domain.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Component;

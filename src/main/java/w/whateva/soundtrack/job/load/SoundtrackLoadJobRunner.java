@@ -1,4 +1,4 @@
-package w.whateva.soundtrack.jobs.load;
+package w.whateva.soundtrack.job.load;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
@@ -9,6 +9,8 @@ import org.springframework.context.event.ContextRefreshedEvent;
 
 /**
  * Created by rich on 4/3/16.
+ *
+ * TODO: um, do i need this ?
  */
 public class SoundtrackLoadJobRunner implements ApplicationListener {
 

@@ -1,4 +1,4 @@
-package w.whateva.soundtrack.jobs.load;
+package w.whateva.soundtrack.job.load;
 
 import org.springframework.batch.item.ItemProcessor;
 import w.whateva.soundtrack.domain.Entry;

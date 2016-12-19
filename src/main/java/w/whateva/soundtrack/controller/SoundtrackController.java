@@ -1,4 +1,4 @@
-package w.whateva.soundtrack.controllers;
+package w.whateva.soundtrack.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -74,7 +74,7 @@ function saveEntry($$) {
 
     $.ajax({
         url: url,
-        type: "post",
+        type: "patch",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(entry)
