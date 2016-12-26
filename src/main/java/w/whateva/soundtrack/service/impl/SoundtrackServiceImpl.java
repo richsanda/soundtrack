@@ -9,6 +9,7 @@ import w.whateva.soundtrack.domain.repository.EntryRepository;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.data.ApiEntry;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
+import w.whateva.soundtrack.service.util.SoundtrackUtil;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -55,6 +56,9 @@ public class SoundtrackServiceImpl implements SoundtrackService {
     @Override
     public ApiEntry updateEntry(String key, ApiEntry apiEntry) {
         Entry entry = entryRepository.findById(new Long(key));
+        for (String name : SoundtrackUtil.extractPersons(apiEntry.getStory())) {
+            System.out.println(name);
+        }
         entry.setStory(apiEntry.getStory());
         entryRepository.save(entry);
         return SoundtrackDataBuilder.buildApiEntry(entry);

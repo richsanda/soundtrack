@@ -57,9 +57,6 @@ public class Entry {
     @Column(length = 100000)
     private String notes;
 
-    @ManyToOne
-    private Playlist playlist;
-
     @ManyToMany
     private List<Person> persons;
 
