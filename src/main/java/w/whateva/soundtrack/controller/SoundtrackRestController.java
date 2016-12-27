@@ -5,6 +5,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import w.whateva.soundtrack.api.dto.Entry;
 import w.whateva.soundtrack.api.dto.EntrySpec;
+import w.whateva.soundtrack.api.dto.Person;
+import w.whateva.soundtrack.service.PersonService;
 import w.whateva.soundtrack.service.SoundtrackService;
 
 import java.util.List;
@@ -18,33 +20,43 @@ public class SoundtrackRestController implements SoundtrackRestService {
     @Autowired
     SoundtrackService soundtrackService;
 
-    @Transactional(value = "transactionManager")
+    @Autowired
+    PersonService personService;
+
+    private static final SoundtrackRestMapper.EntryMapper entryMapper = new SoundtrackRestMapper.EntryMapper();
+    private static final SoundtrackRestMapper.EntrySpecMapper entrySpecMapper = new SoundtrackRestMapper.EntrySpecMapper();
+    private static final SoundtrackRestMapper.PersonMapper personMapper = new SoundtrackRestMapper.PersonMapper();
+
     public Entry createEntry(EntrySpec entry) {
-        return SoundtrackRestMapper.map(soundtrackService.createEntry(SoundtrackRestMapper.map(entry)));
+        return entryMapper.toDto(soundtrackService.createEntry(entrySpecMapper.toApi(entry)));
     }
 
     public Entry readEntry(@PathVariable("key") String key) {
-        return SoundtrackRestMapper.map(soundtrackService.readEntry(key));
+        return entryMapper.toDto(soundtrackService.readEntry(key));
     }
 
     @Transactional(value = "transactionManager")
     public Entry updateEntry(@PathVariable("key") String key, @RequestBody EntrySpec entry) {
-        return SoundtrackRestMapper.map(soundtrackService.updateEntry(key, SoundtrackRestMapper.map(entry)));
+        return entryMapper.toDto(soundtrackService.updateEntry(key, entrySpecMapper.toApi(entry)));
     }
 
     public List<Entry> readEntries() {
-        return SoundtrackRestMapper.map(soundtrackService.readEntries());
+        return entryMapper.toDto(soundtrackService.readEntries());
     }
 
     public List<Entry> readSoundtrack() {
-        return SoundtrackRestMapper.map(soundtrackService.readEntries());
+        return entryMapper.toDto(soundtrackService.readEntries());
     }
 
     public List<Entry> readEntries(@PathVariable("year") Integer year) {
-        return SoundtrackRestMapper.map(soundtrackService.readEntries(year));
+        return entryMapper.toDto(soundtrackService.readEntries(year));
     }
 
     public Entry readEntry(@PathVariable("year") Integer year, @PathVariable("ordinal") Integer ordinal) {
-        return SoundtrackRestMapper.map(soundtrackService.readEntry(year, ordinal));
+        return entryMapper.toDto(soundtrackService.readEntry(year, ordinal));
+    }
+
+    public List<Person> readPersons() {
+        return personMapper.toDto(personService.readPersons());
     }
 }

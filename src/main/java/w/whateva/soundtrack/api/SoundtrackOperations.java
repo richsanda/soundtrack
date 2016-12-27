@@ -3,6 +3,7 @@ package w.whateva.soundtrack.api;
 import org.springframework.web.bind.annotation.*;
 import w.whateva.soundtrack.api.dto.Entry;
 import w.whateva.soundtrack.api.dto.EntrySpec;
+import w.whateva.soundtrack.api.dto.Person;
 
 import java.util.List;
 
@@ -38,4 +39,8 @@ public interface SoundtrackOperations {
     @RequestMapping(value = "/entry/{year}/{ordinal}", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
     Entry readEntry(@PathVariable("year") Integer year, @PathVariable("ordinal") Integer ordinal);
+
+    @RequestMapping(value = "/persons", method= RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    List<Person> readPersons();
 }

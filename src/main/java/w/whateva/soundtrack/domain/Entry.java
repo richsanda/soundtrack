@@ -111,6 +111,14 @@ public class Entry {
         this.notes = notes;
     }
 
+    public List<Person> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(List<Person> persons) {
+        this.persons = persons;
+    }
+
     public String getSpotify() {
         return spotify;
     }

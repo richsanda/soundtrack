@@ -1,11 +1,14 @@
 package w.whateva.soundtrack.service.impl;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import w.whateva.soundtrack.domain.Entry;
+import w.whateva.soundtrack.domain.Person;
 import w.whateva.soundtrack.domain.repository.EntryRepository;
+import w.whateva.soundtrack.domain.repository.PersonRepository;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.data.ApiEntry;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
@@ -14,6 +17,7 @@ import w.whateva.soundtrack.service.util.SoundtrackUtil;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by rich on 12/17/16.
@@ -23,6 +27,9 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
     @Autowired
     EntryRepository entryRepository;
+
+    @Autowired
+    PersonRepository personRepository;
 
     @Override
     public ApiEntry createEntry(ApiEntry apiEntry) {
@@ -55,12 +62,27 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
     @Override
     public ApiEntry updateEntry(String key, ApiEntry apiEntry) {
+
         Entry entry = entryRepository.findById(new Long(key));
-        for (String name : SoundtrackUtil.extractPersons(apiEntry.getStory())) {
-            System.out.println(name);
+
+        List<String> personTags = SoundtrackUtil.extractPersonTags(apiEntry.getStory());
+        List<Person> persons = personRepository.findByTag(personTags);
+        Map<String, Person> personTagsToPersons = Maps.newHashMap();
+        for (Person person : persons) {
+            personTagsToPersons.put(person.getTag(), person);
         }
+        for (String personTag : personTags) {
+            if (!personTagsToPersons.containsKey(personTag)) {
+                Person person = new Person(personTag);
+                personTagsToPersons.put(personTag, person);
+            }
+        }
+
+        personRepository.save(personTagsToPersons.values());
+        entry.setPersons(Lists.newArrayList(personTagsToPersons.values()));
         entry.setStory(apiEntry.getStory());
         entryRepository.save(entry);
+
         return SoundtrackDataBuilder.buildApiEntry(entry);
     }
 
