@@ -11,6 +11,7 @@ import w.whateva.soundtrack.domain.Person;
 import w.whateva.soundtrack.domain.repository.EntryRepository;
 import w.whateva.soundtrack.domain.repository.PersonRepository;
 import w.whateva.soundtrack.service.SoundtrackService;
+import w.whateva.soundtrack.service.TagType;
 import w.whateva.soundtrack.service.data.ApiEntry;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 import w.whateva.soundtrack.service.util.SoundtrackUtil;
@@ -72,7 +73,7 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
         Entry entry = entryRepository.findById(new Long(key));
 
-        List<String> personTags = SoundtrackUtil.extractPersonTags(apiEntry.getStory());
+        List<String> personTags = SoundtrackUtil.extractTags(apiEntry.getStory(), TagType.PERSON);
 
         if (!CollectionUtils.isEmpty(personTags)) {
             List<Person> persons = personRepository.findByTagIn(personTags);

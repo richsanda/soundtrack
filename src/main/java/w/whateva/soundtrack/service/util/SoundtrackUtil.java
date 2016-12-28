@@ -1,6 +1,9 @@
 package w.whateva.soundtrack.service.util;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
+import w.whateva.soundtrack.service.TagType;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -13,29 +16,25 @@ public class SoundtrackUtil {
 
     private final static Pattern tagPattern = Pattern.compile("(\\@|\\#)([0-9a-z\\-]*)\\{(.*?)\\}");
 
-    public static List<String> extractPersonTags(String text) {
+    public static Multimap<TagType, String> extractTags(String text) {
 
-        List<String> result = Lists.newArrayList();
+        Multimap<TagType, String> result = HashMultimap.create();
 
         Matcher matcher = tagPattern.matcher(text);
+
         while (matcher.find()) {
-            if ("@".equals(matcher.group(1))) {
-                result.add(matcher.group(2));
-            }
+
+            TagType tagType = TagType.getTagType(matcher.group(1));
+            String key = matcher.group(2);
+
+            result.put(tagType, key);
         }
+
         return result;
     }
 
-    public static List<String> extractHashTags(String text) {
+    public static List<String> extractTags(String text, TagType tagType) {
 
-        List<String> result = Lists.newArrayList();
-
-        Matcher matcher = tagPattern.matcher(text);
-        while (matcher.find()) {
-            if ("#".equals(matcher.group(1))) {
-                result.add(matcher.group(2));
-            }
-        }
-        return result;
+        return Lists.newArrayList(extractTags(text).get(tagType));
     }
 }
