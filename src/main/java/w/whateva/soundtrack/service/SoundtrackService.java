@@ -17,6 +17,8 @@ public interface SoundtrackService {
 
     List<ApiEntry> readEntries(Integer year);
 
+    List<ApiEntry> readEntries(List<String> personTags);
+
     ApiEntry readEntry(Integer year, Integer ordinal);
 
     ApiEntry updateEntry(String key, ApiEntry entry);

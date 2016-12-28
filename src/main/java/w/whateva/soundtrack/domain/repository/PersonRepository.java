@@ -1,7 +1,6 @@
 package w.whateva.soundtrack.domain.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
-import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.Person;
 
 import java.util.List;
@@ -13,5 +12,5 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
 
     Person findByTag(String tag);
 
-    List<Person> findByTag(List<String> tag);
+    List<Person> findByTagIn(List<String> tag);
 }

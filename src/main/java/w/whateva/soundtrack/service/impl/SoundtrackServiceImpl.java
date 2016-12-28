@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.Person;
 import w.whateva.soundtrack.domain.repository.EntryRepository;
@@ -56,6 +57,12 @@ public class SoundtrackServiceImpl implements SoundtrackService {
     }
 
     @Override
+    public List<ApiEntry> readEntries(List<String> personTags) {
+        List<Entry> entries = Lists.newArrayList(entryRepository.findByPersonTags(personTags));
+        return sortAndConvert(entries);
+    }
+
+    @Override
     public ApiEntry readEntry(Integer year, Integer ordinal) {
         return SoundtrackDataBuilder.buildApiEntry(entryRepository.findByYearAndOrdinal(year, ordinal));
     }
@@ -66,20 +73,24 @@ public class SoundtrackServiceImpl implements SoundtrackService {
         Entry entry = entryRepository.findById(new Long(key));
 
         List<String> personTags = SoundtrackUtil.extractPersonTags(apiEntry.getStory());
-        List<Person> persons = personRepository.findByTag(personTags);
-        Map<String, Person> personTagsToPersons = Maps.newHashMap();
-        for (Person person : persons) {
-            personTagsToPersons.put(person.getTag(), person);
-        }
-        for (String personTag : personTags) {
-            if (!personTagsToPersons.containsKey(personTag)) {
-                Person person = new Person(personTag);
-                personTagsToPersons.put(personTag, person);
+
+        if (!CollectionUtils.isEmpty(personTags)) {
+            List<Person> persons = personRepository.findByTagIn(personTags);
+            Map<String, Person> personTagsToPersons = Maps.newHashMap();
+            for (Person person : persons) {
+                personTagsToPersons.put(person.getTag(), person);
             }
+            for (String personTag : personTags) {
+                if (!personTagsToPersons.containsKey(personTag)) {
+                    Person person = new Person(personTag);
+                    personTagsToPersons.put(personTag, person);
+                }
+            }
+
+            personRepository.save(personTagsToPersons.values());
+            entry.setPersons(Lists.newArrayList(personTagsToPersons.values()));
         }
 
-        personRepository.save(personTagsToPersons.values());
-        entry.setPersons(Lists.newArrayList(personTagsToPersons.values()));
         entry.setStory(apiEntry.getStory());
         entryRepository.save(entry);
 

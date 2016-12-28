@@ -22,11 +22,11 @@ public interface SoundtrackOperations {
 
     @RequestMapping(value = "/entries", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public List<Entry> readEntries();
+    List<Entry> readEntries(@RequestParam(value = "personTags", required = false) List<String> personTags);
 
     @RequestMapping(value = "/soundtrack", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public List<Entry> readSoundtrack();
+    List<Entry> readSoundtrack();
 
     @RequestMapping(value = "/entry/{key}", method= RequestMethod.PATCH, consumes = "application/json", produces = "application/json")
     @ResponseBody

@@ -44,6 +44,10 @@ public class SoundtrackRestController implements SoundtrackRestService {
         return entryMapper.toDto(soundtrackService.readEntries());
     }
 
+    public List<Entry> readEntries(List<String> personTags) {
+        return entryMapper.toDto(soundtrackService.readEntries(personTags));
+    }
+
     public List<Entry> readSoundtrack() {
         return entryMapper.toDto(soundtrackService.readEntries());
     }
