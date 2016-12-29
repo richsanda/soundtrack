@@ -5,9 +5,9 @@ import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.api.dto.Entry;
 import w.whateva.soundtrack.api.dto.EntrySpec;
 import w.whateva.soundtrack.api.dto.Person;
-import w.whateva.soundtrack.service.data.IAEntry;
-import w.whateva.soundtrack.service.data.IAEntrySpec;
-import w.whateva.soundtrack.service.data.IAPerson;
+import w.whateva.soundtrack.service.iao.IAEntry;
+import w.whateva.soundtrack.service.iao.IAEntrySpec;
+import w.whateva.soundtrack.service.iao.IAPerson;
 
 import java.util.List;
 

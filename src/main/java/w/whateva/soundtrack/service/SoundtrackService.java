@@ -1,7 +1,7 @@
 package w.whateva.soundtrack.service;
 
-import w.whateva.soundtrack.service.data.IAEntry;
-import w.whateva.soundtrack.service.data.IAEntrySpec;
+import w.whateva.soundtrack.service.iao.IAEntry;
+import w.whateva.soundtrack.service.iao.IAEntrySpec;
 
 import java.util.List;
 

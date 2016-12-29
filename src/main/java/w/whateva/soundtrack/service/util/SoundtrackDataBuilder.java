@@ -3,9 +3,9 @@ package w.whateva.soundtrack.service.util;
 import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.Person;
-import w.whateva.soundtrack.service.data.IAEntry;
-import w.whateva.soundtrack.service.data.IAEntrySpec;
-import w.whateva.soundtrack.service.data.IAPerson;
+import w.whateva.soundtrack.service.iao.IAEntry;
+import w.whateva.soundtrack.service.iao.IAEntrySpec;
+import w.whateva.soundtrack.service.iao.IAPerson;
 
 /**
  * Created by rich on 12/18/16.

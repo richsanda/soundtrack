@@ -1,6 +1,6 @@
 package w.whateva.soundtrack.service;
 
-import w.whateva.soundtrack.service.data.IAPerson;
+import w.whateva.soundtrack.service.iao.IAPerson;
 
 import java.util.List;
 
