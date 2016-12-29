@@ -1,6 +1,7 @@
 package w.whateva.soundtrack.service;
 
-import w.whateva.soundtrack.service.data.ApiEntry;
+import w.whateva.soundtrack.service.data.IAEntry;
+import w.whateva.soundtrack.service.data.IAEntrySpec;
 
 import java.util.List;
 
@@ -9,19 +10,19 @@ import java.util.List;
  */
 public interface SoundtrackService {
 
-    ApiEntry createEntry(ApiEntry entry);
+    IAEntry createEntry(IAEntrySpec entry);
 
-    ApiEntry readEntry(String key);
+    IAEntry readEntry(String key);
 
-    List<ApiEntry> readEntries();
+    List<IAEntry> readEntries();
 
-    List<ApiEntry> readEntries(Integer year);
+    List<IAEntry> readEntries(Integer year);
 
-    List<ApiEntry> readEntries(List<String> personTags);
+    List<IAEntry> readEntries(List<String> personTags);
 
-    ApiEntry readEntry(Integer year, Integer ordinal);
+    IAEntry readEntry(Integer year, Integer ordinal);
 
-    ApiEntry updateEntry(String key, ApiEntry entry);
+    IAEntry updateEntry(String key, IAEntrySpec entry);
 
-    ApiEntry deleteEntry(String key);
+    IAEntry deleteEntry(String key);
 }

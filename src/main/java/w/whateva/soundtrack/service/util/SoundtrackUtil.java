@@ -20,6 +20,8 @@ public class SoundtrackUtil {
 
         Multimap<TagType, String> result = HashMultimap.create();
 
+        if (null == text) return result;
+
         Matcher matcher = tagPattern.matcher(text);
 
         while (matcher.find()) {

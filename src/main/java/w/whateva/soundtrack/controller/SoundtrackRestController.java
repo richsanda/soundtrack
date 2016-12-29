@@ -28,39 +28,84 @@ public class SoundtrackRestController implements SoundtrackRestService {
     private static final SoundtrackRestMapper.PersonMapper personMapper = new SoundtrackRestMapper.PersonMapper();
 
     public Entry createEntry(EntrySpec entry) {
-        return entryMapper.toDto(soundtrackService.createEntry(entrySpecMapper.toApi(entry)));
+        try {
+            return entryMapper.toOuter(soundtrackService.createEntry(entrySpecMapper.toInner(entry)));
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 
     public Entry readEntry(@PathVariable("key") String key) {
-        return entryMapper.toDto(soundtrackService.readEntry(key));
+        try {
+            return entryMapper.toOuter(soundtrackService.readEntry(key));
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 
     @Transactional(value = "transactionManager")
     public Entry updateEntry(@PathVariable("key") String key, @RequestBody EntrySpec entry) {
-        return entryMapper.toDto(soundtrackService.updateEntry(key, entrySpecMapper.toApi(entry)));
+        try {
+            return entryMapper.toOuter(soundtrackService.updateEntry(key, entrySpecMapper.toInner(entry)));
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 
     public List<Entry> readEntries() {
-        return entryMapper.toDto(soundtrackService.readEntries());
+        try {
+            return entryMapper.toOuter(soundtrackService.readEntries());
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 
     public List<Entry> readEntries(List<String> personTags) {
-        return entryMapper.toDto(soundtrackService.readEntries(personTags));
+        try {
+            return entryMapper.toOuter(soundtrackService.readEntries(personTags));
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 
     public List<Entry> readSoundtrack() {
-        return entryMapper.toDto(soundtrackService.readEntries());
+        try {
+            return entryMapper.toOuter(soundtrackService.readEntries());
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 
     public List<Entry> readEntries(@PathVariable("year") Integer year) {
-        return entryMapper.toDto(soundtrackService.readEntries(year));
+        try {
+            return entryMapper.toOuter(soundtrackService.readEntries(year));
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 
     public Entry readEntry(@PathVariable("year") Integer year, @PathVariable("ordinal") Integer ordinal) {
-        return entryMapper.toDto(soundtrackService.readEntry(year, ordinal));
+        try {
+            return entryMapper.toOuter(soundtrackService.readEntry(year, ordinal));
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 
     public List<Person> readPersons() {
-        return personMapper.toDto(personService.readPersons());
+        try {
+            return personMapper.toOuter(personService.readPersons());
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
     }
 }

@@ -3,35 +3,48 @@ package w.whateva.soundtrack.service.util;
 import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.Person;
-import w.whateva.soundtrack.service.data.ApiEntry;
-import w.whateva.soundtrack.service.data.ApiPerson;
+import w.whateva.soundtrack.service.data.IAEntry;
+import w.whateva.soundtrack.service.data.IAEntrySpec;
+import w.whateva.soundtrack.service.data.IAPerson;
 
 /**
  * Created by rich on 12/18/16.
  */
 public class SoundtrackDataBuilder {
 
-    public static ApiEntry buildApiEntry(Entry entry) {
-        ApiEntry result = new ApiEntry();
+    public static IAEntry buildIAEntry(Entry entry) {
+        IAEntry result = new IAEntry();
         BeanUtils.copyProperties(entry, result);
         return result;
     }
 
-    public static Entry buildEntry(ApiEntry apiEntry) {
+    public static Entry buildEntry(IAEntrySpec iaEntrySpec) {
+
         Entry entry = new Entry();
-        BeanUtils.copyProperties(apiEntry, entry);
+
+        entry.setYear(iaEntrySpec.getYear().orElse(null));
+
+        entry.setTitle(iaEntrySpec.getTitle().orElse(null));
+        entry.setArtist(iaEntrySpec.getArtist().orElse(null));
+
+        entry.setStory(iaEntrySpec.getStory().orElse(null));
+        entry.setNotes(iaEntrySpec.getNotes().orElse(null));
+
+        entry.setSpotify(iaEntrySpec.getSpotify().orElse(null));
+        entry.setYoutube(iaEntrySpec.getYoutube().orElse(null));
+
         return entry;
     }
 
-    public static ApiPerson buildApiPerson(Person person) {
-        ApiPerson result = new ApiPerson();
+    public static IAPerson buildIAPerson(Person person) {
+        IAPerson result = new IAPerson();
         BeanUtils.copyProperties(person, result);
         return result;
     }
 
-    public static Person buildPerson(ApiPerson apiPerson) {
-        Person person = new Person();
-        BeanUtils.copyProperties(apiPerson, person);
-        return person;
+    public static Person buildPerson(IAPerson iaPerson) {
+        Person result = new Person();
+        BeanUtils.copyProperties(iaPerson, result);
+        return result;
     }
 }

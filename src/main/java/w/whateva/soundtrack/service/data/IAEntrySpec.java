@@ -1,12 +1,11 @@
-package w.whateva.soundtrack.api.dto;
-
+package w.whateva.soundtrack.service.data;
 
 import java.util.Optional;
 
 /**
- * Created by rich on 12/18/16.
+ * Created by rich on 12/17/16.
  */
-public class EntrySpec {
+public class IAEntrySpec {
 
     private Optional<Integer> year;
     private Optional<Integer> ordinal;
@@ -22,61 +21,61 @@ public class EntrySpec {
 
     public Optional<Integer> getYear() { return year; }
 
-    public void setYear(Integer year) {
-        this.year = Optional.ofNullable(year);
+    public void setYear(Optional<Integer> year) {
+        this.year = year;
     }
 
     public Optional<Integer> getOrdinal() { return ordinal; }
 
-    public void setOrdinal(Integer ordinal) {
-        this.ordinal = Optional.ofNullable(ordinal);
+    public void setOrdinal(Optional<Integer> ordinal) {
+        this.ordinal = ordinal;
     }
 
     public Optional<String> getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = Optional.ofNullable(title);
+    public void setTitle(Optional<String> title) {
+        this.title = title;
     }
 
     public Optional<String> getArtist() {
         return artist;
     }
 
-    public void setArtist(String artist) {
-        this.artist = Optional.ofNullable(artist);
+    public void setArtist(Optional<String> artist) {
+        this.artist = artist;
     }
 
     public Optional<String> getStory() {
         return story;
     }
 
-    public void setStory(String story) {
-        this.story = Optional.ofNullable(story);
+    public void setStory(Optional<String> story) {
+        this.story = story;
     }
 
     public Optional<String> getNotes() {
         return notes;
     }
 
-    public void setNotes(String notes) {
-        this.notes = Optional.ofNullable(notes);
+    public void setNotes(Optional<String> notes) {
+        this.notes = notes;
     }
 
     public Optional<String> getSpotify() {
         return spotify;
     }
 
-    public void setSpotify(String spotify) {
-       this.spotify = Optional.ofNullable(spotify);
+    public void setSpotify(Optional<String> spotify) {
+        this.spotify = spotify;
     }
 
     public Optional<String> getYoutube() {
         return youtube;
     }
 
-    public void setYoutube(String youtube) {
-        this.youtube = Optional.ofNullable(youtube);
+    public void setYoutube(Optional<String> youtube) {
+        this.youtube = youtube;
     }
 }

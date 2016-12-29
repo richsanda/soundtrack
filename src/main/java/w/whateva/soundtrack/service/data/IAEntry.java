@@ -3,7 +3,7 @@ package w.whateva.soundtrack.service.data;
 /**
  * Created by rich on 12/17/16.
  */
-public class ApiEntry {
+public class IAEntry {
 
     private String key;
 

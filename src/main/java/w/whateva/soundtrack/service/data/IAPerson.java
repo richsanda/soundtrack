@@ -3,7 +3,7 @@ package w.whateva.soundtrack.service.data;
 /**
  * Created by rich on 12/26/16.
  */
-public class ApiPerson {
+public class IAPerson {
 
     private String tag;
 

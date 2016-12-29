@@ -5,8 +5,9 @@ import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.api.dto.Entry;
 import w.whateva.soundtrack.api.dto.EntrySpec;
 import w.whateva.soundtrack.api.dto.Person;
-import w.whateva.soundtrack.service.data.ApiEntry;
-import w.whateva.soundtrack.service.data.ApiPerson;
+import w.whateva.soundtrack.service.data.IAEntry;
+import w.whateva.soundtrack.service.data.IAEntrySpec;
+import w.whateva.soundtrack.service.data.IAPerson;
 
 import java.util.List;
 
@@ -15,77 +16,81 @@ import java.util.List;
  */
 public class SoundtrackRestMapper {
 
-    public static class EntryMapper extends Mapper<Entry, ApiEntry> {
+    public static class EntryMapper extends Mapper<Entry, IAEntry> {
 
         @Override
-        public Entry newDto() {
+        public Entry newOuter() {
             return new Entry();
         }
+    }
+
+    public static class EntrySpecMapper extends Mapper<EntrySpec, IAEntrySpec> {
 
         @Override
-        public ApiEntry newApi() {
-            return new ApiEntry();
+        public IAEntrySpec newInner() {
+            return new IAEntrySpec();
         }
     }
 
-    public static class EntrySpecMapper extends Mapper<EntrySpec, ApiEntry> {
+    public static class PersonMapper extends Mapper<Person, IAPerson> {
 
         @Override
-        public EntrySpec newDto() {
-            return new EntrySpec();
-        }
-
-        @Override
-        public ApiEntry newApi() {
-            return new ApiEntry();
-        }
-    }
-
-    public static class PersonMapper extends Mapper<Person, ApiPerson> {
-
-        @Override
-        public Person newDto() {
+        public Person newOuter() {
             return new Person();
         }
 
         @Override
-        public ApiPerson newApi() {
-            return new ApiPerson();
+        public IAPerson newInner() {
+            return new IAPerson();
         }
     }
 
-    private static abstract class Mapper<DtoType, ApiType> {
+    private static abstract class Mapper<OuterType, InnerType> {
 
-        public abstract DtoType newDto();
+        public OuterType newOuter() throws MapperException {
+            throw new UnimplementedMappingException();
+        };
 
-        public abstract ApiType newApi();
+        public InnerType newInner() throws MapperException {
+            throw new UnimplementedMappingException();
+        };
 
-        public DtoType toDto(ApiType api) {
-            DtoType result = newDto();
-            BeanUtils.copyProperties(api, result);
+        public OuterType toOuter(InnerType inner) throws MapperException {
+            OuterType result = newOuter();
+            if (null == result) return null;
+            BeanUtils.copyProperties(inner, result);
             return result;
         }
 
-        public ApiType toApi(DtoType dto) {
-            ApiType result = newApi();
-            BeanUtils.copyProperties(dto, result);
+        public InnerType toInner(OuterType outer) throws MapperException {
+            InnerType result = newInner();
+            if (null == result) return null;
+            BeanUtils.copyProperties(outer, result);
             return result;
         }
 
-        public List<DtoType> toDto(List<ApiType> apis) {
-            List<DtoType> result = Lists.newArrayList();
-            for (ApiType api : apis) {
-                result.add(toDto(api));
+        public List<OuterType> toOuter(List<InnerType> inners) throws MapperException {
+            List<OuterType> result = Lists.newArrayList();
+            for (InnerType inner : inners) {
+                result.add(toOuter(inner));
             }
             return result;
         }
 
-        public List<ApiType> toApi(List<DtoType> dtos) {
-            List<ApiType> result = Lists.newArrayList();
-            for (DtoType dto : dtos) {
-                result.add(toApi(dto));
+        public List<InnerType> toInner(List<OuterType> outers) throws MapperException {
+            List<InnerType> result = Lists.newArrayList();
+            for (OuterType outer : outers) {
+                result.add(toInner(outer));
             }
             return result;
         }
+    }
+
+    public static class MapperException extends Exception {
+
+    }
+
+    public static class UnimplementedMappingException extends MapperException {
+
     }
 }
