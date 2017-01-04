@@ -4,7 +4,7 @@ div.title {
 }
 
 div.story {
-   padding-top: 4px;
+    padding-top: 4px;
 }
 
 textarea.story {
@@ -43,4 +43,139 @@ div.year {
     padding-right: 4px;
 
     border: 1px solid saddlebrown;
+}
+
+div.overlay {
+
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.8);
+    overflow-x: hidden;
+
+    display: none;
+}
+
+textarea.edit-story {
+
+    min-height: 240px;
+    min-width: 640px;
+    background-color: white;
+    display: inline-block;
+}
+
+div.edit-story {
+
+    margin-left: 0;
+    width: 80%;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus, .overlay .close-button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.overlay .close-buttons {
+    width: 20%;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.overlay .label-container {
+    text-align: center;
+}
+
+.overlay label {
+    display: inline-block;
+}
+
+label.year, label.year input {
+    width: 40px;
+}
+label.ordinal, label.ordinal input {
+    width: 40px;
+}
+label.title, label.title input {
+    width: 320px;
+}
+label.artist, label.artist input {
+    width: 320px;
+}
+
+.overlay .close-button, .overlay label {
+
+    color: saddlebrown;
+    background-color: #ddd0d8;
+    border: 1px solid saddlebrown;
+
+    -moz-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    border-radius: 0.4em;
+
+    margin: 8px;
+    padding: 8px;
+}
+
+.overlay label {
+    margin: 4px;
+    padding: 12px;
+}
+
+div.edit-entry-top, div.edit-entry-bottom {
+    text-align: center;
+}
+
+div.edit-entry:hover, div.name-tag:hover {
+     cursor: pointer;
+}
+
+div.edit-entry {
+    font-weight: bold;
+    color: darkblue;
+    border: none;
+    margin-left: 20px;
+}
+
+div.name-tag {
+    color: darkblue;
+    background-color: #ddd0d8;
+
+    display: inline-block;
+    zoom: 1;
+
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+
+    text-align: center;
+
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    border: 1px solid #bbb0b7;
 }

@@ -37,7 +37,14 @@ function actionsClick(e) {
         },
         'save-entry' : function ($$) {
             saveEntry($$);
-        }
+        },
+        'read-entry' : function ($$) {
+            readEntry($$);
+        },
+        'name-tag' : function ($$) {
+            readNameTag($$);
+        },
+        'no-op' : function ($$) {}
     };
 
     regionClick(e, actions);
@@ -52,16 +59,18 @@ function actionsBehavior(root) {
 
 function editEntry($$) {
 
-    var id = $$.attr('id');
+    var entryDiv = $$.closest('div.entry');
+    var id = entryDiv.attr('id');
     var url = "/entry/" + id;
 
     $.ajax({
         url: url,
         dataType: "json"
     }).success(function (data) {
-        var newDiv = showEntryForEdit(data);
-        newDiv.css({width: 500, height: 100});
-        $$.replaceWith(newDiv);
+        var overlayDiv = showEntryForEdit(data);
+        overlayDiv.width("100%");
+        overlayDiv.fadeIn(200);
+        entryDiv.append(overlayDiv);
     });
 }
 
@@ -70,7 +79,7 @@ function saveEntry($$) {
     var entryDiv = $$.closest('div.entry');
     var id = entryDiv.attr('id');
     var url = "/entry/" + id;
-    var entry = {story: entryDiv.find('textarea.story').val()};
+    var entry = {story: entryDiv.find('textarea.edit-story').val()};
 
     $.ajax({
         url: url,
@@ -78,6 +87,24 @@ function saveEntry($$) {
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(entry)
+    }).success(function (data) {
+        var newEntryDiv = showEntry(data);
+        entryDiv.fadeOut(500, function () {
+            entryDiv.replaceWith(newEntryDiv);
+        })
+    });
+}
+
+function readEntry($$) {
+
+    var entryDiv = $$.closest('div.entry');
+    var id = entryDiv.attr('id');
+    var url = "/entry/" + id;
+
+    $.ajax({
+        url: url,
+        type: "get",
+        contentType: "application/json",
     }).success(function (data) {
         entryDiv.replaceWith(showEntry(data));
     });
@@ -95,9 +122,9 @@ function showEntries(entries) {
 }
 
 function showEntry(entry) {
-    var titleDiv = $("<div class='title'><div class='year'>" + entry.year + "</div><div class='year'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + "</div>");
-    var storyDiv = $("<div class='story'>" + entry.story + "</div>");
-    var entryDiv = $("<div class='entry edit-entry' id='" + entry.key + "'/>");
+    var titleDiv = $("<div class='title'><div class='year'>" + entry.year + "</div><div class='year'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='year edit-entry'>edit</div></div>");
+    var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
+    var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
     entryDiv.append(storyDiv);
     entryDiv.append("<hr/>");
@@ -105,11 +132,57 @@ function showEntry(entry) {
 }
 
 function showEntryForEdit(entry) {
-    var titleDiv = $("<div class='title save-entry'><div class='year'>" + entry.year + "</div><div class='year'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + "</div>");
-    var storyDiv = $("<textarea class='story'>" + entry.story + "</textarea>");
-    var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
-    entryDiv.append(titleDiv);
-    entryDiv.append(storyDiv);
-    entryDiv.append("<hr/>");
-    return entryDiv;
+
+    var overlayDiv = $("<div class='overlay no-op'/>");
+    var contentDiv = $("<div class='overlay-content'/>");
+    overlayDiv.append(contentDiv);
+
+    var headerDiv = $("<div class='edit-entry-top'/>");
+    var yearDiv = $("<label for='year' class='year'><span>year</span><input type='text' id='year' value='" + entry.year + "'/></label>");
+    var ordinalDiv = $("<label for='ordinal' class='ordinal'><span>ordinal</span><input type='text' id='ordinal' value='" + entry.ordinal + "'/></label>");
+    var titleDiv = $("<label for='title' class='title'><span>title</span><input type='text' id='title' value='" + entry.title.replace(/\'/g, "&apos;") + "'/></label>");
+    var artistDiv = $("<label for='artist' class='artist'><span>artist</span><input type='text' id='artist' value='" + entry.artist.replace(/\`/g, "&apos;") + "'/></label>");
+    headerDiv.append(yearDiv);
+    headerDiv.append(ordinalDiv);
+    headerDiv.append(titleDiv);
+    headerDiv.append(artistDiv);
+    contentDiv.append(headerDiv);
+
+    var storyDiv= $("<div class='edit-entry-bottom'><textarea class='no-op edit-story'>" + entry.story + "</textarea></div>");
+    contentDiv.append(storyDiv);
+
+    var buttonsDiv = $("<div class='close-buttons'/>");
+    var saveButton = $("<div class='close-button save-entry'>save</div>");
+    var cancelButton = $("<div class='close-button read-entry'>cancel</div>");
+    buttonsDiv.append(saveButton);
+    buttonsDiv.append(cancelButton);
+    storyDiv.append(buttonsDiv);
+
+    return overlayDiv;
+}
+
+function readNameTag($$) {
+
+    var id = $$.attr('id');
+    var url = "/entries?personTags=" + id;
+
+    $.ajax({
+        url: url,
+        type: "get",
+        contentType: "application/json",
+    }).success(function (data) {
+        $("#soundtrack").replaceWith(showEntries(data));
+    });
+}
+
+function storyify(text) {
+
+    text = text.replace(/(\@|\#)([0-9a-z\-]*)\{(.*?)\}/g, nameify('$2', '$3'));
+    text = text.replace(/(?:\r\n|\r|\n)/g, "<br/>");
+
+    return text;
+}
+
+function nameify(tag, text) {
+    return "<div class='name-tag' id='" + tag + "'>" + text + "</div>";
 }

@@ -70,13 +70,13 @@ public class SoundtrackServiceImpl implements SoundtrackService {
     }
 
     @Override
-    public IAEntry updateEntry(String key, IAEntrySpec innerEntrySpec) {
+    public IAEntry updateEntry(String key, IAEntrySpec iaEntrySpec) {
 
         Entry entry = entryRepository.findById(new Long(key));
 
-        if (innerEntrySpec.getStory() != null) {
+        if (iaEntrySpec.getStory() != null) {
 
-            String story = innerEntrySpec.getStory().get();
+            String story = iaEntrySpec.getStory().get();
 
             List<String> personTags = SoundtrackUtil.extractTags(story, TagType.PERSON);
 
@@ -95,13 +95,15 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
                 personRepository.save(personTagsToPersons.values());
                 entry.setPersons(Lists.newArrayList(personTagsToPersons.values()));
+            } else {
+                entry.setPersons(Lists.newArrayList());
             }
 
             entry.setStory(story);
         }
 
-        if (innerEntrySpec.getSpotify() != null) {
-            entry.setSpotify(innerEntrySpec.getSpotify().orElse(null));
+        if (iaEntrySpec.getSpotify() != null) {
+            entry.setSpotify(iaEntrySpec.getSpotify().orElse(null));
         }
 
         entryRepository.save(entry);
