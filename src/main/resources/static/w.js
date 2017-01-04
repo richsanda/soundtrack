@@ -44,6 +44,9 @@ function actionsClick(e) {
         'name-tag' : function ($$) {
             readNameTag($$);
         },
+        'read-year' : function ($$) {
+            readYear($$);
+        },
         'no-op' : function ($$) {}
     };
 
@@ -122,7 +125,7 @@ function showEntries(entries) {
 }
 
 function showEntry(entry) {
-    var titleDiv = $("<div class='title'><div class='year'>" + entry.year + "</div><div class='year'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='year edit-entry'>edit</div></div>");
+    var titleDiv = $("<div class='title'><div class='year read-year' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='year edit-entry'>edit</div></div>");
     var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
@@ -169,9 +172,23 @@ function readNameTag($$) {
     $.ajax({
         url: url,
         type: "get",
-        contentType: "application/json",
+        contentType: "application/json"
     }).success(function (data) {
-        $("#soundtrack").replaceWith(showEntries(data));
+        $("#soundtrack").html(showEntries(data));
+    });
+}
+
+function readYear($$) {
+
+    var id = $$.attr('id');
+    var url = "/entries/" + id;
+
+    $.ajax({
+        url: url,
+        type: "get",
+        contentType: "application/json"
+    }).success(function (data) {
+        $("#soundtrack").html(showEntries(data));
     });
 }
 

@@ -23,7 +23,7 @@ div.entry {
     padding-bottom: 4px;
 }
 
-div.year {
+div.year, div.ordinal {
     color: saddlebrown;
     background-color: #ddd0d8;
 
@@ -149,7 +149,7 @@ div.edit-entry-top, div.edit-entry-bottom {
     text-align: center;
 }
 
-div.edit-entry:hover, div.name-tag:hover {
+div.edit-entry:hover, div.name-tag:hover, div.year:hover {
      cursor: pointer;
 }
 
@@ -161,7 +161,6 @@ div.edit-entry {
 }
 
 div.name-tag {
-    color: darkblue;
     background-color: #ddd0d8;
 
     display: inline-block;
@@ -173,9 +172,8 @@ div.name-tag {
 
     text-align: center;
 
-    padding: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 1px;
+    padding-right: 1px;
 
     border: 1px solid #bbb0b7;
 }
