@@ -1,11 +1,11 @@
-package w.whateva.soundtrack.service.iao;
+package w.whateva.soundtrack.service.sao;
 
 import java.util.Optional;
 
 /**
  * Created by rich on 12/17/16.
  */
-public class IAEntrySpec {
+public class SAEntrySpec {
 
     private Optional<Integer> year;
     private Optional<Integer> ordinal;

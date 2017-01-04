@@ -12,8 +12,8 @@ import w.whateva.soundtrack.domain.repository.EntryRepository;
 import w.whateva.soundtrack.domain.repository.PersonRepository;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.TagType;
-import w.whateva.soundtrack.service.iao.IAEntry;
-import w.whateva.soundtrack.service.iao.IAEntrySpec;
+import w.whateva.soundtrack.service.sao.SAEntry;
+import w.whateva.soundtrack.service.sao.SAEntrySpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 import w.whateva.soundtrack.service.util.SoundtrackUtil;
 
@@ -35,48 +35,48 @@ public class SoundtrackServiceImpl implements SoundtrackService {
     PersonRepository personRepository;
 
     @Override
-    public IAEntry createEntry(IAEntrySpec innerEntrySpec) {
-        Entry entry = SoundtrackDataBuilder.buildEntry(innerEntrySpec);
+    public SAEntry createEntry(SAEntrySpec saEntrySpec) {
+        Entry entry = SoundtrackDataBuilder.buildEntry(saEntrySpec);
         entryRepository.save(entry);
-        return SoundtrackDataBuilder.buildIAEntry(entry);
+        return SoundtrackDataBuilder.buildSAEntry(entry);
     }
 
     @Override
-    public IAEntry readEntry(String key) {
-        return SoundtrackDataBuilder.buildIAEntry(findEntry(key));
+    public SAEntry readEntry(String key) {
+        return SoundtrackDataBuilder.buildSAEntry(findEntry(key));
     }
 
     @Override
-    public List<IAEntry> readEntries() {
+    public List<SAEntry> readEntries() {
         List<Entry> entries = Lists.newArrayList(entryRepository.findAll());
         return sortAndConvert(entries);
     }
 
     @Override
-    public List<IAEntry> readEntries(Integer year) {
+    public List<SAEntry> readEntries(Integer year) {
         List<Entry> entries = Lists.newArrayList(entryRepository.findByYear(year));
         return sortAndConvert(entries);
     }
 
     @Override
-    public List<IAEntry> readEntries(List<String> personTags) {
+    public List<SAEntry> readEntries(List<String> personTags) {
         List<Entry> entries = Lists.newArrayList(entryRepository.findByPersonTags(personTags));
         return sortAndConvert(entries);
     }
 
     @Override
-    public IAEntry readEntry(Integer year, Integer ordinal) {
-        return SoundtrackDataBuilder.buildIAEntry(entryRepository.findByYearAndOrdinal(year, ordinal));
+    public SAEntry readEntry(Integer year, Integer ordinal) {
+        return SoundtrackDataBuilder.buildSAEntry(entryRepository.findByYearAndOrdinal(year, ordinal));
     }
 
     @Override
-    public IAEntry updateEntry(String key, IAEntrySpec iaEntrySpec) {
+    public SAEntry updateEntry(String key, SAEntrySpec saEntrySpec) {
 
         Entry entry = entryRepository.findById(new Long(key));
 
-        if (iaEntrySpec.getStory() != null) {
+        if (saEntrySpec.getStory() != null) {
 
-            String story = iaEntrySpec.getStory().get();
+            String story = saEntrySpec.getStory().get();
 
             List<String> personTags = SoundtrackUtil.extractTags(story, TagType.PERSON);
 
@@ -102,18 +102,18 @@ public class SoundtrackServiceImpl implements SoundtrackService {
             entry.setStory(story);
         }
 
-        if (iaEntrySpec.getSpotify() != null) {
-            entry.setSpotify(iaEntrySpec.getSpotify().orElse(null));
+        if (saEntrySpec.getSpotify() != null) {
+            entry.setSpotify(saEntrySpec.getSpotify().orElse(null));
         }
 
         entryRepository.save(entry);
 
-        return SoundtrackDataBuilder.buildIAEntry(entry);
+        return SoundtrackDataBuilder.buildSAEntry(entry);
     }
 
     @Override
-    public IAEntry deleteEntry(String key) {
-        IAEntry result = SoundtrackDataBuilder.buildIAEntry(findEntry(key));
+    public SAEntry deleteEntry(String key) {
+        SAEntry result = SoundtrackDataBuilder.buildSAEntry(findEntry(key));
         entryRepository.delete(new Long(key));
         return result;
     }
@@ -122,11 +122,11 @@ public class SoundtrackServiceImpl implements SoundtrackService {
         return entryRepository.findById(new Long(key));
     }
 
-    private List<IAEntry> sortAndConvert(List<Entry> entries) {
+    private List<SAEntry> sortAndConvert(List<Entry> entries) {
         Collections.sort(entries, ENTRY_COMPARATOR);
-        List<IAEntry> result = Lists.newArrayList();
+        List<SAEntry> result = Lists.newArrayList();
         for (Entry entry : entries) {
-            result.add(SoundtrackDataBuilder.buildIAEntry(entry));
+            result.add(SoundtrackDataBuilder.buildSAEntry(entry));
         }
         return result;
     }

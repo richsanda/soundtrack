@@ -3,22 +3,22 @@ package w.whateva.soundtrack.service.util;
 import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.Person;
-import w.whateva.soundtrack.service.iao.IAEntry;
-import w.whateva.soundtrack.service.iao.IAEntrySpec;
-import w.whateva.soundtrack.service.iao.IAPerson;
+import w.whateva.soundtrack.service.sao.SAEntry;
+import w.whateva.soundtrack.service.sao.SAEntrySpec;
+import w.whateva.soundtrack.service.sao.SAPerson;
 
 /**
  * Created by rich on 12/18/16.
  */
 public class SoundtrackDataBuilder {
 
-    public static IAEntry buildIAEntry(Entry entry) {
-        IAEntry result = new IAEntry();
+    public static SAEntry buildSAEntry(Entry entry) {
+        SAEntry result = new SAEntry();
         BeanUtils.copyProperties(entry, result);
         return result;
     }
 
-    public static Entry buildEntry(IAEntrySpec iaEntrySpec) {
+    public static Entry buildEntry(SAEntrySpec iaEntrySpec) {
 
         Entry entry = new Entry();
 
@@ -36,13 +36,13 @@ public class SoundtrackDataBuilder {
         return entry;
     }
 
-    public static IAPerson buildIAPerson(Person person) {
-        IAPerson result = new IAPerson();
+    public static SAPerson buildSAPerson(Person person) {
+        SAPerson result = new SAPerson();
         BeanUtils.copyProperties(person, result);
         return result;
     }
 
-    public static Person buildPerson(IAPerson iaPerson) {
+    public static Person buildPerson(SAPerson iaPerson) {
         Person result = new Person();
         BeanUtils.copyProperties(iaPerson, result);
         return result;

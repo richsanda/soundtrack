@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import w.whateva.soundtrack.domain.Person;
 import w.whateva.soundtrack.domain.repository.PersonRepository;
 import w.whateva.soundtrack.service.PersonService;
-import w.whateva.soundtrack.service.iao.IAPerson;
+import w.whateva.soundtrack.service.sao.SAPerson;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 
 import java.util.Collections;
@@ -24,16 +24,16 @@ public class PersonServiceImpl implements PersonService {
     PersonRepository personRepository;
 
     @Override
-    public List<IAPerson> readPersons() {
+    public List<SAPerson> readPersons() {
         List<Person> persons = Lists.newArrayList(personRepository.findAll());
         return sortAndConvert(persons);
     }
 
-    private List<IAPerson> sortAndConvert(List<Person> persons) {
+    private List<SAPerson> sortAndConvert(List<Person> persons) {
         Collections.sort(persons, PERSON_COMPARATOR);
-        List<IAPerson> result = Lists.newArrayList();
+        List<SAPerson> result = Lists.newArrayList();
         for (Person person : persons) {
-            result.add(SoundtrackDataBuilder.buildIAPerson(person));
+            result.add(SoundtrackDataBuilder.buildSAPerson(person));
         }
         return result;
     }

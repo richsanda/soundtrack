@@ -1,9 +1,9 @@
-package w.whateva.soundtrack.service.iao;
+package w.whateva.soundtrack.service.sao;
 
 /**
  * Created by rich on 12/17/16.
  */
-public class IAEntry {
+public class SAEntry {
 
     private String key;
 

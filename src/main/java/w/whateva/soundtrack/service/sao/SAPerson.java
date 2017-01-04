@@ -1,9 +1,9 @@
-package w.whateva.soundtrack.service.iao;
+package w.whateva.soundtrack.service.sao;
 
 /**
  * Created by rich on 12/26/16.
  */
-public class IAPerson {
+public class SAPerson {
 
     private String tag;
 
