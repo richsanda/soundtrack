@@ -19,7 +19,7 @@ public class SoundtrackRestMapper {
     public static class EntryMapper extends Mapper<Entry, ApiEntry> {
 
         @Override
-        public Entry newOuter() {
+        public Entry newRestObject() {
             return new Entry();
         }
     }
@@ -27,7 +27,7 @@ public class SoundtrackRestMapper {
     public static class EntrySpecMapper extends Mapper<EntrySpec, ApiEntrySpec> {
 
         @Override
-        public ApiEntrySpec newInner() {
+        public ApiEntrySpec newApiObject() {
             return new ApiEntrySpec();
         }
     }
@@ -35,52 +35,52 @@ public class SoundtrackRestMapper {
     public static class PersonMapper extends Mapper<Person, ApiPerson> {
 
         @Override
-        public Person newOuter() {
+        public Person newRestObject() {
             return new Person();
         }
 
         @Override
-        public ApiPerson newInner() {
+        public ApiPerson newApiObject() {
             return new ApiPerson();
         }
     }
 
-    private static abstract class Mapper<OuterType, InnerType> {
+    private static abstract class Mapper<RestObjectType, ApiObjectType> {
 
-        public OuterType newOuter() throws MapperException {
+        public RestObjectType newRestObject() throws MapperException {
             throw new UnimplementedMappingException();
         };
 
-        public InnerType newInner() throws MapperException {
+        public ApiObjectType newApiObject() throws MapperException {
             throw new UnimplementedMappingException();
         };
 
-        public OuterType toOuter(InnerType inner) throws MapperException {
-            OuterType result = newOuter();
+        public RestObjectType toRest(ApiObjectType apiObject) throws MapperException {
+            RestObjectType result = newRestObject();
             if (null == result) return null;
-            BeanUtils.copyProperties(inner, result);
+            BeanUtils.copyProperties(apiObject, result);
             return result;
         }
 
-        public InnerType toInner(OuterType outer) throws MapperException {
-            InnerType result = newInner();
+        public ApiObjectType toApi(RestObjectType restObject) throws MapperException {
+            ApiObjectType result = newApiObject();
             if (null == result) return null;
-            BeanUtils.copyProperties(outer, result);
+            BeanUtils.copyProperties(restObject, result);
             return result;
         }
 
-        public List<OuterType> toOuter(List<InnerType> inners) throws MapperException {
-            List<OuterType> result = Lists.newArrayList();
-            for (InnerType inner : inners) {
-                result.add(toOuter(inner));
+        public List<RestObjectType> toRest(List<ApiObjectType> apiObjects) throws MapperException {
+            List<RestObjectType> result = Lists.newArrayList();
+            for (ApiObjectType apiObject : apiObjects) {
+                result.add(toRest(apiObject));
             }
             return result;
         }
 
-        public List<InnerType> toInner(List<OuterType> outers) throws MapperException {
-            List<InnerType> result = Lists.newArrayList();
-            for (OuterType outer : outers) {
-                result.add(toInner(outer));
+        public List<ApiObjectType> toApi(List<RestObjectType> restObjects) throws MapperException {
+            List<ApiObjectType> result = Lists.newArrayList();
+            for (RestObjectType restObject : restObjects) {
+                result.add(toApi(restObject));
             }
             return result;
         }

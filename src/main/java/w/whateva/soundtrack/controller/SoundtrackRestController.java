@@ -29,7 +29,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
 
     public Entry createEntry(EntrySpec entry) {
         try {
-            return entryMapper.toOuter(soundtrackService.createEntry(entrySpecMapper.toInner(entry)));
+            return entryMapper.toRest(soundtrackService.createEntry(entrySpecMapper.toApi(entry)));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -38,7 +38,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
 
     public Entry readEntry(@PathVariable("key") String key) {
         try {
-            return entryMapper.toOuter(soundtrackService.readEntry(key));
+            return entryMapper.toRest(soundtrackService.readEntry(key));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -48,7 +48,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
     @Transactional(value = "transactionManager")
     public Entry updateEntry(@PathVariable("key") String key, @RequestBody EntrySpec entry) {
         try {
-            return entryMapper.toOuter(soundtrackService.updateEntry(key, entrySpecMapper.toInner(entry)));
+            return entryMapper.toRest(soundtrackService.updateEntry(key, entrySpecMapper.toApi(entry)));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -58,7 +58,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
     // um, for now, instead of delete, just read
     public Entry deleteEntry(@PathVariable("key") String key) {
         try {
-            return entryMapper.toOuter(soundtrackService.readEntry(key));
+            return entryMapper.toRest(soundtrackService.readEntry(key));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -67,7 +67,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
 
     public List<Entry> readEntries() {
         try {
-            return entryMapper.toOuter(soundtrackService.readEntries());
+            return entryMapper.toRest(soundtrackService.readEntries());
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -76,7 +76,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
 
     public List<Entry> readEntries(List<String> personTags) {
         try {
-            return entryMapper.toOuter(soundtrackService.readEntries(personTags));
+            return entryMapper.toRest(soundtrackService.readEntries(personTags));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -85,7 +85,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
 
     public List<Entry> readSoundtrack() {
         try {
-            return entryMapper.toOuter(soundtrackService.readEntries());
+            return entryMapper.toRest(soundtrackService.readEntries());
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -94,7 +94,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
 
     public List<Entry> readEntries(@PathVariable("year") Integer year) {
         try {
-            return entryMapper.toOuter(soundtrackService.readEntries(year));
+            return entryMapper.toRest(soundtrackService.readEntries(year));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -103,7 +103,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
 
     public Entry readEntry(@PathVariable("year") Integer year, @PathVariable("ordinal") Integer ordinal) {
         try {
-            return entryMapper.toOuter(soundtrackService.readEntry(year, ordinal));
+            return entryMapper.toRest(soundtrackService.readEntry(year, ordinal));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
@@ -112,7 +112,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
 
     public List<Person> readPersons() {
         try {
-            return personMapper.toOuter(personService.readPersons());
+            return personMapper.toRest(personService.readPersons());
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
