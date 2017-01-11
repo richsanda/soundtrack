@@ -5,7 +5,7 @@ import java.util.Optional;
 /**
  * Created by rich on 12/17/16.
  */
-public class SAEntrySpec {
+public class ApiEntrySpec {
 
     private Optional<Integer> year;
     private Optional<Integer> ordinal;

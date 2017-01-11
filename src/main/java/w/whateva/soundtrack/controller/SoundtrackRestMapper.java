@@ -5,9 +5,9 @@ import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.api.dto.Entry;
 import w.whateva.soundtrack.api.dto.EntrySpec;
 import w.whateva.soundtrack.api.dto.Person;
-import w.whateva.soundtrack.service.sao.SAEntry;
-import w.whateva.soundtrack.service.sao.SAEntrySpec;
-import w.whateva.soundtrack.service.sao.SAPerson;
+import w.whateva.soundtrack.service.sao.ApiEntry;
+import w.whateva.soundtrack.service.sao.ApiEntrySpec;
+import w.whateva.soundtrack.service.sao.ApiPerson;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class SoundtrackRestMapper {
 
-    public static class EntryMapper extends Mapper<Entry, SAEntry> {
+    public static class EntryMapper extends Mapper<Entry, ApiEntry> {
 
         @Override
         public Entry newOuter() {
@@ -24,15 +24,15 @@ public class SoundtrackRestMapper {
         }
     }
 
-    public static class EntrySpecMapper extends Mapper<EntrySpec, SAEntrySpec> {
+    public static class EntrySpecMapper extends Mapper<EntrySpec, ApiEntrySpec> {
 
         @Override
-        public SAEntrySpec newInner() {
-            return new SAEntrySpec();
+        public ApiEntrySpec newInner() {
+            return new ApiEntrySpec();
         }
     }
 
-    public static class PersonMapper extends Mapper<Person, SAPerson> {
+    public static class PersonMapper extends Mapper<Person, ApiPerson> {
 
         @Override
         public Person newOuter() {
@@ -40,8 +40,8 @@ public class SoundtrackRestMapper {
         }
 
         @Override
-        public SAPerson newInner() {
-            return new SAPerson();
+        public ApiPerson newInner() {
+            return new ApiPerson();
         }
     }
 

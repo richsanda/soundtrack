@@ -32,6 +32,10 @@ public interface SoundtrackOperations {
     @ResponseBody
     Entry updateEntry(@PathVariable("key") String key, @RequestBody EntrySpec entry);
 
+    @RequestMapping(value = "/entry/{key}", method= RequestMethod.DELETE, consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    Entry deleteEntry(@PathVariable("key") String key);
+
     @RequestMapping(value = "/entries/{year}", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
     List<Entry> readEntries(@PathVariable("year") Integer year);

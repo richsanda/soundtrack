@@ -1,6 +1,6 @@
 package w.whateva.soundtrack.service;
 
-import w.whateva.soundtrack.service.sao.SAPerson;
+import w.whateva.soundtrack.service.sao.ApiPerson;
 
 import java.util.List;
 
@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface PersonService {
 
-    public List<SAPerson> readPersons();
+    public List<ApiPerson> readPersons();
 }

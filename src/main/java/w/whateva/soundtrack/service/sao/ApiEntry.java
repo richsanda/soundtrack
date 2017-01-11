@@ -3,7 +3,7 @@ package w.whateva.soundtrack.service.sao;
 /**
  * Created by rich on 12/17/16.
  */
-public class SAEntry {
+public class ApiEntry {
 
     private String key;
 
