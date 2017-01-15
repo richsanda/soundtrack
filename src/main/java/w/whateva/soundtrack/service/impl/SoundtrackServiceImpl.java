@@ -17,10 +17,7 @@ import w.whateva.soundtrack.service.sao.ApiEntrySpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 import w.whateva.soundtrack.service.util.SoundtrackUtil;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by rich on 12/17/16.
@@ -100,6 +97,61 @@ public class SoundtrackServiceImpl implements SoundtrackService {
             }
 
             entry.setStory(story);
+        }
+
+        if (null != apiEntrySpec.getOrdinal() || null != apiEntrySpec.getYear()) {
+
+            Integer originalYear = entry.getYear();
+            Integer originalOrdinal = entry.getOrdinal();
+
+            Integer newYear = null != apiEntrySpec.getYear() ? apiEntrySpec.getYear().orElse(originalYear) : originalYear;
+            Integer newOrdinal = null != apiEntrySpec.getOrdinal() ? apiEntrySpec.getOrdinal().orElse(originalOrdinal) : originalOrdinal;
+
+            if (null != originalYear && !newYear.equals(originalYear) || null != originalOrdinal && !newOrdinal.equals(originalOrdinal)) {
+
+                entry.setYear(newYear);
+                entry.setOrdinal(newOrdinal);
+
+                List<Entry> newYearEntries = Lists.newArrayList();
+                List<Entry> repositoryEntries = entryRepository.findByYear(newYear);
+                repositoryEntries.remove(entry);
+
+                // add the new entry first if it is taking precedence (moving up), otherwise last...
+                if (newOrdinal < originalOrdinal || !newYear.equals(originalYear)) {
+                    newYearEntries.add(entry);
+                    newYearEntries.addAll(repositoryEntries);
+                } else {
+                    newYearEntries.addAll(repositoryEntries);
+                    newYearEntries.add(entry);
+                }
+
+                Collections.sort(newYearEntries, ENTRY_COMPARATOR);
+
+                int i = 1;
+                for (Entry newYearEntry : newYearEntries) {
+                    if (i != newYearEntry.getOrdinal()) {
+                        newYearEntry.setOrdinal(i);
+                        entryRepository.save(newYearEntry);
+                    }
+                    i++;
+                }
+
+                // go redo the year it was moved from...
+                if (!newYear.equals(originalYear)) {
+
+                    List<Entry> originalYearEntries = entryRepository.findByYear(originalYear);
+                    Collections.sort(originalYearEntries, ENTRY_COMPARATOR);
+
+                    i = 1;
+                    for (Entry originalYearEntry : originalYearEntries) {
+                        if (i != originalYearEntry.getOrdinal()) {
+                            originalYearEntry.setOrdinal(i);
+                            entryRepository.save(originalYearEntry);
+                        }
+                        i++;
+                    }
+                }
+            }
         }
 
         if (apiEntrySpec.getSpotify() != null) {

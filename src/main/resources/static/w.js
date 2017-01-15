@@ -1,4 +1,4 @@
-$(pageBehavior)
+$(pageBehavior);
 
 function pageBehavior () {
 
@@ -21,7 +21,7 @@ function regionClick (e, behaviorMap) {
     while ($$.length > 0) {
         for (var key in behaviorMap) {
             if ($$.hasClass(key)) {
-                behaviorMap[key]($$)
+                behaviorMap[key]($$);
                 return
             }
         }
@@ -82,7 +82,11 @@ function saveEntry($$) {
     var entryDiv = $$.closest('div.entry');
     var id = entryDiv.attr('id');
     var url = "/entry/" + id;
-    var entry = {story: entryDiv.find('textarea.edit-story').val()};
+    var entry = {
+        story: entryDiv.find('textarea.edit-story').val(),
+        year: entryDiv.find('#year').val(),
+        ordinal: entryDiv.find('#ordinal').val()
+    };
 
     $.ajax({
         url: url,
@@ -107,7 +111,7 @@ function readEntry($$) {
     $.ajax({
         url: url,
         type: "get",
-        contentType: "application/json",
+        contentType: "application/json"
     }).success(function (data) {
         entryDiv.replaceWith(showEntry(data));
     });
@@ -115,22 +119,31 @@ function readEntry($$) {
 
 function showEntries(entries) {
 
+    // reset
+    $('#soundtrack').data('keysToDivs', {});
+
     var entriesDiv = $("<div class='entries'></div>");
+    entriesDiv.sortable();
 
     $.each(entries, function() {
-        entriesDiv.append(showEntry(this));
+        var entryDiv = showEntry(this);
+        entriesDiv.append(entryDiv);
     });
 
     return entriesDiv;
 }
 
 function showEntry(entry) {
+
     var titleDiv = $("<div class='title'><div class='year read-year' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='year edit-entry'>edit</div></div>");
     var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
     entryDiv.append(storyDiv);
     entryDiv.append("<hr/>");
+
+    $('#soundtrack').data('keysToDivs')[entry.key] = entryDiv;
+
     return entryDiv;
 }
 
@@ -194,7 +207,7 @@ function readYear($$) {
 
 function storyify(text) {
 
-    text = text.replace(/(\@|\#)([0-9a-z\-]*)\{(.*?)\}/g, nameify('$2', '$3'));
+    text = text.replace(/(\@|\#)([0-9a-z\-]*)(\{(.*?)\})?/g, nameify2);
     text = text.replace(/(?:\r\n|\r|\n)/g, "<br/>");
 
     return text;
@@ -202,4 +215,8 @@ function storyify(text) {
 
 function nameify(tag, text) {
     return "<div class='name-tag' id='" + tag + "'>" + text + "</div>";
+}
+
+function nameify2(match, p1, p2, p3, p4, offset, text) {
+    return "<div class='name-tag' id='" + p2 + "'>" + (!p4 ? '@' + p2 : p4) + "</div>";
 }
