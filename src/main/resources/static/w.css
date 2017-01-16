@@ -29,6 +29,11 @@ div.year, div.ordinal {
 
     font-weight: bold;
 
+    border: 1px solid saddlebrown;
+}
+
+div.title-button {
+
     display: inline-block;
     zoom: 1;
 
@@ -41,8 +46,6 @@ div.year, div.ordinal {
     padding: 2px;
     padding-left: 4px;
     padding-right: 4px;
-
-    border: 1px solid saddlebrown;
 }
 
 div.overlay {
@@ -158,6 +161,7 @@ div.edit-entry {
     color: darkblue;
     border: none;
     margin-left: 20px;
+    background-color: #ddd0d8;
 }
 
 div.name-tag {

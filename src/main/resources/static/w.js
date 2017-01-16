@@ -4,16 +4,20 @@ function pageBehavior () {
 
     actionsBehavior($(this));
 
+    refreshEntries();
+}
+
+function refreshEntries() {
+
     var url = "/soundtrack";
 
     $.ajax({
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').append(showEntries(data));
+        $('#soundtrack').html(showEntries(data));
     });
 }
-
 
 function regionClick (e, behaviorMap) {
 
@@ -98,7 +102,8 @@ function saveEntry($$) {
         var newEntryDiv = showEntry(data);
         entryDiv.fadeOut(500, function () {
             entryDiv.replaceWith(newEntryDiv);
-        })
+            refreshEntries();
+        });
     });
 }
 
@@ -123,26 +128,64 @@ function showEntries(entries) {
     $('#soundtrack').data('keysToDivs', {});
 
     var entriesDiv = $("<div class='entries'></div>");
-    entriesDiv.sortable();
+    entriesDiv.sortable({
+        update: updateEntryPosition
+    });
 
     $.each(entries, function() {
         var entryDiv = showEntry(this);
+        $('#soundtrack').data('keysToDivs')[this.key] = entryDiv;
         entriesDiv.append(entryDiv);
     });
 
     return entriesDiv;
 }
 
+function updateEntryPosition( event, ui ) {
+
+    var entryDiv = $(ui.item);
+    var entryYear = Number(entryDiv.find('div.year').text());
+    var entryOrdinal = Number(entryDiv.find('div.ordinal').text());
+    var prevEntryDiv = entryDiv.prev();
+    var prevEntryYear = Number(prevEntryDiv.find('div.year').text());
+    var prevEntryOrdinal = Number(prevEntryDiv.find('div.ordinal').text());
+
+    // add one if moving from a different year or from later in the same year
+    if (entryYear != prevEntryYear || entryOrdinal > prevEntryOrdinal) {
+        prevEntryOrdinal += 1;
+    }
+
+    // TODO: factor all this out into a helper method
+    var id = entryDiv.attr('id');
+    var url = "/entry/" + id;
+    var entry = {
+        year: prevEntryYear,
+        ordinal: prevEntryOrdinal
+    };
+
+    $.ajax({
+        url: url,
+        type: "patch",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(entry)
+    }).success(function (data) {
+        var newEntryDiv = showEntry(data);
+        entryDiv.fadeOut(500, function () {
+            entryDiv.replaceWith(newEntryDiv);
+            refreshEntries();
+        });
+    });
+}
+
 function showEntry(entry) {
 
-    var titleDiv = $("<div class='title'><div class='year read-year' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='year edit-entry'>edit</div></div>");
+    var titleDiv = $("<div class='title'><div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='edit-entry title-button'>edit</div></div>");
     var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
     entryDiv.append(storyDiv);
     entryDiv.append("<hr/>");
-
-    $('#soundtrack').data('keysToDivs')[entry.key] = entryDiv;
 
     return entryDiv;
 }

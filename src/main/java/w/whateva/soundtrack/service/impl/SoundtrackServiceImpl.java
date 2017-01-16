@@ -112,23 +112,16 @@ public class SoundtrackServiceImpl implements SoundtrackService {
                 entry.setYear(newYear);
                 entry.setOrdinal(newOrdinal);
 
-                List<Entry> newYearEntries = Lists.newArrayList();
-                List<Entry> repositoryEntries = entryRepository.findByYear(newYear);
-                repositoryEntries.remove(entry);
-
-                // add the new entry first if it is taking precedence (moving up), otherwise last...
-                if (newOrdinal < originalOrdinal || !newYear.equals(originalYear)) {
-                    newYearEntries.add(entry);
-                    newYearEntries.addAll(repositoryEntries);
-                } else {
-                    newYearEntries.addAll(repositoryEntries);
-                    newYearEntries.add(entry);
-                }
+                List<Entry> newYearEntries = entryRepository.findByYear(newYear);
+                newYearEntries.remove(entry);
 
                 Collections.sort(newYearEntries, ENTRY_COMPARATOR);
 
                 int i = 1;
                 for (Entry newYearEntry : newYearEntries) {
+                    if (i == newOrdinal) {
+                        i++; // skip this i... it's reserved for entry
+                    }
                     if (i != newYearEntry.getOrdinal()) {
                         newYearEntry.setOrdinal(i);
                         entryRepository.save(newYearEntry);
