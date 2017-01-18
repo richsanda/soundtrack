@@ -23,4 +23,8 @@ public interface EntryRepository extends PagingAndSortingRepository<Entry, Long>
     @Query("SELECT DISTINCT e FROM Entry e LEFT JOIN e.persons p" +
             " WHERE :personTags IS NULL OR p.tag in :personTags")
     List<Entry> findByPersonTags(@Param("personTags") List<String> personTags);
+
+    @Query("SELECT DISTINCT e FROM Entry e LEFT JOIN e.hashTags h" +
+            " WHERE :hashTags IS NULL OR h.tag in :hashTags")
+    List<Entry> findByHashTags(@Param("hashTags") List<String> hashTags);
 }

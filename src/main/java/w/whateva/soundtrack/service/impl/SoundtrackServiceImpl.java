@@ -2,13 +2,16 @@ package w.whateva.soundtrack.service.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.Entry;
+import w.whateva.soundtrack.domain.HashTag;
 import w.whateva.soundtrack.domain.Person;
 import w.whateva.soundtrack.domain.repository.EntryRepository;
+import w.whateva.soundtrack.domain.repository.HashTagRepository;
 import w.whateva.soundtrack.domain.repository.PersonRepository;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.TagType;
@@ -30,6 +33,9 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
     @Autowired
     PersonRepository personRepository;
+
+    @Autowired
+    HashTagRepository hashTagRepository;
 
     @Override
     public ApiEntry createEntry(ApiEntrySpec apiEntrySpec) {
@@ -56,8 +62,14 @@ public class SoundtrackServiceImpl implements SoundtrackService {
     }
 
     @Override
-    public List<ApiEntry> readEntries(List<String> personTags) {
+    public List<ApiEntry> readEntriesByPersonTags(List<String> personTags) {
         List<Entry> entries = Lists.newArrayList(entryRepository.findByPersonTags(personTags));
+        return sortAndConvert(entries);
+    }
+
+    @Override
+    public List<ApiEntry> readEntriesByHashTags(List<String> hashTags) {
+        List<Entry> entries = Lists.newArrayList(entryRepository.findByHashTags(hashTags));
         return sortAndConvert(entries);
     }
 
@@ -75,7 +87,9 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
             String story = apiEntrySpec.getStory().get();
 
-            List<String> personTags = SoundtrackUtil.extractTags(story, TagType.PERSON);
+            Multimap<TagType, String> tags = SoundtrackUtil.extractTags(story);
+            Collection<String> personTags = tags.get(TagType.PERSON);
+            Collection<String> hashTagTags = tags.get(TagType.HASH);
 
             if (!CollectionUtils.isEmpty(personTags)) {
                 List<Person> persons = personRepository.findByTagIn(personTags);
@@ -94,6 +108,25 @@ public class SoundtrackServiceImpl implements SoundtrackService {
                 entry.setPersons(Lists.newArrayList(personTagsToPersons.values()));
             } else {
                 entry.setPersons(Lists.<Person>newArrayList());
+            }
+
+            if (!CollectionUtils.isEmpty(hashTagTags)) {
+                List<HashTag> hashTags = hashTagRepository.findByTagIn(hashTagTags);
+                Map<String, HashTag> tagsToHashTags = Maps.newHashMap();
+                for (HashTag hashTag : hashTags) {
+                    tagsToHashTags.put(hashTag.getTag(), hashTag);
+                }
+                for (String hashTagTag : hashTagTags) {
+                    if (!tagsToHashTags.containsKey(hashTagTag)) {
+                        HashTag hashTag = new HashTag(hashTagTag);
+                        tagsToHashTags.put(hashTagTag, hashTag);
+                    }
+                }
+
+                hashTagRepository.save(tagsToHashTags.values());
+                entry.setHashTags(Lists.newArrayList(tagsToHashTags.values()));
+            } else {
+                entry.setHashTags(Lists.<HashTag>newArrayList());
             }
 
             entry.setStory(story);

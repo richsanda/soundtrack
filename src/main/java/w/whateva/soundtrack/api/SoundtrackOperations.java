@@ -22,7 +22,7 @@ public interface SoundtrackOperations {
 
     @RequestMapping(value = "/entries", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    List<Entry> readEntries(@RequestParam(value = "personTags", required = false) List<String> personTags);
+    List<Entry> readEntries(@RequestParam(value = "personTags", required = false) List<String> personTags, @RequestParam(value = "hashTags", required = false) List<String> hashTags);
 
     @RequestMapping(value = "/soundtrack", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody

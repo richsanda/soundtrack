@@ -60,6 +60,9 @@ public class Entry {
     @ManyToMany
     private List<Person> persons;
 
+    @ManyToMany
+    private List<HashTag> hashTags;
+
     private String spotify;
     private String youtube;
 
@@ -117,6 +120,14 @@ public class Entry {
 
     public void setPersons(List<Person> persons) {
         this.persons = persons;
+    }
+
+    public List<HashTag> getHashTags() {
+        return hashTags;
+    }
+
+    public void setHashTags(List<HashTag> hashTags) {
+        this.hashTags = hashTags;
     }
 
     public String getSpotify() {

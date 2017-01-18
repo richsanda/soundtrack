@@ -2,6 +2,7 @@ package w.whateva.soundtrack.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import w.whateva.soundtrack.api.dto.Entry;
 import w.whateva.soundtrack.api.dto.EntrySpec;
@@ -74,9 +75,13 @@ public class SoundtrackRestController implements SoundtrackRestService {
         return null;
     }
 
-    public List<Entry> readEntries(List<String> personTags) {
+    public List<Entry> readEntries(List<String> personTags, List<String> hashTags) {
         try {
-            return entryMapper.toRest(soundtrackService.readEntries(personTags));
+            if (!CollectionUtils.isEmpty(personTags)) {
+                return entryMapper.toRest(soundtrackService.readEntriesByPersonTags(personTags));
+            } else {
+                return entryMapper.toRest(soundtrackService.readEntriesByHashTags(hashTags));
+            }
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
