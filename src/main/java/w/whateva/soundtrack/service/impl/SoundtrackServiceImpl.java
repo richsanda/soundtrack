@@ -93,7 +93,7 @@ public class SoundtrackServiceImpl implements SoundtrackService {
                 personRepository.save(personTagsToPersons.values());
                 entry.setPersons(Lists.newArrayList(personTagsToPersons.values()));
             } else {
-                entry.setPersons(Lists.newArrayList());
+                entry.setPersons(Lists.<Person>newArrayList());
             }
 
             entry.setStory(story);
