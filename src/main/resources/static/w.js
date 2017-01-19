@@ -48,6 +48,9 @@ function actionsClick(e) {
         'name-tag' : function ($$) {
             readNameTag($$);
         },
+        'hash-tag' : function ($$) {
+            readHashTag($$);
+        },
         'read-year' : function ($$) {
             readYear($$);
         },
@@ -234,6 +237,21 @@ function readNameTag($$) {
     });
 }
 
+// TODO: this is obv pretty similar to readNameTag... maybe consolidate
+function readHashTag($$) {
+
+    var id = $$.attr('id');
+    var url = "/entries?hashTags=" + id;
+
+    $.ajax({
+        url: url,
+        type: "get",
+        contentType: "application/json"
+    }).success(function (data) {
+        $("#soundtrack").html(showEntries(data));
+    });
+}
+
 function readYear($$) {
 
     var id = $$.attr('id');
@@ -250,16 +268,13 @@ function readYear($$) {
 
 function storyify(text) {
 
-    text = text.replace(/(\@|\#)([0-9a-z\-]*)(\{(.*?)\})?/g, nameify2);
+    text = text.replace(/(\@|\#)([0-9a-z\-]*)(\{(.*?)\})?/g, nameify);
     text = text.replace(/(?:\r\n|\r|\n)/g, "<br/>");
 
     return text;
 }
 
-function nameify(tag, text) {
-    return "<div class='name-tag' id='" + tag + "'>" + text + "</div>";
-}
-
-function nameify2(match, p1, p2, p3, p4, offset, text) {
-    return "<div class='name-tag' id='" + p2 + "'>" + (!p4 ? '@' + p2 : p4) + "</div>";
+function nameify(match, p1, p2, p3, p4, offset, text) {
+    var divClass = p1 == '@' ? 'name-tag' : 'hash-tag';
+    return "<div class='" + divClass + "' id='" + p2 + "'>" + (!p4 ? p1 + p2 : p4) + "</div>";
 }

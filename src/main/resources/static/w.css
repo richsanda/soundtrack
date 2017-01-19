@@ -152,7 +152,7 @@ div.edit-entry-top, div.edit-entry-bottom {
     text-align: center;
 }
 
-div.edit-entry:hover, div.name-tag:hover, div.year:hover {
+div.edit-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover {
      cursor: pointer;
 }
 
@@ -164,7 +164,7 @@ div.edit-entry {
     background-color: #ddd0d8;
 }
 
-div.name-tag {
+div.name-tag, div.hash-tag {
     background-color: #ddd0d8;
 
     display: inline-block;
