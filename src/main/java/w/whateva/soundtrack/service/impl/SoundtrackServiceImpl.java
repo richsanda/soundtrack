@@ -217,6 +217,7 @@ public class SoundtrackServiceImpl implements SoundtrackService {
     }
 
     private List<ApiEntry> sortAndConvert(List<Entry> entries) {
+
         Collections.sort(entries, ENTRY_COMPARATOR);
         List<ApiEntry> result = Lists.newArrayList();
         for (Entry entry : entries) {
