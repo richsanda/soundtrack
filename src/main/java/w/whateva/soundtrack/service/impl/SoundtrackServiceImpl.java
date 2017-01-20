@@ -39,9 +39,10 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
     @Override
     public ApiEntry createEntry(ApiEntrySpec apiEntrySpec) {
-        Entry entry = SoundtrackDataBuilder.buildEntry(apiEntrySpec);
-        entryRepository.save(entry);
-        return SoundtrackDataBuilder.buildApiEntry(entry);
+
+        Entry entry = new Entry();
+
+        return updateEntry(entry, apiEntrySpec);
     }
 
     @Override
@@ -82,6 +83,11 @@ public class SoundtrackServiceImpl implements SoundtrackService {
     public ApiEntry updateEntry(String key, ApiEntrySpec apiEntrySpec) {
 
         Entry entry = entryRepository.findById(new Long(key));
+
+        return updateEntry(entry, apiEntrySpec);
+    }
+
+    private ApiEntry updateEntry(Entry entry, ApiEntrySpec apiEntrySpec) {
 
         if (apiEntrySpec.getStory() != null) {
 
@@ -140,15 +146,17 @@ public class SoundtrackServiceImpl implements SoundtrackService {
             Integer newYear = null != apiEntrySpec.getYear() ? apiEntrySpec.getYear().orElse(originalYear) : originalYear;
             Integer newOrdinal = null != apiEntrySpec.getOrdinal() ? apiEntrySpec.getOrdinal().orElse(originalOrdinal) : originalOrdinal;
 
-            if (null != originalYear && !newYear.equals(originalYear) || null != originalOrdinal && !newOrdinal.equals(originalOrdinal)) {
-
-                entry.setYear(newYear);
-                entry.setOrdinal(newOrdinal);
+            if (!newYear.equals(originalYear) || !newOrdinal.equals(originalOrdinal)) {
 
                 List<Entry> newYearEntries = entryRepository.findByYear(newYear);
                 newYearEntries.remove(entry);
-
                 Collections.sort(newYearEntries, ENTRY_COMPARATOR);
+
+                // adjust the ordinal to be in the range of 1 to # of entries for year
+                newOrdinal = newOrdinal < 1 ? 1 : newOrdinal > newYearEntries.size() ? newYearEntries.size() + 1 : newOrdinal;
+
+                entry.setYear(newYear);
+                entry.setOrdinal(newOrdinal);
 
                 int i = 1;
                 for (Entry newYearEntry : newYearEntries) {
@@ -182,6 +190,14 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
         if (apiEntrySpec.getSpotify() != null) {
             entry.setSpotify(apiEntrySpec.getSpotify().orElse(null));
+        }
+
+        if (apiEntrySpec.getTitle() != null) {
+            entry.setTitle(apiEntrySpec.getTitle().orElse(null));
+        }
+
+        if (apiEntrySpec.getArtist() != null) {
+            entry.setArtist(apiEntrySpec.getArtist().orElse(null));
         }
 
         entryRepository.save(entry);

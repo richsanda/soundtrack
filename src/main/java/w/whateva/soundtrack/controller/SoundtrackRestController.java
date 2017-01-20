@@ -28,6 +28,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
     private static final SoundtrackRestMapper.EntrySpecMapper entrySpecMapper = new SoundtrackRestMapper.EntrySpecMapper();
     private static final SoundtrackRestMapper.PersonMapper personMapper = new SoundtrackRestMapper.PersonMapper();
 
+    @Transactional(value = "transactionManager")
     public Entry createEntry(EntrySpec entry) {
         try {
             return entryMapper.toRest(soundtrackService.createEntry(entrySpecMapper.toApi(entry)));

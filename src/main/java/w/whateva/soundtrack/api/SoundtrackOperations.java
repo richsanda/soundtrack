@@ -12,15 +12,15 @@ import java.util.List;
  */
 public interface SoundtrackOperations {
 
-    @RequestMapping(value = "/entry", method= RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @RequestMapping(value = "/entry", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     @ResponseBody
     Entry createEntry(@RequestBody EntrySpec entry);
 
-    @RequestMapping(value = "/entry/{key}", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/entry/{key}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     Entry readEntry(@PathVariable("key") String key);
 
-    @RequestMapping(value = "/entries", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/entries", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     List<Entry> readEntries(@RequestParam(value = "personTags", required = false) List<String> personTags, @RequestParam(value = "hashTags", required = false) List<String> hashTags);
 
@@ -28,23 +28,23 @@ public interface SoundtrackOperations {
     @ResponseBody
     List<Entry> readSoundtrack();
 
-    @RequestMapping(value = "/entry/{key}", method= RequestMethod.PATCH, consumes = "application/json", produces = "application/json")
+    @RequestMapping(value = "/entry/{key}", method = RequestMethod.PATCH, consumes = "application/json", produces = "application/json")
     @ResponseBody
     Entry updateEntry(@PathVariable("key") String key, @RequestBody EntrySpec entry);
 
-    @RequestMapping(value = "/entry/{key}", method= RequestMethod.DELETE, consumes = "application/json", produces = "application/json")
+    @RequestMapping(value = "/entry/{key}", method = RequestMethod.DELETE, consumes = "application/json", produces = "application/json")
     @ResponseBody
     Entry deleteEntry(@PathVariable("key") String key);
 
-    @RequestMapping(value = "/entries/{year}", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/entries/{year}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     List<Entry> readEntries(@PathVariable("year") Integer year);
 
-    @RequestMapping(value = "/entry/{year}/{ordinal}", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/entry/{year}/{ordinal}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     Entry readEntry(@PathVariable("year") Integer year, @PathVariable("ordinal") Integer ordinal);
 
-    @RequestMapping(value = "/persons", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/persons", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     List<Person> readPersons();
 }

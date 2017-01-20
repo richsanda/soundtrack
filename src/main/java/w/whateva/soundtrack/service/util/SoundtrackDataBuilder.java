@@ -23,6 +23,7 @@ public class SoundtrackDataBuilder {
         Entry entry = new Entry();
 
         entry.setYear(null != apiEntrySpec.getYear() ? apiEntrySpec.getYear().orElse(null) : null);
+        entry.setOrdinal(null != apiEntrySpec.getOrdinal() ? apiEntrySpec.getOrdinal().orElse(null) : null);
 
         entry.setTitle(null != apiEntrySpec.getTitle() ? apiEntrySpec.getTitle().orElse(null) : null);
         entry.setArtist(null != apiEntrySpec.getArtist() ? apiEntrySpec.getArtist().orElse(null) : null);
