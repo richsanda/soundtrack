@@ -15,6 +15,9 @@ import java.util.List;
  */
 @Entity
 @XmlRootElement
+@Table(uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"year", "ordinal"})
+})
 public class Entry {
 
     @Id

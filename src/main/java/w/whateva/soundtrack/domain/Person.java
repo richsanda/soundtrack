@@ -27,7 +27,7 @@ public class Person {
     private String tag;
     private String name;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "persons")
     private List<Entry> entries;
 
 

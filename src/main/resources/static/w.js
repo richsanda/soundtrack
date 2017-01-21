@@ -328,7 +328,7 @@ function readYear($$) {
 
 function storyify(text) {
 
-    text = text.replace(/(\@|\#)([0-9a-z\-]*)(\{(.*?)\})?/g, nameify);
+    text = text.replace(/(\@|\#)([0-9a-z\-\.]*)(\{(.*?)\})?/g, nameify);
     text = text.replace(/(?:\r\n|\r|\n)/g, "<br/>");
 
     return text;

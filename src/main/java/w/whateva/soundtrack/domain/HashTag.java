@@ -25,7 +25,7 @@ public class HashTag {
     private String tag;
     private String name;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "hashTags")
     private List<Entry> entries;
 
     public String getTag() {

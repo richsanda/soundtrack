@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class SoundtrackUtil {
 
-    private final static Pattern tagPattern = Pattern.compile("(\\@|\\#)([0-9a-z\\-]*)(\\{(.*?)\\})?");
+    private final static Pattern tagPattern = Pattern.compile("(\\@|\\#)([0-9a-z\\-\\.]*)(\\{(.*?)\\})?");
 
     public static Multimap<TagType, String> extractTags(String text) {
 
