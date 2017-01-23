@@ -48,6 +48,9 @@ function actionsClick(e) {
         'read-entry' : function ($$) {
             readEntry($$);
         },
+        'delete-entry' : function ($$) {
+            deleteEntry($$);
+        },
         'name-tag' : function ($$) {
             readNameTag($$);
         },
@@ -74,8 +77,8 @@ function addEntry($$) {
     var data =
     {
         "key" : null,
-        "year" : 2016,
-        "ordinal" : 0,
+        "year" : null,
+        "ordinal" : null,
         "title" : null,
         "artist" : null,
         "story" : null,
@@ -131,7 +134,7 @@ function saveEntry($$) {
             var newEntryDiv = showEntry(data);
             entryDiv.fadeOut(500, function () {
                 entryDiv.replaceWith(newEntryDiv);
-                refreshEntries();
+                //refreshEntries();
             });
         });
     } else {
@@ -170,6 +173,26 @@ function readEntry($$) {
         contentType: "application/json"
     }).success(function (data) {
         entryDiv.replaceWith(showEntry(data));
+    });
+}
+
+function deleteEntry($$) {
+
+    var entryDiv = $$.closest('div.entry');
+    var id = entryDiv.attr('id');
+
+    var url = "/entry/" + id;
+
+    $.ajax({
+        url: url,
+        type: "delete",
+        contentType: "application/json"
+    }).success(function (data) {
+        // var newEntryDiv = showEntry(data);
+        entryDiv.fadeOut(500, function () {
+            entryDiv.remove();
+            refreshEntries();
+        });
     });
 }
 
@@ -243,7 +266,7 @@ function createAddEntryDiv() {
 
 function showEntry(entry) {
 
-    var titleDiv = $("<div class='title'><div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='edit-entry title-button'>edit</div></div>");
+    var titleDiv = $("<div class='title'><div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='edit-entry title-button'>edit</div><div class='delete-entry title-button'>delete</div></div>");
     var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
@@ -260,8 +283,8 @@ function showEntryForEdit(entry) {
     overlayDiv.append(contentDiv);
 
     var headerDiv = $("<div class='edit-entry-top'/>");
-    var yearDiv = $("<label for='year' class='year'><span>year</span><input type='text' id='year' value='" + entry.year + "'/></label>");
-    var ordinalDiv = $("<label for='ordinal' class='ordinal'><span>ordinal</span><input type='text' id='ordinal' value='" + entry.ordinal + "'/></label>");
+    var yearDiv = $("<label for='year' class='year'><span>year</span><input type='text' id='year' value='" + numerify(entry.year) + "'/></label>");
+    var ordinalDiv = $("<label for='ordinal' class='ordinal'><span>ordinal</span><input type='text' id='ordinal' value='" + numerify(entry.ordinal) + "'/></label>");
     var titleDiv = $("<label for='title' class='title'><span>title</span><input type='text' id='title' value='" + valuify(entry.title) + "'/></label>");
     var artistDiv = $("<label for='artist' class='artist'><span>artist</span><input type='text' id='artist' value='" + valuify(entry.artist) + "'/></label>");
     headerDiv.append(yearDiv);
@@ -341,6 +364,10 @@ function nameify(match, p1, p2, p3, p4, offset, text) {
 
 function valuify(text) {
     return null == text ? "" : text.replace(/\'/g, "&apos;");
+}
+
+function numerify(text) {
+    return null == text ? "" : text;
 }
 
 function textareaify(text) {

@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 @XmlRootElement
 @Table(uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"year", "ordinal"})
+        // @UniqueConstraint(columnNames = {"year", "ordinal"}) // yes, i want this, but i can't swap in 1 transaction !!
 })
 public class Entry {
 
@@ -26,15 +26,12 @@ public class Entry {
 
     /*
 
-                <Entry id="19" created="2016-04-02T02:46:53Z" createdBy="houleo" updated="2016-04-02T02:46:53Z" updatedBy="houleo" unless="doqtgjswu02tv729rjcv40copvnw24qx" filename="Entry.19.doqtgjswu02tv729rjcv40copvnw24qx.xml" update="true">
+                <Entry id="19" created="2016-04-02T02:46:53Z" createdBy="whomever" updated="2016-04-02T02:46:53Z" updatedBy="whomever" unless="doqtgjswu02tv729rjcv40copvnw24qx" filename="Entry.19.doqtgjswu02tv729rjcv40copvnw24qx.xml" update="true">
                 <MixReference id="1"/>
                 <Title>Crazy For You</Title>
                 <Artist>Madonna</Artist>
-                <Story>Maura and I danced to Crazy For You at the Key Club karaoke dance that November. We began dating the following year and it went on to become our song. When making a tape for her some time later I wanted to include it, and so I ended up calling a bunch of girls from our class to track down the right Madonna tape.
-
-                    That turned out to be the easy part. I ended up needing to shorten one side of that tape by about ten seconds, which meant I had to tape the last few songs over each other and closer together each time several times to get it to fit perfectly. Yes, a cliche, but rewarding nonetheless.</Story>
-                <Notes>92.19  crazy for you--madonna
-                    maura and i danced to "crazy for you" at the key club karaeoke dance that november.  when making a tape for her some time later, it took a number of phone calls to various girls to track the song down (i think i got it from julie ahola).</Notes>
+                <Story>this is the story</Story>
+                <Notes>these are the notes</Notes>
                 <TitleIndex>crazy for you</TitleIndex>
                 <ArtistIndex>madonna</ArtistIndex>
                 <Markers>

@@ -146,14 +146,21 @@ public class SoundtrackServiceImpl implements SoundtrackService {
             Integer newYear = null != apiEntrySpec.getYear() ? apiEntrySpec.getYear().orElse(originalYear) : originalYear;
             Integer newOrdinal = null != apiEntrySpec.getOrdinal() ? apiEntrySpec.getOrdinal().orElse(originalOrdinal) : originalOrdinal;
 
-            if (!newYear.equals(originalYear) || !newOrdinal.equals(originalOrdinal)) {
+            if (null == newYear || null == newOrdinal || !newYear.equals(originalYear) || !newOrdinal.equals(originalOrdinal)) {
+
+                if (null == newYear) {
+                    newYear = entryRepository.findGreatestYear();
+                }
 
                 List<Entry> newYearEntries = entryRepository.findByYear(newYear);
                 newYearEntries.remove(entry);
                 Collections.sort(newYearEntries, ENTRY_COMPARATOR);
 
                 // adjust the ordinal to be in the range of 1 to # of entries for year
-                newOrdinal = newOrdinal < 1 ? 1 : newOrdinal > newYearEntries.size() ? newYearEntries.size() + 1 : newOrdinal;
+                newOrdinal = null == newOrdinal ? newYearEntries.size() + 1
+                        : newOrdinal < 1 ? 1
+                        : newOrdinal > newYearEntries.size() ? newYearEntries.size() + 1
+                        : newOrdinal;
 
                 entry.setYear(newYear);
                 entry.setOrdinal(newOrdinal);
@@ -171,19 +178,9 @@ public class SoundtrackServiceImpl implements SoundtrackService {
                 }
 
                 // go redo the year it was moved from...
-                if (!newYear.equals(originalYear)) {
+                if (null != originalYear && !newYear.equals(originalYear)) {
 
-                    List<Entry> originalYearEntries = entryRepository.findByYear(originalYear);
-                    Collections.sort(originalYearEntries, ENTRY_COMPARATOR);
-
-                    i = 1;
-                    for (Entry originalYearEntry : originalYearEntries) {
-                        if (i != originalYearEntry.getOrdinal()) {
-                            originalYearEntry.setOrdinal(i);
-                            entryRepository.save(originalYearEntry);
-                        }
-                        i++;
-                    }
+                    reorderYear(originalYear);
                 }
             }
         }
@@ -207,9 +204,26 @@ public class SoundtrackServiceImpl implements SoundtrackService {
 
     @Override
     public ApiEntry deleteEntry(String key) {
-        ApiEntry result = SoundtrackDataBuilder.buildApiEntry(findEntry(key));
+        Entry entry = findEntry(key);
+        ApiEntry result = SoundtrackDataBuilder.buildApiEntry(entry);
         entryRepository.delete(new Long(key));
+        reorderYear(entry.getYear());
         return result;
+    }
+
+    private void reorderYear(Integer year) {
+
+        List<Entry> entries = entryRepository.findByYear(year);
+        Collections.sort(entries, ENTRY_COMPARATOR);
+
+        int i = 1;
+        for (Entry entry : entries) {
+            if (i != entry.getOrdinal()) {
+                entry.setOrdinal(i);
+                entryRepository.save(entry);
+            }
+            i++;
+        }
     }
 
     private Entry findEntry(String key) {

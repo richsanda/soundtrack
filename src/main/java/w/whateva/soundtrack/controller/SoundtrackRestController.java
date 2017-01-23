@@ -57,10 +57,9 @@ public class SoundtrackRestController implements SoundtrackRestService {
         return null;
     }
 
-    // um, for now, instead of delete, just read
     public Entry deleteEntry(@PathVariable("key") String key) {
         try {
-            return entryMapper.toRest(soundtrackService.readEntry(key));
+            return entryMapper.toRest(soundtrackService.deleteEntry(key));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }

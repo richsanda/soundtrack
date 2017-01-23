@@ -161,11 +161,11 @@ div.edit-entry-top, div.edit-entry-bottom {
     text-align: center;
 }
 
-div.edit-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover, div.add-entry:hover {
+div.edit-entry:hover, div.delete-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover, div.add-entry:hover {
      cursor: pointer;
 }
 
-div.edit-entry {
+div.edit-entry, div.delete-entry {
     font-weight: bold;
     color: darkblue;
     border: none;

@@ -27,4 +27,7 @@ public interface EntryRepository extends PagingAndSortingRepository<Entry, Long>
     @Query("SELECT DISTINCT e FROM Entry e LEFT JOIN e.hashTags h" +
             " WHERE :hashTags IS NULL OR h.tag in :hashTags")
     List<Entry> findByHashTags(@Param("hashTags") List<String> hashTags);
+
+    @Query("SELECT MAX(e.year) FROM Entry e")
+    Integer findGreatestYear();
 }
