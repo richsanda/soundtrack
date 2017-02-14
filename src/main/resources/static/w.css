@@ -190,3 +190,31 @@ div.name-tag, div.hash-tag {
 
     border: 1px solid #bbb0b7;
 }
+
+div.media, div.format, div.player, div.timeline, div.music, div.general {
+
+}
+
+div.media {
+    background-color: #bdd0d5;
+}
+
+div.format {
+    background-color: #d5ddd0;
+}
+
+div.player {
+    background-color: #d5d07d;
+}
+
+div.timeline {
+    background-color: #ddd0d8;
+}
+
+div.music {
+    background-color: lavenderblush;
+}
+
+div.general {
+    background-color: #d9d1c0;
+}

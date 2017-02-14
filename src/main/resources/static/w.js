@@ -351,15 +351,30 @@ function readYear($$) {
 
 function storyify(text) {
 
-    text = text.replace(/(\@|\#)([0-9a-z\-\.]*)(\{(.*?)\})?/g, nameify);
+    text = text.replace(/(@|#)([0-9a-z\-\./]*)(\{(.*?)\})?/g, nameify);
     text = text.replace(/(?:\r\n|\r|\n)/g, "<br/>");
 
     return text;
 }
 
 function nameify(match, p1, p2, p3, p4, offset, text) {
+
     var divClass = p1 == '@' ? 'name-tag' : 'hash-tag';
-    return "<div class='" + divClass + "' id='" + p2 + "'>" + (!p4 ? p1 + p2 : p4) + "</div>";
+    var linkText = p4;
+    var tagText = p2;
+    var tagSepIndex = p2.indexOf('/');
+    var tagHasSep = tagSepIndex > 0;
+
+    if (tagHasSep) {
+        divClass += ' ' + p2.substring(0, tagSepIndex);
+        tagText = p2.substring(tagSepIndex + 1);
+    } else {
+        divClass += ' general';
+    }
+    tagText = tagText.replace(/\./g, ' ');
+    if (!linkText) linkText = tagText;
+
+    return "<div class='" + divClass + "' id='" + p2 + "'>" + linkText + "</div>";
 }
 
 function valuify(text) {
