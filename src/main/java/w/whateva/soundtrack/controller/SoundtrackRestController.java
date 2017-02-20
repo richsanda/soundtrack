@@ -6,7 +6,9 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import w.whateva.soundtrack.api.dto.Entry;
 import w.whateva.soundtrack.api.dto.EntrySpec;
+import w.whateva.soundtrack.api.dto.HashTag;
 import w.whateva.soundtrack.api.dto.Person;
+import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.PersonService;
 import w.whateva.soundtrack.service.SoundtrackService;
 
@@ -24,9 +26,13 @@ public class SoundtrackRestController implements SoundtrackRestService {
     @Autowired
     PersonService personService;
 
+    @Autowired
+    HashTagService hashTagService;
+
     private static final SoundtrackRestMapper.EntryMapper entryMapper = new SoundtrackRestMapper.EntryMapper();
     private static final SoundtrackRestMapper.EntrySpecMapper entrySpecMapper = new SoundtrackRestMapper.EntrySpecMapper();
     private static final SoundtrackRestMapper.PersonMapper personMapper = new SoundtrackRestMapper.PersonMapper();
+    private static final SoundtrackRestMapper.HashTagMapper hashTagMapper = new SoundtrackRestMapper.HashTagMapper();
 
     @Transactional(value = "transactionManager")
     public Entry createEntry(EntrySpec entry) {
@@ -118,6 +124,15 @@ public class SoundtrackRestController implements SoundtrackRestService {
     public List<Person> readPersons() {
         try {
             return personMapper.toRest(personService.readPersons());
+        } catch (SoundtrackRestMapper.MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    public List<HashTag> readHashTags() {
+        try {
+            return hashTagMapper.toRest(hashTagService.readHashTags());
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }

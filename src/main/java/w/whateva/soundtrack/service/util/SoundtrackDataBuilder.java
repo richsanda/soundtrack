@@ -2,9 +2,11 @@ package w.whateva.soundtrack.service.util;
 
 import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.domain.Entry;
+import w.whateva.soundtrack.domain.HashTag;
 import w.whateva.soundtrack.domain.Person;
 import w.whateva.soundtrack.service.sao.ApiEntry;
 import w.whateva.soundtrack.service.sao.ApiEntrySpec;
+import w.whateva.soundtrack.service.sao.ApiHashTag;
 import w.whateva.soundtrack.service.sao.ApiPerson;
 
 import java.util.Optional;
@@ -70,6 +72,13 @@ public class SoundtrackDataBuilder {
     public static Person buildPerson(ApiPerson apiPerson) {
         Person result = new Person();
         BeanUtils.copyProperties(apiPerson, result);
+        return result;
+    }
+
+    public static ApiHashTag buildApiHashTag(HashTag hashTag) {
+        ApiHashTag result = new ApiHashTag();
+        BeanUtils.copyProperties(hashTag, result);
+        result.setAppearances(hashTag.getEntries().size());
         return result;
     }
 }
