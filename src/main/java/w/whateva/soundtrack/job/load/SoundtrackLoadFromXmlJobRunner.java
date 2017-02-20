@@ -12,7 +12,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
  *
  * TODO: um, do i need this ?
  */
-public class SoundtrackLoadJobRunner implements ApplicationListener {
+public class SoundtrackLoadFromXmlJobRunner implements ApplicationListener {
 
     private Job job;
     private JobLauncher jobLauncher;
