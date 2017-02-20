@@ -63,6 +63,7 @@ public class SoundtrackDataBuilder {
     public static ApiPerson buildApiPerson(Person person) {
         ApiPerson result = new ApiPerson();
         BeanUtils.copyProperties(person, result);
+        result.setAppearances(person.getEntries().size());
         return result;
     }
 

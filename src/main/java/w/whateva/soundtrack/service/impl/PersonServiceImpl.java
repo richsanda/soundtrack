@@ -26,24 +26,26 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<ApiPerson> readPersons() {
         List<Person> persons = Lists.newArrayList(personRepository.findAll());
-        return sortAndConvert(persons);
+        return convertAndSort(persons);
     }
 
-    private List<ApiPerson> sortAndConvert(List<Person> persons) {
-        Collections.sort(persons, PERSON_COMPARATOR);
+    private List<ApiPerson> convertAndSort(List<Person> persons) {
         List<ApiPerson> result = Lists.newArrayList();
         for (Person person : persons) {
             result.add(SoundtrackDataBuilder.buildApiPerson(person));
         }
+        Collections.sort(result, PERSON_COMPARATOR);
+        Collections.reverse(result);
         return result;
     }
 
-    private static final Comparator<Person> PERSON_COMPARATOR = new Comparator<Person>() {
+    private static final Comparator<ApiPerson> PERSON_COMPARATOR = new Comparator<ApiPerson>() {
 
         @Override
-        public int compare(Person person1, Person person2) {
+        public int compare(ApiPerson person1, ApiPerson person2) {
             return new CompareToBuilder()
-                    .append(person1.getName(), person2.getName())
+                    .append(person1.getAppearances(), person2.getAppearances())
+                    .append(person1.getTag(), person2.getTag())
                     .toComparison();
         }
     };

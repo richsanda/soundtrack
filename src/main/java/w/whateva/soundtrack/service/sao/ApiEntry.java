@@ -1,9 +1,11 @@
 package w.whateva.soundtrack.service.sao;
 
+import org.apache.commons.lang3.builder.CompareToBuilder;
+
 /**
  * Created by rich on 12/17/16.
  */
-public class ApiEntry {
+public class ApiEntry implements Comparable<ApiEntry> {
 
     private String key;
 
@@ -85,5 +87,14 @@ public class ApiEntry {
 
     public void setYoutube(String youtube) {
         this.youtube = youtube;
+    }
+
+    @Override
+    public int compareTo(ApiEntry other) {
+
+        return new CompareToBuilder()
+                .append(getYear(), other.getYear())
+                .append(getOrdinal(), other.getOrdinal())
+                .toComparison();
     }
 }
