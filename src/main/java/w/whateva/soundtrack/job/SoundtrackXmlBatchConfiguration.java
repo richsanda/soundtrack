@@ -6,25 +6,22 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.launch.JobLauncher;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
 import org.springframework.batch.item.xml.StaxEventItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import w.whateva.soundtrack.domain.Entry;
-import w.whateva.soundtrack.domain.repository.EntryRepository;
-import w.whateva.soundtrack.job.load.SoundtrackEntryProcessor;
-import w.whateva.soundtrack.job.load.SoundtrackEntryWriter;
 import w.whateva.soundtrack.job.load.SoundtrackLoadFromXmlJobRunner;
 
 /**
  * Created by rich on 2/19/17.
  */
+@Configuration
 public class SoundtrackXmlBatchConfiguration {
 
     @Autowired

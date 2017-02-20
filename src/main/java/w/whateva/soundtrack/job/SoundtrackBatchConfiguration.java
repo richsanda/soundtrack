@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import w.whateva.soundtrack.domain.Entry;
-import w.whateva.soundtrack.domain.repository.EntryRepository;
 import w.whateva.soundtrack.job.load.SoundtrackEntryProcessor;
 import w.whateva.soundtrack.job.load.SoundtrackEntryWriter;
+import w.whateva.soundtrack.service.MigrationService;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -26,7 +26,7 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     private EntityManagerFactory entityManagerFactory;
 
     @Autowired
-    private EntryRepository entryRepository;
+    private MigrationService migrationService;
 
     // this is, like, super crucial to tying the start job to the jpa entity manager used in the controller
     @Bean
@@ -49,7 +49,7 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     @Bean
     ItemWriter<Entry> soundtrackEntryWriter() {
         SoundtrackEntryWriter writer = new SoundtrackEntryWriter();
-        writer.setEntryRepository(entryRepository);
+        writer.setMigrationService(migrationService);
         return writer;
     }
 }

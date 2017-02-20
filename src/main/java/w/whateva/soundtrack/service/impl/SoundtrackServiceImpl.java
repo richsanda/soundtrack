@@ -13,6 +13,7 @@ import w.whateva.soundtrack.domain.Person;
 import w.whateva.soundtrack.domain.repository.EntryRepository;
 import w.whateva.soundtrack.domain.repository.HashTagRepository;
 import w.whateva.soundtrack.domain.repository.PersonRepository;
+import w.whateva.soundtrack.service.MigrationService;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.TagType;
 import w.whateva.soundtrack.service.sao.ApiEntry;
@@ -26,7 +27,7 @@ import java.util.*;
  * Created by rich on 12/17/16.
  */
 @Component
-public class SoundtrackServiceImpl implements SoundtrackService {
+public class SoundtrackServiceImpl implements SoundtrackService, MigrationService {
 
     @Autowired
     EntryRepository entryRepository;
@@ -85,6 +86,14 @@ public class SoundtrackServiceImpl implements SoundtrackService {
         Entry entry = entryRepository.findById(new Long(key));
 
         return updateEntry(entry, apiEntrySpec);
+    }
+
+    @Override
+    public void refreshEntry(Entry entry) {
+
+        ApiEntrySpec apiEntrySpec = SoundtrackDataBuilder.buildApiEntrySpec(entry);
+
+        updateEntry(entry, apiEntrySpec);
     }
 
     private ApiEntry updateEntry(Entry entry, ApiEntrySpec apiEntrySpec) {

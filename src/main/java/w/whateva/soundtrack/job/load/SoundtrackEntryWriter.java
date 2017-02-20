@@ -2,7 +2,7 @@ package w.whateva.soundtrack.job.load;
 
 import org.springframework.batch.item.ItemWriter;
 import w.whateva.soundtrack.domain.Entry;
-import w.whateva.soundtrack.domain.repository.EntryRepository;
+import w.whateva.soundtrack.service.MigrationService;
 
 import java.util.List;
 
@@ -11,10 +11,10 @@ import java.util.List;
  */
 public class SoundtrackEntryWriter implements ItemWriter<Entry> {
 
-    private EntryRepository entryRepository;
+    private MigrationService migrationService;
 
-    public void setEntryRepository(EntryRepository entryRepository) {
-        this.entryRepository = entryRepository;
+    public void setMigrationService(MigrationService migrationService) {
+        this.migrationService = migrationService;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class SoundtrackEntryWriter implements ItemWriter<Entry> {
         for (Entry entry : entries) {
             if (null != entry.getTitle()) {
                 System.out.println("here's an entry: " + entry.getTitle());
-                entryRepository.save(entry);
+                migrationService.refreshEntry(entry);
             } else {
                 Entry.print(entry);
             }

@@ -7,6 +7,8 @@ import w.whateva.soundtrack.service.sao.ApiEntry;
 import w.whateva.soundtrack.service.sao.ApiEntrySpec;
 import w.whateva.soundtrack.service.sao.ApiPerson;
 
+import java.util.Optional;
+
 /**
  * Created by rich on 12/18/16.
  */
@@ -35,6 +37,27 @@ public class SoundtrackDataBuilder {
         entry.setYoutube(null != apiEntrySpec.getYoutube() ? apiEntrySpec.getYoutube().orElse(null) : null);
 
         return entry;
+    }
+
+    // for use in migration... starting with an Entry, give an equivalent ApiEntrySpec that can be used
+    // to effect application code that should accompany installment into the database for the Entry
+    public static ApiEntrySpec buildApiEntrySpec(Entry entry) {
+
+        ApiEntrySpec apiEntrySpec = new ApiEntrySpec();
+
+        apiEntrySpec.setYear(Optional.ofNullable(entry.getYear()));
+        apiEntrySpec.setOrdinal(Optional.ofNullable(entry.getOrdinal()));
+
+        apiEntrySpec.setTitle(Optional.ofNullable(entry.getTitle()));
+        apiEntrySpec.setArtist(Optional.ofNullable(entry.getArtist()));
+
+        apiEntrySpec.setStory(Optional.ofNullable(entry.getStory()));
+        apiEntrySpec.setNotes(Optional.ofNullable(entry.getNotes()));
+
+        apiEntrySpec.setSpotify(Optional.ofNullable(entry.getSpotify()));
+        apiEntrySpec.setYoutube(Optional.ofNullable(entry.getYoutube()));
+
+        return apiEntrySpec;
     }
 
     public static ApiPerson buildApiPerson(Person person) {
