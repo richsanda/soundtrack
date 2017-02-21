@@ -2,14 +2,8 @@ package w.whateva.soundtrack.controller;
 
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
-import w.whateva.soundtrack.api.dto.Entry;
-import w.whateva.soundtrack.api.dto.EntrySpec;
-import w.whateva.soundtrack.api.dto.HashTag;
-import w.whateva.soundtrack.api.dto.Person;
-import w.whateva.soundtrack.service.sao.ApiEntry;
-import w.whateva.soundtrack.service.sao.ApiEntrySpec;
-import w.whateva.soundtrack.service.sao.ApiHashTag;
-import w.whateva.soundtrack.service.sao.ApiPerson;
+import w.whateva.soundtrack.api.dto.*;
+import w.whateva.soundtrack.service.sao.*;
 
 import java.util.List;
 
@@ -44,6 +38,19 @@ public class SoundtrackRestMapper {
         @Override
         public ApiHashTag newApiObject() {
             return new ApiHashTag();
+        }
+    }
+
+    public static class HashTagSpecMapper extends Mapper<HashTagSpec, ApiHashTagSpec> {
+
+        @Override
+        public HashTagSpec newRestObject() {
+            return new HashTagSpec();
+        }
+
+        @Override
+        public ApiHashTagSpec newApiObject() {
+            return new ApiHashTagSpec();
         }
     }
 

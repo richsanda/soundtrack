@@ -5,9 +5,18 @@ package w.whateva.soundtrack.api.dto;
  */
 public class Person {
 
+    private String key;
     private String tag;
     private String name;
     private Integer appearances;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getTag() {
         return tag;

@@ -5,9 +5,20 @@ package w.whateva.soundtrack.api.dto;
  */
 public class HashTag {
 
+    private String key;
     private String tag;
+    private String fullTag;
     private String name;
+    private String story;
     private Integer appearances;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getTag() {
         return tag;
@@ -17,12 +28,28 @@ public class HashTag {
         this.tag = tag;
     }
 
+    public String getFullTag() {
+        return fullTag;
+    }
+
+    public void setFullTag(String fullTag) {
+        this.fullTag = fullTag;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStory() {
+        return story;
+    }
+
+    public void setStory(String story) {
+        this.story = story;
     }
 
     public Integer getAppearances() {

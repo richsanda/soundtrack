@@ -1,9 +1,6 @@
 package w.whateva.soundtrack.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -19,14 +16,22 @@ public class HashTag {
     }
 
     @Id
-   	@GeneratedValue
-   	private Long id;
+    @GeneratedValue
+    private Long id;
 
     private String tag;
+    private String fullTag;
     private String name;
+
+    @Column(length = 100000)
+    private String story;
 
     @ManyToMany(mappedBy = "hashTags")
     private List<Entry> entries;
+
+    public String getKey() {
+        return id.toString();
+    }
 
     public String getTag() {
         return tag;
@@ -36,12 +41,28 @@ public class HashTag {
         this.tag = tag;
     }
 
+    public String getFullTag() {
+        return fullTag;
+    }
+
+    public void setFullTag(String fullTag) {
+        this.fullTag = fullTag;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStory() {
+        return story;
+    }
+
+    public void setStory(String story) {
+        this.story = story;
     }
 
     public List<Entry> getEntries() {

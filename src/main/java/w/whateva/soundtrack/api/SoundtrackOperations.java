@@ -1,10 +1,7 @@
 package w.whateva.soundtrack.api;
 
 import org.springframework.web.bind.annotation.*;
-import w.whateva.soundtrack.api.dto.Entry;
-import w.whateva.soundtrack.api.dto.EntrySpec;
-import w.whateva.soundtrack.api.dto.HashTag;
-import w.whateva.soundtrack.api.dto.Person;
+import w.whateva.soundtrack.api.dto.*;
 
 import java.util.List;
 
@@ -51,5 +48,13 @@ public interface SoundtrackOperations {
 
     @RequestMapping(value = "/hashTags", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    List<HashTag> readHashTags();
+    List<HashTag> readHashTags(@RequestParam(value = "type", required = false) String type);
+
+    @RequestMapping(value = "/hashTag/{key}", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    HashTag readHashTag(@PathVariable("key") String key);
+
+    @RequestMapping(value = "/hashTag/{key}", method = RequestMethod.PATCH, consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    HashTag updateHashTag(@PathVariable("key") String key, @RequestBody HashTagSpec hashTag);
 }

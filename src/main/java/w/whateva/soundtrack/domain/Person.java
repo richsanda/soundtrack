@@ -30,6 +30,9 @@ public class Person {
     @ManyToMany(mappedBy = "persons")
     private List<Entry> entries;
 
+    public String getKey() {
+        return id.toString();
+    }
 
     public String getTag() {
         return tag;
