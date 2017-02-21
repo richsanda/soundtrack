@@ -57,6 +57,14 @@ public class HashTagServiceImpl implements HashTagService {
         return updateHashTag(hashTag, spec);
     }
 
+    @Override
+    public ApiHashTag updateHashTag(ApiHashTagSpec spec) {
+
+        HashTag hashTag = hashTagRepository.findByTag(spec.getTag().get());
+
+        return updateHashTag(hashTag, spec);
+    }
+
     private ApiHashTag updateHashTag(HashTag hashTag, ApiHashTagSpec spec) {
 
         if (spec.getFullTag() != null) {

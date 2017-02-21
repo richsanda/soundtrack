@@ -11,7 +11,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.job.load.SoundtrackEntryProcessor;
 import w.whateva.soundtrack.job.load.SoundtrackEntryWriter;
+import w.whateva.soundtrack.job.load.SoundtrackHashTagWriter;
+import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.MigrationService;
+import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -28,10 +31,13 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     @Autowired
     private MigrationService migrationService;
 
+    @Autowired
+    private HashTagService hashTagService;
+
     // this is, like, super crucial to tying the start job to the jpa entity manager used in the controller
     @Bean
     public PlatformTransactionManager platformTransactionManager() {
-         return new JpaTransactionManager(entityManagerFactory);
+        return new JpaTransactionManager(entityManagerFactory);
     }
 
     @Override
@@ -50,6 +56,13 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     ItemWriter<Entry> soundtrackEntryWriter() {
         SoundtrackEntryWriter writer = new SoundtrackEntryWriter();
         writer.setMigrationService(migrationService);
+        return writer;
+    }
+
+    @Bean
+    ItemWriter<ApiHashTagSpec> soundtrackHashTagWriter() {
+        SoundtrackHashTagWriter writer = new SoundtrackHashTagWriter();
+        writer.setHashTagService(hashTagService);
         return writer;
     }
 }

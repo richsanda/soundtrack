@@ -4,21 +4,16 @@ import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.*;
 import org.springframework.batch.core.launch.JobLauncher;
-import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.oxm.jaxb.Jaxb2Marshaller;
-import org.springframework.transaction.PlatformTransactionManager;
 import w.whateva.soundtrack.domain.Entry;
-import w.whateva.soundtrack.domain.repository.EntryRepository;
 import w.whateva.soundtrack.job.load.*;
+import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -50,7 +45,10 @@ public class SoundtrackJsonBatchConfiguration {
 
     @Bean
     public Job soundtrackLoadFromJsonJob() throws Exception {
-        return this.jobs.get("soundtrackLoadFromJsonJob").start(soundtrackLoadFromJsonStep()).build();
+        return this.jobs.get("soundtrackLoadFromJsonJob")
+                .start(soundtrackLoadFromJsonStep())
+                .next(hashTagsLoadFromJsonStep())
+                .build();
     }
 
     private ResourceLoader resourceLoader = new DefaultResourceLoader();
@@ -66,10 +64,27 @@ public class SoundtrackJsonBatchConfiguration {
     }
 
     @Bean
+    protected Step hashTagsLoadFromJsonStep() throws Exception {
+        return this.steps.get("hashTagsLoadFromJsonStep")
+                .<ApiHashTagSpec, ApiHashTagSpec>chunk(2)
+                .reader(soundtrackJsonHashTagReader())
+                .writer(config.soundtrackHashTagWriter())
+                .build();
+    }
+
+    @Bean
     @StepScope
     protected ItemReader<Entry> soundtrackJsonEntryReader() {
 
         Resource resource = resourceLoader.getResource("data/data.json");
         return new SoundtrackJsonEntryReader(resource);
+    }
+
+    @Bean
+    @StepScope
+    protected ItemReader<ApiHashTagSpec> soundtrackJsonHashTagReader() {
+
+        Resource resource = resourceLoader.getResource("data/tags.json");
+        return new SoundtrackJsonHashTagReader(resource);
     }
 }
