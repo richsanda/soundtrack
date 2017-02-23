@@ -19,6 +19,30 @@ function refreshEntries() {
     });
 }
 
+function refreshTags() {
+
+    var url = "/hashTags?sort=FULL";
+
+    $.ajax({
+        url: url,
+        dataType: "json"
+    }).success(function (data) {
+        $('#soundtrack').html(showTags(data));
+    });
+}
+
+function refreshPersons() {
+
+    var url = "/persons";
+
+    $.ajax({
+        url: url,
+        dataType: "json"
+    }).success(function (data) {
+        $('#soundtrack').html(showPersons(data));
+    });
+}
+
 function regionClick (e, behaviorMap) {
 
     var $$ = $(e.target);
@@ -59,6 +83,30 @@ function actionsClick(e) {
         },
         'read-year' : function ($$) {
             readYear($$);
+        },
+        'show-soundtrack' : function ($$) {
+            refreshEntries();
+        },
+        'show-tags' : function ($$) {
+            refreshTags();
+        },
+        'show-persons' : function ($$) {
+            refreshPersons();
+        },
+        'add-tag' : function ($$) {
+            addTag($$);
+        },
+        'edit-tag' : function ($$) {
+            editTag($$);
+        },
+        'save-tag' : function ($$) {
+            saveTag($$);
+        },
+        'read-tag' : function ($$) {
+            readTag($$);
+        },
+        'delete-tag' : function ($$) {
+            deleteTag($$);
         },
         'no-op' : function ($$) {}
     };
@@ -111,6 +159,23 @@ function editEntry($$) {
     });
 }
 
+function editTag($$) {
+
+    var tagDiv = $$.closest('div.tag');
+    var id = tagDiv.attr('id');
+    var url = "/hashTag/" + id;
+
+    $.ajax({
+        url: url,
+        dataType: "json"
+    }).success(function (data) {
+        var overlayDiv = showTagForEdit(data);
+        overlayDiv.width("100%");
+        overlayDiv.fadeIn(200);
+        tagDiv.append(overlayDiv);
+    });
+}
+
 function saveEntry($$) {
 
     var entryDiv = $$.closest('div.entry');
@@ -154,6 +219,30 @@ function saveEntry($$) {
     }
 }
 
+function saveTag($$) {
+
+    var tagDiv = $$.closest('div.tag');
+    var id = tagDiv.attr('id');
+    var tag = {
+        story: tagDiv.find('textarea.edit-story').val(),
+        fullTag: tagDiv.find('#full').val(),
+        name: tagDiv.find('#name').val()
+    };
+
+    $.ajax({
+        url: "/hashTag/" + id,
+        type: "patch",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(tag)
+    }).success(function (data) {
+        var newTagDiv = showTag(data);
+        tagDiv.fadeOut(500, function () {
+            tagDiv.replaceWith(newTagDiv);
+        });
+    });
+}
+
 function readEntry($$) {
 
     var entryDiv = $$.closest('div.entry');
@@ -173,6 +262,22 @@ function readEntry($$) {
         contentType: "application/json"
     }).success(function (data) {
         entryDiv.replaceWith(showEntry(data));
+    });
+}
+
+function readTag($$) {
+
+    var tagDiv = $$.closest('div.tag');
+    var id = tagDiv.attr('id');
+
+    var url = "/hashTag/" + id;
+
+    $.ajax({
+        url: url,
+        type: "get",
+        contentType: "application/json"
+    }).success(function (data) {
+        tagDiv.replaceWith(showTag(data));
     });
 }
 
@@ -215,6 +320,38 @@ function showEntries(entries) {
     });
 
     return entriesDiv;
+}
+
+function showTags(tags) {
+
+    // reset
+    $('#tags').data('keysToDivs', {});
+
+    var tagsDiv = $("<div class='tags'></div>");
+
+    $.each(tags, function() {
+        var tagDiv = showTag(this);
+        $('#tags').data('keysToDivs')[this.key] = tagDiv;
+        tagsDiv.append(tagDiv);
+    });
+
+    return tagsDiv;
+}
+
+function showPersons(persons) {
+
+    // reset
+    $('#persons').data('keysToDivs', {});
+
+    var personsDiv = $("<div class='persons'></div>");
+
+    $.each(persons, function() {
+        var personDiv = showPerson(this);
+        $('#persons').data('keysToDivs')[this.key] = personDiv;
+        personsDiv.append(personDiv);
+    });
+
+    return personsDiv;
 }
 
 function updateEntryPosition( event, ui ) {
@@ -276,6 +413,30 @@ function showEntry(entry) {
     return entryDiv;
 }
 
+function showTag(tag) {
+
+    var titleDiv = $("<div class='title'><div class='tag-title title-button' id='" + tag.tag + "'>" + tag.tag + " (" + tag.appearances + ")" + "</div> " + valuify(tag.fullTag) + " <div class='edit-tag title-button'>edit</div><div class='delete-tag title-button'>delete</div></div>");
+    var storyDiv = $("<div class='story'>" + storyify(tag.story) + "</div>");
+    var tagDiv = $("<div class='tag' id='" + tag.key + "'/>");
+    tagDiv.append(titleDiv);
+    tagDiv.append(storyDiv);
+    tagDiv.append("<hr/>");
+
+    return tagDiv;
+}
+
+function showPerson(person) {
+
+    var titleDiv = $("<div class='title'><div class='person-title title-button' id='" + person.tag + "'> " + person.tag + " (" + person.appearances + ")" + "</div> " + valuify(person.name) + " <div class='edit-person title-button'>edit</div><div class='delete-person title-button'>delete</div></div>");
+    var storyDiv = $("<div class='story'>" + storyify(person.story) + "</div>");
+    var personDiv = $("<div class='person' id='" + person.key + "'/>");
+    personDiv.append(titleDiv);
+    personDiv.append(storyDiv);
+    personDiv.append("<hr/>");
+
+    return personDiv;
+}
+
 function showEntryForEdit(entry) {
 
     var overlayDiv = $("<div class='overlay no-op'/>");
@@ -299,6 +460,34 @@ function showEntryForEdit(entry) {
     var buttonsDiv = $("<div class='close-buttons'/>");
     var saveButton = $("<div class='close-button save-entry'>save</div>");
     var cancelButton = $("<div class='close-button read-entry'>cancel</div>");
+    buttonsDiv.append(saveButton);
+    buttonsDiv.append(cancelButton);
+    storyDiv.append(buttonsDiv);
+
+    return overlayDiv;
+}
+
+function showTagForEdit(tag) {
+
+    var overlayDiv = $("<div class='overlay no-op'/>");
+    var contentDiv = $("<div class='overlay-content'/>");
+    overlayDiv.append(contentDiv);
+
+    var headerDiv = $("<div class='edit-entry-top'/>");
+    var tagDiv = $("<label for='tag' class='tag'><span>" + valuify(tag.tag) + " (" + tag.appearances + ")</span></label>");
+    var fullDiv = $("<label for='full' class='full'><span>full</span><input type='text' id='full' value='" + valuify(tag.fullTag) + "'/></label>");
+    var nameDiv = $("<label for='name' class='name'><span>name</span><input type='text' id='name' value='" + valuify(tag.name) + "'/></label>");
+    headerDiv.append(tagDiv);
+    headerDiv.append(fullDiv);
+    headerDiv.append(nameDiv);
+    contentDiv.append(headerDiv);
+
+    var storyDiv= $("<div class='edit-entry-bottom'><textarea class='no-op edit-story'>" + textareaify(tag.story) + "</textarea></div>");
+    contentDiv.append(storyDiv);
+
+    var buttonsDiv = $("<div class='close-buttons'/>");
+    var saveButton = $("<div class='close-button save-tag'>save</div>");
+    var cancelButton = $("<div class='close-button read-tag'>cancel</div>");
     buttonsDiv.append(saveButton);
     buttonsDiv.append(cancelButton);
     storyDiv.append(buttonsDiv);
@@ -350,6 +539,8 @@ function readYear($$) {
 }
 
 function storyify(text) {
+
+    if (!text) return "";
 
     text = text.replace(/(@|#)([0-9a-z\-\./]*)(\{(.*?)\})?/g, nameify);
     text = text.replace(/(?:\r\n|\r|\n)/g, "<br/>");

@@ -12,6 +12,7 @@ import w.whateva.soundtrack.domain.repository.HashTagRepository;
 import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.sao.ApiHashTag;
 import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
+import w.whateva.soundtrack.service.sao.HashTagSortSpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 
 import java.util.Collection;
@@ -35,8 +36,9 @@ public class HashTagServiceImpl implements HashTagService {
     }
 
     @Override
-    public List<ApiHashTag> readHashTags(String type) {
-        return filterByType(readHashTags(), type);
+    public List<ApiHashTag> readHashTags(String type, HashTagSortSpec spec) {
+        List<HashTag> hashTags = Lists.newArrayList(hashTagRepository.findAll());
+        return filterByType(convertAndSort(hashTags, spec), type);
     }
 
     @Override
@@ -81,21 +83,51 @@ public class HashTagServiceImpl implements HashTagService {
     }
 
     private List<ApiHashTag> convertAndSort(List<HashTag> hashTags) {
+        return convertAndSort(hashTags, HashTagSortSpec.TAG);
+    }
+
+    private static List<ApiHashTag> convertAndSort(Collection<HashTag> hashTags, HashTagSortSpec sortSpec) {
+
         List<ApiHashTag> result = Lists.newArrayList();
         for (HashTag hashTag : hashTags) {
             result.add(SoundtrackDataBuilder.buildApiHashTag(hashTag));
         }
-        Collections.sort(result, PERSON_COMPARATOR);
-        Collections.reverse(result);
+        Collections.sort(result, getHashTagComparator(sortSpec));
         return result;
     }
 
-    private static final Comparator<ApiHashTag> PERSON_COMPARATOR = new Comparator<ApiHashTag>() {
+    private static Comparator<ApiHashTag> getHashTagComparator(HashTagSortSpec sortSpec) {
+
+        if (null == sortSpec) return HASH_TAG_COMPARATOR;
+
+        switch (sortSpec) {
+            case TAG:
+                return HASH_TAG_COMPARATOR;
+            case NAME:
+                return HASH_TAG_COMPARATOR;
+            case FULL:
+                return HASH_TAG_FULL_COMPARATOR;
+        }
+        return HASH_TAG_COMPARATOR;
+    }
+
+    private static final Comparator<ApiHashTag> HASH_TAG_COMPARATOR = new Comparator<ApiHashTag>() {
 
         @Override
         public int compare(ApiHashTag apiHashTag1, ApiHashTag apiHashTag2) {
             return new CompareToBuilder()
-                    .append(apiHashTag1.getAppearances(), apiHashTag2.getAppearances())
+                    .append(apiHashTag2.getAppearances(), apiHashTag1.getAppearances()) // NOTE: reverse !
+                    .append(apiHashTag1.getTag(), apiHashTag2.getTag())
+                    .toComparison();
+        }
+    };
+
+    private static final Comparator<ApiHashTag> HASH_TAG_FULL_COMPARATOR = new Comparator<ApiHashTag>() {
+
+        @Override
+        public int compare(ApiHashTag apiHashTag1, ApiHashTag apiHashTag2) {
+            return new CompareToBuilder()
+                    .append(apiHashTag1.getFullTag(), apiHashTag2.getFullTag())
                     .append(apiHashTag1.getTag(), apiHashTag2.getTag())
                     .toComparison();
         }
@@ -103,7 +135,7 @@ public class HashTagServiceImpl implements HashTagService {
 
     private static List<ApiHashTag> filterByType(Collection<ApiHashTag> hashTags, final String type) {
 
-        if (StringUtils.isEmpty(type)) return null;
+        if (StringUtils.isEmpty(type)) return Lists.newArrayList(hashTags);
 
         Predicate<ApiHashTag> predicate = new Predicate<ApiHashTag>() {
 

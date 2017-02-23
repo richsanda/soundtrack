@@ -1,6 +1,6 @@
 package w.whateva.soundtrack.controller;
 
-import org.apache.commons.lang3.StringUtils;
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
@@ -9,6 +9,7 @@ import w.whateva.soundtrack.api.dto.*;
 import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.PersonService;
 import w.whateva.soundtrack.service.SoundtrackService;
+import w.whateva.soundtrack.service.sao.HashTagSortSpec;
 
 import java.util.List;
 
@@ -129,17 +130,17 @@ public class SoundtrackRestController implements SoundtrackRestService {
         return null;
     }
 
-    public List<HashTag> readHashTags(String type) {
+    public List<HashTag> readHashTags(String type, HashTagSortSpec sortSpec) {
+
+        List<HashTag> result = Lists.newArrayList();
+
         try {
-            if (StringUtils.isEmpty(type)) {
-                return hashTagMapper.toRest(hashTagService.readHashTags());
-            } else {
-                return hashTagMapper.toRest(hashTagService.readHashTags(type));
-            }
+            result = hashTagMapper.toRest(hashTagService.readHashTags(type, sortSpec));
         } catch (SoundtrackRestMapper.MapperException e) {
             // TODO: throw useful exception
         }
-        return null;
+
+        return result;
     }
 
     @Override

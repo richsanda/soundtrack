@@ -23,7 +23,7 @@ div.entry {
     padding-bottom: 4px;
 }
 
-div.year, div.ordinal {
+div.year, div.ordinal, div.tag-title, div.person-title {
     color: saddlebrown;
     background-color: #ddd0d8;
 
@@ -137,6 +137,16 @@ label.title, label.title input {
 label.artist, label.artist input {
     width: 320px;
 }
+label.name, label.name input {
+    width: 320px;
+}
+label.full, label.full input {
+    width: 320px;
+}
+
+label.tag {
+    width: 80px;
+}
 
 .overlay .close-button, .overlay label {
 
@@ -161,11 +171,12 @@ div.edit-entry-top, div.edit-entry-bottom {
     text-align: center;
 }
 
-div.edit-entry:hover, div.delete-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover, div.add-entry:hover {
+div.edit-entry:hover, div.delete-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover,
+div.add-entry:hover, div.tab:hover, div.edit-tag, div.edit-person {
      cursor: pointer;
 }
 
-div.edit-entry, div.delete-entry {
+div.edit-entry, div.delete-entry, div.edit-tag, div.delete-tag, div.edit-person, div.delete-person {
     font-weight: bold;
     color: darkblue;
     border: none;
@@ -217,4 +228,38 @@ div.music {
 
 div.general {
     background-color: #d9d1c0;
+}
+
+div.tabs {
+
+    text-align: center;
+
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 4px;
+}
+
+div.tab {
+
+    color: saddlebrown;
+    background-color: #ddd0d8;
+
+    font-weight: bold;
+
+    border: 1px solid saddlebrown;
+
+    display: inline-block;
+    zoom: 1;
+
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+
+    text-align: center;
+
+    font-size: 1.2em;
+
+    padding: 2px;
+    padding-left: 16px;
+    padding-right: 16px;
 }

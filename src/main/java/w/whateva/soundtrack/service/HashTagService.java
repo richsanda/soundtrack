@@ -2,6 +2,7 @@ package w.whateva.soundtrack.service;
 
 import w.whateva.soundtrack.service.sao.ApiHashTag;
 import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
+import w.whateva.soundtrack.service.sao.HashTagSortSpec;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface HashTagService {
 
     List<ApiHashTag> readHashTags();
 
-    List<ApiHashTag> readHashTags(String type);
+    List<ApiHashTag> readHashTags(String type, HashTagSortSpec sortSpec);
 
     List<String> readHashTagTypes();
 
