@@ -8,6 +8,7 @@ public class HashTag {
     private String key;
     private String tag;
     private String fullTag;
+    private HashTagType type;
     private String name;
     private String story;
     private Integer appearances;
@@ -34,6 +35,14 @@ public class HashTag {
 
     public void setFullTag(String fullTag) {
         this.fullTag = fullTag;
+    }
+
+    public HashTagType getType() {
+        return type;
+    }
+
+    public void setType(HashTagType type) {
+        this.type = type;
     }
 
     public String getName() {

@@ -2,7 +2,7 @@ package w.whateva.soundtrack.api;
 
 import org.springframework.web.bind.annotation.*;
 import w.whateva.soundtrack.api.dto.*;
-import w.whateva.soundtrack.service.sao.HashTagSortSpec;
+import w.whateva.soundtrack.service.sao.ApiHashTagSortSpec;
 
 import java.util.List;
 
@@ -50,7 +50,7 @@ public interface SoundtrackOperations {
     @RequestMapping(value = "/hashTags", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     List<HashTag> readHashTags(@RequestParam(value = "type", required = false) String type,
-                               @RequestParam(value = "sort", required = false) HashTagSortSpec sort);
+                               @RequestParam(value = "sort", required = false) ApiHashTagSortSpec sort);
 
     @RequestMapping(value = "/hashTag/{key}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody

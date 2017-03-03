@@ -1,8 +1,13 @@
 package w.whateva.soundtrack.controller;
 
+import com.google.common.collect.BiMap;
+import com.google.common.collect.EnumBiMap;
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.api.dto.*;
+import w.whateva.soundtrack.api.dto.Entry;
+import w.whateva.soundtrack.api.dto.HashTag;
+import w.whateva.soundtrack.api.dto.Person;
 import w.whateva.soundtrack.service.sao.*;
 
 import java.util.List;
@@ -29,16 +34,42 @@ public class SoundtrackRestMapper {
     }
 
     public static class HashTagMapper extends Mapper<HashTag, ApiHashTag> {
-
+        
         @Override
-        public HashTag newRestObject() {
-            return new HashTag();
+        public HashTag toRest(ApiHashTag apiObject) throws MapperException {
+            HashTag result = new HashTag();
+            BeanUtils.copyProperties(apiObject, result);
+            result.setType(SoundtrackRestMapper.toRest(apiObject.getType()));
+            return result;
         }
 
         @Override
-        public ApiHashTag newApiObject() {
-            return new ApiHashTag();
+        public ApiHashTag toApi(HashTag restObject) throws MapperException {
+            ApiHashTag result = new ApiHashTag();
+            BeanUtils.copyProperties(restObject, result);
+            result.setType(SoundtrackRestMapper.toApi(restObject.getType()));
+            return result;
         }
+    }
+    
+    private static final BiMap<HashTagType, ApiHashTagType> restToApiHashTagType =
+            EnumBiMap.create(HashTagType.class, ApiHashTagType.class);
+
+    static {
+        restToApiHashTagType.put(HashTagType.FORMAT, ApiHashTagType.FORMAT);
+        restToApiHashTagType.put(HashTagType.MEDIA, ApiHashTagType.MEDIA);
+        restToApiHashTagType.put(HashTagType.MUSIC, ApiHashTagType.MUSIC);
+        restToApiHashTagType.put(HashTagType.TIMELINE, ApiHashTagType.TIMELINE);
+        restToApiHashTagType.put(HashTagType.GENERAL, ApiHashTagType.GENERAL);
+        restToApiHashTagType.put(HashTagType.PLAYER, ApiHashTagType.PLAYER);
+    }
+
+    public static ApiHashTagType toApi(HashTagType rest) {
+        return restToApiHashTagType.get(rest);
+    }
+
+    public static HashTagType toRest(ApiHashTagType api) {
+        return restToApiHashTagType.inverse().get(api);
     }
 
     public static class HashTagSpecMapper extends Mapper<HashTagSpec, ApiHashTagSpec> {

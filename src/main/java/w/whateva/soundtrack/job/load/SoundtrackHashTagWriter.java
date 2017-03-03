@@ -24,7 +24,7 @@ public class SoundtrackHashTagWriter implements ItemWriter<ApiHashTagSpec> {
                 System.out.println("here's a tag: " + spec.getTag().get());
                 hashTagService.updateHashTag(spec);
             } else {
-                System.out.println("Error updating tag: " + spec.getTag().get());
+                System.out.println("Error updating tag (tag was null)");
             }
         }
     }

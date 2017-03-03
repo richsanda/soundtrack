@@ -1,13 +1,14 @@
 package w.whateva.soundtrack.service.util;
 
+import com.google.common.collect.BiMap;
+import com.google.common.collect.EnumBiMap;
+import com.google.common.collect.HashBiMap;
 import org.springframework.beans.BeanUtils;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.HashTag;
+import w.whateva.soundtrack.domain.HashTagType;
 import w.whateva.soundtrack.domain.Person;
-import w.whateva.soundtrack.service.sao.ApiEntry;
-import w.whateva.soundtrack.service.sao.ApiEntrySpec;
-import w.whateva.soundtrack.service.sao.ApiHashTag;
-import w.whateva.soundtrack.service.sao.ApiPerson;
+import w.whateva.soundtrack.service.sao.*;
 
 import java.util.Optional;
 
@@ -79,6 +80,19 @@ public class SoundtrackDataBuilder {
         ApiHashTag result = new ApiHashTag();
         BeanUtils.copyProperties(hashTag, result);
         result.setAppearances(hashTag.getEntries().size());
+        result.setType(domainToApiHashTagType.get(hashTag.getType()));
         return result;
+    }
+
+    private static final BiMap<HashTagType, ApiHashTagType> domainToApiHashTagType =
+            EnumBiMap.create(HashTagType.class, ApiHashTagType.class);
+
+    static {
+        domainToApiHashTagType.put(HashTagType.FORMAT, ApiHashTagType.FORMAT);
+        domainToApiHashTagType.put(HashTagType.MEDIA, ApiHashTagType.MEDIA);
+        domainToApiHashTagType.put(HashTagType.MUSIC, ApiHashTagType.MUSIC);
+        domainToApiHashTagType.put(HashTagType.TIMELINE, ApiHashTagType.TIMELINE);
+        domainToApiHashTagType.put(HashTagType.GENERAL, ApiHashTagType.GENERAL);
+        domainToApiHashTagType.put(HashTagType.PLAYER, ApiHashTagType.PLAYER);
     }
 }

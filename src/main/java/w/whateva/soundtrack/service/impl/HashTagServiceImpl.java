@@ -12,7 +12,7 @@ import w.whateva.soundtrack.domain.repository.HashTagRepository;
 import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.sao.ApiHashTag;
 import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
-import w.whateva.soundtrack.service.sao.HashTagSortSpec;
+import w.whateva.soundtrack.service.sao.ApiHashTagSortSpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 
 import java.util.Collection;
@@ -36,7 +36,7 @@ public class HashTagServiceImpl implements HashTagService {
     }
 
     @Override
-    public List<ApiHashTag> readHashTags(String type, HashTagSortSpec spec) {
+    public List<ApiHashTag> readHashTags(String type, ApiHashTagSortSpec spec) {
         List<HashTag> hashTags = Lists.newArrayList(hashTagRepository.findAll());
         return filterByType(convertAndSort(hashTags, spec), type);
     }
@@ -83,10 +83,10 @@ public class HashTagServiceImpl implements HashTagService {
     }
 
     private List<ApiHashTag> convertAndSort(List<HashTag> hashTags) {
-        return convertAndSort(hashTags, HashTagSortSpec.TAG);
+        return convertAndSort(hashTags, ApiHashTagSortSpec.TAG);
     }
 
-    private static List<ApiHashTag> convertAndSort(Collection<HashTag> hashTags, HashTagSortSpec sortSpec) {
+    private static List<ApiHashTag> convertAndSort(Collection<HashTag> hashTags, ApiHashTagSortSpec sortSpec) {
 
         List<ApiHashTag> result = Lists.newArrayList();
         for (HashTag hashTag : hashTags) {
@@ -96,7 +96,7 @@ public class HashTagServiceImpl implements HashTagService {
         return result;
     }
 
-    private static Comparator<ApiHashTag> getHashTagComparator(HashTagSortSpec sortSpec) {
+    private static Comparator<ApiHashTag> getHashTagComparator(ApiHashTagSortSpec sortSpec) {
 
         if (null == sortSpec) return HASH_TAG_COMPARATOR;
 

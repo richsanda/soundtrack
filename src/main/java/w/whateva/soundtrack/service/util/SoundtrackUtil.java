@@ -3,8 +3,12 @@ package w.whateva.soundtrack.service.util;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
+import w.whateva.soundtrack.domain.HashTagType;
 import w.whateva.soundtrack.service.TagType;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

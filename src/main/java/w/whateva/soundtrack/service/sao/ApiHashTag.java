@@ -8,6 +8,7 @@ public class ApiHashTag {
     private String key;
     private String tag;
     private String fullTag;
+    private ApiHashTagType type;
     private String name;
     private String story;
     private Integer appearances;
@@ -58,5 +59,13 @@ public class ApiHashTag {
 
     public void setAppearances(Integer appearances) {
         this.appearances = appearances;
+    }
+
+    public ApiHashTagType getType() {
+        return type;
+    }
+
+    public void setType(ApiHashTagType type) {
+        this.type = type;
     }
 }

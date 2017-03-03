@@ -9,7 +9,7 @@ import w.whateva.soundtrack.api.dto.*;
 import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.PersonService;
 import w.whateva.soundtrack.service.SoundtrackService;
-import w.whateva.soundtrack.service.sao.HashTagSortSpec;
+import w.whateva.soundtrack.service.sao.ApiHashTagSortSpec;
 
 import java.util.List;
 
@@ -130,7 +130,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
         return null;
     }
 
-    public List<HashTag> readHashTags(String type, HashTagSortSpec sortSpec) {
+    public List<HashTag> readHashTags(String type, ApiHashTagSortSpec sortSpec) {
 
         List<HashTag> result = Lists.newArrayList();
 

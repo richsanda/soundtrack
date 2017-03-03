@@ -1,5 +1,7 @@
 package w.whateva.soundtrack.domain;
 
+import org.apache.commons.lang3.StringUtils;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -71,5 +73,16 @@ public class HashTag {
 
     public void setEntries(List<Entry> entries) {
         this.entries = entries;
+    }
+
+    @Transient
+    public HashTagType getType() {
+        if (StringUtils.isEmpty(tag)) {
+            return HashTagType.GENERAL;
+        } else if (tag.contains("/")) {
+            return HashTagType.valueForType(tag.substring(0, tag.indexOf('/')));
+        } else {
+            return HashTagType.GENERAL;
+        }
     }
 }
