@@ -10,7 +10,8 @@ import org.springframework.batch.item.ParseException;
 import org.springframework.batch.item.UnexpectedInputException;
 import org.springframework.core.io.Resource;
 import w.whateva.soundtrack.api.dto.HashTagSpec;
-import w.whateva.soundtrack.controller.SoundtrackRestMapper;
+import w.whateva.soundtrack.mapper.HashTagSpecMapper;
+import w.whateva.soundtrack.mapper.MapperException;
 import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
 
 import java.io.IOException;
@@ -31,8 +32,8 @@ public class SoundtrackJsonHashTagReader implements ItemReader<ApiHashTagSpec> {
             List<HashTagSpec> specs = objectMapper.readValue(resource.getInputStream(), new TypeReference<List<HashTagSpec>>(){});
             List<ApiHashTagSpec> apiSpecs = Lists.newArrayList();
             try {
-                apiSpecs = new SoundtrackRestMapper.HashTagSpecMapper().toApi(specs);
-            } catch (SoundtrackRestMapper.MapperException e) {
+                apiSpecs = new HashTagSpecMapper().toApi(specs);
+            } catch (MapperException e) {
                 e.printStackTrace();
             }
             iterator = apiSpecs.iterator();
