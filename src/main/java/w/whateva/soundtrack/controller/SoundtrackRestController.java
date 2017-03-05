@@ -168,4 +168,13 @@ public class SoundtrackRestController implements SoundtrackRestService {
         }
         return null;
     }
+
+    public HashTag deleteHashTag(@PathVariable("key") String key) {
+        try {
+            return hashTagMapper.toRest(hashTagService.deleteHashTag(key));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
 }

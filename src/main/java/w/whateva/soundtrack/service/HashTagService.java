@@ -22,4 +22,6 @@ public interface HashTagService {
     ApiHashTag updateHashTag(String key, ApiHashTagSpec spec);
 
     ApiHashTag updateHashTag(ApiHashTagSpec spec);
+
+    ApiHashTag deleteHashTag(String key);
 }

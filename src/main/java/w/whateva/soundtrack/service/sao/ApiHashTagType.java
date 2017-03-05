@@ -6,10 +6,10 @@ package w.whateva.soundtrack.service.sao;
 public enum ApiHashTagType {
 
     MUSIC("music"),
+    TIMELINE("timeline"),
     MEDIA("media"),
     FORMAT("format"),
     PLAYER("player"),
-    TIMELINE("timeline"),
     GENERAL(null);
 
     private String type;

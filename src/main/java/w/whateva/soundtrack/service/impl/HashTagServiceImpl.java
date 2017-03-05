@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.HashTag;
 import w.whateva.soundtrack.domain.repository.HashTagRepository;
 import w.whateva.soundtrack.service.HashTagService;
@@ -54,7 +55,7 @@ public class HashTagServiceImpl implements HashTagService {
     @Override
     public ApiHashTag updateHashTag(String key, ApiHashTagSpec spec) {
 
-        HashTag hashTag = hashTagRepository.findById(new Long(key));
+        HashTag hashTag = findHashTag(key);
 
         return updateHashTag(hashTag, spec);
     }
@@ -80,6 +81,25 @@ public class HashTagServiceImpl implements HashTagService {
         hashTagRepository.save(hashTag);
 
         return SoundtrackDataBuilder.buildApiHashTag(hashTag);
+    }
+
+    @Override
+    public ApiHashTag deleteHashTag(String key) {
+        HashTag hashTag = findHashTag(key);
+        ApiHashTag result = SoundtrackDataBuilder.buildApiHashTag(hashTag);
+        //for (Entry entry : hashTag.getEntries()) {
+        //    entry.getHashTags().remove(hashTag);
+        //}
+        //hashTag.getEntries().clear();
+        if (!CollectionUtils.isEmpty(hashTag.getEntries())) {
+            throw new RuntimeException();
+        }
+        hashTagRepository.delete(new Long(key));
+        return result;
+    }
+
+    private HashTag findHashTag(String key) {
+        return hashTagRepository.findById(new Long(key));
     }
 
     private List<ApiHashTag> convertAndSort(List<HashTag> hashTags) {
@@ -127,6 +147,7 @@ public class HashTagServiceImpl implements HashTagService {
         @Override
         public int compare(ApiHashTag apiHashTag1, ApiHashTag apiHashTag2) {
             return new CompareToBuilder()
+                    .append(apiHashTag1.getType(), apiHashTag2.getType())
                     .append(apiHashTag1.getFullTag(), apiHashTag2.getFullTag())
                     .append(apiHashTag1.getTag(), apiHashTag2.getTag())
                     .toComparison();

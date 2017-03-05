@@ -138,14 +138,14 @@ label.artist, label.artist input {
     width: 320px;
 }
 label.name, label.name input {
-    width: 320px;
+    width: 400px;
 }
 label.full, label.full input {
-    width: 320px;
+    width: 400px;
 }
 
 label.tag {
-    width: 80px;
+    width: 820px;
 }
 
 .overlay .close-button, .overlay label {
@@ -172,7 +172,8 @@ div.edit-entry-top, div.edit-entry-bottom {
 }
 
 div.edit-entry:hover, div.delete-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover,
-div.add-entry:hover, div.tab:hover, div.edit-tag, div.edit-person {
+div.add-entry:hover, div.tab:hover, div.edit-tag:hover, div.edit-person:hover, div.delete-tag:hover,
+div.delete-person:hover {
      cursor: pointer;
 }
 

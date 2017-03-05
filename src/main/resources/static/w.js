@@ -301,6 +301,28 @@ function deleteEntry($$) {
     });
 }
 
+function deleteTag($$) {
+
+    var tagDiv = $$.closest('div.tag');
+    var id = tagDiv.attr('id');
+
+    var url = "/hashTag/" + id;
+
+    $.ajax({
+        url: url,
+        type: "delete",
+        contentType: "application/json"
+    }).success(function (data) {
+        // var newEntryDiv = showEntry(data);
+        tagDiv.fadeOut(500, function () {
+            tagDiv.remove();
+            refreshTags();
+        });
+    }).error(function (data) {
+        alert("can't delete !")
+    });
+}
+
 function showEntries(entries) {
 
     // reset
@@ -474,7 +496,7 @@ function showTagForEdit(tag) {
     overlayDiv.append(contentDiv);
 
     var headerDiv = $("<div class='edit-entry-top'/>");
-    var tagDiv = $("<label for='tag' class='tag'><span>" + valuify(tag.tag) + " (" + tag.appearances + ")</span></label>");
+    var tagDiv = $("<div><label for='tag' class='tag'><span>" + valuify(tag.tag) + " (" + tag.appearances + ")</span></label></div>");
     var fullDiv = $("<label for='full' class='full'><span>full</span><input type='text' id='full' value='" + valuify(tag.fullTag) + "'/></label>");
     var nameDiv = $("<label for='name' class='name'><span>name</span><input type='text' id='name' value='" + valuify(tag.name) + "'/></label>");
     headerDiv.append(tagDiv);

@@ -59,4 +59,8 @@ public interface SoundtrackOperations {
     @RequestMapping(value = "/hashTag/{key}", method = RequestMethod.PATCH, consumes = "application/json", produces = "application/json")
     @ResponseBody
     HashTag updateHashTag(@PathVariable("key") String key, @RequestBody HashTagSpec hashTag);
+
+    @RequestMapping(value = "/hashTag/{key}", method = RequestMethod.DELETE, consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    HashTag deleteHashTag(@PathVariable("key") String key);
 }
