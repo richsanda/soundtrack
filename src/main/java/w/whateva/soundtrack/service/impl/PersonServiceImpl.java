@@ -20,8 +20,12 @@ import java.util.List;
 @Component
 public class PersonServiceImpl implements PersonService {
 
+    private final PersonRepository personRepository;
+
     @Autowired
-    PersonRepository personRepository;
+    public PersonServiceImpl(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
 
     @Override
     public List<ApiPerson> readPersons() {

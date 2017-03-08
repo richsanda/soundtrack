@@ -29,14 +29,18 @@ import java.util.*;
 @Component
 public class SoundtrackServiceImpl implements SoundtrackService, MigrationService {
 
-    @Autowired
-    EntryRepository entryRepository;
+    private final EntryRepository entryRepository;
+
+    private final PersonRepository personRepository;
+
+    private final HashTagRepository hashTagRepository;
 
     @Autowired
-    PersonRepository personRepository;
-
-    @Autowired
-    HashTagRepository hashTagRepository;
+    public SoundtrackServiceImpl(EntryRepository entryRepository, PersonRepository personRepository, HashTagRepository hashTagRepository) {
+        this.entryRepository = entryRepository;
+        this.personRepository = personRepository;
+        this.hashTagRepository = hashTagRepository;
+    }
 
     @Override
     public ApiEntry createEntry(ApiEntrySpec apiEntrySpec) {

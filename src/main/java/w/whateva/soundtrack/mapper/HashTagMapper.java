@@ -12,8 +12,12 @@ import w.whateva.soundtrack.service.sao.ApiHashTag;
 @Component
 public class HashTagMapper extends Mapper<HashTag, ApiHashTag> {
 
+    private final HashTagTypeMapper hashTagTypeMapper;
+
     @Autowired
-    HashTagTypeMapper hashTagTypeMapper;
+    public HashTagMapper(HashTagTypeMapper hashTagTypeMapper) {
+        this.hashTagTypeMapper = hashTagTypeMapper;
+    }
 
     public HashTag toRest(ApiHashTag apiObject) throws MapperException {
         HashTag result = new HashTag();

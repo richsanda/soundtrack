@@ -5,6 +5,7 @@ import java.util.Optional;
 /**
  * Created by rich on 12/17/16.
  */
+@SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class ApiEntrySpec {
 
     private Optional<Integer> year;

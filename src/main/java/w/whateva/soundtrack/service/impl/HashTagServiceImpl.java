@@ -27,8 +27,12 @@ import java.util.List;
 @Component
 public class HashTagServiceImpl implements HashTagService {
 
+    private final HashTagRepository hashTagRepository;
+
     @Autowired
-    HashTagRepository hashTagRepository;
+    public HashTagServiceImpl(HashTagRepository hashTagRepository) {
+        this.hashTagRepository = hashTagRepository;
+    }
 
     @Override
     public List<ApiHashTag> readHashTags() {
