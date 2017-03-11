@@ -12,7 +12,7 @@ import org.springframework.core.io.Resource;
 import w.whateva.soundtrack.api.dto.HashTagSpec;
 import w.whateva.soundtrack.mapper.HashTagSpecMapper;
 import w.whateva.soundtrack.mapper.MapperException;
-import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
+import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 
 import java.io.IOException;
 import java.util.Iterator;

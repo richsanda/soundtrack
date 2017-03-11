@@ -16,8 +16,8 @@ import w.whateva.soundtrack.domain.repository.PersonRepository;
 import w.whateva.soundtrack.service.MigrationService;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.TagType;
-import w.whateva.soundtrack.service.sao.ApiEntry;
-import w.whateva.soundtrack.service.sao.ApiEntrySpec;
+import w.whateva.soundtrack.service.iao.ApiEntry;
+import w.whateva.soundtrack.service.iao.ApiEntrySpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 import w.whateva.soundtrack.service.util.SoundtrackUtil;
 

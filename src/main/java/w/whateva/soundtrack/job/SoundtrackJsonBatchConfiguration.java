@@ -13,9 +13,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.job.load.*;
-import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
-
-import javax.persistence.EntityManagerFactory;
+import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 
 /**
  * Created by rich on 2/19/17.

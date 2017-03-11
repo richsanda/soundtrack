@@ -2,7 +2,7 @@ package w.whateva.soundtrack.mapper;
 
 import org.springframework.stereotype.Component;
 import w.whateva.soundtrack.api.dto.EntrySpec;
-import w.whateva.soundtrack.service.sao.ApiEntrySpec;
+import w.whateva.soundtrack.service.iao.ApiEntrySpec;
 
 /**
  * Created by rich on 3/3/17.

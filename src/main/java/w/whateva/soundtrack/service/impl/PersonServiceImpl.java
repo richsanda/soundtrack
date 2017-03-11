@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import w.whateva.soundtrack.domain.Person;
 import w.whateva.soundtrack.domain.repository.PersonRepository;
 import w.whateva.soundtrack.service.PersonService;
-import w.whateva.soundtrack.service.sao.ApiPerson;
+import w.whateva.soundtrack.service.iao.ApiPerson;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 
 import java.util.Collections;

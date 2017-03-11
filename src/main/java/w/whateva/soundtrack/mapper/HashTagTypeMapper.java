@@ -4,7 +4,7 @@ import com.google.common.collect.BiMap;
 import com.google.common.collect.EnumBiMap;
 import org.springframework.stereotype.Component;
 import w.whateva.soundtrack.api.dto.HashTagType;
-import w.whateva.soundtrack.service.sao.ApiHashTagType;
+import w.whateva.soundtrack.service.iao.ApiHashTagType;
 
 /**
  * Created by rich on 3/3/17.

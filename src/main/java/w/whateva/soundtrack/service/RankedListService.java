@@ -1,7 +1,7 @@
 package w.whateva.soundtrack.service;
 
-import w.whateva.soundtrack.service.sao.ApiRankedList;
-import w.whateva.soundtrack.service.sao.ApiRankedListSpec;
+import w.whateva.soundtrack.service.iao.ApiRankedList;
+import w.whateva.soundtrack.service.iao.ApiRankedListSpec;
 
 /**
  * Created by rich on 3/8/17.

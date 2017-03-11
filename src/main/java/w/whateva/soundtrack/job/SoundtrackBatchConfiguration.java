@@ -14,7 +14,7 @@ import w.whateva.soundtrack.job.load.SoundtrackEntryWriter;
 import w.whateva.soundtrack.job.load.SoundtrackHashTagWriter;
 import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.MigrationService;
-import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
+import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 
 import javax.persistence.EntityManagerFactory;
 

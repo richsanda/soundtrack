@@ -11,9 +11,9 @@ import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.HashTag;
 import w.whateva.soundtrack.domain.repository.HashTagRepository;
 import w.whateva.soundtrack.service.HashTagService;
-import w.whateva.soundtrack.service.sao.ApiHashTag;
-import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
-import w.whateva.soundtrack.service.sao.ApiHashTagSortSpec;
+import w.whateva.soundtrack.service.iao.ApiHashTag;
+import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
+import w.whateva.soundtrack.service.iao.ApiHashTagSortSpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 
 import java.util.Collection;

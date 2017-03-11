@@ -10,7 +10,7 @@ import w.whateva.soundtrack.mapper.*;
 import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.PersonService;
 import w.whateva.soundtrack.service.SoundtrackService;
-import w.whateva.soundtrack.service.sao.ApiHashTagSortSpec;
+import w.whateva.soundtrack.service.iao.ApiHashTagSortSpec;
 
 import java.util.List;
 

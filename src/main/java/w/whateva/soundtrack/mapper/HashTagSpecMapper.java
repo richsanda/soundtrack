@@ -2,7 +2,7 @@ package w.whateva.soundtrack.mapper;
 
 import org.springframework.stereotype.Component;
 import w.whateva.soundtrack.api.dto.HashTagSpec;
-import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
+import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 
 /**
  * Created by rich on 3/3/17.

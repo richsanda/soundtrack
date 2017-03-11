@@ -2,7 +2,7 @@ package w.whateva.soundtrack.job.load;
 
 import org.springframework.batch.item.ItemWriter;
 import w.whateva.soundtrack.service.HashTagService;
-import w.whateva.soundtrack.service.sao.ApiHashTagSpec;
+import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 
 import java.util.List;
 

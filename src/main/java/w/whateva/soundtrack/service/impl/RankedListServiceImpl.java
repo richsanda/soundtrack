@@ -8,8 +8,8 @@ import w.whateva.soundtrack.domain.Ranking;
 import w.whateva.soundtrack.domain.repository.RankedListRepository;
 import w.whateva.soundtrack.domain.repository.RankingRepository;
 import w.whateva.soundtrack.service.RankedListService;
-import w.whateva.soundtrack.service.sao.ApiRankedList;
-import w.whateva.soundtrack.service.sao.ApiRankedListSpec;
+import w.whateva.soundtrack.service.iao.ApiRankedList;
+import w.whateva.soundtrack.service.iao.ApiRankedListSpec;
 
 /**
  * Created by rich on 3/8/17.

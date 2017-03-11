@@ -2,7 +2,7 @@ package w.whateva.soundtrack.api;
 
 import org.springframework.web.bind.annotation.*;
 import w.whateva.soundtrack.api.dto.*;
-import w.whateva.soundtrack.service.sao.ApiHashTagSortSpec;
+import w.whateva.soundtrack.service.iao.ApiHashTagSortSpec;
 
 import java.util.List;
 

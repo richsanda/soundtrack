@@ -4,7 +4,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import w.whateva.soundtrack.api.dto.RankedList;
-import w.whateva.soundtrack.service.sao.ApiRankedList;
+import w.whateva.soundtrack.service.iao.ApiRankedList;
 
 /**
  * Created by rich on 3/3/17.
