@@ -11,12 +11,12 @@ import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 public class HashTagSpecMapper extends Mapper<HashTagSpec, ApiHashTagSpec> {
 
     @Override
-    public HashTagSpec newRestObject() {
-        return new HashTagSpec();
+    public Class<HashTagSpec> getRestClass() {
+        return HashTagSpec.class;
     }
 
     @Override
-    public ApiHashTagSpec newApiObject() {
-        return new ApiHashTagSpec();
+    public Class<ApiHashTagSpec> getApiClass() {
+        return ApiHashTagSpec.class;
     }
 }

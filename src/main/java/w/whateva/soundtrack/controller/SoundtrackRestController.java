@@ -9,6 +9,7 @@ import w.whateva.soundtrack.api.dto.*;
 import w.whateva.soundtrack.mapper.*;
 import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.PersonService;
+import w.whateva.soundtrack.service.RankedListService;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.iao.ApiHashTagSortSpec;
 
@@ -20,25 +21,43 @@ import java.util.List;
 @RestController
 public class SoundtrackRestController implements SoundtrackRestService {
 
-    @Autowired
-    SoundtrackService soundtrackService;
+    private final SoundtrackService soundtrackService;
+    private final PersonService personService;
+    private final HashTagService hashTagService;
+    private final RankedListService rankedListService;
+
+    private final EntryMapper entryMapper;
+    private final EntrySpecMapper entrySpecMapper;
+    private final PersonMapper personMapper;
+    private final HashTagMapper hashTagMapper;
+    private final HashTagSpecMapper hashTagSpecMapper;
+    private final RankedListSpecMapper rankedListSpecMapper;
+    private final RankedListMapper rankedListMapper;
 
     @Autowired
-    PersonService personService;
-
-    @Autowired
-    HashTagService hashTagService;
-
-    @Autowired
-    EntryMapper entryMapper;
-    @Autowired
-    EntrySpecMapper entrySpecMapper;
-    @Autowired
-    PersonMapper personMapper;
-    @Autowired
-    HashTagMapper hashTagMapper;
-    @Autowired
-    HashTagSpecMapper hashTagSpecMapper;
+    public SoundtrackRestController(SoundtrackService soundtrackService,
+                                    PersonService personService,
+                                    HashTagService hashTagService,
+                                    RankedListService rankedListService,
+                                    EntryMapper entryMapper,
+                                    EntrySpecMapper entrySpecMapper,
+                                    PersonMapper personMapper,
+                                    HashTagMapper hashTagMapper,
+                                    HashTagSpecMapper hashTagSpecMapper,
+                                    RankedListSpecMapper rankedListSpecMapper,
+                                    RankedListMapper rankedListMapper) {
+        this.soundtrackService = soundtrackService;
+        this.personService = personService;
+        this.hashTagService = hashTagService;
+        this.rankedListService = rankedListService;
+        this.entryMapper = entryMapper;
+        this.entrySpecMapper = entrySpecMapper;
+        this.personMapper = personMapper;
+        this.hashTagMapper = hashTagMapper;
+        this.hashTagSpecMapper = hashTagSpecMapper;
+        this.rankedListSpecMapper = rankedListSpecMapper;
+        this.rankedListMapper = rankedListMapper;
+    }
 
     @Transactional(value = "transactionManager")
     public Entry createEntry(EntrySpec entry) {
@@ -172,6 +191,46 @@ public class SoundtrackRestController implements SoundtrackRestService {
     public HashTag deleteHashTag(@PathVariable("key") String key) {
         try {
             return hashTagMapper.toRest(hashTagService.deleteHashTag(key));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    @Override
+    public RankedList createRankedList(@RequestBody RankedListSpec spec) {
+        try {
+            return rankedListMapper.toRest(rankedListService.createRankedList(rankedListSpecMapper.toApi(spec)));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    @Override
+    public RankedList readRankedList(@PathVariable("key") String key) {
+        try {
+            return rankedListMapper.toRest(rankedListService.readRankedList(key));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    @Override
+    public RankedList updateRankedList(@PathVariable("name") String name, @RequestBody RankedListSpec spec) {
+        try {
+            return rankedListMapper.toRest(rankedListService.createRankedList(rankedListSpecMapper.toApi(spec)));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    @Override
+    public RankedList deleteRankedList(@PathVariable("key") String key) {
+        try {
+            return rankedListMapper.toRest(rankedListService.deleteRankedList(key));
         } catch (MapperException e) {
             // TODO: throw useful exception
         }

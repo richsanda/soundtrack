@@ -2,6 +2,10 @@ package w.whateva.soundtrack.api;
 
 import org.springframework.web.bind.annotation.*;
 import w.whateva.soundtrack.api.dto.*;
+import w.whateva.soundtrack.api.dto.Entry;
+import w.whateva.soundtrack.api.dto.HashTag;
+import w.whateva.soundtrack.api.dto.Person;
+import w.whateva.soundtrack.api.dto.RankedList;
 import w.whateva.soundtrack.service.iao.ApiHashTagSortSpec;
 
 import java.util.List;
@@ -63,4 +67,20 @@ public interface SoundtrackOperations {
     @RequestMapping(value = "/hashTag/{key}", method = RequestMethod.DELETE, consumes = "application/json", produces = "application/json")
     @ResponseBody
     HashTag deleteHashTag(@PathVariable("key") String key);
+
+    @RequestMapping(value = "/rankedList", method = RequestMethod.POST, produces = "application/json")
+    @ResponseBody
+    RankedList createRankedList(@RequestBody RankedListSpec spec);
+
+    @RequestMapping(value = "/rankedList/{key}", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    RankedList readRankedList(@PathVariable("key") String key);
+
+    @RequestMapping(value = "/rankedList/{key}", method = RequestMethod.PATCH, produces = "application/json")
+    @ResponseBody
+    RankedList updateRankedList(@PathVariable("key") String key, @RequestBody RankedListSpec spec);
+
+    @RequestMapping(value = "/rankedList/{key}", method = RequestMethod.DELETE, produces = "application/json")
+    @ResponseBody
+    RankedList deleteRankedList(@PathVariable("key") String key);
 }

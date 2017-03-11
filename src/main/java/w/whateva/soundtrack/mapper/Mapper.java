@@ -10,12 +10,28 @@ import java.util.List;
  */
 abstract class Mapper<RestObjectType, ApiObjectType> {
 
-    public RestObjectType newRestObject() throws MapperException {
+    protected Class<RestObjectType> getRestClass() throws MapperException {
         throw new UnimplementedMappingException();
     }
 
-    public ApiObjectType newApiObject() throws MapperException {
+    protected Class<ApiObjectType> getApiClass() throws MapperException {
         throw new UnimplementedMappingException();
+    }
+
+    public RestObjectType newRestObject() throws MapperException {
+        try {
+            return getRestClass().newInstance();
+        } catch (IllegalAccessException | InstantiationException e) {
+            throw new MappingInstantiationException();
+        }
+    }
+
+    public ApiObjectType newApiObject() throws MapperException {
+        try {
+            return getApiClass().newInstance();
+        } catch (IllegalAccessException | InstantiationException e) {
+            throw new MappingInstantiationException();
+        }
     }
 
     public RestObjectType toRest(ApiObjectType apiObject) throws MapperException {

@@ -11,7 +11,7 @@ import w.whateva.soundtrack.service.iao.ApiEntry;
 public class EntryMapper extends Mapper<Entry, ApiEntry> {
 
     @Override
-    public Entry newRestObject() {
-        return new Entry();
+    public Class<Entry> getRestClass() {
+        return Entry.class;
     }
 }

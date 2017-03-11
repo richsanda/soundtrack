@@ -11,7 +11,7 @@ import w.whateva.soundtrack.service.iao.ApiEntrySpec;
 public class EntrySpecMapper extends Mapper<EntrySpec, ApiEntrySpec> {
 
     @Override
-    public ApiEntrySpec newApiObject() {
-        return new ApiEntrySpec();
+    public Class<ApiEntrySpec> getApiClass() {
+        return ApiEntrySpec.class;
     }
 }

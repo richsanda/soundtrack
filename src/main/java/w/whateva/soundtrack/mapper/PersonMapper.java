@@ -11,12 +11,7 @@ import w.whateva.soundtrack.service.iao.ApiPerson;
 public class PersonMapper extends Mapper<Person, ApiPerson> {
 
     @Override
-    public Person newRestObject() {
-        return new Person();
-    }
-
-    @Override
-    public ApiPerson newApiObject() {
-        return new ApiPerson();
+    public Class<Person> getRestClass() {
+        return Person.class;
     }
 }
