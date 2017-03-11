@@ -3,10 +3,8 @@ package w.whateva.soundtrack.service.util;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.EnumBiMap;
 import org.springframework.beans.BeanUtils;
-import w.whateva.soundtrack.domain.Entry;
-import w.whateva.soundtrack.domain.HashTag;
-import w.whateva.soundtrack.domain.HashTagType;
-import w.whateva.soundtrack.domain.Person;
+import org.springframework.context.annotation.Bean;
+import w.whateva.soundtrack.domain.*;
 import w.whateva.soundtrack.service.iao.*;
 
 import java.util.Optional;
@@ -93,5 +91,23 @@ public class SoundtrackDataBuilder {
         domainToApiHashTagType.put(HashTagType.TIMELINE, ApiHashTagType.TIMELINE);
         domainToApiHashTagType.put(HashTagType.GENERAL, ApiHashTagType.GENERAL);
         domainToApiHashTagType.put(HashTagType.PLAYER, ApiHashTagType.PLAYER);
+    }
+
+    public static RankedList buildRankedList(ApiRankedListSpec apiRankedList) {
+
+        RankedList rankedList = new RankedList();
+
+        rankedList.setType(null != apiRankedList.getType() ? apiRankedList.getType().orElse(null) : null);
+
+        return rankedList;
+    }
+
+    public static ApiRankedList buildRankedList(RankedList rankedList) {
+
+        ApiRankedList result = new ApiRankedList();
+
+        BeanUtils.copyProperties(rankedList, result);
+
+        return result;
     }
 }

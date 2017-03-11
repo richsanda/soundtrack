@@ -10,6 +10,7 @@ import w.whateva.soundtrack.domain.repository.RankingRepository;
 import w.whateva.soundtrack.service.RankedListService;
 import w.whateva.soundtrack.service.iao.ApiRankedList;
 import w.whateva.soundtrack.service.iao.ApiRankedListSpec;
+import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 
 /**
  * Created by rich on 3/8/17.
@@ -31,14 +32,14 @@ public class RankedListServiceImpl implements RankedListService {
 
         // TODO: this for real
 
-        RankedList rankedList = new RankedList();
+        RankedList rankedList = SoundtrackDataBuilder.buildRankedList(spec);
         Ranking ranking = new Ranking();
         rankedList.setRankings(Lists.newArrayList(ranking));
 
-        rankedListRepository.save(rankedList);
         rankingRepository.save(ranking);
+        rankedListRepository.save(rankedList);
 
-        return new ApiRankedList();
+        return SoundtrackDataBuilder.buildRankedList(rankedList);
     }
 
     @Override

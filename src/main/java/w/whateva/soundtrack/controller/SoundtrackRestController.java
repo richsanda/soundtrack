@@ -218,9 +218,9 @@ public class SoundtrackRestController implements SoundtrackRestService {
     }
 
     @Override
-    public RankedList updateRankedList(@PathVariable("name") String name, @RequestBody RankedListSpec spec) {
+    public RankedList updateRankedList(@PathVariable("key") String key, @RequestBody RankedListSpec spec) {
         try {
-            return rankedListMapper.toRest(rankedListService.createRankedList(rankedListSpecMapper.toApi(spec)));
+            return rankedListMapper.toRest(rankedListService.updateRankedList(key, rankedListSpecMapper.toApi(spec), false));
         } catch (MapperException e) {
             // TODO: throw useful exception
         }

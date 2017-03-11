@@ -49,6 +49,7 @@ abstract class Mapper<RestObjectType, ApiObjectType> {
     }
 
     public List<RestObjectType> toRest(List<ApiObjectType> apiObjects) throws MapperException {
+        if (null == apiObjects) return null;
         List<RestObjectType> result = Lists.newArrayList();
         for (ApiObjectType apiObject : apiObjects) {
             result.add(toRest(apiObject));
@@ -57,6 +58,7 @@ abstract class Mapper<RestObjectType, ApiObjectType> {
     }
 
     public List<ApiObjectType> toApi(List<RestObjectType> restObjects) throws MapperException {
+        if (null == restObjects) return null;
         List<ApiObjectType> result = Lists.newArrayList();
         for (RestObjectType restObject : restObjects) {
             result.add(toApi(restObject));

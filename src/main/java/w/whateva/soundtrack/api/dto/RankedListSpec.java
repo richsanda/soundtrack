@@ -9,15 +9,15 @@ import java.util.Optional;
 @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class RankedListSpec {
 
-    private Optional<String> name;
+    private Optional<String> type;
     private Optional<List<String>> entries;
 
-    public Optional<String> getName() {
-        return name;
+    public Optional<String> getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = Optional.ofNullable(name);
+    public void setType(String type) {
+        this.type = Optional.ofNullable(type);
     }
 
 

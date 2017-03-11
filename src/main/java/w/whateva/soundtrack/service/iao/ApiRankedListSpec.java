@@ -9,15 +9,15 @@ import java.util.Optional;
 @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class ApiRankedListSpec {
 
-    private Optional<String> name;
+    private Optional<String> type;
     private Optional<List<String>> entries;
 
-    public Optional<String> getName() {
-        return name;
+    public Optional<String> getType() {
+        return type;
     }
 
-    public void setName(Optional<String> name) {
-        this.name = name;
+    public void setType(Optional<String> type) {
+        this.type = type;
     }
 
     public Optional<List<String>> getEntries() {

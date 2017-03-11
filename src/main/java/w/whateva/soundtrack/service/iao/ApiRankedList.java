@@ -8,7 +8,7 @@ import java.util.List;
 public class ApiRankedList {
 
     private String key;
-    private String name;
+    private String type;
     private List<ApiEntry> entries;
 
     public String getKey() {
@@ -19,12 +19,12 @@ public class ApiRankedList {
         this.key = key;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public List<ApiEntry> getEntries() {
