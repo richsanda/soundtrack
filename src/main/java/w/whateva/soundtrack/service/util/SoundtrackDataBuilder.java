@@ -2,8 +2,10 @@ package w.whateva.soundtrack.service.util;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.EnumBiMap;
+import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Bean;
+import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.*;
 import w.whateva.soundtrack.service.iao.*;
 
@@ -102,12 +104,23 @@ public class SoundtrackDataBuilder {
         return rankedList;
     }
 
-    public static ApiRankedList buildRankedList(RankedList rankedList) {
+    public static ApiRankedList buildApiRankedList(RankedList rankedList) {
 
         ApiRankedList result = new ApiRankedList();
 
         BeanUtils.copyProperties(rankedList, result);
+        result.setEntries(Lists.newArrayList());
+        if (!CollectionUtils.isEmpty(rankedList.getRankings())) {
+            for (Ranking ranking : rankedList.getRankings()) {
+                result.getEntries().add(buildApiEntry(ranking));
+            }
+        }
 
         return result;
+    }
+
+    private static ApiEntry buildApiEntry(Ranking ranking) {
+
+        return buildApiEntry(ranking.getEntry());
     }
 }
