@@ -15,4 +15,10 @@ public interface RankedListService {
     ApiRankedList updateRankedList(String key, ApiRankedListSpec spec, boolean isAppend);
 
     ApiRankedList deleteRankedList(String key);
+
+    ApiRankedList readRankedListByType(String type);
+
+    ApiRankedList updateRankedListByType(String type, ApiRankedListSpec spec, boolean isAppend);
+
+    ApiRankedList deleteRankedListByType(String type);
 }

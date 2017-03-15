@@ -1,5 +1,7 @@
 package w.whateva.soundtrack.domain;
 
+import org.apache.commons.lang3.builder.CompareToBuilder;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @XmlRootElement
-public class Ranking {
+public class Ranking implements Comparable<Ranking> {
 
     public Ranking() {}
 
@@ -55,5 +57,10 @@ public class Ranking {
 
     public void setRankedList(RankedList rankedList) {
         this.rankedList = rankedList;
+    }
+
+    @Override
+    public int compareTo(Ranking o) {
+        return new CompareToBuilder().append(index, o.index).toComparison();
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.*;
 import w.whateva.soundtrack.service.iao.*;
 
+import java.util.Collections;
 import java.util.Optional;
 
 /**
@@ -95,11 +96,31 @@ public class SoundtrackDataBuilder {
         domainToApiHashTagType.put(HashTagType.PLAYER, ApiHashTagType.PLAYER);
     }
 
+    private static final BiMap<RankedListType, ApiRankedListType> domainToApiRankedListType =
+            EnumBiMap.create(RankedListType.class, ApiRankedListType.class);
+
+    static {
+        domainToApiRankedListType.put(RankedListType.FAVORITE, ApiRankedListType.FAVORITE);
+        domainToApiRankedListType.put(RankedListType.SHARED, ApiRankedListType.SHARED);
+        domainToApiRankedListType.put(RankedListType.REPRESENTATIVE, ApiRankedListType.REPRESENTATIVE);
+    }
+
+    private static ApiRankedListType toApi(RankedListType domain) {
+        return domainToApiRankedListType.get(domain);
+    }
+
+    private static RankedListType toDomain(ApiRankedListType api) {
+        return domainToApiRankedListType.inverse().get(api);
+    }
+
     public static RankedList buildRankedList(ApiRankedListSpec apiRankedList) {
 
         RankedList rankedList = new RankedList();
 
-        rankedList.setType(null != apiRankedList.getType() ? apiRankedList.getType().orElse(null) : null);
+        if (null != apiRankedList.getType()) {
+            String type = apiRankedList.getType().orElse(null);
+            rankedList.setType(RankedListType.valueOf(type));
+        }
 
         return rankedList;
     }
@@ -108,9 +129,10 @@ public class SoundtrackDataBuilder {
 
         ApiRankedList result = new ApiRankedList();
 
-        BeanUtils.copyProperties(rankedList, result);
+        result.setType(rankedList.getType().toString());
         result.setEntries(Lists.newArrayList());
         if (!CollectionUtils.isEmpty(rankedList.getRankings())) {
+            Collections.sort(rankedList.getRankings()); // TODO: in db
             for (Ranking ranking : rankedList.getRankings()) {
                 result.getEntries().add(buildApiEntry(ranking));
             }

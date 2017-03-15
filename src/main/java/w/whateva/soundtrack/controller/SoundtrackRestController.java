@@ -236,4 +236,34 @@ public class SoundtrackRestController implements SoundtrackRestService {
         }
         return null;
     }
+
+    @Override
+    public RankedList readRankedListByType(@PathVariable("type") String type) {
+        try {
+            return rankedListMapper.toRest(rankedListService.readRankedListByType(type));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    @Override
+    public RankedList updateRankedListByType(@PathVariable("type") String type, @RequestBody RankedListSpec spec) {
+        try {
+            return rankedListMapper.toRest(rankedListService.updateRankedListByType(type, rankedListSpecMapper.toApi(spec), false));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    @Override
+    public RankedList deleteRankedListByType(@PathVariable("type") String type) {
+        try {
+            return rankedListMapper.toRest(rankedListService.deleteRankedListByType(type));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
 }

@@ -11,7 +11,7 @@ public class RankedList {
 
     public RankedList() {}
 
-    public RankedList(String type) {
+    public RankedList(RankedListType type) {
         this.type = type;
     }
 
@@ -19,20 +19,22 @@ public class RankedList {
    	@GeneratedValue
    	private Long id;
 
-    private String type;
+    @Column(unique = true)
+    private RankedListType type;
 
-    @OneToMany
+    @OneToMany(mappedBy = "rankedList")
+    @OrderColumn(name = "index") // does this work ?
     private List<Ranking> rankings;
 
     public String getKey() {
         return id.toString();
     }
 
-    public String getType() {
+    public RankedListType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(RankedListType type) {
         this.type = type;
     }
 

@@ -9,6 +9,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.namespace.QName;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by rich on 4/3/16.
@@ -65,6 +66,9 @@ public class Entry {
 
     private String spotify;
     private String youtube;
+
+    @OneToMany
+    private Set<Ranking> rankings;
 
     public String getKey() {
         return id.toString();
@@ -144,6 +148,15 @@ public class Entry {
 
     public void setYoutube(String youtube) {
         this.youtube = youtube;
+    }
+
+    @OneToMany(mappedBy = "entry")
+    public Set<Ranking> getRankings() {
+        return rankings;
+    }
+
+    public void setRankings(Set<Ranking> rankings) {
+        this.rankings = rankings;
     }
 
     public static void print(Entry entry) throws Exception {

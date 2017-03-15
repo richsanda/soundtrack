@@ -83,4 +83,16 @@ public interface SoundtrackOperations {
     @RequestMapping(value = "/rankedList/{key}", method = RequestMethod.DELETE, produces = "application/json")
     @ResponseBody
     RankedList deleteRankedList(@PathVariable("key") String key);
+
+    @RequestMapping(value = "/rankedList", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    RankedList readRankedListByType(@RequestParam(value = "type") String type);
+
+    @RequestMapping(value = "/rankedList", method = RequestMethod.PATCH, produces = "application/json")
+    @ResponseBody
+    RankedList updateRankedListByType(@RequestParam(value = "type") String type, @RequestBody RankedListSpec spec);
+
+    @RequestMapping(value = "/rankedList", method = RequestMethod.DELETE, produces = "application/json")
+    @ResponseBody
+    RankedList deleteRankedListByType(@PathVariable("type") String type);
 }

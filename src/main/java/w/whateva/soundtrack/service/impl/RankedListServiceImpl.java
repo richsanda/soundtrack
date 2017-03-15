@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.RankedList;
+import w.whateva.soundtrack.domain.RankedListType;
 import w.whateva.soundtrack.domain.Ranking;
 import w.whateva.soundtrack.domain.repository.EntryRepository;
 import w.whateva.soundtrack.domain.repository.RankedListRepository;
@@ -41,7 +42,20 @@ public class RankedListServiceImpl implements RankedListService {
 
         RankedList rankedList = SoundtrackDataBuilder.buildRankedList(spec);
 
+        rankedListRepository.save(rankedList);
+
         return updateRankedList(rankedList, spec);
+    }
+
+    public ApiRankedList updateRankedList(String key, ApiRankedListSpec spec) {
+
+        RankedList rankedList = rankedListRepository.findById(new Long(key));
+
+        if (null != rankedList) {
+            return updateRankedList(rankedList, spec);
+        }
+
+        return null;
     }
 
     private ApiRankedList updateRankedList(RankedList rankedList, ApiRankedListSpec spec) {
@@ -74,6 +88,7 @@ public class RankedListServiceImpl implements RankedListService {
 
                 ranking.setEntry(entry);
                 ranking.setIndex(rankIndex++);
+                ranking.setRankedList(rankedList);
 
                 rankingRepository.save(ranking);
                 rankings.add(ranking);
@@ -89,16 +104,50 @@ public class RankedListServiceImpl implements RankedListService {
 
     @Override
     public ApiRankedList readRankedList(String key) {
-        return null;
+
+        RankedList rankedList = rankedListRepository.findById(new Long(key));
+
+        return SoundtrackDataBuilder.buildApiRankedList(rankedList);
     }
 
     @Override
     public ApiRankedList updateRankedList(String key, ApiRankedListSpec spec, boolean isAppend) {
-        return null;
+
+        RankedList rankedList = rankedListRepository.findById(new Long(key));
+
+        return updateRankedList(rankedList, spec);
     }
 
     @Override
     public ApiRankedList deleteRankedList(String key) {
-        return null;
+
+        RankedList rankedList = rankedListRepository.findById(new Long(key));
+        rankedListRepository.delete(rankedList);
+
+        return SoundtrackDataBuilder.buildApiRankedList(rankedList);
     }
+
+    @Override
+    public ApiRankedList readRankedListByType(String type) {
+
+        RankedList rankedList = rankedListRepository.findByType(RankedListType.valueOf(type));
+
+        return SoundtrackDataBuilder.buildApiRankedList(rankedList);
+    }
+
+    @Override
+    public ApiRankedList updateRankedListByType(String type, ApiRankedListSpec spec, boolean isAppend) {
+
+        RankedList rankedList = rankedListRepository.findByType(RankedListType.valueOf(type));
+
+        return updateRankedList(rankedList, spec);
+    }
+
+    @Override
+    public ApiRankedList deleteRankedListByType(String type) {
+
+        RankedList rankedList = rankedListRepository.findByType(RankedListType.valueOf(type));
+        rankedListRepository.delete(rankedList);
+
+        return SoundtrackDataBuilder.buildApiRankedList(rankedList);    }
 }

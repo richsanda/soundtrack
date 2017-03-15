@@ -32,7 +32,7 @@ div.year, div.ordinal, div.tag-title, div.person-title {
     border: 1px solid saddlebrown;
 }
 
-div.add-entry {
+div.nav-button {
     color: saddlebrown;
     background-color: #ddd0d8;
 
@@ -172,7 +172,7 @@ div.edit-entry-top, div.edit-entry-bottom {
 }
 
 div.edit-entry:hover, div.delete-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover,
-div.add-entry:hover, div.tab:hover, div.edit-tag:hover, div.edit-person:hover, div.delete-tag:hover,
+div.nav-button:hover, div.tab:hover, div.edit-tag:hover, div.edit-person:hover, div.delete-tag:hover,
 div.delete-person:hover {
      cursor: pointer;
 }

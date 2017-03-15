@@ -15,7 +15,19 @@ function refreshEntries() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showEntries(data));
+        $('#soundtrack').html(showEntries(data, updateEntryPosition, createAddEntryDiv));
+    });
+}
+
+function refreshFavorites() {
+
+    var url = "/rankedList?type=FAVORITE";
+
+    $.ajax({
+        url: url,
+        dataType: "json"
+    }).success(function (data) {
+        $('#soundtrack').html(showEntries(data.entries, function() {}, createSaveFavoritesDiv));
     });
 }
 
@@ -92,6 +104,12 @@ function actionsClick(e) {
         },
         'show-persons' : function ($$) {
             refreshPersons();
+        },
+        'show-favorites' : function ($$) {
+            refreshFavorites();
+        },
+        'save-favorites' : function ($$) {
+            updateFavorites();
         },
         'add-tag' : function ($$) {
             addTag($$);
@@ -323,17 +341,22 @@ function deleteTag($$) {
     });
 }
 
-function showEntries(entries) {
+function showEntries(entries, updateFunction, navFunction) {
 
     // reset
     $('#soundtrack').data('keysToDivs', {});
 
     var entriesDiv = $("<div class='entries'></div>");
-    entriesDiv.sortable({
-        update: updateEntryPosition
-    });
 
-    entriesDiv.append(createAddEntryDiv());
+    if (updateFunction) {
+        entriesDiv.sortable({
+            update: updateFunction
+        });
+    }
+
+    if (navFunction) {
+        entriesDiv.append(navFunction);
+    }
 
     $.each(entries, function() {
         var entryDiv = showEntry(this);
@@ -413,9 +436,77 @@ function updateEntryPosition( event, ui ) {
     });
 }
 
+function updateFavoritePosition( event, ui ) {
+
+    var entryDiv = $(ui.item);
+    var entriesDiv = entryDiv.closest('div.entries');
+    var entryDivs = entriesDiv.find('div.entry');
+    var entryKeys = [];
+    entryDivs.each(function(e) { entryKeys.push($(e).attr('id'))});
+
+    var json = {
+        type : "FAVORITE",
+        entries : entryKeys
+    };
+
+    var url = "/rankedList?type=FAVORITE";
+
+    $.ajax({
+        url: url,
+        type: "patch",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(json)
+    }).success(function (data) {
+        var newEntryDiv = showEntry(data);
+        entryDiv.fadeOut(500, function () {
+            refreshFavorites();
+        });
+    });
+}
+
+function updateFavorites() {
+
+    var entryDivs = $('#soundtrack').find('div.entry');
+    var entryKeys = [];
+    entryDivs.each(function() {
+        var id = $(this).attr('id');
+        if (id) entryKeys.push(id);
+    });
+
+    var json = {
+        type : "FAVORITE",
+        entries : entryKeys
+    };
+
+    var url = "/rankedList?type=FAVORITE";
+
+    $.ajax({
+        url: url,
+        type: "patch",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(json)
+    }).success(function (data) {
+        $('#soundtrack').children('div.entries').fadeOut(200, function () {
+            $('#soundtrack').html(showEntries(data.entries, function() {}, createSaveFavoritesDiv));
+        });
+    });
+}
+
 function createAddEntryDiv() {
 
-    var titleDiv = $("<div class='title'><div class='add-entry title-button'>add a new entry</div>");
+    var titleDiv = $("<div class='title'><div class='add-entry title-button nav-button'>add a new entry</div>");
+    var entryDiv = $("<div class='entry'/>");
+    entryDiv.append(titleDiv);
+    entryDiv.append("<hr/>");
+
+    return entryDiv;
+}
+
+function createSaveFavoritesDiv() {
+
+    var titleDiv = $("<div class='title'><div class='save-favorites title-button nav-button'>save favorites</div>");
     var entryDiv = $("<div class='entry'/>");
     entryDiv.append(titleDiv);
     entryDiv.append("<hr/>");
