@@ -1,6 +1,9 @@
 package w.whateva.soundtrack.api.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.util.Date;
 import java.util.Optional;
 
 /**
@@ -20,6 +23,8 @@ public class EntrySpec {
 
     private Optional<String> spotify;
     private Optional<String> youtube;
+
+    private Optional<Date> release;
 
     public Optional<Integer> getYear() { return year; }
 
@@ -79,5 +84,13 @@ public class EntrySpec {
 
     public void setYoutube(String youtube) {
         this.youtube = Optional.ofNullable(youtube);
+    }
+
+    public Optional<Date> getRelease() {
+        return release;
+    }
+
+    public void setRelease(Date release) {
+        this.release = Optional.ofNullable(release);
     }
 }

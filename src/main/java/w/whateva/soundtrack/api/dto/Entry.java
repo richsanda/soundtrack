@@ -1,5 +1,9 @@
 package w.whateva.soundtrack.api.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.util.Date;
+
 /**
  * Created by rich on 12/18/16.
  */
@@ -18,6 +22,9 @@ public class Entry {
 
     private String spotify;
     private String youtube;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+    private Date release;
 
     public String getKey() {
         return key;
@@ -85,5 +92,13 @@ public class Entry {
 
     public void setYoutube(String youtube) {
         this.youtube = youtube;
+    }
+
+    public Date getRelease() {
+        return release;
+    }
+
+    public void setRelease(Date release) {
+        this.release = release;
     }
 }

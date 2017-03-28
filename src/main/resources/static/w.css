@@ -131,11 +131,14 @@ label.year, label.year input {
 label.ordinal, label.ordinal input {
     width: 40px;
 }
+label.release, label.release input {
+    width: 80px;
+}
 label.title, label.title input {
-    width: 320px;
+    width: 300px;
 }
 label.artist, label.artist input {
-    width: 320px;
+    width: 300px;
 }
 label.name, label.name input {
     width: 400px;

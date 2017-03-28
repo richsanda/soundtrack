@@ -210,6 +210,10 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
             entry.setArtist(apiEntrySpec.getArtist().orElse(null));
         }
 
+        if (apiEntrySpec.getRelease() != null) {
+            entry.setRelease(apiEntrySpec.getRelease().orElse(null));
+        }
+
         entryRepository.save(entry);
 
         return SoundtrackDataBuilder.buildApiEntry(entry);

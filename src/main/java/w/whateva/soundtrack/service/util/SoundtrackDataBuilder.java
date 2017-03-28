@@ -39,6 +39,8 @@ public class SoundtrackDataBuilder {
         entry.setSpotify(null != apiEntrySpec.getSpotify() ? apiEntrySpec.getSpotify().orElse(null) : null);
         entry.setYoutube(null != apiEntrySpec.getYoutube() ? apiEntrySpec.getYoutube().orElse(null) : null);
 
+        entry.setRelease(null != apiEntrySpec.getRelease() ? apiEntrySpec.getRelease().orElse(null) : null);
+
         return entry;
     }
 
@@ -59,6 +61,8 @@ public class SoundtrackDataBuilder {
 
         apiEntrySpec.setSpotify(Optional.ofNullable(entry.getSpotify()));
         apiEntrySpec.setYoutube(Optional.ofNullable(entry.getYoutube()));
+
+        apiEntrySpec.setRelease(Optional.ofNullable(entry.getRelease()));
 
         return apiEntrySpec;
     }

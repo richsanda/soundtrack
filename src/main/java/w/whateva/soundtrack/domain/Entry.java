@@ -8,6 +8,7 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.namespace.QName;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -66,6 +67,8 @@ public class Entry {
 
     private String spotify;
     private String youtube;
+
+    private Date release;
 
     @OneToMany
     private Set<Ranking> rankings;
@@ -148,6 +151,14 @@ public class Entry {
 
     public void setYoutube(String youtube) {
         this.youtube = youtube;
+    }
+
+    public Date getRelease() {
+        return release;
+    }
+
+    public void setRelease(Date release) {
+        this.release = release;
     }
 
     @OneToMany(mappedBy = "entry")

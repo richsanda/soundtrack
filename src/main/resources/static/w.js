@@ -150,7 +150,8 @@ function addEntry($$) {
         "story" : null,
         "notes" : null,
         "spotify" : null,
-        "youtube" : null
+        "youtube" : null,
+        "release" : null
     }
 
     var entryDiv = $$.closest('div.entry');
@@ -203,7 +204,8 @@ function saveEntry($$) {
         year: entryDiv.find('#year').val(),
         ordinal: entryDiv.find('#ordinal').val(),
         title: entryDiv.find('#title').val(),
-        artist: entryDiv.find('#artist').val()
+        artist: entryDiv.find('#artist').val(),
+        release: dateify(entryDiv.find('#release').val())
     };
 
     if (null != id) {
@@ -516,7 +518,7 @@ function createSaveFavoritesDiv() {
 
 function showEntry(entry) {
 
-    var titleDiv = $("<div class='title'><div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + " <div class='edit-entry title-button'>edit</div><div class='delete-entry title-button'>delete</div></div>");
+    var titleDiv = $("<div class='title'><div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + parenthesize(entry.release) + " <div class='edit-entry title-button'>edit</div><div class='delete-entry title-button'>delete</div></div>");
     var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
@@ -561,10 +563,12 @@ function showEntryForEdit(entry) {
     var ordinalDiv = $("<label for='ordinal' class='ordinal'><span>ordinal</span><input type='text' id='ordinal' value='" + numerify(entry.ordinal) + "'/></label>");
     var titleDiv = $("<label for='title' class='title'><span>title</span><input type='text' id='title' value='" + valuify(entry.title) + "'/></label>");
     var artistDiv = $("<label for='artist' class='artist'><span>artist</span><input type='text' id='artist' value='" + valuify(entry.artist) + "'/></label>");
+    var releaseDiv = $("<label for='release' class='release'><span>release</span><input type='text' id='release' value='" + valuify(entry.release) + "'/></label>");
     headerDiv.append(yearDiv);
     headerDiv.append(ordinalDiv);
     headerDiv.append(titleDiv);
     headerDiv.append(artistDiv);
+    headerDiv.append(releaseDiv);
     contentDiv.append(headerDiv);
 
     var storyDiv= $("<div class='edit-entry-bottom'><textarea class='no-op edit-story'>" + textareaify(entry.story) + "</textarea></div>");
@@ -691,4 +695,12 @@ function numerify(text) {
 
 function textareaify(text) {
     return null == text ? "" : text;
+}
+
+function parenthesize(text) {
+    return null == text ? "" : " (" + text + ") ";
+}
+
+function dateify(text) {
+    return null == text ? null : text.length == 4 ? text + "-01-01" : text.length == 7 ? text + "-01" : text;
 }
