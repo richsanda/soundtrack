@@ -8,6 +8,7 @@ import w.whateva.soundtrack.api.dto.Person;
 import w.whateva.soundtrack.api.dto.RankedList;
 import w.whateva.soundtrack.service.iao.ApiHashTagSortSpec;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ public interface SoundtrackOperations {
 
     @RequestMapping(value = "/entries", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    List<Entry> readEntries(@RequestParam(value = "personTags", required = false) List<String> personTags, @RequestParam(value = "hashTags", required = false) List<String> hashTags);
+    List<Entry> readEntries(@RequestParam(value = "personTags[]", required = false) ArrayList<String> personTags, @RequestParam(value = "hashTags[]", required = false) ArrayList<String> hashTags);
 
     @RequestMapping(value = "/soundtrack", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody

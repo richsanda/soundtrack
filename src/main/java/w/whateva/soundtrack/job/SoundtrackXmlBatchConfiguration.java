@@ -11,6 +11,7 @@ import org.springframework.batch.item.xml.StaxEventItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -24,25 +25,29 @@ import w.whateva.soundtrack.job.load.SoundtrackLoadFromXmlJobRunner;
 @Configuration
 public class SoundtrackXmlBatchConfiguration {
 
-    @Autowired
-    private JobBuilderFactory jobs;
+    private final JobBuilderFactory jobs;
+
+    private final StepBuilderFactory steps;
+
+    private final JobLauncher jobLauncher;
+
+    private final SoundtrackBatchConfiguration config;
 
     @Autowired
-    private StepBuilderFactory steps;
-
-    @Autowired
-    private JobLauncher jobLauncher;
-
-    @Autowired
-    private SoundtrackBatchConfiguration config;
-
-    @Bean
-    public SoundtrackLoadFromXmlJobRunner soundtrackLoadFromXmlJobRunner() throws Exception {
-        SoundtrackLoadFromXmlJobRunner runner = new SoundtrackLoadFromXmlJobRunner();
-        runner.setJob(soundtrackLoadFromXmlJob());
-        runner.setJobLauncher(jobLauncher);
-        return runner;
+    public SoundtrackXmlBatchConfiguration(JobBuilderFactory jobs, StepBuilderFactory steps, JobLauncher jobLauncher, SoundtrackBatchConfiguration config) {
+        this.jobs = jobs;
+        this.steps = steps;
+        this.jobLauncher = jobLauncher;
+        this.config = config;
     }
+
+    //@Bean
+    //public SoundtrackLoadFromXmlJobRunner soundtrackLoadFromXmlJobRunner() throws Exception {
+    //    SoundtrackLoadFromXmlJobRunner runner = new SoundtrackLoadFromXmlJobRunner();
+    //    runner.setJob(soundtrackLoadFromXmlJob());
+    //    runner.setJobLauncher(jobLauncher);
+    //    return runner;
+    //}
 
     @Bean
     public Job soundtrackLoadFromXmlJob() throws Exception {

@@ -2,7 +2,9 @@ package w.whateva.soundtrack.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.*;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,9 @@ import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import w.whateva.soundtrack.domain.Entry;
-import w.whateva.soundtrack.job.load.*;
+import w.whateva.soundtrack.job.load.SoundtrackJsonEntryReader;
+import w.whateva.soundtrack.job.load.SoundtrackJsonHashTagReader;
+import w.whateva.soundtrack.job.load.SoundtrackLoadFromJsonJobRunner;
 import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 
 /**
@@ -21,25 +25,29 @@ import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 @Configuration
 public class SoundtrackJsonBatchConfiguration {
 
-    @Autowired
-    private JobBuilderFactory jobs;
+    private final JobBuilderFactory jobs;
+
+    private final StepBuilderFactory steps;
+
+    private final JobLauncher jobLauncher;
+
+    private final SoundtrackBatchConfiguration config;
 
     @Autowired
-    private StepBuilderFactory steps;
-
-    @Autowired
-    private JobLauncher jobLauncher;
-
-    @Autowired
-    private SoundtrackBatchConfiguration config;
-
-    @Bean
-    public SoundtrackLoadFromJsonJobRunner soundtrackLoadFromJsonJobRunner() throws Exception {
-        SoundtrackLoadFromJsonJobRunner runner = new SoundtrackLoadFromJsonJobRunner();
-        runner.setJob(soundtrackLoadFromJsonJob());
-        runner.setJobLauncher(jobLauncher);
-        return runner;
+    public SoundtrackJsonBatchConfiguration(JobBuilderFactory jobs, StepBuilderFactory steps, JobLauncher jobLauncher, SoundtrackBatchConfiguration config) {
+        this.jobs = jobs;
+        this.steps = steps;
+        this.jobLauncher = jobLauncher;
+        this.config = config;
     }
+
+    //@Bean
+    //public SoundtrackLoadFromJsonJobRunner soundtrackLoadFromJsonJobRunner() throws Exception {
+    //    SoundtrackLoadFromJsonJobRunner runner = new SoundtrackLoadFromJsonJobRunner();
+    //    runner.setJob(soundtrackLoadFromJsonJob());
+    //    runner.setJobLauncher(jobLauncher);
+    //    return runner;
+    //}
 
     @Bean
     public Job soundtrackLoadFromJsonJob() throws Exception {

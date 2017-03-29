@@ -9,6 +9,7 @@ import java.util.List;
  * Created by rich on 1/17/17.
  */
 @Entity
+@Table(name = "hashtag") // backwards compatibility w/db
 public class HashTag {
 
     public HashTag() {}

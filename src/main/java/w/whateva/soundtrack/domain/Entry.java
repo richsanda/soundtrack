@@ -8,7 +8,7 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.namespace.QName;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -60,15 +60,17 @@ public class Entry {
     private String notes;
 
     @ManyToMany
+    @JoinTable(name="entry_person") // backwards compatibility w/db
     private List<Person> persons;
 
     @ManyToMany
+    @JoinTable(name="entry_hashtag", inverseJoinColumns = @JoinColumn(name = "hashtags_id")) // backwards compatibility w/db
     private List<HashTag> hashTags;
 
     private String spotify;
     private String youtube;
 
-    private Date release;
+    private LocalDate releaseDate;
 
     @OneToMany
     private Set<Ranking> rankings;
@@ -153,12 +155,12 @@ public class Entry {
         this.youtube = youtube;
     }
 
-    public Date getRelease() {
-        return release;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease(Date release) {
-        this.release = release;
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     @OneToMany(mappedBy = "entry")

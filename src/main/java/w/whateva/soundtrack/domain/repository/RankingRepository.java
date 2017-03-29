@@ -13,5 +13,5 @@ public interface RankingRepository extends PagingAndSortingRepository<Ranking, L
     @Query("SELECT DISTINCT r FROM Ranking r LEFT JOIN r.entry e WHERE e.id = :key")
     Ranking findByEntryKey(@Param("key") Long id);
 
-    Ranking findByIndex(Integer index);
+    Ranking findByIdx(Integer index);
 }

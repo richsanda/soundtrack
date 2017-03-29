@@ -1,6 +1,6 @@
 package w.whateva.soundtrack.service.iao;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Optional;
 
 /**
@@ -21,7 +21,7 @@ public class ApiEntrySpec {
     private Optional<String> spotify;
     private Optional<String> youtube;
 
-    private Optional<Date> release;
+    private Optional<LocalDate> releaseDate;
 
     public Optional<Integer> getYear() { return year; }
 
@@ -83,11 +83,11 @@ public class ApiEntrySpec {
         this.youtube = youtube;
     }
 
-    public Optional<Date> getRelease() {
-        return release;
+    public Optional<LocalDate> getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease(Optional<Date> release) {
-        this.release = release;
+    public void setReleaseDate(Optional<LocalDate> releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }

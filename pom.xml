@@ -18,7 +18,7 @@
         <!-- Your own application should inherit from spring-boot-starter-parent -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.0.2.RELEASE</version>
+        <version>1.5.2.RELEASE</version>
     </parent>
 
     <groupId>w.whateva</groupId>
@@ -32,9 +32,9 @@
     <properties>
         <main.basedir>${basedir}/../..</main.basedir>
         <spring.batch.version>3.0.4.RELEASE</spring.batch.version>
-        <spring.version>4.1.1.RELEASE</spring.version>
+        <spring.version>4.3.4.RELEASE</spring.version>
 
-        <hibernate.version>5.0.11.Final</hibernate.version>
+        <hibernate.version>5.1.0.Final</hibernate.version>
         <hibernate-jpa-2.1-api.version>1.0.0.Final</hibernate-jpa-2.1-api.version>
         <mysql-connector.version>5.1.35</mysql-connector.version>
 
@@ -96,6 +96,13 @@
             <version>${mysql-connector.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-ehcache</artifactId>
@@ -106,6 +113,12 @@
                     <artifactId>jboss-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+        	<groupId>org.hibernate</groupId>
+        	<artifactId>hibernate-java8</artifactId>
+        	<version>${hibernate.version}</version>
         </dependency>
 
         <dependency>
@@ -144,6 +157,19 @@
         	<version>2.9.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+            <version>2.6.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.9.0.pr2</version>
+        </dependency>
+        
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>

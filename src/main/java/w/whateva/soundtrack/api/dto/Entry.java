@@ -2,7 +2,7 @@ package w.whateva.soundtrack.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Created by rich on 12/18/16.
@@ -24,7 +24,7 @@ public class Entry {
     private String youtube;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
-    private Date release;
+    private LocalDate releaseDate;
 
     public String getKey() {
         return key;
@@ -94,11 +94,11 @@ public class Entry {
         this.youtube = youtube;
     }
 
-    public Date getRelease() {
-        return release;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease(Date release) {
-        this.release = release;
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }

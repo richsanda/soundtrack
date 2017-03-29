@@ -2,7 +2,7 @@ package w.whateva.soundtrack.service.iao;
 
 import org.apache.commons.lang3.builder.CompareToBuilder;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Created by rich on 12/17/16.
@@ -23,7 +23,7 @@ public class ApiEntry implements Comparable<ApiEntry> {
     private String spotify;
     private String youtube;
 
-    private Date release;
+    private LocalDate releaseDate;
 
     public String getKey() {
         return key;
@@ -102,11 +102,11 @@ public class ApiEntry implements Comparable<ApiEntry> {
                 .toComparison();
     }
 
-    public Date getRelease() {
-        return release;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease(Date release) {
-        this.release = release;
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }

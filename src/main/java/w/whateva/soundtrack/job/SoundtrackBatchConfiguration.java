@@ -25,14 +25,17 @@ import javax.persistence.EntityManagerFactory;
 @EnableBatchProcessing
 public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
 
-    @Autowired
-    private EntityManagerFactory entityManagerFactory;
+    private final EntityManagerFactory entityManagerFactory;
+
+    private final MigrationService migrationService;
+    private final HashTagService hashTagService;
 
     @Autowired
-    private MigrationService migrationService;
-
-    @Autowired
-    private HashTagService hashTagService;
+    public SoundtrackBatchConfiguration(EntityManagerFactory entityManagerFactory, MigrationService migrationService, HashTagService hashTagService) {
+        this.entityManagerFactory = entityManagerFactory;
+        this.migrationService = migrationService;
+        this.hashTagService = hashTagService;
+    }
 
     // this is, like, super crucial to tying the start job to the jpa entity manager used in the controller
     @Bean

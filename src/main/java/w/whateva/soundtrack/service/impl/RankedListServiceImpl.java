@@ -87,7 +87,7 @@ public class RankedListServiceImpl implements RankedListService {
                 if (null == ranking) ranking = new Ranking();
 
                 ranking.setEntry(entry);
-                ranking.setIndex(rankIndex++);
+                ranking.setIdx(rankIndex++);
                 ranking.setRankedList(rankedList);
 
                 rankingRepository.save(ranking);

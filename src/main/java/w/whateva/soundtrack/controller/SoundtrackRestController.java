@@ -13,6 +13,7 @@ import w.whateva.soundtrack.service.RankedListService;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.iao.ApiHashTagSortSpec;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -106,17 +107,19 @@ public class SoundtrackRestController implements SoundtrackRestService {
         return null;
     }
 
-    public List<Entry> readEntries(List<String> personTags, List<String> hashTags) {
+    @Override
+    public List<Entry> readEntries(@RequestParam(value = "personTags", required = false) ArrayList<String> personTags,
+                                   @RequestParam(value = "hashTags", required = false) ArrayList<String> hashTags) {
         try {
             if (!CollectionUtils.isEmpty(personTags)) {
                 return entryMapper.toRest(soundtrackService.readEntriesByPersonTags(personTags));
-            } else {
+            } else if (!CollectionUtils.isEmpty(hashTags)) {
                 return entryMapper.toRest(soundtrackService.readEntriesByHashTags(hashTags));
             }
         } catch (MapperException e) {
             // TODO: throw useful exception
         }
-        return null;
+        return Lists.newArrayList();
     }
 
     public List<Entry> readSoundtrack() {

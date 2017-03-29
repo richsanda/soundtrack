@@ -4,7 +4,6 @@ import org.apache.commons.lang3.builder.CompareToBuilder;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.List;
 
 /**
  * Created by rich on 4/3/16.
@@ -15,15 +14,15 @@ public class Ranking implements Comparable<Ranking> {
 
     public Ranking() {}
 
-    public Ranking(Integer index) {
-        this.index = index;
+    public Ranking(Integer idx) {
+        this.idx = idx;
     }
 
     @Id
    	@GeneratedValue
    	private Long id;
 
-    private Integer index;
+    private Integer idx;
 
     @ManyToOne
     private Entry entry;
@@ -35,12 +34,12 @@ public class Ranking implements Comparable<Ranking> {
         return id.toString();
     }
 
-    public Integer getIndex() {
-        return index;
+    public Integer getIdx() {
+        return idx;
     }
 
-    public void setIndex(Integer index) {
-        this.index = index;
+    public void setIdx(Integer idx) {
+        this.idx = idx;
     }
 
     public Entry getEntry() {
@@ -61,6 +60,6 @@ public class Ranking implements Comparable<Ranking> {
 
     @Override
     public int compareTo(Ranking o) {
-        return new CompareToBuilder().append(index, o.index).toComparison();
+        return new CompareToBuilder().append(idx, o.idx).toComparison();
     }
 }

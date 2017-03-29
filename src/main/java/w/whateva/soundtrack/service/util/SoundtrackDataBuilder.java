@@ -4,7 +4,6 @@ import com.google.common.collect.BiMap;
 import com.google.common.collect.EnumBiMap;
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
 import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.*;
 import w.whateva.soundtrack.service.iao.*;
@@ -39,7 +38,7 @@ public class SoundtrackDataBuilder {
         entry.setSpotify(null != apiEntrySpec.getSpotify() ? apiEntrySpec.getSpotify().orElse(null) : null);
         entry.setYoutube(null != apiEntrySpec.getYoutube() ? apiEntrySpec.getYoutube().orElse(null) : null);
 
-        entry.setRelease(null != apiEntrySpec.getRelease() ? apiEntrySpec.getRelease().orElse(null) : null);
+        entry.setReleaseDate(null != apiEntrySpec.getReleaseDate() ? apiEntrySpec.getReleaseDate().orElse(null) : null);
 
         return entry;
     }
@@ -62,7 +61,7 @@ public class SoundtrackDataBuilder {
         apiEntrySpec.setSpotify(Optional.ofNullable(entry.getSpotify()));
         apiEntrySpec.setYoutube(Optional.ofNullable(entry.getYoutube()));
 
-        apiEntrySpec.setRelease(Optional.ofNullable(entry.getRelease()));
+        apiEntrySpec.setReleaseDate(Optional.ofNullable(entry.getReleaseDate()));
 
         return apiEntrySpec;
     }

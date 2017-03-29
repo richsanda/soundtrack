@@ -23,7 +23,7 @@ public class RankedList {
     private RankedListType type;
 
     @OneToMany(mappedBy = "rankedList")
-    @OrderColumn(name = "index") // does this work ?
+    @OrderColumn(name = "idx") // does this work ?
     private List<Ranking> rankings;
 
     public String getKey() {
