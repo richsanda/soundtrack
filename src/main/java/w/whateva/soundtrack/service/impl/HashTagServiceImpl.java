@@ -69,7 +69,7 @@ public class HashTagServiceImpl implements HashTagService {
 
         HashTag hashTag = hashTagRepository.findByTag(spec.getTag().get());
 
-        return updateHashTag(hashTag, spec);
+        return null == hashTag ? null : updateHashTag(hashTag, spec);
     }
 
     private ApiHashTag updateHashTag(HashTag hashTag, ApiHashTagSpec spec) {

@@ -3,6 +3,8 @@ package w.whateva.soundtrack.job.load;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.google.common.collect.Lists;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.NonTransientResourceException;
@@ -25,6 +27,9 @@ public class SoundtrackJsonEntryReader implements ItemReader<Entry> {
     public SoundtrackJsonEntryReader(Resource resource) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        // from: http://stackoverflow.com/questions/28802544/java-8-localdate-jackson-format
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         try {
             List<Entry> entries = objectMapper.readValue(resource.getInputStream(), new TypeReference<List<Entry>>(){});
             iterator = entries.iterator();

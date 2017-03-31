@@ -1,5 +1,6 @@
 package w.whateva.soundtrack.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
@@ -70,6 +71,7 @@ public class Entry {
     private String spotify;
     private String youtube;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd") // for migration
     private LocalDate releaseDate;
 
     @OneToMany

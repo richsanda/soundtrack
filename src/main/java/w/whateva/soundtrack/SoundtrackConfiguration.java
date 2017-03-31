@@ -32,9 +32,4 @@ public class SoundtrackConfiguration extends WebMvcConfigurerAdapter {
     ObjectMapper objectMapper() {
         return new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
     }
-    
-    //@Bean
-    //public Module jodaTimeModule() {
-    //    return new JodaModule();
-    //}
 }
