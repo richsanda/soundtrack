@@ -4,10 +4,10 @@ function pageBehavior () {
 
     actionsBehavior($(this));
 
-    refreshEntries();
+    refreshEntries(true);
 }
 
-function refreshEntries() {
+function refreshEntries(showStory) {
 
     var url = "/soundtrack";
 
@@ -15,7 +15,19 @@ function refreshEntries() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showEntries(data, updateEntryPosition, createAddEntryDiv));
+        $('#soundtrack').html(showEntries(data, updateEntryPosition, createAddEntryDiv, showStory));
+    });
+}
+
+function randomizeEntries(showStory) {
+
+    var url = "/soundtrack/random";
+
+    $.ajax({
+        url: url,
+        dataType: "json"
+    }).success(function (data) {
+        $('#soundtrack').html(showEntries(data, function() {}, createSaveFavoritesDiv, showStory));
     });
 }
 
@@ -27,7 +39,7 @@ function refreshFavorites() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showEntries(data.entries, function() {}, createSaveFavoritesDiv));
+        $('#soundtrack').html(showEntries(data.entries, function() {}, createSaveFavoritesDiv, false));
     });
 }
 
@@ -97,7 +109,7 @@ function actionsClick(e) {
             readYear($$);
         },
         'show-soundtrack' : function ($$) {
-            refreshEntries();
+            refreshEntries(true);
         },
         'show-tags' : function ($$) {
             refreshTags();
@@ -110,6 +122,9 @@ function actionsClick(e) {
         },
         'save-favorites' : function ($$) {
             updateFavorites();
+        },
+        'show-random' : function ($$) {
+            randomizeEntries(false);
         },
         'add-tag' : function ($$) {
             addTag($$);
@@ -316,7 +331,7 @@ function deleteEntry($$) {
         // var newEntryDiv = showEntry(data);
         entryDiv.fadeOut(500, function () {
             entryDiv.remove();
-            refreshEntries();
+            refreshEntries(true);
         });
     });
 }
@@ -343,7 +358,7 @@ function deleteTag($$) {
     });
 }
 
-function showEntries(entries, updateFunction, navFunction) {
+function showEntries(entries, updateFunction, navFunction, showStory) {
 
     // reset
     $('#soundtrack').data('keysToDivs', {});
@@ -361,7 +376,7 @@ function showEntries(entries, updateFunction, navFunction) {
     }
 
     $.each(entries, function() {
-        var entryDiv = showEntry(this);
+        var entryDiv = showEntry(this, showStory);
         $('#soundtrack').data('keysToDivs')[this.key] = entryDiv;
         entriesDiv.append(entryDiv);
     });
@@ -403,6 +418,7 @@ function showPersons(persons) {
 
 function updateEntryPosition( event, ui ) {
 
+    var showStory = true;
     var entryDiv = $(ui.item);
     var entryYear = Number(entryDiv.find('div.year').text());
     var entryOrdinal = Number(entryDiv.find('div.ordinal').text());
@@ -430,10 +446,10 @@ function updateEntryPosition( event, ui ) {
         dataType: "json",
         data: JSON.stringify(entry)
     }).success(function (data) {
-        var newEntryDiv = showEntry(data);
+        var newEntryDiv = showEntry(data, showStory);
         entryDiv.fadeOut(500, function () {
             entryDiv.replaceWith(newEntryDiv);
-            refreshEntries();
+            refreshEntries(showStory);
         });
     });
 }
@@ -460,7 +476,7 @@ function updateFavoritePosition( event, ui ) {
         dataType: "json",
         data: JSON.stringify(json)
     }).success(function (data) {
-        var newEntryDiv = showEntry(data);
+        var newEntryDiv = showEntry(data, false);
         entryDiv.fadeOut(500, function () {
             refreshFavorites();
         });
@@ -491,7 +507,7 @@ function updateFavorites() {
         data: JSON.stringify(json)
     }).success(function (data) {
         $('#soundtrack').children('div.entries').fadeOut(200, function () {
-            $('#soundtrack').html(showEntries(data.entries, function() {}, createSaveFavoritesDiv));
+            $('#soundtrack').html(showEntries(data.entries, function() {}, createSaveFavoritesDiv, false));
         });
     });
 }
@@ -508,7 +524,7 @@ function createAddEntryDiv() {
 
 function createSaveFavoritesDiv() {
 
-    var titleDiv = $("<div class='title'><div class='save-favorites title-button nav-button'>save favorites</div>");
+    var titleDiv = $("<div class='title'><div class='save-favorites title-button nav-button'>save favorites</div><div class='show-random title-button nav-button'>randomize</div></div>");
     var entryDiv = $("<div class='entry'/>");
     entryDiv.append(titleDiv);
     entryDiv.append("<hr/>");
@@ -516,14 +532,16 @@ function createSaveFavoritesDiv() {
     return entryDiv;
 }
 
-function showEntry(entry) {
+function showEntry(entry, showStory) {
 
     var titleDiv = $("<div class='title'><div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + parenthesize(entry.releaseDate) + " <div class='edit-entry title-button'>edit</div><div class='delete-entry title-button'>delete</div></div>");
-    var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
-    entryDiv.append(storyDiv);
-    entryDiv.append("<hr/>");
+    if (showStory) {
+        var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
+        entryDiv.append(storyDiv);
+        entryDiv.append("<hr/>");
+    }
 
     return entryDiv;
 }
@@ -622,7 +640,7 @@ function readNameTag($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
-        $("#soundtrack").html(showEntries(data));
+        $("#soundtrack").html(showEntries(data, true));
     });
 }
 
@@ -637,7 +655,7 @@ function readHashTag($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
-        $("#soundtrack").html(showEntries(data));
+        $("#soundtrack").html(showEntries(data, true));
     });
 }
 
@@ -651,7 +669,7 @@ function readYear($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
-        $("#soundtrack").html(showEntries(data));
+        $("#soundtrack").html(showEntries(data, true));
     });
 }
 

@@ -132,6 +132,8 @@ public class SoundtrackDataBuilder {
 
         ApiRankedList result = new ApiRankedList();
 
+        if (null == rankedList) return result;
+
         result.setType(rankedList.getType().toString());
         result.setEntries(Lists.newArrayList());
         if (!CollectionUtils.isEmpty(rankedList.getRankings())) {

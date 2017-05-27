@@ -241,7 +241,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
     }
 
     @Override
-    public RankedList readRankedListByType(@PathVariable("type") String type) {
+    public RankedList readRankedListByType(@RequestParam("type") String type) {
         try {
             return rankedListMapper.toRest(rankedListService.readRankedListByType(type));
         } catch (MapperException e) {
@@ -251,7 +251,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
     }
 
     @Override
-    public RankedList updateRankedListByType(@PathVariable("type") String type, @RequestBody RankedListSpec spec) {
+    public RankedList updateRankedListByType(@RequestParam("type") String type, @RequestBody RankedListSpec spec) {
         try {
             return rankedListMapper.toRest(rankedListService.updateRankedListByType(type, rankedListSpecMapper.toApi(spec), false));
         } catch (MapperException e) {
@@ -261,9 +261,18 @@ public class SoundtrackRestController implements SoundtrackRestService {
     }
 
     @Override
-    public RankedList deleteRankedListByType(@PathVariable("type") String type) {
+    public RankedList deleteRankedListByType(@RequestParam("type") String type) {
         try {
             return rankedListMapper.toRest(rankedListService.deleteRankedListByType(type));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    public List<Entry> readSoundtrackRandomized() {
+        try {
+            return entryMapper.toRest(soundtrackService.readEntriesRandomized());
         } catch (MapperException e) {
             // TODO: throw useful exception
         }

@@ -68,6 +68,12 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
     }
 
     @Override
+    public List<ApiEntry> readEntriesRandomized() {
+        List<Entry> entries = Lists.newArrayList(entryRepository.findAll());
+        return randomizeAndConvert(entries);
+    }
+
+    @Override
     public List<ApiEntry> readEntriesByPersonTags(List<String> personTags) {
         List<Entry> entries = Lists.newArrayList(entryRepository.findByPersonTags(personTags));
         return sortAndConvert(entries);
@@ -249,7 +255,17 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
 
     private List<ApiEntry> sortAndConvert(List<Entry> entries) {
 
-        Collections.sort(entries, ENTRY_COMPARATOR);
+        entries.sort(ENTRY_COMPARATOR);
+        List<ApiEntry> result = Lists.newArrayList();
+        for (Entry entry : entries) {
+            result.add(SoundtrackDataBuilder.buildApiEntry(entry));
+        }
+        return result;
+    }
+
+    private List<ApiEntry> randomizeAndConvert(List<Entry> entries) {
+
+        Collections.shuffle(entries);
         List<ApiEntry> result = Lists.newArrayList();
         for (Entry entry : entries) {
             result.add(SoundtrackDataBuilder.buildApiEntry(entry));

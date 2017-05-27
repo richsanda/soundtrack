@@ -96,4 +96,8 @@ public interface SoundtrackOperations {
     @RequestMapping(value = "/rankedList", method = RequestMethod.DELETE, produces = "application/json")
     @ResponseBody
     RankedList deleteRankedListByType(@PathVariable("type") String type);
+
+    @RequestMapping(value = "/soundtrack/random", method= RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    List<Entry> readSoundtrackRandomized();
 }

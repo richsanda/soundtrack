@@ -18,6 +18,8 @@ public interface SoundtrackService {
 
     List<ApiEntry> readEntries(Integer year);
 
+    List<ApiEntry> readEntriesRandomized();
+
     List<ApiEntry> readEntriesByPersonTags(List<String> personTags);
 
     List<ApiEntry> readEntriesByHashTags(List<String> hashTags);
