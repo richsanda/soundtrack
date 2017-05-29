@@ -82,7 +82,7 @@ public class RankedListServiceImpl implements RankedListService {
 
                 if (null == entry) continue;
 
-                Ranking ranking = rankingRepository.findByEntryKey(new Long(key));
+                Ranking ranking = rankingRepository.findByEntryKey(rankedList.getType(), new Long(key));
 
                 if (null == ranking) ranking = new Ranking();
 

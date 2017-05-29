@@ -176,11 +176,11 @@ div.edit-entry-top, div.edit-entry-bottom {
 
 div.edit-entry:hover, div.delete-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover,
 div.nav-button:hover, div.tab:hover, div.edit-tag:hover, div.edit-person:hover, div.delete-tag:hover,
-div.delete-person:hover {
+div.delete-person:hover, div.title-button:hover {
      cursor: pointer;
 }
 
-div.edit-entry, div.delete-entry, div.edit-tag, div.delete-tag, div.edit-person, div.delete-person {
+div.edit-entry, div.delete-entry, div.edit-tag, div.delete-tag, div.edit-person, div.delete-person, div.edit-button {
     font-weight: bold;
     color: darkblue;
     border: none;
@@ -266,4 +266,16 @@ div.tab {
     padding: 2px;
     padding-left: 16px;
     padding-right: 16px;
+}
+
+div.favorites div.entry div.title, div.favorites-button {
+    background-color: #ffe1e1
+}
+
+div.representatives div.entry div.title, div.representatives-button {
+    background-color: #ffffe1
+}
+
+div.shared div.entry div.title, div.shared-button {
+    background-color: #e1e1ff
 }

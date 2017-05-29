@@ -19,7 +19,7 @@ function refreshEntries(showStory) {
     });
 }
 
-function randomizeEntries(showStory) {
+function randomizeFavorites() {
 
     var url = "/soundtrack/random";
 
@@ -27,19 +27,39 @@ function randomizeEntries(showStory) {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showEntries(data, function() {}, createSaveFavoritesDiv, showStory));
+        $('#soundtrack').html(showEntries(data, function() {}, createSaveFavoritesDiv));
     });
+}
+
+function seedWithFavorites(createDivFunction) {
+
+    refreshRankedList("FAVORITE", createDivFunction);
 }
 
 function refreshFavorites() {
 
-    var url = "/rankedList?type=FAVORITE";
+    refreshRankedList("FAVORITE", createSaveFavoritesDiv);
+}
+
+function refreshRepresentatives() {
+
+    refreshRankedList("REPRESENTATIVE", createSaveRepresentativesDiv);
+}
+
+function refreshShared() {
+
+    refreshRankedList("SHARED", createSaveSharedDiv);
+}
+
+function refreshRankedList(type, saveDivFunction) {
+
+    var url = "/rankedList?type=" + type;
 
     $.ajax({
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showEntries(data.entries, function() {}, createSaveFavoritesDiv, false));
+        $('#soundtrack').html(showEntries(data.entries, function() {}, saveDivFunction));
     });
 }
 
@@ -110,6 +130,7 @@ function actionsClick(e) {
         },
         'show-soundtrack' : function ($$) {
             refreshEntries(true);
+            clearAndUpdateSoundtrackDiv();
         },
         'show-tags' : function ($$) {
             refreshTags();
@@ -119,12 +140,44 @@ function actionsClick(e) {
         },
         'show-favorites' : function ($$) {
             refreshFavorites();
+            clearAndUpdateSoundtrackDiv('favorites');
         },
         'save-favorites' : function ($$) {
             updateFavorites();
+            clearAndUpdateSoundtrackDiv('favorites');
+        },
+        'show-representatives' : function ($$) {
+            refreshRepresentatives();
+            clearAndUpdateSoundtrackDiv('representatives');
+        },
+        'save-representatives' : function ($$) {
+            updateRepresentatives();
+            clearAndUpdateSoundtrackDiv('representatives');
+        },
+        'show-shared' : function ($$) {
+            refreshShared();
+            clearAndUpdateSoundtrackDiv('shared');
+        },
+        'save-shared' : function ($$) {
+            updateShared();
+            clearAndUpdateSoundtrackDiv('shared');
         },
         'show-random' : function ($$) {
-            randomizeEntries(false);
+            randomizeFavorites();
+        },
+        'move-to' : function ($$) {
+            var entryDiv = $$.closest('div.entry');
+            var idx = entryDiv.find('#moveTo').val();
+            entryDiv.fadeOut(250, function() {
+                entryDiv.insertAfter($('#soundtrack div.entry:eq(' + idx + ')'));
+                entryDiv.fadeIn(250);
+            });
+        },
+        'seed-representatives-with-favorites' : function ($$) {
+            seedWithFavorites(createSaveRepresentativesDiv);
+        },
+        'seed-shared-with-favorites' : function ($$) {
+            seedWithFavorites(createSaveSharedDiv);
         },
         'add-tag' : function ($$) {
             addTag($$);
@@ -231,7 +284,7 @@ function saveEntry($$) {
             dataType: "json",
             data: JSON.stringify(entry)
         }).success(function (data) {
-            var newEntryDiv = showEntry(data);
+            var newEntryDiv = showEntry(data, true);
             entryDiv.fadeOut(500, function () {
                 entryDiv.replaceWith(newEntryDiv);
                 //refreshEntries();
@@ -245,7 +298,7 @@ function saveEntry($$) {
             dataType: "json",
             data: JSON.stringify(entry)
         }).success(function (data) {
-            var newEntryDiv = showEntry(data);
+            var newEntryDiv = showEntry(data, true);
             entryDiv.fadeOut(500, function () {
                 entryDiv.replaceWith(newEntryDiv);
                 newEntryDiv.before(createAddEntryDiv());
@@ -296,7 +349,7 @@ function readEntry($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
-        entryDiv.replaceWith(showEntry(data));
+        entryDiv.replaceWith(showEntry(data, true));
     });
 }
 
@@ -328,7 +381,6 @@ function deleteEntry($$) {
         type: "delete",
         contentType: "application/json"
     }).success(function (data) {
-        // var newEntryDiv = showEntry(data);
         entryDiv.fadeOut(500, function () {
             entryDiv.remove();
             refreshEntries(true);
@@ -348,7 +400,6 @@ function deleteTag($$) {
         type: "delete",
         contentType: "application/json"
     }).success(function (data) {
-        // var newEntryDiv = showEntry(data);
         tagDiv.fadeOut(500, function () {
             tagDiv.remove();
             refreshTags();
@@ -375,8 +426,9 @@ function showEntries(entries, updateFunction, navFunction, showStory) {
         entriesDiv.append(navFunction);
     }
 
+    var i = 1;
     $.each(entries, function() {
-        var entryDiv = showEntry(this, showStory);
+        var entryDiv = showEntry(this, showStory, i++);
         $('#soundtrack').data('keysToDivs')[this.key] = entryDiv;
         entriesDiv.append(entryDiv);
     });
@@ -454,36 +506,19 @@ function updateEntryPosition( event, ui ) {
     });
 }
 
-function updateFavoritePosition( event, ui ) {
-
-    var entryDiv = $(ui.item);
-    var entriesDiv = entryDiv.closest('div.entries');
-    var entryDivs = entriesDiv.find('div.entry');
-    var entryKeys = [];
-    entryDivs.each(function(e) { entryKeys.push($(e).attr('id'))});
-
-    var json = {
-        type : "FAVORITE",
-        entries : entryKeys
-    };
-
-    var url = "/rankedList?type=FAVORITE";
-
-    $.ajax({
-        url: url,
-        type: "patch",
-        contentType: "application/json",
-        dataType: "json",
-        data: JSON.stringify(json)
-    }).success(function (data) {
-        var newEntryDiv = showEntry(data, false);
-        entryDiv.fadeOut(500, function () {
-            refreshFavorites();
-        });
-    });
+function updateFavorites() {
+    updateRankedList("FAVORITE", createSaveFavoritesDiv);
 }
 
-function updateFavorites() {
+function updateRepresentatives() {
+    updateRankedList("REPRESENTATIVE", createSaveRepresentativesDiv);
+}
+
+function updateShared() {
+    updateRankedList("SHARED", createSaveSharedDiv);
+}
+
+function updateRankedList(type, createDivFunction) {
 
     var entryDivs = $('#soundtrack').find('div.entry');
     var entryKeys = [];
@@ -493,11 +528,11 @@ function updateFavorites() {
     });
 
     var json = {
-        type : "FAVORITE",
+        type : type,
         entries : entryKeys
     };
 
-    var url = "/rankedList?type=FAVORITE";
+    var url = "/rankedList?type=" + type;
 
     $.ajax({
         url: url,
@@ -507,7 +542,7 @@ function updateFavorites() {
         data: JSON.stringify(json)
     }).success(function (data) {
         $('#soundtrack').children('div.entries').fadeOut(200, function () {
-            $('#soundtrack').html(showEntries(data.entries, function() {}, createSaveFavoritesDiv, false));
+            $('#soundtrack').html(showEntries(data.entries, function() {}, createDivFunction));
         });
     });
 }
@@ -532,15 +567,39 @@ function createSaveFavoritesDiv() {
     return entryDiv;
 }
 
-function showEntry(entry, showStory) {
+function createSaveRepresentativesDiv() {
 
-    var titleDiv = $("<div class='title'><div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + parenthesize(entry.releaseDate) + " <div class='edit-entry title-button'>edit</div><div class='delete-entry title-button'>delete</div></div>");
+    var titleDiv = $("<div class='title'><div class='save-representatives title-button nav-button'>save representatives</div><div class='seed-representatives-with-favorites title-button nav-button'>seed favorites</div></div>");
+    var entryDiv = $("<div class='entry'/>");
+    entryDiv.append(titleDiv);
+    entryDiv.append("<hr/>");
+
+    return entryDiv;
+}
+
+function createSaveSharedDiv() {
+
+    var titleDiv = $("<div class='title'><div class='save-shared title-button nav-button'>save shared</div><div class='seed-shared-with-favorites title-button nav-button'>seed favorites</div></div>");
+    var entryDiv = $("<div class='entry'/>");
+    entryDiv.append(titleDiv);
+    entryDiv.append("<hr/>");
+
+    return entryDiv;
+}
+
+function showEntry(entry, showStory, count) {
+
+    var titleDiv = $("<div class='title'>" + count + ". <div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + parenthesize(entry.releaseDate) + " <div class='edit-entry edit-button title-button'>edit</div><div class='delete-entry edit-button title-button'>delete</div></div>");
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
     if (showStory) {
         var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
         entryDiv.append(storyDiv);
         entryDiv.append("<hr/>");
+    } else { // proxy for sortable...
+
+        var moveToDiv = $("<div class='title-button edit-button move-to'>move to</div><input type='text' size='4' id='moveTo' value='" + count + "'/>");
+        titleDiv.append(moveToDiv);
     }
 
     return entryDiv;
@@ -671,6 +730,16 @@ function readYear($$) {
     }).success(function (data) {
         $("#soundtrack").html(showEntries(data, true));
     });
+}
+
+function clearAndUpdateSoundtrackDiv(newClass) {
+    var classes = ['favorites', 'shared', 'representatives'];
+    $.each(classes, function (i, c) {
+        $('#soundtrack').removeClass(c);
+    });
+    if (classes.includes(newClass)) {
+        $('#soundtrack').addClass(newClass);
+    }
 }
 
 function storyify(text) {
