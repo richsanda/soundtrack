@@ -6,6 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import w.whateva.soundtrack.domain.Entry;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -15,6 +16,9 @@ import java.util.List;
 public interface EntryRepository extends PagingAndSortingRepository<Entry, Long> {
 
     Entry findById(Long id);
+
+    @Query("SELECT e FROM Entry e WHERE e.id in :ids")
+    List<Entry> findByIds(@Param("ids") Collection<Long> ids);
 
     Entry findByYearAndOrdinal(Integer year, Integer ordinal);
 

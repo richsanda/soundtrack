@@ -16,9 +16,9 @@ import w.whateva.soundtrack.service.iao.ApiRankedList;
 import w.whateva.soundtrack.service.iao.ApiRankedListSpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Created by rich on 3/8/17.
@@ -75,25 +75,35 @@ public class RankedListServiceImpl implements RankedListService {
 
             List<Ranking> rankings = Lists.newArrayList();
 
+            List<Entry> entries = entryRepository.findByIds(
+                    keys.stream().map(Long::valueOf).collect(Collectors.toList())
+            );
+
+            Map<String, Entry> existingEntries = entries.stream().collect(Collectors.toMap(Entry::getKey, Function.identity()));
+
             int rankIndex = 1;
             for (String key : keysRanked) {
 
-                Entry entry = entryRepository.findById(new Long(key));
+                // Entry entry = entryRepository.findById(new Long(key));
+                Entry entry = existingEntries.get(key);
 
                 if (null == entry) continue;
 
-                Ranking ranking = rankingRepository.findByEntryKey(rankedList.getType(), new Long(key));
+                // Ranking ranking = rankingRepository.findByEntryKey(rankedList.getType(), new Long(key));
 
-                if (null == ranking) ranking = new Ranking();
+                Ranking ranking = entry.getRankings().stream().filter(
+                        ranking1 -> rankedList.equals(ranking1.getRankedList())
+                ).findFirst().orElse(new Ranking());
+
+                // if (null == ranking) ranking = new Ranking();
 
                 ranking.setEntry(entry);
                 ranking.setIdx(rankIndex++);
                 ranking.setRankedList(rankedList);
-
-                rankingRepository.save(ranking);
                 rankings.add(ranking);
             }
 
+            rankingRepository.save(rankings);
             rankedList.setRankings(rankings);
         }
 
