@@ -174,6 +174,11 @@ public class Entry {
         this.rankings = rankings;
     }
 
+    @Transient
+    public Ranking getRanking(RankedListType type) {
+        return getRankings().stream().filter(r -> type.equals(r.getRankedList().getType())).findFirst().orElse(null);
+    }
+
     public static void print(Entry entry) throws Exception {
 
         JAXBContext jc = JAXBContext.newInstance(Entry.class);

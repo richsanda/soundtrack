@@ -278,4 +278,13 @@ public class SoundtrackRestController implements SoundtrackRestService {
         }
         return null;
     }
+
+    public List<Entry> readSoundtrackRanked() {
+        try {
+            return entryMapper.toRest(soundtrackService.readEntriesRanked());
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
 }

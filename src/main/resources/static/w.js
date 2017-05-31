@@ -19,6 +19,18 @@ function refreshEntries(showStory) {
     });
 }
 
+function refreshOverall() {
+
+    var url = "/soundtrack/ranked";
+
+    $.ajax({
+        url: url,
+        dataType: "json"
+    }).success(function (data) {
+        $('#soundtrack').html(showEntries(data));
+    });
+}
+
 function randomizeFavorites() {
 
     var url = "/soundtrack/random";
@@ -34,6 +46,11 @@ function randomizeFavorites() {
 function seedWithFavorites(createDivFunction) {
 
     refreshRankedList("FAVORITE", createDivFunction);
+}
+
+function seedWithRepresentatives(createDivFunction) {
+
+    refreshRankedList("REPRESENTATIVE", createDivFunction);
 }
 
 function refreshFavorites() {
@@ -165,6 +182,9 @@ function actionsClick(e) {
         'show-random' : function ($$) {
             randomizeFavorites();
         },
+        'show-overall' : function ($$) {
+            refreshOverall();
+        },
         'move-to' : function ($$) {
             var entryDiv = $$.closest('div.entry');
             var idx = entryDiv.find('#moveTo').val();
@@ -175,6 +195,9 @@ function actionsClick(e) {
         },
         'seed-representatives-with-favorites' : function ($$) {
             seedWithFavorites(createSaveRepresentativesDiv);
+        },
+        'seed-favorites-with-representatives' : function ($$) {
+            seedWithRepresentatives(createSaveFavoritesDiv);
         },
         'seed-shared-with-favorites' : function ($$) {
             seedWithFavorites(createSaveSharedDiv);
@@ -559,7 +582,7 @@ function createAddEntryDiv() {
 
 function createSaveFavoritesDiv() {
 
-    var titleDiv = $("<div class='title'><div class='save-favorites title-button nav-button'>save favorites</div><div class='show-random title-button nav-button'>randomize</div></div>");
+    var titleDiv = $("<div class='title'><div class='save-favorites title-button nav-button'>save favorites</div><div class='show-random title-button nav-button'>randomize</div><div class='seed-favorites-with-representatives title-button nav-button'>seed reps</div></div>");
     var entryDiv = $("<div class='entry'/>");
     entryDiv.append(titleDiv);
     entryDiv.append("<hr/>");

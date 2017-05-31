@@ -100,4 +100,8 @@ public interface SoundtrackOperations {
     @RequestMapping(value = "/soundtrack/random", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
     List<Entry> readSoundtrackRandomized();
+
+    @RequestMapping(value = "/soundtrack/ranked", method= RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    List<Entry> readSoundtrackRanked();
 }

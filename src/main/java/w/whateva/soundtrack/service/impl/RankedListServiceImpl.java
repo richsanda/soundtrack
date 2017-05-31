@@ -1,6 +1,7 @@
 package w.whateva.soundtrack.service.impl;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -67,7 +68,8 @@ public class RankedListServiceImpl implements RankedListService {
 
             if (!CollectionUtils.isEmpty(rankedList.getRankings())) {
                 for (Ranking ranking : rankedList.getRankings()) {
-                    if (!keys.contains(ranking.getKey())) {
+                    if (!keys.contains(ranking.getEntry().getKey())) {
+                        ranking.getEntry().getRankings().remove(ranking);
                         rankingRepository.delete(ranking);
                     }
                 }
@@ -97,9 +99,20 @@ public class RankedListServiceImpl implements RankedListService {
 
                 // if (null == ranking) ranking = new Ranking();
 
-                ranking.setEntry(entry);
+                // if it's new...
+                if (null == ranking.getEntry() && null == ranking.getRankedList()) {
+                    ranking.setEntry(entry);
+                    ranking.setRankedList(rankedList);
+                }
+
+                // back pointer from entry
+                if (CollectionUtils.isEmpty(entry.getRankings())) {
+                    entry.setRankings(Sets.newHashSet(ranking));
+                } else { // TODO: do i need to make sure it's not already there ?
+                    entry.getRankings().add(ranking);
+                }
+
                 ranking.setIdx(rankIndex++);
-                ranking.setRankedList(rankedList);
                 rankings.add(ranking);
             }
 

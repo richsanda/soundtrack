@@ -20,6 +20,8 @@ public interface SoundtrackService {
 
     List<ApiEntry> readEntriesRandomized();
 
+    List<ApiEntry> readEntriesRanked();
+
     List<ApiEntry> readEntriesByPersonTags(List<String> personTags);
 
     List<ApiEntry> readEntriesByHashTags(List<String> hashTags);
