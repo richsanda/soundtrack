@@ -612,7 +612,7 @@ function createSaveSharedDiv() {
 
 function showEntry(entry, showStory, count) {
 
-    var titleDiv = $("<div class='title'>" + count + ". <div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + parenthesize(entry.releaseDate) + " <div class='edit-entry edit-button title-button'>edit</div><div class='delete-entry edit-button title-button'>delete</div></div>");
+    var titleDiv = $("<div class='title'>" + count + ". (" + entry.score + " / " + entry.releasePosition + " / " + entry.soundtrackPosition + ") <div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + parenthesize(entry.releaseDate) + " <div class='edit-entry edit-button title-button'>edit</div><div class='delete-entry edit-button title-button'>delete</div></div>");
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
     if (showStory) {

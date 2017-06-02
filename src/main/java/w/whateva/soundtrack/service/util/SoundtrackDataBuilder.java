@@ -10,6 +10,7 @@ import w.whateva.soundtrack.service.iao.*;
 
 import java.util.Collections;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created by rich on 12/18/16.
@@ -19,6 +20,17 @@ public class SoundtrackDataBuilder {
     public static ApiEntry buildApiEntry(Entry entry) {
         ApiEntry result = new ApiEntry();
         BeanUtils.copyProperties(entry, result);
+        if (!CollectionUtils.isEmpty(entry.getRankings())) {
+            result.setRankings(entry.getRankings().stream().map(SoundtrackDataBuilder::buildApiRanking).collect(Collectors.toList()));
+        }
+        return result;
+    }
+
+    private static ApiRanking buildApiRanking(Ranking ranking) {
+        ApiRanking result = new ApiRanking();
+        result.setIndex(ranking.getIdx());
+        result.setScore(ranking.score());
+        result.setType(toApi(ranking.getRankedList().getType()));
         return result;
     }
 

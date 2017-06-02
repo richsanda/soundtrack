@@ -1,9 +1,11 @@
 package w.whateva.soundtrack.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.math.BigDecimal;
 
 /**
  * Created by rich on 4/3/16.
@@ -11,6 +13,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement
 public class Ranking implements Comparable<Ranking> {
+
+    @Transient
+    private static final int MAX_LEGIT_POSITION = 300;
+    @Transient
+    private static final int SCORE_SCALE = 5;
+    @Transient
+    private static final int SCORE_ROUNDING_MODE = BigDecimal.ROUND_HALF_UP;
 
     public Ranking() {}
 
@@ -61,5 +70,17 @@ public class Ranking implements Comparable<Ranking> {
     @Override
     public int compareTo(Ranking o) {
         return new CompareToBuilder().append(idx, o.idx).toComparison();
+    }
+
+    @Transient
+    public BigDecimal score() {
+
+        int raw = MAX_LEGIT_POSITION - getIdx();
+        if (raw <= 0) return BigDecimal.ONE;
+        BigDecimal scaled = new BigDecimal(raw);
+        scaled = scaled.setScale(SCORE_SCALE, SCORE_ROUNDING_MODE);
+        scaled = scaled.divide(new BigDecimal(MAX_LEGIT_POSITION / 2), SCORE_ROUNDING_MODE);
+        return BigDecimal.valueOf(Math.pow(BigDecimal.TEN.doubleValue(), scaled.doubleValue()))
+                .setScale(SCORE_SCALE, SCORE_ROUNDING_MODE);
     }
 }

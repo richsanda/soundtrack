@@ -1,20 +1,15 @@
 package w.whateva.soundtrack.service.iao;
 
+import java.math.BigDecimal;
+
 /**
  * Created by rich on 3/12/17.
  */
 public class ApiRanking {
 
-    private String key;
+    private ApiRankedListType type;
     private Integer index;
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
+    private BigDecimal score;
 
     public Integer getIndex() {
         return index;
@@ -22,5 +17,21 @@ public class ApiRanking {
 
     public void setIndex(Integer index) {
         this.index = index;
+    }
+
+    public ApiRankedListType getType() {
+        return type;
+    }
+
+    public void setType(ApiRankedListType type) {
+        this.type = type;
+    }
+
+    public BigDecimal getScore() {
+        return score;
+    }
+
+    public void setScore(BigDecimal score) {
+        this.score = score;
     }
 }

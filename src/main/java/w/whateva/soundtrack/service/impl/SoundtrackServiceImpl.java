@@ -10,7 +10,6 @@ import org.springframework.util.CollectionUtils;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.HashTag;
 import w.whateva.soundtrack.domain.Person;
-import w.whateva.soundtrack.domain.Ranking;
 import w.whateva.soundtrack.domain.repository.EntryRepository;
 import w.whateva.soundtrack.domain.repository.HashTagRepository;
 import w.whateva.soundtrack.domain.repository.PersonRepository;
@@ -22,19 +21,14 @@ import w.whateva.soundtrack.service.iao.ApiEntrySpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
 import w.whateva.soundtrack.service.util.SoundtrackUtil;
 
-import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static w.whateva.soundtrack.domain.RankedListType.FAVORITE;
 
 /**
  * Created by rich on 12/17/16.
  */
 @Component
 public class SoundtrackServiceImpl implements SoundtrackService, MigrationService {
-
-    private static final int MAX_LEGIT_POSITION = 300;
 
     private final EntryRepository entryRepository;
 
@@ -300,26 +294,7 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
             .toComparison();
 
     private static final Comparator<Entry> ENTRY_RANKER = (entry1, entry2) -> new CompareToBuilder()
-            .append(score(entry2), score(entry1))
-            //.append(score(entry1.getRanking(FAVORITE)), entry2.getRanking(FAVORITE))
+            .append(entry2.getScore(), entry1.getScore())
+            //.append(getScore(entry1.getRanking(FAVORITE)), entry2.getRanking(FAVORITE))
             .toComparison();
-
-    private static Double score(Entry entry) {
-        return score(entry.getRankings());
-    }
-
-    private static Double score(Collection<Ranking> rankings) {
-        return rankings.stream().mapToDouble(SoundtrackServiceImpl::score).sum();
-    }
-
-    private static Double score(Ranking ranking) {
-
-        int raw = null != ranking ? ranking.getIdx() : MAX_LEGIT_POSITION;
-        raw = MAX_LEGIT_POSITION + 1 - raw;
-        if (raw <= 0) return 0d;
-        BigDecimal scaled = new BigDecimal(raw);
-        scaled = scaled.setScale(5, BigDecimal.ROUND_HALF_UP);
-        scaled = scaled.divide(new BigDecimal(MAX_LEGIT_POSITION / 2), BigDecimal.ROUND_HALF_UP);
-        return Math.pow(BigDecimal.TEN.doubleValue(), scaled.doubleValue());
-    }
 }

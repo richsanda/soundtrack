@@ -2,6 +2,7 @@ package w.whateva.soundtrack.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.joda.time.DateTime;
+import org.springframework.util.CollectionUtils;
 
 import javax.persistence.*;
 import javax.xml.bind.JAXBContext;
@@ -9,7 +10,11 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.namespace.QName;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Set;
 
@@ -22,6 +27,17 @@ import java.util.Set;
         // @UniqueConstraint(columnNames = {"year", "ordinal"}) // yes, i want this, but i can't swap in 1 transaction !!
 })
 public class Entry {
+
+    @Transient
+    private static final LocalDate EPOCH = LocalDate.parse("1962-01-01");
+    @Transient
+    private static final LocalDate SOUNDTRACK_START = LocalDate.parse("1992-01-01");
+    @Transient
+    private static final LocalDate SOUNDTRACK_END = LocalDate.parse("2017-01-01");
+    @Transient
+    private static final Period TIMELINE_DURATION = Period.between(EPOCH, SOUNDTRACK_END);
+    @Transient
+    private static final Long TIMELINE_DAYS = ChronoUnit.DAYS.between(EPOCH, SOUNDTRACK_END);
 
     @Id
    	@GeneratedValue
@@ -177,6 +193,34 @@ public class Entry {
     @Transient
     public Ranking getRanking(RankedListType type) {
         return getRankings().stream().filter(r -> type.equals(r.getRankedList().getType())).findFirst().orElse(null);
+    }
+
+    @Transient
+    public BigDecimal getScore() {
+        if (CollectionUtils.isEmpty(getRankings())) return null;
+        return getRankings().stream().map(Ranking::score).reduce(BigDecimal.ZERO, BigDecimal::add).setScale(2, RoundingMode.HALF_UP);
+    }
+
+    @Transient
+    public BigDecimal getReleasePosition() {
+        Long epochToRelease = ChronoUnit.DAYS.between(EPOCH, getReleaseDate());
+        double ratio = epochToRelease / (double) TIMELINE_DAYS;
+        return BigDecimal.valueOf(ratio).movePointRight(2).setScale(0, RoundingMode.HALF_UP);
+    }
+
+    @Transient
+    public BigDecimal getSoundtrackPosition() {
+        Long epochToSoundtrack = ChronoUnit.DAYS.between(EPOCH, getSoundtrackDate());
+        double ratio = epochToSoundtrack / (double) TIMELINE_DAYS;
+        return BigDecimal.valueOf(ratio).movePointRight(2).setScale(0, RoundingMode.HALF_UP);
+    }
+
+    @Transient
+    private LocalDate getSoundtrackDate() {
+        LocalDate result = LocalDate.of(getYear(), 1, 1);
+        Double daysToAdd = (double) getOrdinal() / 21 * 365;
+        result.plus(daysToAdd.longValue(), ChronoUnit.DAYS);
+        return result;
     }
 
     public static void print(Entry entry) throws Exception {

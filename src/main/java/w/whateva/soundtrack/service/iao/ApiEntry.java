@@ -2,7 +2,9 @@ package w.whateva.soundtrack.service.iao;
 
 import org.apache.commons.lang3.builder.CompareToBuilder;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by rich on 12/17/16.
@@ -24,6 +26,12 @@ public class ApiEntry implements Comparable<ApiEntry> {
     private String youtube;
 
     private LocalDate releaseDate;
+
+    private List<ApiRanking> rankings;
+    private BigDecimal score;
+
+    private BigDecimal soundtrackPosition;
+    private BigDecimal releasePosition;
 
     public String getKey() {
         return key;
@@ -108,5 +116,37 @@ public class ApiEntry implements Comparable<ApiEntry> {
 
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public List<ApiRanking> getRankings() {
+        return rankings;
+    }
+
+    public void setRankings(List<ApiRanking> rankings) {
+        this.rankings = rankings;
+    }
+
+    public BigDecimal getScore() {
+        return score;
+    }
+
+    public void setScore(BigDecimal score) {
+        this.score = score;
+    }
+
+    public BigDecimal getSoundtrackPosition() {
+        return soundtrackPosition;
+    }
+
+    public void setSoundtrackPosition(BigDecimal soundtrackPosition) {
+        this.soundtrackPosition = soundtrackPosition;
+    }
+
+    public BigDecimal getReleasePosition() {
+        return releasePosition;
+    }
+
+    public void setReleasePosition(BigDecimal releasePosition) {
+        this.releasePosition = releasePosition;
     }
 }

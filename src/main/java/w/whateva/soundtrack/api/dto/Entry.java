@@ -2,7 +2,9 @@ package w.whateva.soundtrack.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by rich on 12/18/16.
@@ -22,6 +24,11 @@ public class Entry {
 
     private String spotify;
     private String youtube;
+
+    private List<Ranking> rankings;
+    private BigDecimal score;
+    private BigDecimal soundtrackPosition;
+    private BigDecimal releasePosition;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private LocalDate releaseDate;
@@ -100,5 +107,37 @@ public class Entry {
 
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public List<Ranking> getRankings() {
+        return rankings;
+    }
+
+    public void setRankings(List<Ranking> rankings) {
+        this.rankings = rankings;
+    }
+
+    public BigDecimal getScore() {
+        return score;
+    }
+
+    public void setScore(BigDecimal score) {
+        this.score = score;
+    }
+
+    public BigDecimal getSoundtrackPosition() {
+        return soundtrackPosition;
+    }
+
+    public void setSoundtrackPosition(BigDecimal soundtrackPosition) {
+        this.soundtrackPosition = soundtrackPosition;
+    }
+
+    public BigDecimal getReleasePosition() {
+        return releasePosition;
+    }
+
+    public void setReleasePosition(BigDecimal releasePosition) {
+        this.releasePosition = releasePosition;
     }
 }
