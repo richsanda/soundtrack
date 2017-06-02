@@ -218,8 +218,8 @@ public class Entry {
     @Transient
     private LocalDate getSoundtrackDate() {
         LocalDate result = LocalDate.of(getYear(), 1, 1);
-        Double daysToAdd = (double) getOrdinal() / 21 * 365;
-        result.plus(daysToAdd.longValue(), ChronoUnit.DAYS);
+        Double daysToAdd = Double.valueOf(getOrdinal()) / 20 * 365;
+        result = result.plus(daysToAdd.longValue(), ChronoUnit.DAYS);
         return result;
     }
 

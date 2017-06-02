@@ -17,7 +17,7 @@ public class Ranking implements Comparable<Ranking> {
     @Transient
     private static final int MAX_LEGIT_POSITION = 300;
     @Transient
-    private static final int SCORE_SCALE = 5;
+    private static final int SCORE_SCALE = 2;
     @Transient
     private static final int SCORE_ROUNDING_MODE = BigDecimal.ROUND_HALF_UP;
 
