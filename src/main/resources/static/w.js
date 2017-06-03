@@ -232,18 +232,18 @@ function actionsBehavior(root) {
 
 function addEntry($$) {
     var data =
-    {
-        "key" : null,
-        "year" : null,
-        "ordinal" : null,
-        "title" : null,
-        "artist" : null,
-        "story" : null,
-        "notes" : null,
-        "spotify" : null,
-        "youtube" : null,
-        "releaseDate" : null
-    }
+        {
+            "key" : null,
+            "year" : null,
+            "ordinal" : null,
+            "title" : null,
+            "artist" : null,
+            "story" : null,
+            "notes" : null,
+            "spotify" : null,
+            "youtube" : null,
+            "releaseDate" : null
+        }
 
     var entryDiv = $$.closest('div.entry');
     var overlayDiv = showEntryForEdit(data);
@@ -612,7 +612,55 @@ function createSaveSharedDiv() {
 
 function showEntry(entry, showStory, count) {
 
-    var titleDiv = $("<div class='title'>" + count + ". (" + entry.score + " / " + entry.releasePosition + " / " + entry.soundtrackPosition + ") <div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div><div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " + entry.title + " -- " + entry.artist + parenthesize(entry.releaseDate) + " <div class='edit-entry edit-button title-button'>edit</div><div class='delete-entry edit-button title-button'>delete</div></div>");
+    var timelineDiv = showTimeline();
+
+    var releaseCircleDiv = showCircle(entry.releasePosition, 5);
+    var soundtrackCircleDiv = showCircle(entry.soundtrackPosition, Math.max(5, Math.sqrt(entry.score) * 1.5));
+    var lapseTimelineDiv = $("<div class='lapse-timeline'></div>");
+    lapseTimelineDiv.css({
+        'left': entry.releasePosition + '%',
+        'right': 100 - entry.soundtrackPosition + '%'
+    });
+
+    timelineDiv.append(releaseCircleDiv);
+    timelineDiv.append(soundtrackCircleDiv);
+    timelineDiv.append(lapseTimelineDiv);
+
+    var titleDiv = $("<div class='title'/>");
+
+    var titleInfoDiv = $("<div class='title-info'>" +
+        // "" + count + ". " +
+        "<div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div>" +
+        "<div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " +
+        "<span class='title'>" + entry.title + " -- " + entry.artist + parenthesize(entry.releaseDate) + "</span>" +
+        "<div class='edit-entry edit-button title-button'>edit</div>" +
+        "<div class='delete-entry edit-button title-button'>delete</div>" +
+        "</div>"
+    );
+
+    var r;
+    var y;
+    var b;
+    var g;
+
+    $.each(entry.rankings, function() {
+            if (this.type == "FAVORITE") {
+                r = Math.round(255 / 100 * this.score);
+            } else if (this.type == "REPRESENTATIVE") {
+                y = Math.round(255 / 100 * this.score);
+            } else if (this.type = "SHARED") {
+                b = Math.round(255 / 100 * this.score);
+            }
+            g = Math.round((b + y + y) / 3);
+        }
+    );
+
+    var rgba = "rgba(" + r + ", " + g + ", " + b + ", " + entry.score / 600 + ")";
+    titleInfoDiv.css("background-color", rgba);
+
+    titleDiv.append(timelineDiv);
+    titleDiv.append(titleInfoDiv);
+
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
     if (showStory) {
@@ -622,10 +670,45 @@ function showEntry(entry, showStory, count) {
     } else { // proxy for sortable...
 
         var moveToDiv = $("<div class='title-button edit-button move-to'>move to</div><input type='text' size='4' id='moveTo' value='" + count + "'/>");
-        titleDiv.append(moveToDiv);
+        titleInfoDiv.append(moveToDiv);
     }
 
     return entryDiv;
+}
+
+function showTimeline() {
+
+    return $(
+
+        "<div class='timeline-container'>" +
+        "<div class='timeline-segment'>62</div>" +
+        "<div class='timeline-segment'>67</div>" +
+        "<div class='timeline-segment'>72</div>" +
+        "<div class='timeline-segment'>77</div>" +
+        "<div class='timeline-segment'>82</div>" +
+        "<div class='timeline-segment'>87</div>" +
+        "<div class='timeline-segment soundtrack-segment'>92</div>" +
+        "<div class='timeline-segment soundtrack-segment'>97</div>" +
+        "<div class='timeline-segment soundtrack-segment'>02</div>" +
+        "<div class='timeline-segment soundtrack-segment'>07</div>" +
+        "<div class='timeline-segment-last soundtrack-segment'>12</div>" +
+        "</div>"
+    );
+}
+
+function showCircle(p, d) {
+
+    var circleDiv = $("<div class='soundtrack-circle'></div>");
+
+    circleDiv.css({
+        "left": "" + p + "%",
+        'height': d + 'px',
+        'width': d + 'px',
+        'margin-left': '-' + d / 2 + 'px',
+        'margin-top': '-' + d / 2 + 'px'
+    });
+
+    return circleDiv;
 }
 
 function showTag(tag) {
