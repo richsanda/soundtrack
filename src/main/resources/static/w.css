@@ -3,9 +3,9 @@ div.title {
     background-color: #fafafa;
     font-weight: bold;
     vertical-align: middle;
-    height: 20px;
+    #height: 20px;
     padding: 4px;
-    padding-bottom: 2px;
+    padding-bottom: 5px;
 }
 
 div.count {
@@ -14,6 +14,7 @@ div.count {
 
 div.title-info {
     width: calc(100% - 475px);
+    white-space: pre-wrap;
 }
 
 span.title {
@@ -43,6 +44,7 @@ div.entry {
 }
 
 div.year, div.ordinal, div.tag-title, div.person-title {
+
     color: saddlebrown;
     background-color: #ddd0d8;
 
@@ -60,7 +62,7 @@ div.nav-button {
     border: 1px solid saddlebrown;
 }
 
-div.title-button {
+div.title-button, div.ordinal {
 
     display: inline-block;
     zoom: 1;
@@ -195,7 +197,7 @@ div.edit-entry-top, div.edit-entry-bottom {
 
 div.edit-entry:hover, div.delete-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover,
 div.nav-button:hover, div.tab:hover, div.edit-tag:hover, div.edit-person:hover, div.delete-tag:hover,
-div.delete-person:hover, div.title-button:hover {
+div.delete-person:hover, div.title-button:hover, div.title:hover {
     cursor: pointer;
 }
 
@@ -207,7 +209,8 @@ div.edit-entry, div.delete-entry, div.edit-tag, div.delete-tag, div.edit-person,
     background-color: #ddd0d8;
 }
 
-div.name-tag, div.hash-tag {
+div.story div.name-tag, div.story div.hash-tag {
+
     background-color: #ddd0d8;
 
     display: inline-block;
@@ -285,6 +288,65 @@ div.tab {
     padding: 2px;
     padding-left: 16px;
     padding-right: 16px;
+}
+
+#pane {
+
+    vertical-align: middle;
+
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+div.pane-person {
+    padding: 2px;
+    color: saddlebrown;
+    font-weight: bold;
+}
+
+div.soundtrack-title {
+    
+    font-size: 1.2em;
+    padding: 8px;
+
+    color: saddlebrown;
+
+    font-weight: bold;
+    
+    display: inline-block;
+    zoom: 1;
+
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+}
+
+div.people {
+    -webkit-column-count: 5; /* Chrome, Safari, Opera */
+    -moz-column-count: 5; /* Firefox */
+    column-count: 5;
+
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px; /* Firefox */
+    column-gap: 10px;
+
+    text-align: center;
+}
+
+div.pane-person {
+
+    color: saddlebrown;
+    padding: 1px;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+}
+
+div.pane-person:hover {
+    background-color: #ffe1e1;
+    cursor: pointer;
 }
 
 div.favorites div.entry div.title, div.favorites-button {

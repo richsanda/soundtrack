@@ -5,7 +5,6 @@ var edit = false;
 function pageBehavior () {
 
     actionsBehavior($(this));
-
     refreshEntries(true);
 }
 
@@ -17,6 +16,7 @@ function refreshEntries(showStory) {
         url: url,
         dataType: "json"
     }).success(function (data) {
+        $('#pane').html(showSoundtrackPane("all", true));
         $('#soundtrack').html(showEntries(data, updateEntryPosition, createAddEntryDiv, showStory));
     });
 }
@@ -29,6 +29,7 @@ function refreshOverall() {
         url: url,
         dataType: "json"
     }).success(function (data) {
+        $('#pane').html(showOverallPane("top 100", false));
         $('#soundtrack').html(showEntries(data));
     });
 }
@@ -102,7 +103,7 @@ function refreshPersons() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showPersons(data));
+        $('#pane').html(showPersons(data));
     });
 }
 
@@ -187,10 +188,20 @@ function actionsClick(e) {
         'show-overall' : function ($$) {
             refreshOverall();
         },
-        'show-story' : function ($$) {
+        'toggle-story' : function ($$) {
             var entryDiv = $$.closest('div.entry');
             var storyDiv = entryDiv.find('div.story');
-            storyDiv.show();
+            storyDiv.toggle();
+        },
+        'show-stories' : function ($$) {
+            $('#soundtrack').find('div.story').show();
+            $$.text('hide stories');
+            $$.removeClass('show-stories').addClass('hide-stories');
+        },
+        'hide-stories' : function ($$) {
+            $('#soundtrack').find('div.story').hide();
+            $$.text('show stories');
+            $$.removeClass('hide-stories').addClass('show-stories');
         },
         'move-to' : function ($$) {
             var entryDiv = $$.closest('div.entry');
@@ -487,12 +498,12 @@ function showPersons(persons) {
     // reset
     $('#persons').data('keysToDivs', {});
 
-    var personsDiv = $("<div class='persons'></div>");
+    var personsDiv = $("<div class='people'></div>");
 
     $.each(persons, function() {
-        var personDiv = showPerson(this);
-        $('#persons').data('keysToDivs')[this.key] = personDiv;
-        personsDiv.append(personDiv);
+        var personSpan = showPersonLink(this);
+        $('#persons').data('keysToDivs')[this.key] = personSpan;
+        personsDiv.append(personSpan);
     });
 
     return personsDiv;
@@ -579,12 +590,18 @@ function updateRankedList(type, createDivFunction) {
 
 function createAddEntryDiv() {
 
-    var titleDiv = $("<div class='title'><div class='add-entry title-button nav-button'>add a new entry</div>");
-    var entryDiv = $("<div class='entry'/>");
-    entryDiv.append(titleDiv);
-    entryDiv.append("<hr/>");
+    if (edit) {
 
-    return entryDiv;
+        var titleDiv = $("<div class='title'><div class='add-entry title-button nav-button'>add a new entry</div>");
+        var entryDiv = $("<div class='entry'/>");
+        entryDiv.append(titleDiv);
+        entryDiv.append("<hr/>");
+
+        return entryDiv;
+
+    } else {
+        return null;
+    }
 }
 
 function createSaveFavoritesDiv() {
@@ -617,6 +634,66 @@ function createSaveSharedDiv() {
     return entryDiv;
 }
 
+function showSoundtrackPane(title, showStories) {
+
+    var soundtrackPaneDiv = $(
+        "<div class='soundtrack-pane'>" +
+        "<div class='soundtrack-title'>" + title + "</div>" +
+        "</div>"
+    );
+
+    soundtrackPaneDiv.append(showStoryButtonDiv(showStories));
+
+    return soundtrackPaneDiv;
+}
+
+function showPeoplePane(title, showStories) {
+
+    var peoplePaneDiv = $(
+        "<div class='soundtrack-pane'>" +
+        "<div class='soundtrack-title'>" + title + "</div>" +
+        "</div>"
+    );
+
+    peoplePaneDiv.append(showStoryButtonDiv(showStories));
+
+    return peoplePaneDiv;
+}
+
+function showTagPane(title, showStories) {
+
+    var tagPaneDiv = $(
+        "<div class='soundtrack-pane'>" +
+        "<div class='soundtrack-title'>" + title + "</div>" +
+        "</div>"
+    );
+
+    tagPaneDiv.append(showStoryButtonDiv(showStories));
+
+    return tagPaneDiv;
+}
+
+function showOverallPane(title, showStories) {
+
+    var overallPaneDiv = $(
+        "<div class='soundtrack-pane'>" +
+        "<div class='soundtrack-title'>" + title + "</div>" +
+        "</div>"
+    );
+
+    overallPaneDiv.append(showStoryButtonDiv(showStories));
+
+    return overallPaneDiv;
+}
+
+function showStoryButtonDiv(showStories) {
+    if (showStories) {
+        return $("<div class='tab hide-stories'>hide stories</div>");
+    } else {
+        return $("<div class='tab show-stories'>show stories</div>");
+    }
+}
+
 function showEntry(entry, showStory, count) {
 
     var timelineDiv = showTimeline();
@@ -635,18 +712,18 @@ function showEntry(entry, showStory, count) {
     timelineDiv.append(soundtrackCircleDiv);
     timelineDiv.append(timespanDiv);
 
-    var titleDiv = $("<div class='title'/>");
+    var titleDiv = $("<div class='title toggle-story'/>");
 
     var yearOrdinalDiv = $(
         "<div class='year-ordinal'>" +
         "<div class='count'>" + count + ". </div>" +
         "<div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div>" +
-        "<div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div>" +
+        "<div class='ordinal'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div>" +
         "</div>"
     );
 
     var titleInfoDiv = $(
-        "<div class='title-info show-story'>" +
+        "<div class='title-info'>" +
         "<span class='title'>" + entry.title + " -- " + entry.artist + "</span>" +
         "</div>"
     );
@@ -738,9 +815,13 @@ function showPerson(person) {
     var personDiv = $("<div class='person' id='" + person.key + "'/>");
     personDiv.append(titleDiv);
     personDiv.append(storyDiv);
-    personDiv.append("<hr/>");
+    storyDiv.append("<hr/>");
 
     return personDiv;
+}
+
+function showPersonLink(person) {
+   return $("<div class='pane-person name-tag' id='" + person.tag + "'> " + person.tag + " (" + person.appearances + ")" + "</div>");
 }
 
 function showEntryForEdit(entry) {
@@ -813,6 +894,7 @@ function readNameTag($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
+        $('#pane').html(showPeoplePane(id, false));
         $("#soundtrack").html(showEntries(data, true));
     });
 }
@@ -828,7 +910,9 @@ function readHashTag($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
+        $('#pane').html(showTagPane(id, false));
         $("#soundtrack").html(showEntries(data, true));
+        showTagPane(id, false);
     });
 }
 
@@ -842,6 +926,7 @@ function readYear($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
+        $('#pane').html(showSoundtrackPane(id, false));
         $("#soundtrack").html(showEntries(data, true));
     });
 }
