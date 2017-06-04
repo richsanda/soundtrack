@@ -3,23 +3,27 @@ div.title {
     background-color: #fafafa;
     font-weight: bold;
     vertical-align: middle;
+    height: 20px;
+    padding: 4px;
+    padding-bottom: 2px;
 }
 
-div.timeline-container {
-    float: left;
+div.count {
+    width: 32px;
 }
 
 div.title-info {
-    margin-left: 15px;
-    width: calc(100% - 350px);
+    width: calc(100% - 475px);
 }
 
 span.title {
-    margin-left: 8px;
+    margin-left: 4px;
 }
 
 div.story {
     padding-top: 4px;
+    margin-top: 4px;
+    margin-left: 32px;
 }
 
 textarea.story {
@@ -339,11 +343,26 @@ div.soundtrack-segment {
     opacity: 0.6;
 }
 
+div.year-ordinal {
+    
+    display: inline-block;
+    float: left;
+    zoom: 1;
+    
+    position: relative;
+
+    white-space: nowrap;
+
+    margin-right: 10px;
+    margin-top: -3px;
+}
+
 div.timeline-container {
 
     width: 330px;
 
     display: inline-block;
+    float: right;
     zoom: 1;
 
     border: 1px solid #edcfcf;
@@ -351,6 +370,8 @@ div.timeline-container {
     position: relative;
 
     white-space: nowrap;
+    margin-top: -3px;
+    margin-right: -3px;
 }
 
 div.soundtrack-circle {
@@ -363,7 +384,7 @@ div.soundtrack-circle {
     z-index: 1;
 }
 
-div.lapse-timeline {
+div.timespan {
 
     position: absolute;
     overflow-x: hidden;

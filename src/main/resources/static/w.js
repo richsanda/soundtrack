@@ -1,5 +1,7 @@
 $(pageBehavior);
 
+var edit = false;
+
 function pageBehavior () {
 
     actionsBehavior($(this));
@@ -184,6 +186,11 @@ function actionsClick(e) {
         },
         'show-overall' : function ($$) {
             refreshOverall();
+        },
+        'show-story' : function ($$) {
+            var entryDiv = $$.closest('div.entry');
+            var storyDiv = entryDiv.find('div.story');
+            storyDiv.show();
         },
         'move-to' : function ($$) {
             var entryDiv = $$.closest('div.entry');
@@ -614,61 +621,63 @@ function showEntry(entry, showStory, count) {
 
     var timelineDiv = showTimeline();
 
-    var releaseCircleDiv = showCircle(entry.releasePosition, 5);
-    var soundtrackCircleDiv = showCircle(entry.soundtrackPosition, Math.max(5, Math.sqrt(entry.score) * 1.5));
-    var lapseTimelineDiv = $("<div class='lapse-timeline'></div>");
-    lapseTimelineDiv.css({
+    var timespanTitle = "released " + releaseify(entry.releaseDate) + "; entry " + entry.ordinal + " of 20 in " + entry.year;
+
+    var releaseCircleDiv = showCircle(entry.releasePosition, 5, timespanTitle);
+    var soundtrackCircleDiv = showCircle(entry.soundtrackPosition, Math.max(5, Math.sqrt(entry.score) * 1.5), timespanTitle);
+    var timespanDiv = $("<div class='timespan' title='" + timespanTitle + "'></div>");
+    timespanDiv.css({
         'left': entry.releasePosition + '%',
         'right': 100 - entry.soundtrackPosition + '%'
     });
 
     timelineDiv.append(releaseCircleDiv);
     timelineDiv.append(soundtrackCircleDiv);
-    timelineDiv.append(lapseTimelineDiv);
+    timelineDiv.append(timespanDiv);
 
     var titleDiv = $("<div class='title'/>");
 
-    var titleInfoDiv = $("<div class='title-info'>" +
-        // "" + count + ". " +
+    var yearOrdinalDiv = $(
+        "<div class='year-ordinal'>" +
+        "<div class='count'>" + count + ". </div>" +
         "<div class='year read-year title-button' id='" + entry.year + "'>" + entry.year + "</div>" +
-        "<div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div> " +
-        "<span class='title'>" + entry.title + " -- " + entry.artist + parenthesize(entry.releaseDate) + "</span>" +
-        "<div class='edit-entry edit-button title-button'>edit</div>" +
-        "<div class='delete-entry edit-button title-button'>delete</div>" +
+        "<div class='ordinal title-button'>" + (entry.ordinal < 10 ? "0" : "") + entry.ordinal + "</div>" +
         "</div>"
     );
 
-    var r;
-    var y;
-    var b;
-    var g;
-
-    $.each(entry.rankings, function() {
-            if (this.type == "FAVORITE") {
-                r = Math.round(255 / 100 * this.score);
-            } else if (this.type == "REPRESENTATIVE") {
-                y = Math.round(255 / 100 * this.score);
-            } else if (this.type = "SHARED") {
-                b = Math.round(255 / 100 * this.score);
-            }
-            g = Math.round((b + y + y) / 3);
-        }
+    var titleInfoDiv = $(
+        "<div class='title-info show-story'>" +
+        "<span class='title'>" + entry.title + " -- " + entry.artist + "</span>" +
+        "</div>"
     );
 
-    var rgba = "rgba(" + r + ", " + g + ", " + b + ", " + entry.score / 600 + ")";
-    titleInfoDiv.css("background-color", rgba);
+    if (edit) {
+        var editDiv = $("<div class='edit-entry edit-button title-button'>edit</div>");
+        var deleteDiv = $("<div class='delete-entry edit-button title-button'>delete</div>");
+        titleInfoDiv.append(editDiv);
+        titleInfoDiv.append(deleteDiv);
+    }
 
+    titleDiv.css("background-color", calculateColor(entry));
+
+    titleDiv.append(yearOrdinalDiv);
     titleDiv.append(timelineDiv);
     titleDiv.append(titleInfoDiv);
 
     var entryDiv = $("<div class='entry' id='" + entry.key + "'/>");
     entryDiv.append(titleDiv);
-    if (showStory) {
-        var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
-        entryDiv.append(storyDiv);
-        entryDiv.append("<hr/>");
-    } else { // proxy for sortable...
 
+    var storyDiv = $("<div class='story'>" + storyify(entry.story) + "</div>");
+    entryDiv.append(storyDiv);
+    storyDiv.append("<hr/>");
+
+    if (!showStory) {
+        $(storyDiv).hide();
+    }
+
+    if (edit) {
+
+        // proxy for sortable...
         var moveToDiv = $("<div class='title-button edit-button move-to'>move to</div><input type='text' size='4' id='moveTo' value='" + count + "'/>");
         titleInfoDiv.append(moveToDiv);
     }
@@ -679,7 +688,6 @@ function showEntry(entry, showStory, count) {
 function showTimeline() {
 
     return $(
-
         "<div class='timeline-container'>" +
         "<div class='timeline-segment'>62</div>" +
         "<div class='timeline-segment'>67</div>" +
@@ -696,9 +704,9 @@ function showTimeline() {
     );
 }
 
-function showCircle(p, d) {
+function showCircle(p, d, t) {
 
-    var circleDiv = $("<div class='soundtrack-circle'></div>");
+    var circleDiv = $("<div class='soundtrack-circle' title='" + t + "'></div>");
 
     circleDiv.css({
         "left": "" + p + "%",
@@ -896,4 +904,37 @@ function parenthesize(text) {
 
 function dateify(text) {
     return (!text) ? null : text.length == 4 ? text + "-01-01" : text.length == 7 ? text + "-01" : text;
+}
+
+function releaseify(text) {
+
+    if (!text) return null;
+    var d = new Date(text);
+    var months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+    var year = d.getFullYear();
+    var month = d.getMonth();
+    var day = d.getDay();
+    return (day == 1 && month == 1) ? year : months[month - 1] + ", " + year;
+}
+
+function calculateColor(entry) {
+
+    var r;
+    var y;
+    var b;
+    var g;
+
+    $.each(entry.rankings, function() {
+            if (this.type == "FAVORITE") {
+                r = Math.round(255 / 100 * this.score);
+            } else if (this.type == "REPRESENTATIVE") {
+                y = Math.round(255 / 100 * this.score);
+            } else if (this.type = "SHARED") {
+                b = Math.round(255 / 100 * this.score);
+            }
+            g = Math.round((b + y + y) / 3);
+        }
+    );
+
+    return "rgba(" + r + ", " + g + ", " + b + ", " + entry.score / 600 + ")";
 }
