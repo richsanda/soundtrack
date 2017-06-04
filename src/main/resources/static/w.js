@@ -91,7 +91,7 @@ function refreshTags() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showTags(data));
+        $('#pane').html(showTags(data));
     });
 }
 
@@ -485,7 +485,7 @@ function showTags(tags) {
     var tagsDiv = $("<div class='tags'></div>");
 
     $.each(tags, function() {
-        var tagDiv = showTag(this);
+        var tagDiv = showTagLink(this);
         $('#tags').data('keysToDivs')[this.key] = tagDiv;
         tagsDiv.append(tagDiv);
     });
@@ -501,9 +501,9 @@ function showPersons(persons) {
     var personsDiv = $("<div class='people'></div>");
 
     $.each(persons, function() {
-        var personSpan = showPersonLink(this);
-        $('#persons').data('keysToDivs')[this.key] = personSpan;
-        personsDiv.append(personSpan);
+        var personDiv = showPersonLink(this);
+        $('#persons').data('keysToDivs')[this.key] = personDiv;
+        personsDiv.append(personDiv);
     });
 
     return personsDiv;
@@ -808,6 +808,12 @@ function showTag(tag) {
     return tagDiv;
 }
 
+function showTagLink(tag) {
+    var tagLink = $(nameify(null, "#", tag.tag));
+    tagLink.text(tagLink.text() + " (" + tag.appearances + ")");
+    return tagLink;
+}
+
 function showPerson(person) {
 
     var titleDiv = $("<div class='title'><div class='person-title title-button' id='" + person.tag + "'> " + person.tag + " (" + person.appearances + ")" + "</div> " + valuify(person.name) + " <div class='edit-person title-button'>edit</div><div class='delete-person title-button'>delete</div></div>");
@@ -821,7 +827,10 @@ function showPerson(person) {
 }
 
 function showPersonLink(person) {
-   return $("<div class='pane-person name-tag' id='" + person.tag + "'> " + person.tag + " (" + person.appearances + ")" + "</div>");
+    var personLink = $(nameify(null, "@", person.tag));
+    //personLink.text(personLink.text() + " (" + person.appearances + ")");
+    personLink.append(" (" + person.appearances + ")");
+    return personLink;
 }
 
 function showEntryForEdit(entry) {

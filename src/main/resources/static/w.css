@@ -210,9 +210,7 @@ div.edit-entry, div.delete-entry, div.edit-tag, div.delete-tag, div.edit-person,
 }
 
 div.story div.name-tag, div.story div.hash-tag {
-
-    background-color: #ddd0d8;
-
+    
     display: inline-block;
     zoom: 1;
 
@@ -226,34 +224,6 @@ div.story div.name-tag, div.story div.hash-tag {
     padding-right: 1px;
 
     border: 1px solid #bbb0b7;
-}
-
-div.media, div.format, div.player, div.timeline, div.music, div.general {
-
-}
-
-div.media {
-    background-color: #bdd0d5;
-}
-
-div.format {
-    background-color: #d5ddd0;
-}
-
-div.player {
-    background-color: #d5d07d;
-}
-
-div.timeline {
-    background-color: #ddd0d8;
-}
-
-div.music {
-    background-color: lavenderblush;
-}
-
-div.general {
-    background-color: #d9d1c0;
 }
 
 div.tabs {
@@ -300,12 +270,6 @@ div.tab {
     padding-bottom: 20px;
 }
 
-div.pane-person {
-    padding: 2px;
-    color: saddlebrown;
-    font-weight: bold;
-}
-
 div.soundtrack-title {
     
     font-size: 1.2em;
@@ -324,6 +288,7 @@ div.soundtrack-title {
 }
 
 div.people {
+
     -webkit-column-count: 5; /* Chrome, Safari, Opera */
     -moz-column-count: 5; /* Firefox */
     column-count: 5;
@@ -335,18 +300,35 @@ div.people {
     text-align: center;
 }
 
-div.pane-person {
+div.tags {
 
-    color: saddlebrown;
+    -webkit-column-count: 4; /* Chrome, Safari, Opera */
+    -moz-column-count: 4; /* Firefox */
+    column-count: 4;
+
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px; /* Firefox */
+    column-gap: 10px;
+
+    text-align: center;
+}
+
+div.people div.name-tag, div.tags div.hash-tag {
+
     padding: 1px;
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
+
+    text-align: center;
+
+    border: 1px solid #bbb0b7;
+
+    white-space: nowrap;
 }
 
-div.pane-person:hover {
-    background-color: #ffe1e1;
-    cursor: pointer;
+div.tags div.hash-tag:hover {
+    opacity: 0.8;
 }
 
 div.favorites div.entry div.title, div.favorites-button {
@@ -456,4 +438,32 @@ div.timespan {
     height: 2px;
     background-color: #8b8066;
     margin-top: -1px;
+}
+
+div.media, div.format, div.player, div.timeline, div.music, div.general {
+
+}
+
+div.media {
+    background-color: #bdd0d5;
+}
+
+div.format {
+    background-color: #d5ddd0;
+}
+
+div.player {
+    background-color: #d5d07d;
+}
+
+div.timeline {
+    background-color: #ddd0d8;
+}
+
+div.music {
+    background-color: lavenderblush;
+}
+
+div.general {
+    background-color: #d9d1c0;
 }
