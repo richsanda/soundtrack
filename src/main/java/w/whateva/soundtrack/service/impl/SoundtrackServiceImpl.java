@@ -109,6 +109,7 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
     public void refreshEntry(Entry entry) {
 
         ApiEntrySpec apiEntrySpec = SoundtrackDataBuilder.buildApiEntrySpec(entry);
+        entry.setRankings(null);
 
         updateEntry(entry, apiEntrySpec);
     }

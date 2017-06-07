@@ -57,6 +57,8 @@ public class SoundtrackDataBuilder {
 
     // for use in migration... starting with an Entry, give an equivalent ApiEntrySpec that can be used
     // to effect application code that should accompany installment into the database for the Entry
+    //
+    // TODO: consider building ApiEntry or dto Entry instead of domain Entry
     public static ApiEntrySpec buildApiEntrySpec(Entry entry) {
 
         ApiEntrySpec apiEntrySpec = new ApiEntrySpec();

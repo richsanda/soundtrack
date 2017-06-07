@@ -1,6 +1,7 @@
 package w.whateva.soundtrack.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 
 import javax.persistence.*;
@@ -39,10 +40,13 @@ public class Ranking implements Comparable<Ranking> {
     @ManyToOne
     private RankedList rankedList;
 
+    private String type;
+
     public String getKey() {
         return id.toString();
     }
 
+    @JsonProperty("index")
     public Integer getIdx() {
         return idx;
     }
@@ -82,5 +86,15 @@ public class Ranking implements Comparable<Ranking> {
         scaled = scaled.divide(new BigDecimal(MAX_LEGIT_POSITION / 2), SCORE_ROUNDING_MODE);
         return BigDecimal.valueOf(Math.pow(BigDecimal.TEN.doubleValue(), scaled.doubleValue()))
                 .setScale(SCORE_SCALE, SCORE_ROUNDING_MODE);
+    }
+
+    // for json import
+    @Transient
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
