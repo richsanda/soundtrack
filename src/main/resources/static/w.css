@@ -260,9 +260,11 @@ div.tab {
     padding-right: 16px;
 }
 
-#pane {
+div.pane {
 
     vertical-align: middle;
+
+    color: saddlebrown;
 
     padding-left: 10%;
     padding-right: 10%;
@@ -287,7 +289,7 @@ div.soundtrack-title {
     border-radius: 0.2em;
 }
 
-div.people {
+div.people, div.years {
 
     -webkit-column-count: 5; /* Chrome, Safari, Opera */
     -moz-column-count: 5; /* Firefox */
@@ -298,6 +300,8 @@ div.people {
     column-gap: 10px;
 
     text-align: center;
+
+    margin-bottom: 20px;
 }
 
 div.tags {
@@ -313,9 +317,11 @@ div.tags {
     text-align: center;
 }
 
-div.people div.name-tag, div.tags div.hash-tag {
+div.people div.name-tag, div.tags div.hash-tag, div.years div.year {
 
-    padding: 1px;
+    padding: 2px;
+    margin: 2px;
+
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
@@ -324,7 +330,25 @@ div.people div.name-tag, div.tags div.hash-tag {
 
     border: 1px solid #bbb0b7;
 
+    overflow: hidden;
+
     white-space: nowrap;
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+}
+
+div.years div.year {
+
+    padding: 4px;
+    margin: 4px;
+    -moz-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    border-radius: 0.4em;
+    
+    border: 1px solid saddlebrown;
+
+    font-size: 1.1em;
 }
 
 div.tags div.hash-tag:hover {

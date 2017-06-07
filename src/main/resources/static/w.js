@@ -5,7 +5,7 @@ var edit = false;
 function pageBehavior () {
 
     actionsBehavior($(this));
-    refreshEntries(true);
+    showIntroPane();
 }
 
 function refreshEntries(showStory) {
@@ -16,8 +16,7 @@ function refreshEntries(showStory) {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#pane').html(showSoundtrackPane("all", true));
-        $('#soundtrack').html(showEntries(data, updateEntryPosition, createAddEntryDiv, showStory));
+        showPane(buildAllPane("all", true), buildEntries(data, updateEntryPosition, createAddEntryDiv, showStory));
     });
 }
 
@@ -29,8 +28,7 @@ function refreshOverall() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#pane').html(showOverallPane("top 100", false));
-        $('#soundtrack').html(showEntries(data));
+        showPane(buildOverallPane("top 100"), buildEntries(data));
     });
 }
 
@@ -42,7 +40,7 @@ function randomizeFavorites() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showEntries(data, function() {}, createSaveFavoritesDiv));
+        $('#soundtrack').html(buildEntries(data, function() {}, createSaveFavoritesDiv));
     });
 }
 
@@ -79,7 +77,7 @@ function refreshRankedList(type, saveDivFunction) {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#soundtrack').html(showEntries(data.entries, function() {}, saveDivFunction));
+        $('#soundtrack').html(buildEntries(data.entries, function() {}, saveDivFunction));
     });
 }
 
@@ -91,8 +89,16 @@ function refreshTags() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#pane').html(showTags(data));
+        showPane(buildTags(data));
     });
+}
+
+function showPane(paneDiv, soundtrackDiv) {
+    $('#pane').html(paneDiv);
+    $('#soundtrack').html(soundtrackDiv);
+    $('#intro').hide();
+    $('#years').hide();
+    $('#pane').show();
 }
 
 function refreshPersons() {
@@ -103,7 +109,7 @@ function refreshPersons() {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        $('#pane').html(showPersons(data));
+        showPane(buildPersons(data));
     });
 }
 
@@ -151,6 +157,15 @@ function actionsClick(e) {
         'show-soundtrack' : function ($$) {
             refreshEntries(true);
             clearAndUpdateSoundtrackDiv();
+        },
+        'show-intro' : function ($$) {
+            showIntroPane();
+        },
+        'show-years' : function ($$) {
+            showYearsPane();
+        },
+        'show-artists' : function ($$) {
+            // showArtistsPane();
         },
         'show-tags' : function ($$) {
             refreshTags();
@@ -264,7 +279,7 @@ function addEntry($$) {
         }
 
     var entryDiv = $$.closest('div.entry');
-    var overlayDiv = showEntryForEdit(data);
+    var overlayDiv = buildEntryForEdit(data);
     overlayDiv.width("100%");
     overlayDiv.fadeIn(200);
     entryDiv.append(overlayDiv);
@@ -280,7 +295,7 @@ function editEntry($$) {
         url: url,
         dataType: "json"
     }).success(function (data) {
-        var overlayDiv = showEntryForEdit(data);
+        var overlayDiv = buildEntryForEdit(data);
         overlayDiv.width("100%");
         overlayDiv.fadeIn(200);
         entryDiv.append(overlayDiv);
@@ -450,7 +465,7 @@ function deleteTag($$) {
     });
 }
 
-function showEntries(entries, updateFunction, navFunction, showStory) {
+function buildEntries(entries, updateFunction, navFunction, showStory) {
 
     // reset
     $('#soundtrack').data('keysToDivs', {});
@@ -477,7 +492,7 @@ function showEntries(entries, updateFunction, navFunction, showStory) {
     return entriesDiv;
 }
 
-function showTags(tags) {
+function buildTags(tags) {
 
     // reset
     $('#tags').data('keysToDivs', {});
@@ -485,7 +500,7 @@ function showTags(tags) {
     var tagsDiv = $("<div class='tags'></div>");
 
     $.each(tags, function() {
-        var tagDiv = showTagLink(this);
+        var tagDiv = buildTagLink(this);
         $('#tags').data('keysToDivs')[this.key] = tagDiv;
         tagsDiv.append(tagDiv);
     });
@@ -493,7 +508,7 @@ function showTags(tags) {
     return tagsDiv;
 }
 
-function showPersons(persons) {
+function buildPersons(persons) {
 
     // reset
     $('#persons').data('keysToDivs', {});
@@ -501,7 +516,7 @@ function showPersons(persons) {
     var personsDiv = $("<div class='people'></div>");
 
     $.each(persons, function() {
-        var personDiv = showPersonLink(this);
+        var personDiv = buildPersonLink(this);
         $('#persons').data('keysToDivs')[this.key] = personDiv;
         personsDiv.append(personDiv);
     });
@@ -583,7 +598,7 @@ function updateRankedList(type, createDivFunction) {
         data: JSON.stringify(json)
     }).success(function (data) {
         $('#soundtrack').children('div.entries').fadeOut(200, function () {
-            $('#soundtrack').html(showEntries(data.entries, function() {}, createDivFunction));
+            $('#soundtrack').html(buildEntries(data.entries, function() {}, createDivFunction));
         });
     });
 }
@@ -634,7 +649,21 @@ function createSaveSharedDiv() {
     return entryDiv;
 }
 
-function showSoundtrackPane(title, showStories) {
+function showIntroPane() {
+
+    $('#pane').hide();
+    $('#years').hide();
+    $('#intro').show();
+}
+
+function showYearsPane() {
+
+    $('#pane').hide();
+    $('#intro').hide();
+    $('#years').show();
+}
+
+function buildAllPane(title, showStories) {
 
     var soundtrackPaneDiv = $(
         "<div class='soundtrack-pane'>" +
@@ -642,12 +671,25 @@ function showSoundtrackPane(title, showStories) {
         "</div>"
     );
 
-    soundtrackPaneDiv.append(showStoryButtonDiv(showStories));
+    soundtrackPaneDiv.append(buildStoryButtonDiv(showStories));
 
     return soundtrackPaneDiv;
 }
 
-function showPeoplePane(title, showStories) {
+function buildYearPane(title, showStories) {
+
+    var yearPaneDiv = $(
+        "<div class='soundtrack-pane'>" +
+        "<div class='soundtrack-title'>" + title + "</div>" +
+        "</div>"
+    );
+
+    yearPaneDiv.append(buildStoryButtonDiv(showStories));
+
+    return yearPaneDiv;
+}
+
+function buildPeoplePane(title, showStories) {
 
     var peoplePaneDiv = $(
         "<div class='soundtrack-pane'>" +
@@ -655,12 +697,12 @@ function showPeoplePane(title, showStories) {
         "</div>"
     );
 
-    peoplePaneDiv.append(showStoryButtonDiv(showStories));
+    peoplePaneDiv.append(buildStoryButtonDiv(showStories));
 
     return peoplePaneDiv;
 }
 
-function showTagPane(title, showStories) {
+function buildTagPane(title, showStories) {
 
     var tagPaneDiv = $(
         "<div class='soundtrack-pane'>" +
@@ -668,12 +710,12 @@ function showTagPane(title, showStories) {
         "</div>"
     );
 
-    tagPaneDiv.append(showStoryButtonDiv(showStories));
+    tagPaneDiv.append(buildStoryButtonDiv(showStories));
 
     return tagPaneDiv;
 }
 
-function showOverallPane(title, showStories) {
+function buildOverallPane(title, showStories) {
 
     var overallPaneDiv = $(
         "<div class='soundtrack-pane'>" +
@@ -681,12 +723,12 @@ function showOverallPane(title, showStories) {
         "</div>"
     );
 
-    overallPaneDiv.append(showStoryButtonDiv(showStories));
+    overallPaneDiv.append(buildStoryButtonDiv(showStories));
 
     return overallPaneDiv;
 }
 
-function showStoryButtonDiv(showStories) {
+function buildStoryButtonDiv(showStories) {
     if (showStories) {
         return $("<div class='tab hide-stories'>hide stories</div>");
     } else {
@@ -808,13 +850,13 @@ function showTag(tag) {
     return tagDiv;
 }
 
-function showTagLink(tag) {
+function buildTagLink(tag) {
     var tagLink = $(nameify(null, "#", tag.tag));
     tagLink.text(tagLink.text() + " (" + tag.appearances + ")");
     return tagLink;
 }
 
-function showPerson(person) {
+function buildPerson(person) {
 
     var titleDiv = $("<div class='title'><div class='person-title title-button' id='" + person.tag + "'> " + person.tag + " (" + person.appearances + ")" + "</div> " + valuify(person.name) + " <div class='edit-person title-button'>edit</div><div class='delete-person title-button'>delete</div></div>");
     var storyDiv = $("<div class='story'>" + storyify(person.story) + "</div>");
@@ -826,14 +868,14 @@ function showPerson(person) {
     return personDiv;
 }
 
-function showPersonLink(person) {
+function buildPersonLink(person) {
     var personLink = $(nameify(null, "@", person.tag));
     //personLink.text(personLink.text() + " (" + person.appearances + ")");
     personLink.append(" (" + person.appearances + ")");
     return personLink;
 }
 
-function showEntryForEdit(entry) {
+function buildEntryForEdit(entry) {
 
     var overlayDiv = $("<div class='overlay no-op'/>");
     var contentDiv = $("<div class='overlay-content'/>");
@@ -903,8 +945,7 @@ function readNameTag($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
-        $('#pane').html(showPeoplePane(id, false));
-        $("#soundtrack").html(showEntries(data, true));
+        showPane(buildPeoplePane(id), buildEntries(data, true));
     });
 }
 
@@ -919,9 +960,7 @@ function readHashTag($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
-        $('#pane').html(showTagPane(id, false));
-        $("#soundtrack").html(showEntries(data, true));
-        showTagPane(id, false);
+        showPane(buildTagPane(id), buildEntries(data, true));
     });
 }
 
@@ -935,8 +974,8 @@ function readYear($$) {
         type: "get",
         contentType: "application/json"
     }).success(function (data) {
-        $('#pane').html(showSoundtrackPane(id, false));
-        $("#soundtrack").html(showEntries(data, true));
+        showPane(buildYearPane(id), buildEntries(data, true));
+        $('#years').show();
     });
 }
 
