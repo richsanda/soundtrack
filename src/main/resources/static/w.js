@@ -95,7 +95,11 @@ function refreshTags() {
 
 function showPane(paneDiv, soundtrackDiv) {
     $('#pane').html(paneDiv);
-    $('#soundtrack').html(soundtrackDiv);
+    if (typeof soundtrackDiv == typeof undefined || !soundtrackDiv) {
+        $('#soundtrack').empty();
+    } else {
+        $('#soundtrack').html(soundtrackDiv);
+    }
     $('#intro').hide();
     $('#years').hide();
     $('#pane').show();
@@ -654,6 +658,7 @@ function showIntroPane() {
     $('#pane').hide();
     $('#years').hide();
     $('#intro').show();
+    $('#soundtrack').empty();
 }
 
 function showYearsPane() {
@@ -661,6 +666,7 @@ function showYearsPane() {
     $('#pane').hide();
     $('#intro').hide();
     $('#years').show();
+    $('#soundtrack').empty();
 }
 
 function buildAllPane(title, showStories) {
@@ -967,6 +973,7 @@ function readHashTag($$) {
 function readYear($$) {
 
     var id = $$.attr('id');
+    if (typeof id == typeof undefined || !id) id = "1992";
     var url = "/entries/" + id;
 
     $.ajax({

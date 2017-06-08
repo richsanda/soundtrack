@@ -14,6 +14,7 @@ import w.whateva.soundtrack.job.load.SoundtrackEntryWriter;
 import w.whateva.soundtrack.job.load.SoundtrackHashTagWriter;
 import w.whateva.soundtrack.service.HashTagService;
 import w.whateva.soundtrack.service.MigrationService;
+import w.whateva.soundtrack.service.RankedListService;
 import w.whateva.soundtrack.service.iao.ApiHashTagSpec;
 
 import javax.persistence.EntityManagerFactory;
@@ -28,12 +29,14 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     private final EntityManagerFactory entityManagerFactory;
 
     private final MigrationService migrationService;
+    private final RankedListService rankedListService;
     private final HashTagService hashTagService;
 
     @Autowired
-    public SoundtrackBatchConfiguration(EntityManagerFactory entityManagerFactory, MigrationService migrationService, HashTagService hashTagService) {
+    public SoundtrackBatchConfiguration(EntityManagerFactory entityManagerFactory, MigrationService migrationService, RankedListService rankedListService, HashTagService hashTagService) {
         this.entityManagerFactory = entityManagerFactory;
         this.migrationService = migrationService;
+        this.rankedListService = rankedListService;
         this.hashTagService = hashTagService;
     }
 
@@ -59,6 +62,7 @@ public class SoundtrackBatchConfiguration extends DefaultBatchConfigurer {
     ItemWriter<Entry> soundtrackEntryWriter() {
         SoundtrackEntryWriter writer = new SoundtrackEntryWriter();
         writer.setMigrationService(migrationService);
+        writer.setRankedListService(rankedListService);
         return writer;
     }
 

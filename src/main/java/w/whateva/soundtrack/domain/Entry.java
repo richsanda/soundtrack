@@ -64,6 +64,9 @@ public class Entry {
 
     private DateTime created;
 
+    @Transient
+    private String key;
+
     private Integer year;
     private Integer ordinal;
 
@@ -94,9 +97,18 @@ public class Entry {
     private Set<Ranking> rankings;
 
     public String getKey() {
-        return id.toString();
+
+        if (null != id) {
+            return id.toString();
+        } else {
+            return key;
+        }
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
+    
     public Integer getYear() { return year; }
 
     public void setYear(Integer year) {
