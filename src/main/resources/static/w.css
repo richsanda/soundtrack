@@ -209,7 +209,7 @@ div.edit-entry, div.delete-entry, div.edit-tag, div.delete-tag, div.edit-person,
     background-color: #ddd0d8;
 }
 
-div.story div.name-tag, div.story div.hash-tag {
+div.story div.name-tag, div.story div.hash-tag, div.story div.music {
     
     display: inline-block;
     zoom: 1;

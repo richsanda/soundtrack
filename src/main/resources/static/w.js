@@ -926,7 +926,7 @@ function buildPersonLink(person) {
 }
 
 function buildArtistLink(artist) {
-    var artistLink = $("<div class='music read-artist' id='" + artist.name + "'>" + artist.name + "</div>");
+    var artistLink = $("<div class='music read-artist' id=\"" + artist.name + "\">" + artist.name + "</div>");
     artistLink.append(" (" + artist.appearances + ")");
     return artistLink;
 }
@@ -1079,7 +1079,12 @@ function nameify(match, p1, p2, p3, p4, offset, text) {
     var tagHasSep = tagSepIndex > 0;
 
     if (tagHasSep) {
-        divClass += ' ' + p2.substring(0, tagSepIndex);
+        var tagType = p2.substring(0, tagSepIndex);
+        if (tagType == 'music') {
+            divClass = tagType;
+        } else {
+            divClass += ' ' + tagType;
+        }
         tagText = p2.substring(tagSepIndex + 1);
     } else {
         divClass += ' general';
