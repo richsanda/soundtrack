@@ -77,9 +77,9 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
     }
 
     @Override
-    public List<ApiEntry> readEntriesRanked() {
+    public List<ApiEntry> readEntriesRanked(Long limit) {
         List<Entry> entries = Lists.newArrayList(entryRepository.findAll());
-        return rankAndConvert(entries);
+        return rankAndConvert(entries, limit);
     }
 
     @Override
@@ -291,11 +291,12 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
         return result;
     }
 
-    private List<ApiEntry> rankAndConvert(List<Entry> entries) {
+    private List<ApiEntry> rankAndConvert(List<Entry> entries, Long limit) {
 
         return entries.stream()
                 .sorted(ENTRY_RANKER)
                 .map(SoundtrackDataBuilder::buildApiEntry)
+                .limit(limit)
                 .collect(Collectors.toList());
     }
 

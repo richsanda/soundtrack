@@ -21,7 +21,7 @@ public interface SoundtrackService {
 
     List<ApiEntry> readEntriesRandomized();
 
-    List<ApiEntry> readEntriesRanked();
+    List<ApiEntry> readEntriesRanked(Long limit);
 
     List<ApiEntry> readEntriesByPersonTags(List<String> personTags);
 

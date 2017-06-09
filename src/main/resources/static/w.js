@@ -22,7 +22,7 @@ function refreshEntries(showStory) {
 
 function refreshOverall() {
 
-    var url = "/soundtrack/ranked";
+    var url = "/soundtrack/ranked?limit=100";
 
     $.ajax({
         url: url,
@@ -491,7 +491,7 @@ function buildEntries(entries, updateFunction, navFunction, showStory) {
 
     var entriesDiv = $("<div class='entries'></div>");
 
-    if (updateFunction) {
+    if (updateFunction && edit) {
         entriesDiv.sortable({
             update: updateFunction
         });

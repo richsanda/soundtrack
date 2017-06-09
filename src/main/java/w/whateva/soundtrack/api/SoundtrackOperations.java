@@ -107,7 +107,7 @@ public interface SoundtrackOperations {
 
     @RequestMapping(value = "/soundtrack/ranked", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    List<Entry> readSoundtrackRanked();
+    List<Entry> readSoundtrackRanked(@RequestParam(value = "limit") Long limit);
 
     @RequestMapping(value = "/artists", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody

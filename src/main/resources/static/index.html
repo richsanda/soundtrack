@@ -17,14 +17,101 @@
     <div class="tab show-persons">people</div>
     <div class="tab show-tags">tags</div>
     <div class="tab show-artists">artists</div>
-    <!--div class="tab overall-button show-overall">top 100</div-->
+    <div class="tab overall-button show-overall">top 100</div>
 </div>
 <div class="pane">
     <div id="intro">
+        <h3>The Soundtrack 500</h3>
         <p>
-           Hey, this is the soundtrack.
+            Hello, welcome to the soundtrack. 25 years, 20 songs per year.
         </p>
         <div class='tab read-year'>start from the beginning</div>
+        <h3>The Key</h3>
+        <p>
+            The more significant the song, the darker the background on its title (or just jump to the
+        <span style="font-weight: bold; cursor: pointer;" class="show-overall">top 100</span> to see them in order). Color represents
+            proportional contribution to that significance:
+        </p>
+        <p>
+        <li><div class="title-button" style="margin:1px;font-weight:bold;background-color:rgba(255,0,0,0.25)">redder</div> -> how much I like the song (like, now)</li>
+        <li><div class="title-button" style="margin:1px;font-weight:bold;background-color:rgba(255,255,0,0.25)">yellower</div> -> how appropriate the song was for the soundtrack (like, then)</li>
+        <li><div class="title-button" style="margin:1px;font-weight:bold;background-color:rgba(0,0,255,0.25)">bluer</div> -> how meaningful of others the song is to me (shared enjoyment or experience; reminicent of, vice versa, or both; general popularity)</li>
+        </p>
+        <p>
+            It follows that orangey would mean good for me and the soundtrack, but I kinda went it alone... or green
+            would mean I shared it with others and it is important to the soundtrack, but it's just not a jam that I
+            love so hard anymore...
+        </p>
+        <h3>The Songs</h3>
+        <p>
+            I've been more or less collecting the song list the whole time. It doesn't represent an exhaustive list of
+            <i>favorite</i> songs -- for example, one song from a great album experienced acutely may have "crowded out"
+            other great songs from the album -- plus there was fluctuating enthusiasm, a variety of memory augmentation
+            techniques available at different times, the fact that I was more than twice as old at the end than at
+            the beginning... in a sense, the list is a bit arbitrary. That's not to say without meaning,
+            however, because if nothing else, for a song to appear here has "raised it to stardom" for me,
+            eclipsing and diminishing the stature of what were perhaps more worthy songs.
+        </p>
+        <h3>The Beginning</h3>
+        <p>
+            It began in 1992, when most of my calendar-oriented thoughts about music ended up on the
+            pages of composition notebooks, and in the liner notes of mix tapes, of course.
+            I ended up with a lot of handwriting and mix tapes entitled "92 songs", "93 songs", "94 songs, part 1"
+            -- kinda jumped the gun on that one, since I was headed to Air Force Academy and guessed
+            I wouldn't have much opportunity to listen to music (correctly, it turns out) -- and of course, "95 songs".
+        </p>
+        <h3>The Advent of the Internet</h3>
+        <p>
+            Shortly thereafter email entered the picture, and musical musings became a shared expression -- many a list
+            of songs and bands and albums raced between friends across the Internet. For example, in March, 1999,
+            I spent time producing my own "20 most powerful songs" list, to mass distribute via email (which,
+            almost twenty years later, turned out to be a key piece of research for this project). To start, I took my
+            year-in-review mix tapes from a half decade prior and standardized the song lists to 20 each, then
+            updated my record to include the intervening years, before whittling it down to the 20 I considered of
+            greatest importance then.
+        </p>
+        <h3>The Ten Year Mark</h3>
+        <p>
+            Realizing I had something going, I continued to collect 20 songs per year, working on it in streaks, until
+            the ten year mark, at which point I formally composed, in the body of one long email, the "soundtrack" of
+            the last ten years of my life, complete with stories that aren't much different than the ones that appear
+            here now (it's been more of a maintenance effort on the older content since then).
+        </p>
+        <h3>2003</h3>
+        <p>
+            In 2003 I got proactive and generated the 20 songs with stories almost immediately after the year ended.
+            Not quite sure what that was all about, but I was glad I didn't have to work so hard later on !
+        </p>
+        <h3>Twenty Years</h3>
+        <p>
+            My email collection is littered with self-addressed scraps attempting to keep up to date until the twenty
+            year mark. It was then that I decided to marry my love of organized information to what programming I had
+            learned and make a Web site out of it. It was mostly Python and a big in-memory XML document (mirrored to
+            disk) queried by applying XSL, plus XSL on the browser too (along with CSS and jQuery), so pretty
+            unorthodox, and a little ridiculous on the XSL (not an apology :)), but it remained responsive, though I
+            was a bit surprised it did. Obviously I had to catch up on the stories at that point, exercising my own UI,
+            not notebooks or email.
+        </p>
+        <h3>Twenty-five Years</h3>
+        <p>
+            So this is now. Added the last 100 entries, plus I added the tags and the people as links
+            from within the stories, so that you can pivot the soundtrack around them. And I did the rankings on three
+            axes, which seemed a little weird given that, as explained above, the list is a bit arbitrary to begin with,
+            but still, kinda fun (fwiw, the formula for calculating the overall rankings used for the "top 100"
+            tab involves a 10^x, to value the top spots more, expanding the significance of the difference between
+            1 and 2 over, say, 101 and 102). The timelines showing release date vs soundtrack date are new too.
+
+            The app is Java / Spring boot, but this time w/JSON everywhere instead of XML, and still CSS / jQuery
+            on the front end.
+        </p>
+        <h3>The End</h3>
+        <p>
+            That's it for now :) Enjoy the songs and stories and let me know if you do !
+        </p>
+        <p>
+            (don't let me know if you don't ;))
+        </p>
+        <div class='tab read-year'>ok, now start from the beginning</div>
     </div>
     <div class="years" id="years">
         <div class="year read-year" id='1992'>1992</div>
