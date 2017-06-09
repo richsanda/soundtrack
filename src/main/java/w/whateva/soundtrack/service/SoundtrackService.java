@@ -1,5 +1,6 @@
 package w.whateva.soundtrack.service;
 
+import w.whateva.soundtrack.service.iao.ApiArtist;
 import w.whateva.soundtrack.service.iao.ApiEntry;
 import w.whateva.soundtrack.service.iao.ApiEntrySpec;
 
@@ -28,7 +29,11 @@ public interface SoundtrackService {
 
     ApiEntry readEntry(Integer year, Integer ordinal);
 
+    List<ApiEntry> readEntries(String artist);
+
     ApiEntry updateEntry(String key, ApiEntrySpec apiEntrySpec);
 
     ApiEntry deleteEntry(String key);
+
+    List<ApiArtist> readAllArtists();
 }

@@ -93,6 +93,18 @@ function refreshTags() {
     });
 }
 
+function refreshArtists() {
+
+    var url = "/artists";
+
+    $.ajax({
+        url: url,
+        dataType: "json"
+    }).success(function (data) {
+        showPane(buildArtists(data));
+    });
+}
+
 function showPane(paneDiv, soundtrackDiv) {
     $('#pane').html(paneDiv);
     if (typeof soundtrackDiv == typeof undefined || !soundtrackDiv) {
@@ -158,6 +170,9 @@ function actionsClick(e) {
         'read-year' : function ($$) {
             readYear($$);
         },
+        'read-artist' : function ($$) {
+            readArtist($$);
+        },
         'show-soundtrack' : function ($$) {
             refreshEntries(true);
             clearAndUpdateSoundtrackDiv();
@@ -169,7 +184,7 @@ function actionsClick(e) {
             showYearsPane();
         },
         'show-artists' : function ($$) {
-            // showArtistsPane();
+            refreshArtists();
         },
         'show-tags' : function ($$) {
             refreshTags();
@@ -528,6 +543,22 @@ function buildPersons(persons) {
     return personsDiv;
 }
 
+function buildArtists(artists) {
+
+    // reset
+    $('#artists').data('keysToDivs', {});
+
+    var artistsDiv = $("<div class='artists'></div>");
+
+    $.each(artists, function() {
+        var artistDiv = buildArtistLink(this);
+        $('#artists').data('keysToDivs')[this.key] = artistDiv;
+        artistsDiv.append(artistDiv);
+    });
+
+    return artistsDiv;
+}
+
 function updateEntryPosition( event, ui ) {
 
     var showStory = true;
@@ -721,6 +752,19 @@ function buildTagPane(title, showStories) {
     return tagPaneDiv;
 }
 
+function buildArtistPane(title, showStories) {
+
+    var artistPaneDiv = $(
+        "<div class='soundtrack-pane'>" +
+        "<div class='soundtrack-title'>" + title + "</div>" +
+        "</div>"
+    );
+
+    artistPaneDiv.append(buildStoryButtonDiv(showStories));
+
+    return artistPaneDiv;
+}
+
 function buildOverallPane(title, showStories) {
 
     var overallPaneDiv = $(
@@ -881,6 +925,12 @@ function buildPersonLink(person) {
     return personLink;
 }
 
+function buildArtistLink(artist) {
+    var artistLink = $("<div class='music read-artist' id='" + artist.name + "'>" + artist.name + "</div>");
+    artistLink.append(" (" + artist.appearances + ")");
+    return artistLink;
+}
+
 function buildEntryForEdit(entry) {
 
     var overlayDiv = $("<div class='overlay no-op'/>");
@@ -967,6 +1017,20 @@ function readHashTag($$) {
         contentType: "application/json"
     }).success(function (data) {
         showPane(buildTagPane(id), buildEntries(data, true));
+    });
+}
+
+function readArtist($$) {
+
+    var id = $$.attr('id');
+    var url = "/entries/artist/" + id;
+
+    $.ajax({
+        url: url,
+        type: "get",
+        contentType: "application/json"
+    }).success(function (data) {
+        showPane(buildArtistPane(id), buildEntries(data, true));
     });
 }
 

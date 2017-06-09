@@ -48,6 +48,10 @@ public interface SoundtrackOperations {
     @ResponseBody
     Entry readEntry(@PathVariable("year") Integer year, @PathVariable("ordinal") Integer ordinal);
 
+    @RequestMapping(value = "/entries/artist/{artist}", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    List<Entry> readEntries(@PathVariable("artist") String artist);
+
     @RequestMapping(value = "/persons", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     List<Person> readPersons();
@@ -104,4 +108,8 @@ public interface SoundtrackOperations {
     @RequestMapping(value = "/soundtrack/ranked", method= RequestMethod.GET, produces = "application/json")
     @ResponseBody
     List<Entry> readSoundtrackRanked();
+
+    @RequestMapping(value = "/artists", method= RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    List<Artist> readArtists();
 }

@@ -7,6 +7,7 @@ import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
+import w.whateva.soundtrack.domain.Artist;
 import w.whateva.soundtrack.domain.Entry;
 import w.whateva.soundtrack.domain.HashTag;
 import w.whateva.soundtrack.domain.Person;
@@ -16,6 +17,7 @@ import w.whateva.soundtrack.domain.repository.PersonRepository;
 import w.whateva.soundtrack.service.MigrationService;
 import w.whateva.soundtrack.service.SoundtrackService;
 import w.whateva.soundtrack.service.TagType;
+import w.whateva.soundtrack.service.iao.ApiArtist;
 import w.whateva.soundtrack.service.iao.ApiEntry;
 import w.whateva.soundtrack.service.iao.ApiEntrySpec;
 import w.whateva.soundtrack.service.util.SoundtrackDataBuilder;
@@ -95,6 +97,12 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
     @Override
     public ApiEntry readEntry(Integer year, Integer ordinal) {
         return SoundtrackDataBuilder.buildApiEntry(entryRepository.findByYearAndOrdinal(year, ordinal));
+    }
+
+    @Override
+    public List<ApiEntry> readEntries(String artist) {
+        List<Entry> entries = entryRepository.findByArtist(artist);
+        return sortAndConvert(entries);
     }
 
     @Override
@@ -242,10 +250,17 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
         return result;
     }
 
+    @Override
+    public List<ApiArtist> readAllArtists() {
+
+        List<Artist> artists = entryRepository.findAllArtists();
+        return artists.stream().map(SoundtrackDataBuilder::buildApiArtist).collect(Collectors.toList());
+    }
+
     private void reorderYear(Integer year) {
 
         List<Entry> entries = entryRepository.findByYear(year);
-        Collections.sort(entries, ENTRY_COMPARATOR);
+        entries.sort(ENTRY_COMPARATOR);
 
         int i = 1;
         for (Entry entry : entries) {
@@ -263,12 +278,7 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
 
     private List<ApiEntry> sortAndConvert(List<Entry> entries) {
 
-        entries.sort(ENTRY_COMPARATOR);
-        List<ApiEntry> result = Lists.newArrayList();
-        for (Entry entry : entries) {
-            result.add(SoundtrackDataBuilder.buildApiEntry(entry));
-        }
-        return result;
+        return entries.stream().sorted(ENTRY_COMPARATOR).map(SoundtrackDataBuilder::buildApiEntry).collect(Collectors.toList());
     }
 
     private List<ApiEntry> randomizeAndConvert(List<Entry> entries) {

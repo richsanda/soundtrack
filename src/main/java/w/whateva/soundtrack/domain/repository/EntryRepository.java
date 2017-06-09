@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
+import w.whateva.soundtrack.domain.Artist;
 import w.whateva.soundtrack.domain.Entry;
 
 import java.util.Collection;
@@ -34,4 +35,10 @@ public interface EntryRepository extends PagingAndSortingRepository<Entry, Long>
 
     @Query("SELECT MAX(e.year) FROM Entry e")
     Integer findGreatestYear();
+
+    @Query("SELECT NEW w.whateva.soundtrack.domain.Artist(e.artist, count(e)) FROM Entry e" +
+            " GROUP BY e.artist ORDER BY COUNT(e) DESC, e.artist")
+    List<Artist> findAllArtists();
+
+    List<Entry> findByArtist(String artist);
 }

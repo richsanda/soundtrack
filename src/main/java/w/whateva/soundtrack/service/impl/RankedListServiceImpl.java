@@ -79,10 +79,8 @@ public class RankedListServiceImpl implements RankedListService {
 
             List<Ranking> rankings = Lists.newArrayList();
 
-            // TODO: THIS TURNS UP ONLY 400 in the migration case... why is that ?
-            List<Entry> entries = entryRepository.findByIds(
-                    keys.stream().map(Long::valueOf).collect(Collectors.toList())
-            );
+            List<Long> ids = keys.stream().map(Long::valueOf).collect(Collectors.toList());
+            List<Entry> entries = entryRepository.findByIds(ids);
 
             Map<String, Entry> existingEntries = entries.stream().collect(Collectors.toMap(Entry::getKey, Function.identity()));
 

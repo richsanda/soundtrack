@@ -164,4 +164,10 @@ public class SoundtrackDataBuilder {
 
         return buildApiEntry(ranking.getEntry());
     }
+
+    public static ApiArtist buildApiArtist(Artist artist) {
+        ApiArtist result = new ApiArtist();
+        BeanUtils.copyProperties(artist, result);
+        return result;
+    }
 }

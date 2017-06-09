@@ -34,6 +34,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
     private final HashTagSpecMapper hashTagSpecMapper;
     private final RankedListSpecMapper rankedListSpecMapper;
     private final RankedListMapper rankedListMapper;
+    private final ArtistMapper artistMapper;
 
     @Autowired
     public SoundtrackRestController(SoundtrackService soundtrackService,
@@ -46,7 +47,8 @@ public class SoundtrackRestController implements SoundtrackRestService {
                                     HashTagMapper hashTagMapper,
                                     HashTagSpecMapper hashTagSpecMapper,
                                     RankedListSpecMapper rankedListSpecMapper,
-                                    RankedListMapper rankedListMapper) {
+                                    RankedListMapper rankedListMapper,
+                                    ArtistMapper artistMapper) {
         this.soundtrackService = soundtrackService;
         this.personService = personService;
         this.hashTagService = hashTagService;
@@ -58,6 +60,7 @@ public class SoundtrackRestController implements SoundtrackRestService {
         this.hashTagSpecMapper = hashTagSpecMapper;
         this.rankedListSpecMapper = rankedListSpecMapper;
         this.rankedListMapper = rankedListMapper;
+        this.artistMapper = artistMapper;
     }
 
     @Transactional(value = "transactionManager")
@@ -143,6 +146,15 @@ public class SoundtrackRestController implements SoundtrackRestService {
     public Entry readEntry(@PathVariable("year") Integer year, @PathVariable("ordinal") Integer ordinal) {
         try {
             return entryMapper.toRest(soundtrackService.readEntry(year, ordinal));
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    public List<Entry> readEntries(@PathVariable("artist") String artist) {
+        try {
+            return entryMapper.toRest(soundtrackService.readEntries(artist));
         } catch (MapperException e) {
             // TODO: throw useful exception
         }
@@ -282,6 +294,15 @@ public class SoundtrackRestController implements SoundtrackRestService {
     public List<Entry> readSoundtrackRanked() {
         try {
             return entryMapper.toRest(soundtrackService.readEntriesRanked());
+        } catch (MapperException e) {
+            // TODO: throw useful exception
+        }
+        return null;
+    }
+
+    public List<Artist> readArtists() {
+        try {
+            return artistMapper.toRest(soundtrackService.readAllArtists());
         } catch (MapperException e) {
             // TODO: throw useful exception
         }

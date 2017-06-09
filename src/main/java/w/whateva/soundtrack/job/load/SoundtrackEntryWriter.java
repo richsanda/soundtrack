@@ -64,9 +64,9 @@ public class SoundtrackEntryWriter implements ItemWriter<Entry>, StepExecutionLi
     @Override
     public ExitStatus afterStep(StepExecution stepExecution) {
 
-        List<String> favoriteKeys = Lists.newArrayList(rankings.get(FAVORITE_KEY).keySet());
-        List<String> representativeKeys = Lists.newArrayList(rankings.get(REPRESENTATIVE_KEY).keySet());
-        List<String> sharedKeys = Lists.newArrayList(rankings.get(SHARED_KEY).keySet());
+        List<String> favoriteKeys = Lists.newArrayList(keysToOldKeys.keySet());
+        List<String> representativeKeys = Lists.newArrayList(keysToOldKeys.keySet());
+        List<String> sharedKeys = Lists.newArrayList(keysToOldKeys.keySet());
 
         favoriteKeys.sort(FAVORITES_COMPARATOR);
         representativeKeys.sort(REPRESENTATIVE_COMPARATOR);

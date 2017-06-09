@@ -197,7 +197,7 @@ div.edit-entry-top, div.edit-entry-bottom {
 
 div.edit-entry:hover, div.delete-entry:hover, div.name-tag:hover, div.hash-tag:hover, div.year:hover,
 div.nav-button:hover, div.tab:hover, div.edit-tag:hover, div.edit-person:hover, div.delete-tag:hover,
-div.delete-person:hover, div.title-button:hover, div.title:hover {
+div.delete-person:hover, div.title-button:hover, div.title:hover, div.artists div.music:hover {
     cursor: pointer;
 }
 
@@ -304,7 +304,7 @@ div.people, div.years {
     margin-bottom: 20px;
 }
 
-div.tags {
+div.tags, div.artists {
 
     -webkit-column-count: 4; /* Chrome, Safari, Opera */
     -moz-column-count: 4; /* Firefox */
@@ -317,7 +317,7 @@ div.tags {
     text-align: center;
 }
 
-div.people div.name-tag, div.tags div.hash-tag, div.years div.year {
+div.people div.name-tag, div.tags div.hash-tag, div.years div.year, div.artists div.music {
 
     padding: 2px;
     margin: 2px;
@@ -351,7 +351,7 @@ div.years div.year {
     font-size: 1.1em;
 }
 
-div.tags div.hash-tag:hover {
+div.tags div.hash-tag:hover, div.artists div.music:hover {
     opacity: 0.8;
 }
 
