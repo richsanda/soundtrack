@@ -6,6 +6,7 @@ function pageBehavior () {
 
     actionsBehavior($(this));
     showIntroPane();
+    pushState();
 }
 
 function refreshEntries(showStory) {
@@ -179,9 +180,11 @@ function actionsClick(e) {
         },
         'show-intro' : function ($$) {
             showIntroPane();
+            pushState();
         },
         'show-years' : function ($$) {
             showYearsPane();
+            pushState();
         },
         'show-artists' : function ($$) {
             refreshArtists();
@@ -226,16 +229,19 @@ function actionsClick(e) {
             var entryDiv = $$.closest('div.entry');
             var storyDiv = entryDiv.find('div.story');
             storyDiv.toggle();
+            pushState();
         },
         'show-stories' : function ($$) {
             $('#soundtrack').find('div.story').show();
             $$.text('hide stories');
             $$.removeClass('show-stories').addClass('hide-stories');
+            pushState();
         },
         'hide-stories' : function ($$) {
             $('#soundtrack').find('div.story').hide();
             $$.text('show stories');
             $$.removeClass('hide-stories').addClass('show-stories');
+            pushState();
         },
         'move-to' : function ($$) {
             var entryDiv = $$.closest('div.entry');
@@ -890,7 +896,7 @@ function showCircle(p, d, t) {
 
 function showTag(tag) {
 
-    var titleDiv = $("<div class='title'><div class='tag-title title-button' id='" + tag.tag + "'>" + tag.tag + " (" + tag.appearances + ")" + "</div> " + valuify(tag.fullTag) + " <div class='edit-tag title-button'>edit</div><div class='delete-tag title-button'>delete</div></div>");
+    var titleDiv = $("<div class='title'><div class='tag-title title-button' id='" + tag.tag + "'>" + tag.tag + " " + appearanceify(tag.appearances) + "</div> " + valuify(tag.fullTag) + " <div class='edit-tag title-button'>edit</div><div class='delete-tag title-button'>delete</div></div>");
     var storyDiv = $("<div class='story'>" + storyify(tag.story) + "</div>");
     var tagDiv = $("<div class='tag' id='" + tag.key + "'/>");
     tagDiv.append(titleDiv);
@@ -902,13 +908,13 @@ function showTag(tag) {
 
 function buildTagLink(tag) {
     var tagLink = $(nameify(null, "#", tag.tag));
-    tagLink.text(tagLink.text() + " (" + tag.appearances + ")");
+    tagLink.text(tagLink.text() + " " + appearanceify(tag.appearances));
     return tagLink;
 }
 
 function buildPerson(person) {
 
-    var titleDiv = $("<div class='title'><div class='person-title title-button' id='" + person.tag + "'> " + person.tag + " (" + person.appearances + ")" + "</div> " + valuify(person.name) + " <div class='edit-person title-button'>edit</div><div class='delete-person title-button'>delete</div></div>");
+    var titleDiv = $("<div class='title'><div class='person-title title-button' id='" + person.tag + "'> " + person.tag + " " + appearanceify(person.appearances) + "</div> " + valuify(person.name) + " <div class='edit-person title-button'>edit</div><div class='delete-person title-button'>delete</div></div>");
     var storyDiv = $("<div class='story'>" + storyify(person.story) + "</div>");
     var personDiv = $("<div class='person' id='" + person.key + "'/>");
     personDiv.append(titleDiv);
@@ -920,14 +926,13 @@ function buildPerson(person) {
 
 function buildPersonLink(person) {
     var personLink = $(nameify(null, "@", person.tag));
-    //personLink.text(personLink.text() + " (" + person.appearances + ")");
-    personLink.append(" (" + person.appearances + ")");
+    personLink.append(" " + appearanceify(person.appearances));
     return personLink;
 }
 
 function buildArtistLink(artist) {
     var artistLink = $("<div class='music read-artist' id=\"" + artist.name + "\">" + artist.name + "</div>");
-    artistLink.append(" (" + artist.appearances + ")");
+    artistLink.append(" " + appearanceify(artist.appearances));
     return artistLink;
 }
 
@@ -970,7 +975,7 @@ function showTagForEdit(tag) {
     overlayDiv.append(contentDiv);
 
     var headerDiv = $("<div class='edit-entry-top'/>");
-    var tagDiv = $("<div><label for='tag' class='tag'><span>" + valuify(tag.tag) + " (" + tag.appearances + ")</span></label></div>");
+    var tagDiv = $("<div><label for='tag' class='tag'><span>" + valuify(tag.tag) + " " + appearanceify(tag.appearances) + "</span></label></div>");
     var fullDiv = $("<label for='full' class='full'><span>full</span><input type='text' id='full' value='" + valuify(tag.fullTag) + "'/></label>");
     var nameDiv = $("<label for='name' class='name'><span>name</span><input type='text' id='name' value='" + valuify(tag.name) + "'/></label>");
     headerDiv.append(tagDiv);
@@ -1111,6 +1116,10 @@ function parenthesize(text) {
     return null == text ? "" : " (" + text + ") ";
 }
 
+function appearanceify(count) {
+    return (!count || count <= 1) ? "" : parenthesize(count);
+}
+
 function dateify(text) {
     return (!text) ? null : text.length == 4 ? text + "-01-01" : text.length == 7 ? text + "-01" : text;
 }
@@ -1146,4 +1155,23 @@ function calculateColor(entry) {
     );
 
     return "rgba(" + r + ", " + g + ", " + b + ", " + entry.score / 600 + ")";
+}
+
+$(document).ajaxComplete(function(ev, jqXHR, settings) {
+    // settings.url is the ajax url... could come in handy...
+    pushState();
+});
+
+window.onpopstate = function (event) {
+    var currentState = history.state;
+    if (currentState != null) {
+        document.body.innerHTML = currentState.innerhtml;
+    }
+};
+
+function pushState(url) {
+
+    url = (!url) ? window.location.href : url;
+    var state = { url: url, innerhtml: document.body.innerHTML };
+    window.history.pushState(state, url, url);
 }

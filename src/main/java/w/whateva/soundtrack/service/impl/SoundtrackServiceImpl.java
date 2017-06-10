@@ -141,6 +141,7 @@ public class SoundtrackServiceImpl implements SoundtrackService, MigrationServic
                 for (String personTag : personTags) {
                     if (!personTagsToPersons.containsKey(personTag)) {
                         Person person = new Person(personTag);
+                        personRepository.save(person);
                         personTagsToPersons.put(personTag, person);
                     }
                 }
