@@ -62,7 +62,7 @@ div.nav-button {
     border: 1px solid saddlebrown;
 }
 
-div.title-button, div.ordinal {
+div.title-button, div.ordinal, div.title-button-example {
 
     display: inline-block;
     zoom: 1;

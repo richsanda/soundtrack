@@ -9,13 +9,13 @@
   "spotify" : "spotify:track:1a5GCtqWLseerHmpbIBMA2",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 274,
-    "score" : 1.51
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 266,
     "score" : 1.70
+  }, {
+    "type" : "FAVORITE",
+    "index" : 274,
+    "score" : 1.51
   }, {
     "type" : "SHARED",
     "index" : 117,
@@ -36,6 +36,10 @@
   "spotify" : "spotify:track:47QdoQRwKXKCSuLbBOjm4c",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 69,
+    "score" : 35.48
+  }, {
     "type" : "FAVORITE",
     "index" : 289,
     "score" : 1.20
@@ -43,10 +47,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 233,
     "score" : 2.82
-  }, {
-    "type" : "SHARED",
-    "index" : 69,
-    "score" : 35.48
   } ],
   "score" : 39.50,
   "soundtrackPosition" : 55,
@@ -63,13 +63,13 @@
   "spotify" : "spotify:track:297C4FiD23BA7WHoX3Yr9Z",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 183,
-    "score" : 6.17
-  }, {
     "type" : "FAVORITE",
     "index" : 335,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 183,
+    "score" : 6.17
   }, {
     "type" : "SHARED",
     "index" : 109,
@@ -117,17 +117,17 @@
   "spotify" : "spotify:track:2Vb0mJ4IcLwKrMEcck2d1b",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 14,
-    "score" : 81.28
+    "type" : "FAVORITE",
+    "index" : 292,
+    "score" : 1.15
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 290,
     "score" : 1.17
   }, {
-    "type" : "FAVORITE",
-    "index" : 292,
-    "score" : 1.15
+    "type" : "SHARED",
+    "index" : 14,
+    "score" : 81.28
   } ],
   "score" : 83.60,
   "soundtrackPosition" : 55,
@@ -144,6 +144,10 @@
   "spotify" : "spotify:track:4P5KoWXOxwuobLmHXLMobV",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 108,
+    "score" : 19.50
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 31,
     "score" : 63.10
@@ -151,10 +155,6 @@
     "type" : "FAVORITE",
     "index" : 358,
     "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 108,
-    "score" : 19.50
   } ],
   "score" : 83.60,
   "soundtrackPosition" : 55,
@@ -175,13 +175,13 @@
     "index" : 199,
     "score" : 4.79
   }, {
-    "type" : "FAVORITE",
-    "index" : 311,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 274,
     "score" : 1.51
+  }, {
+    "type" : "FAVORITE",
+    "index" : 311,
+    "score" : 1
   } ],
   "score" : 7.30,
   "soundtrackPosition" : 55,
@@ -225,6 +225,10 @@
   "spotify" : "spotify:track:19bR4aKlr6fD1eAHDCmr2l",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 17,
+    "score" : 77.62
+  }, {
     "type" : "SHARED",
     "index" : 10,
     "score" : 87.10
@@ -232,10 +236,6 @@
     "type" : "FAVORITE",
     "index" : 247,
     "score" : 2.29
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 17,
-    "score" : 77.62
   } ],
   "score" : 167.01,
   "soundtrackPosition" : 55,
@@ -252,13 +252,13 @@
   "spotify" : "spotify:track:2JUXZKIyC7LWh6KcA1Nr05",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 129,
-    "score" : 14.13
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 169,
     "score" : 7.59
+  }, {
+    "type" : "FAVORITE",
+    "index" : 129,
+    "score" : 14.13
   }, {
     "type" : "SHARED",
     "index" : 79,
@@ -306,10 +306,6 @@
   "spotify" : "spotify:track:2qZu6ByfZFFb56CwZRfwTo",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 6,
-    "score" : 93.33
-  }, {
     "type" : "FAVORITE",
     "index" : 342,
     "score" : 1
@@ -317,6 +313,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 35,
     "score" : 58.88
+  }, {
+    "type" : "SHARED",
+    "index" : 6,
+    "score" : 93.33
   } ],
   "score" : 153.21,
   "soundtrackPosition" : 56,
@@ -387,15 +387,15 @@
   "spotify" : "spotify:track:4BWCBgfyzlweCSYqVB2YRD",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 178,
+    "score" : 6.61
+  }, {
     "type" : "FAVORITE",
     "index" : 137,
     "score" : 12.30
   }, {
     "type" : "REPRESENTATIVE",
-    "index" : 178,
-    "score" : 6.61
-  }, {
-    "type" : "SHARED",
     "index" : 178,
     "score" : 6.61
   } ],
@@ -418,12 +418,12 @@
     "index" : 464,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 453,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 468,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 453,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -441,6 +441,10 @@
   "spotify" : "spotify:track:7FRfYOql61DGDp9VPPe2qA",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 26,
+    "score" : 67.61
+  }, {
     "type" : "SHARED",
     "index" : 20,
     "score" : 74.13
@@ -448,10 +452,6 @@
     "type" : "FAVORITE",
     "index" : 345,
     "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 26,
-    "score" : 67.61
   } ],
   "score" : 142.74,
   "soundtrackPosition" : 56,
@@ -468,13 +468,13 @@
   "spotify" : "spotify:track:5YFxxLGoUy3UB0Uc7vTF3b",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 188,
-    "score" : 5.62
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 27,
     "score" : 67.61
+  }, {
+    "type" : "FAVORITE",
+    "index" : 188,
+    "score" : 5.62
   }, {
     "type" : "SHARED",
     "index" : 17,
@@ -495,6 +495,10 @@
   "spotify" : "spotify:track:6iABG3ruJ1ArrulilbVhai",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 443,
+    "score" : 1
+  }, {
     "type" : "SHARED",
     "index" : 4,
     "score" : 95.50
@@ -502,10 +506,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 293,
     "score" : 1.12
-  }, {
-    "type" : "FAVORITE",
-    "index" : 443,
-    "score" : 1
   } ],
   "score" : 97.62,
   "soundtrackPosition" : 56,
@@ -526,12 +526,12 @@
     "index" : 497,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 306,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 445,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 306,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -549,16 +549,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=NWAbNIMsveI",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 394,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 382,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 306,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 394,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -603,10 +603,6 @@
   "spotify" : "spotify:track:0isg6tcGurmZH72U7NzfXi",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 256,
-    "score" : 2.00
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 68,
     "score" : 35.48
@@ -614,6 +610,10 @@
     "type" : "FAVORITE",
     "index" : 420,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 256,
+    "score" : 2.00
   } ],
   "score" : 38.48,
   "soundtrackPosition" : 57,
@@ -630,12 +630,12 @@
   "spotify" : "spotify:track:1ffzAzDFSOvEbWTbC7aPLw",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 326,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 304,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 326,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
@@ -661,13 +661,13 @@
     "index" : 297,
     "score" : 1.07
   }, {
-    "type" : "SHARED",
-    "index" : 383,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 295,
     "score" : 1.10
+  }, {
+    "type" : "SHARED",
+    "index" : 383,
+    "score" : 1
   } ],
   "score" : 3.17,
   "soundtrackPosition" : 57,
@@ -688,13 +688,13 @@
     "index" : 190,
     "score" : 5.50
   }, {
-    "type" : "FAVORITE",
-    "index" : 259,
-    "score" : 1.91
-  }, {
     "type" : "SHARED",
     "index" : 379,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 259,
+    "score" : 1.91
   } ],
   "score" : 8.41,
   "soundtrackPosition" : 57,
@@ -715,13 +715,13 @@
     "index" : 88,
     "score" : 26.30
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 122,
-    "score" : 15.49
-  }, {
     "type" : "FAVORITE",
     "index" : 284,
     "score" : 1.29
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 122,
+    "score" : 15.49
   } ],
   "score" : 43.08,
   "soundtrackPosition" : 57,
@@ -738,10 +738,6 @@
   "spotify" : "spotify:track:04tTdijdFyCr1vwrRylBU5",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 250,
-    "score" : 2.19
-  }, {
     "type" : "SHARED",
     "index" : 240,
     "score" : 2.57
@@ -749,6 +745,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 16,
     "score" : 79.43
+  }, {
+    "type" : "FAVORITE",
+    "index" : 250,
+    "score" : 2.19
   } ],
   "score" : 84.19,
   "soundtrackPosition" : 57,
@@ -765,10 +765,6 @@
   "spotify" : "spotify:track:3jJZVeExYzVYiV6Y9Fl3DX",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 29,
-    "score" : 64.57
-  }, {
     "type" : "FAVORITE",
     "index" : 315,
     "score" : 1
@@ -776,6 +772,10 @@
     "type" : "SHARED",
     "index" : 5,
     "score" : 93.33
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 29,
+    "score" : 64.57
   } ],
   "score" : 158.90,
   "soundtrackPosition" : 57,
@@ -792,17 +792,17 @@
   "spotify" : "spotify:track:0TvruSVPLfS6r0sTqaXoDs",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 216,
-    "score" : 3.72
+    "type" : "SHARED",
+    "index" : 361,
+    "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 248,
     "score" : 2.24
   }, {
-    "type" : "SHARED",
-    "index" : 361,
-    "score" : 1
+    "type" : "REPRESENTATIVE",
+    "index" : 216,
+    "score" : 3.72
   } ],
   "score" : 6.96,
   "soundtrackPosition" : 57,
@@ -819,6 +819,10 @@
   "spotify" : "spotify:track:1JC0lMRGFoRorXtODWpkdf",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 347,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 189,
     "score" : 5.62
@@ -826,10 +830,6 @@
     "type" : "SHARED",
     "index" : 276,
     "score" : 1.48
-  }, {
-    "type" : "FAVORITE",
-    "index" : 347,
-    "score" : 1
   } ],
   "score" : 8.10,
   "soundtrackPosition" : 57,
@@ -850,13 +850,13 @@
     "index" : 115,
     "score" : 17.38
   }, {
-    "type" : "SHARED",
-    "index" : 115,
-    "score" : 17.38
-  }, {
     "type" : "FAVORITE",
     "index" : 290,
     "score" : 1.17
+  }, {
+    "type" : "SHARED",
+    "index" : 115,
+    "score" : 17.38
   } ],
   "score" : 35.93,
   "soundtrackPosition" : 57,
@@ -873,12 +873,12 @@
   "spotify" : "spotify:track:3JwAtICRiXpxfHKsbHEjem",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 423,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 358,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 423,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -900,10 +900,6 @@
   "spotify" : "spotify:track:5m9UvDOucObZxVFgxJOA3E",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 216,
-    "score" : 3.72
-  }, {
     "type" : "FAVORITE",
     "index" : 95,
     "score" : 23.44
@@ -911,6 +907,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 133,
     "score" : 13.18
+  }, {
+    "type" : "SHARED",
+    "index" : 216,
+    "score" : 3.72
   } ],
   "score" : 40.34,
   "soundtrackPosition" : 58,
@@ -927,6 +927,10 @@
   "spotify" : "spotify:track:6xofu37U6SfpzvL2VQK26s",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 219,
+    "score" : 3.55
+  }, {
     "type" : "SHARED",
     "index" : 92,
     "score" : 24.55
@@ -934,10 +938,6 @@
     "type" : "FAVORITE",
     "index" : 233,
     "score" : 2.82
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 219,
-    "score" : 3.55
   } ],
   "score" : 30.92,
   "soundtrackPosition" : 58,
@@ -954,12 +954,12 @@
   "spotify" : "spotify:track:2EogyXM3vYmepKPkuaRAi5",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 350,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 461,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 350,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -981,16 +981,16 @@
   "spotify" : "spotify:track:167W2OjiT98SxbdQvi4zP1",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 407,
+    "type" : "SHARED",
+    "index" : 431,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 413,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 431,
+    "type" : "REPRESENTATIVE",
+    "index" : 407,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -1008,6 +1008,10 @@
   "spotify" : "spotify:track:1zTeBZXy4p2UALobZztYDs",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 62,
+    "score" : 38.90
+  }, {
     "type" : "FAVORITE",
     "index" : 126,
     "score" : 14.79
@@ -1015,10 +1019,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 265,
     "score" : 1.74
-  }, {
-    "type" : "SHARED",
-    "index" : 62,
-    "score" : 38.90
   } ],
   "score" : 55.43,
   "soundtrackPosition" : 58,
@@ -1035,16 +1035,16 @@
   "spotify" : "spotify:track:1VdtGkrtYMfWKu4x120oWz",
   "youtube" : "http://www.youtube.com/watch?v=DW3pZjmS3rg",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 475,
+    "type" : "REPRESENTATIVE",
+    "index" : 476,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 472,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 476,
+    "type" : "SHARED",
+    "index" : 475,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -1089,13 +1089,13 @@
   "spotify" : "spotify:track:5s7tg13b0zcD8xvuQYrMNG",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 182,
-    "score" : 6.17
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 80,
     "score" : 29.51
+  }, {
+    "type" : "FAVORITE",
+    "index" : 182,
+    "score" : 6.17
   }, {
     "type" : "SHARED",
     "index" : 13,
@@ -1116,16 +1116,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=Bf00KI2MEGg",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 362,
+    "type" : "REPRESENTATIVE",
+    "index" : 366,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 185,
     "score" : 5.89
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 366,
+    "type" : "FAVORITE",
+    "index" : 362,
     "score" : 1
   } ],
   "score" : 7.89,
@@ -1147,13 +1147,13 @@
     "index" : 380,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 428,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 197,
     "score" : 4.90
+  }, {
+    "type" : "FAVORITE",
+    "index" : 428,
+    "score" : 1
   } ],
   "score" : 6.90,
   "soundtrackPosition" : 58,
@@ -1197,17 +1197,17 @@
   "spotify" : "spotify:track:25Q2AokxQzdH0IE5hOBNmA",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 408,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 272,
+    "score" : 1.55
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 323,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 272,
-    "score" : 1.55
+    "type" : "FAVORITE",
+    "index" : 408,
+    "score" : 1
   } ],
   "score" : 3.55,
   "soundtrackPosition" : 59,
@@ -1228,13 +1228,13 @@
     "index" : 257,
     "score" : 1.95
   }, {
-    "type" : "SHARED",
-    "index" : 9,
-    "score" : 89.13
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 21,
     "score" : 74.13
+  }, {
+    "type" : "SHARED",
+    "index" : 9,
+    "score" : 89.13
   } ],
   "score" : 165.21,
   "soundtrackPosition" : 59,
@@ -1251,13 +1251,13 @@
   "spotify" : "spotify:track:63tYrry3X6Xk3jqrEAZIGD",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 151,
-    "score" : 10.00
-  }, {
     "type" : "SHARED",
     "index" : 28,
     "score" : 66.07
+  }, {
+    "type" : "FAVORITE",
+    "index" : 151,
+    "score" : 10.00
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 117,
@@ -1278,17 +1278,17 @@
   "spotify" : "spotify:track:0UhZkk4agmJpbMCvT3OgLG",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 113,
-    "score" : 17.78
+    "type" : "REPRESENTATIVE",
+    "index" : 88,
+    "score" : 26.30
   }, {
     "type" : "SHARED",
     "index" : 100,
     "score" : 21.88
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 88,
-    "score" : 26.30
+    "type" : "FAVORITE",
+    "index" : 113,
+    "score" : 17.78
   } ],
   "score" : 65.96,
   "soundtrackPosition" : 59,
@@ -1305,17 +1305,17 @@
   "spotify" : "spotify:track:1VgPjz1kxJefF00tEkLbBZ",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 194,
-    "score" : 5.13
+    "type" : "SHARED",
+    "index" : 7,
+    "score" : 91.20
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 51,
     "score" : 46.77
   }, {
-    "type" : "SHARED",
-    "index" : 7,
-    "score" : 91.20
+    "type" : "FAVORITE",
+    "index" : 194,
+    "score" : 5.13
   } ],
   "score" : 143.10,
   "soundtrackPosition" : 59,
@@ -1332,17 +1332,17 @@
   "spotify" : "spotify:track:1f5s5i721OcbLH8XdSac14",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 110,
-    "score" : 18.62
+    "type" : "FAVORITE",
+    "index" : 303,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 39,
     "score" : 56.23
   }, {
-    "type" : "FAVORITE",
-    "index" : 303,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 110,
+    "score" : 18.62
   } ],
   "score" : 75.85,
   "soundtrackPosition" : 59,
@@ -1359,13 +1359,13 @@
   "spotify" : "spotify:track:6FEKEO3y7QFcMwoGeR0GtU",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 81,
-    "score" : 29.51
-  }, {
     "type" : "FAVORITE",
     "index" : 313,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 81,
+    "score" : 29.51
   }, {
     "type" : "SHARED",
     "index" : 16,
@@ -1386,6 +1386,10 @@
   "spotify" : "spotify:track:1px5YA6UnTvtapfZ6usc62",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 205,
+    "score" : 4.37
+  }, {
     "type" : "FAVORITE",
     "index" : 258,
     "score" : 1.95
@@ -1393,10 +1397,6 @@
     "type" : "SHARED",
     "index" : 97,
     "score" : 22.91
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 205,
-    "score" : 4.37
   } ],
   "score" : 29.23,
   "soundtrackPosition" : 59,
@@ -1413,10 +1413,6 @@
   "spotify" : "spotify:track:6QDhezYZyASBTVVZPiuKD1",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 43,
-    "score" : 52.48
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 6,
     "score" : 93.33
@@ -1424,6 +1420,10 @@
     "type" : "SHARED",
     "index" : 47,
     "score" : 48.98
+  }, {
+    "type" : "FAVORITE",
+    "index" : 43,
+    "score" : 52.48
   } ],
   "score" : 194.79,
   "soundtrackPosition" : 59,
@@ -1440,10 +1440,6 @@
   "spotify" : "spotify:track:3vmaVb2NYq8Se7pLubuRRX",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 187,
-    "score" : 5.75
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 62,
     "score" : 38.90
@@ -1451,6 +1447,10 @@
     "type" : "SHARED",
     "index" : 74,
     "score" : 32.36
+  }, {
+    "type" : "FAVORITE",
+    "index" : 187,
+    "score" : 5.75
   } ],
   "score" : 77.01,
   "soundtrackPosition" : 59,
@@ -1467,15 +1467,15 @@
   "spotify" : "spotify:track:4uUdPhac4okjLxSyNNgY2v",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 288,
+    "score" : 1.23
+  }, {
     "type" : "SHARED",
     "index" : 137,
     "score" : 12.30
   }, {
     "type" : "REPRESENTATIVE",
-    "index" : 288,
-    "score" : 1.23
-  }, {
-    "type" : "FAVORITE",
     "index" : 288,
     "score" : 1.23
   } ],
@@ -1498,12 +1498,12 @@
     "index" : 158,
     "score" : 8.91
   }, {
-    "type" : "FAVORITE",
-    "index" : 492,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 401,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 492,
     "score" : 1
   } ],
   "score" : 10.91,
@@ -1521,6 +1521,10 @@
   "spotify" : "spotify:track:2xK521J5ajfEpjqnczhZY9",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 196,
+    "score" : 5.01
+  }, {
     "type" : "FAVORITE",
     "index" : 256,
     "score" : 2.00
@@ -1528,10 +1532,6 @@
     "type" : "SHARED",
     "index" : 107,
     "score" : 19.50
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 196,
-    "score" : 5.01
   } ],
   "score" : 26.51,
   "soundtrackPosition" : 60,
@@ -1548,6 +1548,10 @@
   "spotify" : "spotify:track:49t1GWE6ZiEoBgN92oMDdM",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 121,
+    "score" : 15.85
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 41,
     "score" : 53.70
@@ -1555,10 +1559,6 @@
     "type" : "SHARED",
     "index" : 38,
     "score" : 56.23
-  }, {
-    "type" : "FAVORITE",
-    "index" : 121,
-    "score" : 15.85
   } ],
   "score" : 125.78,
   "soundtrackPosition" : 60,
@@ -1606,13 +1606,13 @@
     "index" : 79,
     "score" : 30.20
   }, {
-    "type" : "FAVORITE",
-    "index" : 84,
-    "score" : 28.18
-  }, {
     "type" : "SHARED",
     "index" : 26,
     "score" : 67.61
+  }, {
+    "type" : "FAVORITE",
+    "index" : 84,
+    "score" : 28.18
   } ],
   "score" : 125.99,
   "soundtrackPosition" : 60,
@@ -1629,16 +1629,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=97Ydq-NU2Iw",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 451,
+    "type" : "REPRESENTATIVE",
+    "index" : 456,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 452,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 456,
+    "type" : "FAVORITE",
+    "index" : 451,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -1656,17 +1656,17 @@
   "spotify" : "spotify:track:1VekjKr0JXvbebbvpLxfEr",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 201,
-    "score" : 4.68
+    "type" : "REPRESENTATIVE",
+    "index" : 89,
+    "score" : 25.70
   }, {
     "type" : "FAVORITE",
     "index" : 60,
     "score" : 40.74
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 89,
-    "score" : 25.70
+    "type" : "SHARED",
+    "index" : 201,
+    "score" : 4.68
   } ],
   "score" : 71.12,
   "soundtrackPosition" : 60,
@@ -1683,17 +1683,17 @@
   "spotify" : "spotify:track:6etTGUYDxGHcqHYI4xBr1w",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 179,
-    "score" : 6.46
+    "type" : "REPRESENTATIVE",
+    "index" : 73,
+    "score" : 33.11
   }, {
     "type" : "SHARED",
     "index" : 94,
     "score" : 23.99
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 73,
-    "score" : 33.11
+    "type" : "FAVORITE",
+    "index" : 179,
+    "score" : 6.46
   } ],
   "score" : 63.56,
   "soundtrackPosition" : 60,
@@ -1714,13 +1714,13 @@
     "index" : 407,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 180,
-    "score" : 6.46
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 242,
     "score" : 2.45
+  }, {
+    "type" : "SHARED",
+    "index" : 180,
+    "score" : 6.46
   } ],
   "score" : 9.91,
   "soundtrackPosition" : 60,
@@ -1741,13 +1741,13 @@
     "index" : 76,
     "score" : 31.62
   }, {
-    "type" : "SHARED",
-    "index" : 68,
-    "score" : 35.48
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 15,
     "score" : 81.28
+  }, {
+    "type" : "SHARED",
+    "index" : 68,
+    "score" : 35.48
   } ],
   "score" : 148.38,
   "soundtrackPosition" : 60,
@@ -1764,17 +1764,17 @@
   "spotify" : "spotify:track:3YKptz29AsOlm7WAVnztBh",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 217,
-    "score" : 3.63
+    "type" : "SHARED",
+    "index" : 23,
+    "score" : 70.79
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 28,
     "score" : 66.07
   }, {
-    "type" : "SHARED",
-    "index" : 23,
-    "score" : 70.79
+    "type" : "FAVORITE",
+    "index" : 217,
+    "score" : 3.63
   } ],
   "score" : 140.49,
   "soundtrackPosition" : 61,
@@ -1791,17 +1791,17 @@
   "spotify" : "spotify:track:2PAol2oDdGSHys8hc0gtLX",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 326,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 153,
+    "score" : 9.77
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 164,
     "score" : 8.13
   }, {
-    "type" : "SHARED",
-    "index" : 153,
-    "score" : 9.77
+    "type" : "FAVORITE",
+    "index" : 326,
+    "score" : 1
   } ],
   "score" : 18.90,
   "soundtrackPosition" : 61,
@@ -1818,10 +1818,6 @@
   "spotify" : "spotify:track:4hXqWYGyJYHrGawZOK8Rqq",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 297,
-    "score" : 1.07
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 145,
     "score" : 10.96
@@ -1829,6 +1825,10 @@
     "type" : "SHARED",
     "index" : 25,
     "score" : 69.18
+  }, {
+    "type" : "FAVORITE",
+    "index" : 297,
+    "score" : 1.07
   } ],
   "score" : 81.21,
   "soundtrackPosition" : 61,
@@ -1845,17 +1845,17 @@
   "spotify" : "spotify:track:0uWG5H5PrBOI4e46neKfhB",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 286,
-    "score" : 1.26
+    "type" : "FAVORITE",
+    "index" : 291,
+    "score" : 1.17
   }, {
     "type" : "SHARED",
     "index" : 101,
     "score" : 21.38
   }, {
-    "type" : "FAVORITE",
-    "index" : 291,
-    "score" : 1.17
+    "type" : "REPRESENTATIVE",
+    "index" : 286,
+    "score" : 1.26
   } ],
   "score" : 23.81,
   "soundtrackPosition" : 61,
@@ -1872,17 +1872,17 @@
   "spotify" : "spotify:track:0eZ6XqrsqUcEKYbLx8zkU3",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 99,
-    "score" : 22.39
+    "type" : "SHARED",
+    "index" : 71,
+    "score" : 33.88
   }, {
     "type" : "FAVORITE",
     "index" : 96,
     "score" : 23.44
   }, {
-    "type" : "SHARED",
-    "index" : 71,
-    "score" : 33.88
+    "type" : "REPRESENTATIVE",
+    "index" : 99,
+    "score" : 22.39
   } ],
   "score" : 79.71,
   "soundtrackPosition" : 61,
@@ -1899,17 +1899,17 @@
   "spotify" : "spotify:track:43CquBYY72FEwcON9g3js1",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 52,
-    "score" : 45.71
+    "type" : "SHARED",
+    "index" : 72,
+    "score" : 33.88
   }, {
     "type" : "FAVORITE",
     "index" : 59,
     "score" : 40.74
   }, {
-    "type" : "SHARED",
-    "index" : 72,
-    "score" : 33.88
+    "type" : "REPRESENTATIVE",
+    "index" : 52,
+    "score" : 45.71
   } ],
   "score" : 120.33,
   "soundtrackPosition" : 61,
@@ -1926,17 +1926,17 @@
   "spotify" : "spotify:track:0IPfHSiRiuqr15KMfLAzT3",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 47,
-    "score" : 48.98
+    "type" : "FAVORITE",
+    "index" : 120,
+    "score" : 16.22
   }, {
     "type" : "SHARED",
     "index" : 52,
     "score" : 45.71
   }, {
-    "type" : "FAVORITE",
-    "index" : 120,
-    "score" : 16.22
+    "type" : "REPRESENTATIVE",
+    "index" : 47,
+    "score" : 48.98
   } ],
   "score" : 110.91,
   "soundtrackPosition" : 61,
@@ -1953,17 +1953,17 @@
   "spotify" : "spotify:track:6xXVi0VgpT1iYUtDZnRX6Z",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 113,
-    "score" : 17.78
+    "type" : "FAVORITE",
+    "index" : 73,
+    "score" : 33.11
   }, {
     "type" : "SHARED",
     "index" : 111,
     "score" : 18.62
   }, {
-    "type" : "FAVORITE",
-    "index" : 73,
-    "score" : 33.11
+    "type" : "REPRESENTATIVE",
+    "index" : 113,
+    "score" : 17.78
   } ],
   "score" : 69.51,
   "soundtrackPosition" : 61,
@@ -1980,16 +1980,16 @@
   "spotify" : "spotify:track:4OIpGuYJ6ph56K5GTOqjU7",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 391,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 402,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 324,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 391,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -2007,17 +2007,17 @@
   "spotify" : "spotify:track:7HkDrQ5dkY8TOXOp3ZGgmB",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 134,
-    "score" : 12.88
+    "type" : "SHARED",
+    "index" : 77,
+    "score" : 30.90
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 151,
     "score" : 10.00
   }, {
-    "type" : "SHARED",
-    "index" : 77,
-    "score" : 30.90
+    "type" : "FAVORITE",
+    "index" : 134,
+    "score" : 12.88
   } ],
   "score" : 53.78,
   "soundtrackPosition" : 61,
@@ -2061,13 +2061,13 @@
   "spotify" : "spotify:track:28sbvVFPMJEj6djNOUQHl3",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 127,
-    "score" : 14.45
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 61,
     "score" : 39.81
+  }, {
+    "type" : "SHARED",
+    "index" : 127,
+    "score" : 14.45
   }, {
     "type" : "FAVORITE",
     "index" : 67,
@@ -2115,6 +2115,10 @@
   "spotify" : "spotify:track:3UWGFXQSmTWLrM9uqHLwVL",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 244,
+    "score" : 2.40
+  }, {
     "type" : "SHARED",
     "index" : 78,
     "score" : 30.90
@@ -2122,10 +2126,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 182,
     "score" : 6.17
-  }, {
-    "type" : "FAVORITE",
-    "index" : 244,
-    "score" : 2.40
   } ],
   "score" : 39.47,
   "soundtrackPosition" : 62,
@@ -2142,13 +2142,13 @@
   "spotify" : "spotify:track:72Wp7wMGXPtYD5czELd7mJ",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 200,
-    "score" : 4.68
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 148,
     "score" : 10.47
+  }, {
+    "type" : "FAVORITE",
+    "index" : 200,
+    "score" : 4.68
   }, {
     "type" : "SHARED",
     "index" : 166,
@@ -2169,13 +2169,13 @@
   "spotify" : "spotify:track:0tVzXGFyNPusa1VkHmYDLd",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 20,
-    "score" : 74.13
-  }, {
     "type" : "FAVORITE",
     "index" : 14,
     "score" : 81.28
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 20,
+    "score" : 74.13
   }, {
     "type" : "SHARED",
     "index" : 61,
@@ -2196,16 +2196,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=AmSjEu57Lxs",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 457,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 173,
     "score" : 7.08
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 379,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 457,
     "score" : 1
   } ],
   "score" : 9.08,
@@ -2250,6 +2250,10 @@
   "spotify" : "spotify:track:6a7O8ZA818UFWbc9cPeNZA",
   "youtube" : "http://www.youtube.com/watch?v=UaKsLmrIhhQ",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 339,
+    "score" : 1
+  }, {
     "type" : "SHARED",
     "index" : 374,
     "score" : 1
@@ -2257,10 +2261,6 @@
     "type" : "FAVORITE",
     "index" : 269,
     "score" : 1.62
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 339,
-    "score" : 1
   } ],
   "score" : 3.62,
   "soundtrackPosition" : 62,
@@ -2277,16 +2277,16 @@
   "spotify" : "spotify:track:7l7IKhLEbZ8qMILPaqVGz4",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 381,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 282,
     "score" : 1.35
   }, {
     "type" : "SHARED",
     "index" : 406,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 381,
     "score" : 1
   } ],
   "score" : 3.35,
@@ -2304,10 +2304,6 @@
   "spotify" : "spotify:track:48UXIIfOatGFIOopiKBkFf",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 442,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 82,
     "score" : 28.84
@@ -2315,6 +2311,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 128,
     "score" : 14.13
+  }, {
+    "type" : "SHARED",
+    "index" : 442,
+    "score" : 1
   } ],
   "score" : 43.97,
   "soundtrackPosition" : 62,
@@ -2331,6 +2331,10 @@
   "spotify" : "spotify:track:47vSz33h4XdbxUeDlSfEBY",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 168,
+    "score" : 7.76
+  }, {
     "type" : "FAVORITE",
     "index" : 273,
     "score" : 1.55
@@ -2338,10 +2342,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 271,
     "score" : 1.58
-  }, {
-    "type" : "SHARED",
-    "index" : 168,
-    "score" : 7.76
   } ],
   "score" : 10.89,
   "soundtrackPosition" : 62,
@@ -2412,10 +2412,6 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=KwSWfvqCAAU",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 260,
-    "score" : 1.86
-  }, {
     "type" : "SHARED",
     "index" : 328,
     "score" : 1
@@ -2423,6 +2419,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 276,
     "score" : 1.48
+  }, {
+    "type" : "FAVORITE",
+    "index" : 260,
+    "score" : 1.86
   } ],
   "score" : 4.34,
   "soundtrackPosition" : 63,
@@ -2439,17 +2439,17 @@
   "spotify" : "spotify:track:1iArQTuOzxvrtniGmkyy92",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 338,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 147,
+    "score" : 10.72
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 42,
     "score" : 53.70
   }, {
-    "type" : "SHARED",
-    "index" : 147,
-    "score" : 10.72
+    "type" : "FAVORITE",
+    "index" : 338,
+    "score" : 1
   } ],
   "score" : 65.42,
   "soundtrackPosition" : 63,
@@ -2470,13 +2470,13 @@
     "index" : 161,
     "score" : 8.51
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 143,
-    "score" : 11.22
-  }, {
     "type" : "SHARED",
     "index" : 234,
     "score" : 2.82
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 143,
+    "score" : 11.22
   } ],
   "score" : 22.55,
   "soundtrackPosition" : 63,
@@ -2493,10 +2493,6 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=jg-7S_m8W_Q",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 435,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 65,
     "score" : 37.15
@@ -2504,6 +2500,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 279,
     "score" : 1.41
+  }, {
+    "type" : "SHARED",
+    "index" : 435,
+    "score" : 1
   } ],
   "score" : 39.56,
   "soundtrackPosition" : 63,
@@ -2524,13 +2524,13 @@
     "index" : 127,
     "score" : 14.45
   }, {
-    "type" : "FAVORITE",
-    "index" : 199,
-    "score" : 4.79
-  }, {
     "type" : "SHARED",
     "index" : 278,
     "score" : 1.41
+  }, {
+    "type" : "FAVORITE",
+    "index" : 199,
+    "score" : 4.79
   } ],
   "score" : 20.65,
   "soundtrackPosition" : 63,
@@ -2547,10 +2547,6 @@
   "spotify" : "spotify:track:2LVgdv5CFLEsFEh7BlRuDO",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 199,
-    "score" : 4.79
-  }, {
     "type" : "SHARED",
     "index" : 188,
     "score" : 5.62
@@ -2558,6 +2554,10 @@
     "type" : "FAVORITE",
     "index" : 385,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 199,
+    "score" : 4.79
   } ],
   "score" : 11.41,
   "soundtrackPosition" : 63,
@@ -2574,17 +2574,17 @@
   "spotify" : "spotify:track:1XRpbhOMzOISE3dDkQ6eZW",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 230,
-    "score" : 2.95
+    "type" : "SHARED",
+    "index" : 351,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 252,
     "score" : 2.14
   }, {
-    "type" : "SHARED",
-    "index" : 351,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 230,
+    "score" : 2.95
   } ],
   "score" : 6.09,
   "soundtrackPosition" : 63,
@@ -2601,6 +2601,10 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=XwUDPcBpxn0",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 107,
+    "score" : 19.50
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 171,
     "score" : 7.41
@@ -2608,10 +2612,6 @@
     "type" : "SHARED",
     "index" : 63,
     "score" : 38.90
-  }, {
-    "type" : "FAVORITE",
-    "index" : 107,
-    "score" : 19.50
   } ],
   "score" : 65.81,
   "soundtrackPosition" : 63,
@@ -2628,6 +2628,10 @@
   "spotify" : "spotify:track:2oJuoAFzlEHDS0moF0VtuA",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 206,
+    "score" : 4.27
+  }, {
     "type" : "SHARED",
     "index" : 288,
     "score" : 1.23
@@ -2635,10 +2639,6 @@
     "type" : "FAVORITE",
     "index" : 183,
     "score" : 6.17
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 206,
-    "score" : 4.27
   } ],
   "score" : 11.67,
   "soundtrackPosition" : 63,
@@ -2655,17 +2655,17 @@
   "spotify" : "spotify:track:1G3lgbJIOAHIsNbceWCGJI",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 108,
-    "score" : 19.50
+    "type" : "SHARED",
+    "index" : 113,
+    "score" : 17.78
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 185,
     "score" : 5.89
   }, {
-    "type" : "SHARED",
-    "index" : 113,
-    "score" : 17.78
+    "type" : "FAVORITE",
+    "index" : 108,
+    "score" : 19.50
   } ],
   "score" : 43.17,
   "soundtrackPosition" : 64,
@@ -2682,10 +2682,6 @@
   "spotify" : "spotify:track:7wwXN8ixORQknO9j2mLp8E",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 286,
-    "score" : 1.26
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 299,
     "score" : 1.02
@@ -2693,6 +2689,10 @@
     "type" : "SHARED",
     "index" : 380,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 286,
+    "score" : 1.26
   } ],
   "score" : 3.28,
   "soundtrackPosition" : 64,
@@ -2709,16 +2709,16 @@
   "spotify" : "spotify:track:2dZjrzmulQbM5AQjS0J6ms",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 463,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 412,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 456,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 463,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -2736,13 +2736,13 @@
   "spotify" : "spotify:track:4IcTpvoM4dXXEIRtHFnRlj",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 139,
-    "score" : 12.02
-  }, {
     "type" : "SHARED",
     "index" : 376,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 139,
+    "score" : 12.02
   }, {
     "type" : "FAVORITE",
     "index" : 219,
@@ -2763,16 +2763,16 @@
   "spotify" : "spotify:track:1CbDA3Lc6JIwUcQkpdWDcz",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 434,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 369,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 456,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 434,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -2844,17 +2844,17 @@
   "spotify" : "spotify:track:7gg1qC4vPhqMBJ1YKAZfDR",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 165,
-    "score" : 8.13
+    "type" : "REPRESENTATIVE",
+    "index" : 180,
+    "score" : 6.46
   }, {
     "type" : "SHARED",
     "index" : 159,
     "score" : 8.91
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 180,
-    "score" : 6.46
+    "type" : "FAVORITE",
+    "index" : 165,
+    "score" : 8.13
   } ],
   "score" : 23.50,
   "soundtrackPosition" : 64,
@@ -2871,6 +2871,10 @@
   "spotify" : "spotify:track:2mh73SFgFk3tmCKuSUdqtF",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 126,
+    "score" : 14.79
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 96,
     "score" : 23.44
@@ -2878,10 +2882,6 @@
     "type" : "FAVORITE",
     "index" : 94,
     "score" : 23.99
-  }, {
-    "type" : "SHARED",
-    "index" : 126,
-    "score" : 14.79
   } ],
   "score" : 62.22,
   "soundtrackPosition" : 64,
@@ -2898,17 +2898,17 @@
   "spotify" : "spotify:track:4ACxa9buEUnOdYEoPcnMpi",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 357,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 170,
+    "score" : 7.41
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 200,
     "score" : 4.68
   }, {
-    "type" : "SHARED",
-    "index" : 170,
-    "score" : 7.41
+    "type" : "FAVORITE",
+    "index" : 357,
+    "score" : 1
   } ],
   "score" : 13.09,
   "soundtrackPosition" : 64,
@@ -2925,10 +2925,6 @@
   "spotify" : "spotify:track:0UaUU6Od7UUh4AT49Bx3HG",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 69,
-    "score" : 35.48
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 7,
     "score" : 91.20
@@ -2936,6 +2932,10 @@
     "type" : "SHARED",
     "index" : 291,
     "score" : 1.17
+  }, {
+    "type" : "FAVORITE",
+    "index" : 69,
+    "score" : 35.48
   } ],
   "score" : 127.85,
   "soundtrackPosition" : 64,
@@ -2952,6 +2952,10 @@
   "spotify" : "spotify:track:2sO5yzvFFPVQP5QXajOE2r",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 123,
+    "score" : 15.49
+  }, {
     "type" : "SHARED",
     "index" : 359,
     "score" : 1
@@ -2959,10 +2963,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 150,
     "score" : 10.23
-  }, {
-    "type" : "FAVORITE",
-    "index" : 123,
-    "score" : 15.49
   } ],
   "score" : 26.72,
   "soundtrackPosition" : 65,
@@ -3006,13 +3006,13 @@
   "spotify" : "spotify:track:0Xam0zVac3hKWWN4OQ5Gdr",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 174,
-    "score" : 7.08
-  }, {
     "type" : "FAVORITE",
     "index" : 66,
     "score" : 37.15
+  }, {
+    "type" : "SHARED",
+    "index" : 174,
+    "score" : 7.08
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 102,
@@ -3060,6 +3060,10 @@
   "spotify" : "spotify:track:31u14DzjauDPhwZFa0EcdW",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 218,
+    "score" : 3.55
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 8,
     "score" : 89.13
@@ -3067,10 +3071,6 @@
     "type" : "SHARED",
     "index" : 255,
     "score" : 2.04
-  }, {
-    "type" : "FAVORITE",
-    "index" : 218,
-    "score" : 3.55
   } ],
   "score" : 94.72,
   "soundtrackPosition" : 65,
@@ -3087,6 +3087,10 @@
   "spotify" : "spotify:track:5Blb7ut51TL1ljcUdpesui",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 174,
+    "score" : 7.08
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 138,
     "score" : 12.30
@@ -3094,10 +3098,6 @@
     "type" : "SHARED",
     "index" : 224,
     "score" : 3.24
-  }, {
-    "type" : "FAVORITE",
-    "index" : 174,
-    "score" : 7.08
   } ],
   "score" : 22.62,
   "soundtrackPosition" : 65,
@@ -3114,6 +3114,10 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=WoifXktx9Rs",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 198,
+    "score" : 4.90
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 57,
     "score" : 42.66
@@ -3121,10 +3125,6 @@
     "type" : "FAVORITE",
     "index" : 37,
     "score" : 57.54
-  }, {
-    "type" : "SHARED",
-    "index" : 198,
-    "score" : 4.90
   } ],
   "score" : 105.10,
   "soundtrackPosition" : 65,
@@ -3141,10 +3141,6 @@
   "spotify" : "spotify:track:74tXc7WOWxEDZahXcyPG9D",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 273,
-    "score" : 1.55
-  }, {
     "type" : "FAVORITE",
     "index" : 181,
     "score" : 6.31
@@ -3152,6 +3148,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 45,
     "score" : 51.29
+  }, {
+    "type" : "SHARED",
+    "index" : 273,
+    "score" : 1.55
   } ],
   "score" : 59.15,
   "soundtrackPosition" : 65,
@@ -3168,16 +3168,16 @@
   "spotify" : "spotify:track:0Tk5GjmxWnDlt20JFm4OvA",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 425,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 437,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 449,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 425,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -3222,17 +3222,17 @@
   "spotify" : "spotify:track:5yEPxDjbbzUzyauGtnmVEC",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 85,
-    "score" : 27.54
+    "type" : "SHARED",
+    "index" : 11,
+    "score" : 85.11
   }, {
     "type" : "FAVORITE",
     "index" : 97,
     "score" : 22.91
   }, {
-    "type" : "SHARED",
-    "index" : 11,
-    "score" : 85.11
+    "type" : "REPRESENTATIVE",
+    "index" : 85,
+    "score" : 27.54
   } ],
   "score" : 135.56,
   "soundtrackPosition" : 65,
@@ -3249,16 +3249,16 @@
   "spotify" : "spotify:track:5N32fjtqr2ltygGdx8EO8J",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 384,
+    "type" : "REPRESENTATIVE",
+    "index" : 398,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 238,
     "score" : 2.63
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 398,
+    "type" : "FAVORITE",
+    "index" : 384,
     "score" : 1
   } ],
   "score" : 4.63,
@@ -3276,16 +3276,16 @@
   "spotify" : "spotify:track:4aPvbW6R8BxNgrP53ynb1T",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 484,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 352,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 487,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 484,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -3303,6 +3303,10 @@
   "spotify" : "spotify:track:0tYcKClZd7Ks2B2sCscSmI",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 305,
+    "score" : 1
+  }, {
     "type" : "FAVORITE",
     "index" : 63,
     "score" : 38.90
@@ -3310,10 +3314,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 106,
     "score" : 19.95
-  }, {
-    "type" : "SHARED",
-    "index" : 305,
-    "score" : 1
   } ],
   "score" : 59.85,
   "soundtrackPosition" : 66,
@@ -3361,13 +3361,13 @@
     "index" : 77,
     "score" : 30.90
   }, {
-    "type" : "FAVORITE",
-    "index" : 191,
-    "score" : 5.37
-  }, {
     "type" : "SHARED",
     "index" : 8,
     "score" : 89.13
+  }, {
+    "type" : "FAVORITE",
+    "index" : 191,
+    "score" : 5.37
   } ],
   "score" : 125.40,
   "soundtrackPosition" : 66,
@@ -3388,13 +3388,13 @@
     "index" : 425,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 248,
-    "score" : 2.24
-  }, {
     "type" : "FAVORITE",
     "index" : 245,
     "score" : 2.34
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 248,
+    "score" : 2.24
   } ],
   "score" : 5.58,
   "soundtrackPosition" : 66,
@@ -3411,10 +3411,6 @@
   "spotify" : "spotify:track:3g8p7uno48IqoM78RzI8NJ",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 216,
-    "score" : 3.72
-  }, {
     "type" : "SHARED",
     "index" : 342,
     "score" : 1
@@ -3422,6 +3418,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 78,
     "score" : 30.90
+  }, {
+    "type" : "FAVORITE",
+    "index" : 216,
+    "score" : 3.72
   } ],
   "score" : 35.62,
   "soundtrackPosition" : 66,
@@ -3465,10 +3465,6 @@
   "spotify" : "spotify:track:7bG5NDhlrDel1aNofKPNf6",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 314,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 287,
     "score" : 1.23
@@ -3476,6 +3472,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 255,
     "score" : 2.04
+  }, {
+    "type" : "FAVORITE",
+    "index" : 314,
+    "score" : 1
   } ],
   "score" : 4.27,
   "soundtrackPosition" : 66,
@@ -3550,13 +3550,13 @@
     "index" : 58,
     "score" : 41.69
   }, {
-    "type" : "FAVORITE",
-    "index" : 132,
-    "score" : 13.49
-  }, {
     "type" : "SHARED",
     "index" : 145,
     "score" : 10.96
+  }, {
+    "type" : "FAVORITE",
+    "index" : 132,
+    "score" : 13.49
   } ],
   "score" : 66.14,
   "soundtrackPosition" : 67,
@@ -3573,6 +3573,10 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=uiAj26t_mVw",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 423,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 284,
     "score" : 1.29
@@ -3580,10 +3584,6 @@
     "type" : "FAVORITE",
     "index" : 285,
     "score" : 1.29
-  }, {
-    "type" : "SHARED",
-    "index" : 423,
-    "score" : 1
   } ],
   "score" : 3.58,
   "soundtrackPosition" : 67,
@@ -3600,6 +3600,10 @@
   "spotify" : "spotify:track:1KiEikqlYTcBzMdX6W4i9r",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 142,
+    "score" : 11.48
+  }, {
     "type" : "FAVORITE",
     "index" : 380,
     "score" : 1
@@ -3607,10 +3611,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 393,
     "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 142,
-    "score" : 11.48
   } ],
   "score" : 13.48,
   "soundtrackPosition" : 67,
@@ -3627,17 +3627,17 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=2S47N36r5g8",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 325,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 242,
+    "score" : 2.45
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 238,
     "score" : 2.63
   }, {
-    "type" : "FAVORITE",
-    "index" : 242,
-    "score" : 2.45
+    "type" : "SHARED",
+    "index" : 325,
+    "score" : 1
   } ],
   "score" : 6.08,
   "soundtrackPosition" : 67,
@@ -3654,17 +3654,17 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=WQt5H9QIsSE",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 480,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 255,
+    "score" : 2.04
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 188,
     "score" : 5.62
   }, {
-    "type" : "FAVORITE",
-    "index" : 255,
-    "score" : 2.04
+    "type" : "SHARED",
+    "index" : 480,
+    "score" : 1
   } ],
   "score" : 8.66,
   "soundtrackPosition" : 67,
@@ -3685,13 +3685,13 @@
     "index" : 179,
     "score" : 6.46
   }, {
-    "type" : "FAVORITE",
-    "index" : 387,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 3,
     "score" : 97.72
+  }, {
+    "type" : "FAVORITE",
+    "index" : 387,
+    "score" : 1
   } ],
   "score" : 105.18,
   "soundtrackPosition" : 67,
@@ -3708,17 +3708,17 @@
   "spotify" : "spotify:track:15XUmdLQ9i6mHrHTpNCO70",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 440,
-    "score" : 1
+    "type" : "REPRESENTATIVE",
+    "index" : 277,
+    "score" : 1.45
   }, {
     "type" : "FAVORITE",
     "index" : 283,
     "score" : 1.32
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 277,
-    "score" : 1.45
+    "type" : "SHARED",
+    "index" : 440,
+    "score" : 1
   } ],
   "score" : 3.77,
   "soundtrackPosition" : 67,
@@ -3735,12 +3735,12 @@
   "spotify" : "spotify:track:3mlurWDI0Bbxt78zbLTYWx",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 416,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 420,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 416,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -3762,16 +3762,16 @@
   "spotify" : "spotify:track:6CjwC6954gu1xw8kflI0Da",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 405,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 482,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 481,
-    "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 405,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -3789,13 +3789,13 @@
   "spotify" : "spotify:track:1nz1xzqPN4xYZtR4zgiLxt",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 239,
-    "score" : 2.57
-  }, {
     "type" : "SHARED",
     "index" : 194,
     "score" : 5.13
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 239,
+    "score" : 2.57
   }, {
     "type" : "FAVORITE",
     "index" : 239,
@@ -3820,13 +3820,13 @@
     "index" : 356,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 195,
-    "score" : 5.13
-  }, {
     "type" : "FAVORITE",
     "index" : 355,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 195,
+    "score" : 5.13
   } ],
   "score" : 7.13,
   "soundtrackPosition" : 67,
@@ -3843,13 +3843,13 @@
   "spotify" : "spotify:track:2NaophHx1CDYsqUHlCcHXu",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 146,
-    "score" : 10.72
-  }, {
     "type" : "FAVORITE",
     "index" : 58,
     "score" : 41.69
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 146,
+    "score" : 10.72
   }, {
     "type" : "SHARED",
     "index" : 105,
@@ -3870,13 +3870,13 @@
   "spotify" : "spotify:track:6AKSrodq9kU9hmTLEeWFFr",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 223,
-    "score" : 3.31
-  }, {
     "type" : "FAVORITE",
     "index" : 299,
     "score" : 1.02
+  }, {
+    "type" : "SHARED",
+    "index" : 223,
+    "score" : 3.31
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 167,
@@ -3897,13 +3897,13 @@
   "spotify" : "spotify:track:5kwaaw7tSX5q7PQWs0RbrU",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 110,
-    "score" : 18.62
-  }, {
     "type" : "SHARED",
     "index" : 461,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 110,
+    "score" : 18.62
   }, {
     "type" : "FAVORITE",
     "index" : 185,
@@ -3924,12 +3924,12 @@
   "spotify" : "spotify:track:7JOZA4rqQdVes3ce4LXFwU",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 339,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 410,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 339,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -3951,17 +3951,17 @@
   "spotify" : "spotify:track:3vxqxKLhQDG8BOu65tXi8g",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 110,
-    "score" : 18.62
+    "type" : "REPRESENTATIVE",
+    "index" : 59,
+    "score" : 40.74
   }, {
     "type" : "SHARED",
     "index" : 35,
     "score" : 58.88
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 59,
-    "score" : 40.74
+    "type" : "FAVORITE",
+    "index" : 110,
+    "score" : 18.62
   } ],
   "score" : 118.24,
   "soundtrackPosition" : 68,
@@ -3978,10 +3978,6 @@
   "spotify" : "spotify:track:2ydWQJrFzB0bCyw5WtNB1N",
   "youtube" : "http://www.youtube.com/watch?v=1aT9E0MkvZo",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 279,
-    "score" : 1.41
-  }, {
     "type" : "SHARED",
     "index" : 389,
     "score" : 1
@@ -3989,6 +3985,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 390,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 279,
+    "score" : 1.41
   } ],
   "score" : 3.41,
   "soundtrackPosition" : 68,
@@ -4005,10 +4005,6 @@
   "spotify" : "",
   "youtube" : "http://grooveshark.com/#!/s/The One That Keeps Me Running/t6Rp9?src=5",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 177,
-    "score" : 6.76
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 130,
     "score" : 13.80
@@ -4016,6 +4012,10 @@
     "type" : "SHARED",
     "index" : 211,
     "score" : 3.98
+  }, {
+    "type" : "FAVORITE",
+    "index" : 177,
+    "score" : 6.76
   } ],
   "score" : 24.54,
   "soundtrackPosition" : 68,
@@ -4032,6 +4032,10 @@
   "spotify" : "spotify:track:2zrSSQxcNekseMPZRq0S1w",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 83,
+    "score" : 28.18
+  }, {
     "type" : "FAVORITE",
     "index" : 128,
     "score" : 14.13
@@ -4039,10 +4043,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 86,
     "score" : 26.92
-  }, {
-    "type" : "SHARED",
-    "index" : 83,
-    "score" : 28.18
   } ],
   "score" : 69.23,
   "soundtrackPosition" : 68,
@@ -4059,12 +4059,12 @@
   "spotify" : "spotify:track:2rv88FcpSUVUTTT4Ilg580",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 457,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 446,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 457,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -4086,16 +4086,16 @@
   "spotify" : "spotify:track:4zbC8E1OvJmx2DlChRCWUU",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 399,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 281,
     "score" : 1.35
   }, {
     "type" : "SHARED",
     "index" : 415,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 399,
     "score" : 1
   } ],
   "score" : 3.35,
@@ -4113,10 +4113,6 @@
   "spotify" : "spotify:track:1H3aJpfpjEFt3i8KsWbgmP",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 45,
-    "score" : 51.29
-  }, {
     "type" : "FAVORITE",
     "index" : 80,
     "score" : 29.51
@@ -4124,6 +4120,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 11,
     "score" : 85.11
+  }, {
+    "type" : "SHARED",
+    "index" : 45,
+    "score" : 51.29
   } ],
   "score" : 165.91,
   "soundtrackPosition" : 68,
@@ -4140,6 +4140,10 @@
   "spotify" : "spotify:track:5trfcdPw483WmFSao8A9GQ",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 264,
+    "score" : 1.78
+  }, {
     "type" : "FAVORITE",
     "index" : 235,
     "score" : 2.75
@@ -4147,10 +4151,6 @@
     "type" : "SHARED",
     "index" : 162,
     "score" : 8.51
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 264,
-    "score" : 1.78
   } ],
   "score" : 13.04,
   "soundtrackPosition" : 69,
@@ -4167,16 +4167,16 @@
   "spotify" : "spotify:track:0ivlnyFosJ53mEiII13sC3",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 437,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 166,
     "score" : 7.94
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 439,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 437,
     "score" : 1
   } ],
   "score" : 9.94,
@@ -4194,13 +4194,13 @@
   "spotify" : "spotify:track:3aN2V18W3EiW7eg5tHALpF",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 102,
-    "score" : 21.38
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 72,
     "score" : 33.88
+  }, {
+    "type" : "FAVORITE",
+    "index" : 102,
+    "score" : 21.38
   }, {
     "type" : "SHARED",
     "index" : 175,
@@ -4225,13 +4225,13 @@
     "index" : 293,
     "score" : 1.12
   }, {
-    "type" : "SHARED",
-    "index" : 36,
-    "score" : 58.88
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 285,
     "score" : 1.29
+  }, {
+    "type" : "SHARED",
+    "index" : 36,
+    "score" : 58.88
   } ],
   "score" : 61.29,
   "soundtrackPosition" : 69,
@@ -4248,16 +4248,16 @@
   "spotify" : "spotify:track:1sawcLOEaUJ2yGi8T10vNo",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 403,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 417,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 414,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 403,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -4275,16 +4275,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=aPbUGWsL2gw",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 330,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 397,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 395,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 330,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -4302,17 +4302,17 @@
   "spotify" : "spotify:track:0kKcxsBTyWZi5kvBS1kzbu",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 268,
-    "score" : 1.66
+    "type" : "REPRESENTATIVE",
+    "index" : 388,
+    "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 469,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 388,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 268,
+    "score" : 1.66
   } ],
   "score" : 3.66,
   "soundtrackPosition" : 69,
@@ -4329,16 +4329,16 @@
   "spotify" : "",
   "youtube" : "http://www.thestranger.com/seattle/music/Content?oid=515",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 331,
+    "type" : "REPRESENTATIVE",
+    "index" : 301,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 390,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 301,
+    "type" : "SHARED",
+    "index" : 331,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -4356,6 +4356,10 @@
   "spotify" : "spotify:track:3VOS2LMDQT1t7CjoiQWRqW",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 310,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 320,
     "score" : 1
@@ -4363,10 +4367,6 @@
     "type" : "FAVORITE",
     "index" : 206,
     "score" : 4.27
-  }, {
-    "type" : "SHARED",
-    "index" : 310,
-    "score" : 1
   } ],
   "score" : 6.27,
   "soundtrackPosition" : 69,
@@ -4383,6 +4383,10 @@
   "spotify" : "spotify:track:6ptzeMIfo5d5M8aMZZDJIH",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 237,
+    "score" : 2.69
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 204,
     "score" : 4.47
@@ -4390,10 +4394,6 @@
     "type" : "SHARED",
     "index" : 448,
     "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 237,
-    "score" : 2.69
   } ],
   "score" : 8.16,
   "soundtrackPosition" : 69,
@@ -4437,10 +4437,6 @@
   "spotify" : "spotify:track:0IVkP59yJ9GFF6B7IrvrxA",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 132,
-    "score" : 13.49
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 177,
     "score" : 6.76
@@ -4448,6 +4444,10 @@
     "type" : "FAVORITE",
     "index" : 117,
     "score" : 16.98
+  }, {
+    "type" : "SHARED",
+    "index" : 132,
+    "score" : 13.49
   } ],
   "score" : 37.23,
   "soundtrackPosition" : 70,
@@ -4464,10 +4464,6 @@
   "spotify" : "spotify:track:6byDTnvn5cEu7KlPYkj4FP",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 399,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 229,
     "score" : 3.02
@@ -4475,6 +4471,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 191,
     "score" : 5.37
+  }, {
+    "type" : "SHARED",
+    "index" : 399,
+    "score" : 1
   } ],
   "score" : 9.39,
   "soundtrackPosition" : 70,
@@ -4491,17 +4491,17 @@
   "spotify" : "spotify:track:28h0GZFHrgVZ0WWiOHSZCU",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 198,
-    "score" : 4.90
+    "type" : "SHARED",
+    "index" : 299,
+    "score" : 1.02
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 225,
     "score" : 3.24
   }, {
-    "type" : "SHARED",
-    "index" : 299,
-    "score" : 1.02
+    "type" : "FAVORITE",
+    "index" : 198,
+    "score" : 4.90
   } ],
   "score" : 9.16,
   "soundtrackPosition" : 70,
@@ -4518,13 +4518,13 @@
   "spotify" : "spotify:track:0cGPyglLMBrf7fvrD3uPBd",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 56,
-    "score" : 42.66
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 13,
     "score" : 83.18
+  }, {
+    "type" : "FAVORITE",
+    "index" : 56,
+    "score" : 42.66
   }, {
     "type" : "SHARED",
     "index" : 112,
@@ -4545,16 +4545,16 @@
   "spotify" : "spotify:track:44sz0rNbTA687rs9CYi0IN",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 462,
+    "type" : "REPRESENTATIVE",
+    "index" : 473,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 472,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 473,
+    "type" : "FAVORITE",
+    "index" : 462,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -4572,16 +4572,16 @@
   "spotify" : "spotify:track:51c94ac31swyDQj9B3Lzs3",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 303,
+    "type" : "REPRESENTATIVE",
+    "index" : 452,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 444,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 452,
+    "type" : "SHARED",
+    "index" : 303,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -4626,6 +4626,10 @@
   "spotify" : "spotify:track:5x4hYFJSVmyLjvLDmeRGBO",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 252,
+    "score" : 2.14
+  }, {
     "type" : "FAVORITE",
     "index" : 100,
     "score" : 21.88
@@ -4633,10 +4637,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 107,
     "score" : 19.50
-  }, {
-    "type" : "SHARED",
-    "index" : 252,
-    "score" : 2.14
   } ],
   "score" : 43.52,
   "soundtrackPosition" : 70,
@@ -4653,10 +4653,6 @@
   "spotify" : "spotify:track:3Djx1L0Yv8qR4TjfmNTknQ",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 34,
-    "score" : 60.26
-  }, {
     "type" : "FAVORITE",
     "index" : 32,
     "score" : 61.66
@@ -4664,6 +4660,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 43,
     "score" : 52.48
+  }, {
+    "type" : "SHARED",
+    "index" : 34,
+    "score" : 60.26
   } ],
   "score" : 174.40,
   "soundtrackPosition" : 70,
@@ -4680,17 +4680,17 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=XL0tgrBGYNo",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 224,
-    "score" : 3.24
+    "type" : "SHARED",
+    "index" : 202,
+    "score" : 4.57
   }, {
     "type" : "FAVORITE",
     "index" : 271,
     "score" : 1.58
   }, {
-    "type" : "SHARED",
-    "index" : 202,
-    "score" : 4.57
+    "type" : "REPRESENTATIVE",
+    "index" : 224,
+    "score" : 3.24
   } ],
   "score" : 9.39,
   "soundtrackPosition" : 70,
@@ -4707,12 +4707,12 @@
   "spotify" : "spotify:track:6WqxoaLAccNvYLmSUVj1dN",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 371,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 372,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 371,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -4734,10 +4734,6 @@
   "spotify" : "spotify:track:6p0pREyibShixyjn3qm83N",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 139,
-    "score" : 12.02
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 212,
     "score" : 3.89
@@ -4745,6 +4741,10 @@
     "type" : "SHARED",
     "index" : 75,
     "score" : 32.36
+  }, {
+    "type" : "FAVORITE",
+    "index" : 139,
+    "score" : 12.02
   } ],
   "score" : 48.27,
   "soundtrackPosition" : 71,
@@ -4765,13 +4765,13 @@
     "index" : 116,
     "score" : 16.98
   }, {
-    "type" : "SHARED",
-    "index" : 21,
-    "score" : 74.13
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 33,
     "score" : 61.66
+  }, {
+    "type" : "SHARED",
+    "index" : 21,
+    "score" : 74.13
   } ],
   "score" : 152.77,
   "soundtrackPosition" : 71,
@@ -4788,17 +4788,17 @@
   "spotify" : "spotify:track:3RLim0eufd4wmcYpyK19Qy",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 163,
-    "score" : 8.32
+    "type" : "FAVORITE",
+    "index" : 106,
+    "score" : 19.95
   }, {
     "type" : "SHARED",
     "index" : 44,
     "score" : 51.29
   }, {
-    "type" : "FAVORITE",
-    "index" : 106,
-    "score" : 19.95
+    "type" : "REPRESENTATIVE",
+    "index" : 163,
+    "score" : 8.32
   } ],
   "score" : 79.56,
   "soundtrackPosition" : 71,
@@ -4819,13 +4819,13 @@
     "index" : 337,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 317,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 300,
     "score" : 1.02
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 317,
+    "score" : 1
   } ],
   "score" : 3.02,
   "soundtrackPosition" : 71,
@@ -4842,10 +4842,6 @@
   "spotify" : "spotify:track:0xm49v9jgCCVeLcAQyYTSX",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 296,
-    "score" : 1.07
-  }, {
     "type" : "FAVORITE",
     "index" : 351,
     "score" : 1
@@ -4853,6 +4849,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 338,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 296,
+    "score" : 1.07
   } ],
   "score" : 3.07,
   "soundtrackPosition" : 71,
@@ -4869,13 +4869,13 @@
   "spotify" : "spotify:track:28MXz5RstGpOYyup7teXyd",
   "youtube" : "http://www.youtube.com/watch?v=23aYZf18i-c",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 253,
-    "score" : 2.09
-  }, {
     "type" : "FAVORITE",
     "index" : 263,
     "score" : 1.78
+  }, {
+    "type" : "SHARED",
+    "index" : 253,
+    "score" : 2.09
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 175,
@@ -4896,7 +4896,7 @@
   "spotify" : "spotify:track:5qALlihoLaUOAFZ7LIJW9i",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
+    "type" : "REPRESENTATIVE",
     "index" : 365,
     "score" : 1
   }, {
@@ -4904,7 +4904,7 @@
     "index" : 330,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
+    "type" : "FAVORITE",
     "index" : 365,
     "score" : 1
   } ],
@@ -4923,6 +4923,10 @@
   "spotify" : "spotify:track:4MUWxkwzESBRp5fpcpeDBY",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 253,
+    "score" : 2.09
+  }, {
     "type" : "FAVORITE",
     "index" : 225,
     "score" : 3.24
@@ -4930,10 +4934,6 @@
     "type" : "SHARED",
     "index" : 285,
     "score" : 1.29
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 253,
-    "score" : 2.09
   } ],
   "score" : 6.62,
   "soundtrackPosition" : 71,
@@ -4954,13 +4954,13 @@
     "index" : 325,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 280,
-    "score" : 1.38
-  }, {
     "type" : "FAVORITE",
     "index" : 332,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 280,
+    "score" : 1.38
   } ],
   "score" : 3.38,
   "soundtrackPosition" : 71,
@@ -4981,13 +4981,13 @@
     "index" : 225,
     "score" : 3.24
   }, {
-    "type" : "FAVORITE",
-    "index" : 112,
-    "score" : 18.20
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 152,
     "score" : 9.77
+  }, {
+    "type" : "FAVORITE",
+    "index" : 112,
+    "score" : 18.20
   } ],
   "score" : 31.21,
   "soundtrackPosition" : 71,
@@ -5004,13 +5004,13 @@
   "spotify" : "spotify:track:266AwwMDQoo9R0KOcBgTaM",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 267,
-    "score" : 1.70
-  }, {
     "type" : "FAVORITE",
     "index" : 275,
     "score" : 1.48
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 267,
+    "score" : 1.70
   }, {
     "type" : "SHARED",
     "index" : 319,
@@ -5031,10 +5031,6 @@
   "spotify" : "spotify:track:06Alk3UcvL1ku0zQB59GSe",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 105,
-    "score" : 20.42
-  }, {
     "type" : "SHARED",
     "index" : 120,
     "score" : 16.22
@@ -5042,6 +5038,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 162,
     "score" : 8.51
+  }, {
+    "type" : "FAVORITE",
+    "index" : 105,
+    "score" : 20.42
   } ],
   "score" : 45.15,
   "soundtrackPosition" : 72,
@@ -5085,16 +5085,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=araU0fZj6oQ&ob=av2e",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 357,
+    "type" : "FAVORITE",
+    "index" : 395,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 220,
     "score" : 3.47
   }, {
-    "type" : "FAVORITE",
-    "index" : 395,
+    "type" : "SHARED",
+    "index" : 357,
     "score" : 1
   } ],
   "score" : 5.47,
@@ -5112,6 +5112,10 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=tG6oYT56kfg",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 49,
+    "score" : 47.86
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 5,
     "score" : 93.33
@@ -5119,10 +5123,6 @@
     "type" : "SHARED",
     "index" : 15,
     "score" : 81.28
-  }, {
-    "type" : "FAVORITE",
-    "index" : 49,
-    "score" : 47.86
   } ],
   "score" : 222.47,
   "soundtrackPosition" : 72,
@@ -5139,10 +5139,6 @@
   "spotify" : "spotify:track:1sPjM1Kn6OFk9XCAhowrrm",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 8,
-    "score" : 89.13
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 10,
     "score" : 87.10
@@ -5150,6 +5146,10 @@
     "type" : "SHARED",
     "index" : 30,
     "score" : 64.57
+  }, {
+    "type" : "FAVORITE",
+    "index" : 8,
+    "score" : 89.13
   } ],
   "score" : 240.80,
   "soundtrackPosition" : 72,
@@ -5166,17 +5166,17 @@
   "spotify" : "spotify:track:1KEAQLoXw9t5gPEaNH8MSH",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 377,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 104,
+    "score" : 20.42
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 103,
     "score" : 20.89
   }, {
-    "type" : "FAVORITE",
-    "index" : 104,
-    "score" : 20.42
+    "type" : "SHARED",
+    "index" : 377,
+    "score" : 1
   } ],
   "score" : 42.31,
   "soundtrackPosition" : 72,
@@ -5220,10 +5220,6 @@
   "spotify" : "spotify:track:5rdqQ966i6VMvIzzBr6xjv",
   "youtube" : "http://www.youtube.com/watch?v=Xyix3xdRd3Y",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 29,
-    "score" : 64.57
-  }, {
     "type" : "SHARED",
     "index" : 98,
     "score" : 22.39
@@ -5231,6 +5227,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 54,
     "score" : 44.67
+  }, {
+    "type" : "FAVORITE",
+    "index" : 29,
+    "score" : 64.57
   } ],
   "score" : 131.63,
   "soundtrackPosition" : 72,
@@ -5278,13 +5278,13 @@
     "index" : 296,
     "score" : 1.07
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 87,
-    "score" : 26.92
-  }, {
     "type" : "SHARED",
     "index" : 364,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 87,
+    "score" : 26.92
   } ],
   "score" : 28.99,
   "soundtrackPosition" : 72,
@@ -5301,16 +5301,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=1Jp20gOwlS4",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 414,
+    "type" : "FAVORITE",
+    "index" : 400,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 179,
     "score" : 6.46
   }, {
-    "type" : "FAVORITE",
-    "index" : 400,
+    "type" : "REPRESENTATIVE",
+    "index" : 414,
     "score" : 1
   } ],
   "score" : 8.46,
@@ -5332,13 +5332,13 @@
     "index" : 93,
     "score" : 24.55
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 116,
-    "score" : 16.98
-  }, {
     "type" : "SHARED",
     "index" : 41,
     "score" : 53.70
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 116,
+    "score" : 16.98
   } ],
   "score" : 95.23,
   "soundtrackPosition" : 73,
@@ -5355,13 +5355,13 @@
   "spotify" : "spotify:track:2DHgvPQD1jApRnT1DBZdrS",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 11,
-    "score" : 85.11
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 9,
     "score" : 89.13
+  }, {
+    "type" : "FAVORITE",
+    "index" : 11,
+    "score" : 85.11
   }, {
     "type" : "SHARED",
     "index" : 43,
@@ -5382,10 +5382,6 @@
   "spotify" : "spotify:track:4QmlFIBnSjDFAiPcbWlWde",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 146,
-    "score" : 10.72
-  }, {
     "type" : "SHARED",
     "index" : 459,
     "score" : 1
@@ -5393,6 +5389,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 419,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 146,
+    "score" : 10.72
   } ],
   "score" : 12.72,
   "soundtrackPosition" : 73,
@@ -5409,6 +5409,10 @@
   "spotify" : "spotify:track:7vKYuqKAySUizIkcAl4Oal",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 176,
+    "score" : 6.76
+  }, {
     "type" : "SHARED",
     "index" : 454,
     "score" : 1
@@ -5416,10 +5420,6 @@
     "type" : "FAVORITE",
     "index" : 201,
     "score" : 4.68
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 176,
-    "score" : 6.76
   } ],
   "score" : 12.44,
   "soundtrackPosition" : 73,
@@ -5440,13 +5440,13 @@
     "index" : 60,
     "score" : 40.74
   }, {
-    "type" : "SHARED",
-    "index" : 66,
-    "score" : 37.15
-  }, {
     "type" : "FAVORITE",
     "index" : 172,
     "score" : 7.24
+  }, {
+    "type" : "SHARED",
+    "index" : 66,
+    "score" : 37.15
   } ],
   "score" : 85.13,
   "soundtrackPosition" : 73,
@@ -5463,13 +5463,13 @@
   "spotify" : "spotify:track:2pcM2LIViO6k1FyzG2WU9N",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 367,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 151,
     "score" : 10.00
+  }, {
+    "type" : "FAVORITE",
+    "index" : 367,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 319,
@@ -5490,6 +5490,10 @@
   "spotify" : "spotify:track:5ceGigL7CZQ3Ih6W8SIbv8",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 270,
+    "score" : 1.62
+  }, {
     "type" : "FAVORITE",
     "index" : 278,
     "score" : 1.41
@@ -5497,10 +5501,6 @@
     "type" : "SHARED",
     "index" : 284,
     "score" : 1.29
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 270,
-    "score" : 1.62
   } ],
   "score" : 4.32,
   "soundtrackPosition" : 73,
@@ -5517,10 +5517,6 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=EDKwCvD56kw",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 254,
-    "score" : 2.04
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 257,
     "score" : 1.95
@@ -5528,6 +5524,10 @@
     "type" : "SHARED",
     "index" : 482,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 254,
+    "score" : 2.04
   } ],
   "score" : 4.99,
   "soundtrackPosition" : 73,
@@ -5544,13 +5544,13 @@
   "spotify" : "spotify:track:66LT15XEqCaWiMG44NGQRE",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 241,
-    "score" : 2.51
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 123,
     "score" : 15.49
+  }, {
+    "type" : "FAVORITE",
+    "index" : 241,
+    "score" : 2.51
   }, {
     "type" : "SHARED",
     "index" : 209,
@@ -5575,12 +5575,12 @@
     "index" : 302,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 305,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 421,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 305,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -5598,13 +5598,13 @@
   "spotify" : "spotify:track:6nGyJv1KezONpOgiXBon03",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 222,
-    "score" : 3.39
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 340,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 222,
+    "score" : 3.39
   }, {
     "type" : "FAVORITE",
     "index" : 312,
@@ -5629,12 +5629,12 @@
     "index" : 215,
     "score" : 3.72
   }, {
-    "type" : "FAVORITE",
-    "index" : 371,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 368,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 371,
     "score" : 1
   } ],
   "score" : 5.72,
@@ -5656,13 +5656,13 @@
     "index" : 163,
     "score" : 8.32
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 121,
-    "score" : 15.85
-  }, {
     "type" : "SHARED",
     "index" : 360,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 121,
+    "score" : 15.85
   } ],
   "score" : 25.17,
   "soundtrackPosition" : 74,
@@ -5679,13 +5679,13 @@
   "spotify" : "spotify:track:6crBy2sODw2HS53xquM6us",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 478,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 85,
     "score" : 27.54
+  }, {
+    "type" : "FAVORITE",
+    "index" : 478,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 479,
@@ -5710,12 +5710,12 @@
     "index" : 321,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 341,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 404,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 341,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -5733,10 +5733,6 @@
   "spotify" : "spotify:track:6iKEXRnFepoyqwmcWoWm0B",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 302,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 306,
     "score" : 1
@@ -5744,6 +5740,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 259,
     "score" : 1.91
+  }, {
+    "type" : "SHARED",
+    "index" : 302,
+    "score" : 1
   } ],
   "score" : 3.91,
   "soundtrackPosition" : 74,
@@ -5760,16 +5760,16 @@
   "spotify" : "spotify:track:3AvMXM7A4zMHNbjRI2zGan",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 436,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 457,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 449,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 436,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -5787,12 +5787,12 @@
   "spotify" : "spotify:track:779ooI3rBd0CLqCiiJmtVo",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 418,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 406,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 418,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -5814,16 +5814,16 @@
   "spotify" : "spotify:track:72li0d2CgwciPLPADO0J0d",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 460,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 472,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 470,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 460,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -5841,10 +5841,6 @@
   "spotify" : "spotify:track:3866LODbxOdvHwMMDXJPGe",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 444,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 438,
     "score" : 1
@@ -5852,6 +5848,10 @@
     "type" : "SHARED",
     "index" : 106,
     "score" : 19.95
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 444,
+    "score" : 1
   } ],
   "score" : 21.95,
   "soundtrackPosition" : 74,
@@ -5895,10 +5895,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 266,
-    "score" : 1.70
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 249,
     "score" : 2.24
@@ -5906,6 +5902,10 @@
     "type" : "SHARED",
     "index" : 138,
     "score" : 12.30
+  }, {
+    "type" : "FAVORITE",
+    "index" : 266,
+    "score" : 1.70
   } ],
   "score" : 16.24,
   "soundtrackPosition" : 74,
@@ -5922,16 +5922,16 @@
   "spotify" : "spotify:track:5njSPpv1nzVOBhDoHiibQA",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 322,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 489,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 355,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 322,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -5949,17 +5949,17 @@
   "spotify" : "spotify:track:799azdZNV34Z1w8CQ1z9ds",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 268,
-    "score" : 1.66
+    "type" : "FAVORITE",
+    "index" : 133,
+    "score" : 13.18
   }, {
     "type" : "SHARED",
     "index" : 33,
     "score" : 61.66
   }, {
-    "type" : "FAVORITE",
-    "index" : 133,
-    "score" : 13.18
+    "type" : "REPRESENTATIVE",
+    "index" : 268,
+    "score" : 1.66
   } ],
   "score" : 76.50,
   "soundtrackPosition" : 75,
@@ -5976,6 +5976,10 @@
   "spotify" : "spotify:track:4WmILdqbZOqBfy1zOtCuno",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 260,
+    "score" : 1.86
+  }, {
     "type" : "FAVORITE",
     "index" : 111,
     "score" : 18.62
@@ -5983,10 +5987,6 @@
     "type" : "SHARED",
     "index" : 190,
     "score" : 5.50
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 260,
-    "score" : 1.86
   } ],
   "score" : 25.98,
   "soundtrackPosition" : 75,
@@ -6007,13 +6007,13 @@
     "index" : 375,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 291,
-    "score" : 1.17
-  }, {
     "type" : "FAVORITE",
     "index" : 119,
     "score" : 16.22
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 291,
+    "score" : 1.17
   } ],
   "score" : 18.39,
   "soundtrackPosition" : 75,
@@ -6057,10 +6057,6 @@
   "spotify" : "spotify:track:1d5UuboIPRMD4HaU3yycKC",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 241,
-    "score" : 2.51
-  }, {
     "type" : "FAVORITE",
     "index" : 344,
     "score" : 1
@@ -6068,6 +6064,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 335,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 241,
+    "score" : 2.51
   } ],
   "score" : 4.51,
   "soundtrackPosition" : 75,
@@ -6084,13 +6084,13 @@
   "spotify" : "spotify:track:7JvTheiFwSaMFXFEbHnStK",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 89,
-    "score" : 25.70
-  }, {
     "type" : "SHARED",
     "index" : 128,
     "score" : 14.13
+  }, {
+    "type" : "FAVORITE",
+    "index" : 89,
+    "score" : 25.70
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 142,
@@ -6111,17 +6111,17 @@
   "spotify" : "spotify:track:4d8EFwexIj2rtX4fIT2l8Q",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 192,
-    "score" : 5.37
+    "type" : "REPRESENTATIVE",
+    "index" : 172,
+    "score" : 7.24
   }, {
     "type" : "FAVORITE",
     "index" : 136,
     "score" : 12.59
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 172,
-    "score" : 7.24
+    "type" : "SHARED",
+    "index" : 192,
+    "score" : 5.37
   } ],
   "score" : 25.20,
   "soundtrackPosition" : 75,
@@ -6138,6 +6138,10 @@
   "spotify" : "spotify:track:1hu7wC5M5RvEsKQ6P2AXps",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 173,
+    "score" : 7.08
+  }, {
     "type" : "SHARED",
     "index" : 131,
     "score" : 13.49
@@ -6145,10 +6149,6 @@
     "type" : "FAVORITE",
     "index" : 138,
     "score" : 12.30
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 173,
-    "score" : 7.08
   } ],
   "score" : 32.87,
   "soundtrackPosition" : 75,
@@ -6165,17 +6165,17 @@
   "spotify" : "spotify:track:0cOf4csnt4DeXSkFmBjULw",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 136,
-    "score" : 12.59
+    "type" : "FAVORITE",
+    "index" : 143,
+    "score" : 11.22
   }, {
     "type" : "SHARED",
     "index" : 182,
     "score" : 6.17
   }, {
-    "type" : "FAVORITE",
-    "index" : 143,
-    "score" : 11.22
+    "type" : "REPRESENTATIVE",
+    "index" : 136,
+    "score" : 12.59
   } ],
   "score" : 29.98,
   "soundtrackPosition" : 75,
@@ -6192,17 +6192,17 @@
   "spotify" : "spotify:track:0BCPKOYdS2jbQ8iyB56Zns",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 193,
-    "score" : 5.25
+    "type" : "REPRESENTATIVE",
+    "index" : 32,
+    "score" : 61.66
   }, {
     "type" : "SHARED",
     "index" : 64,
     "score" : 38.02
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 32,
-    "score" : 61.66
+    "type" : "FAVORITE",
+    "index" : 193,
+    "score" : 5.25
   } ],
   "score" : 104.93,
   "soundtrackPosition" : 75,
@@ -6219,6 +6219,10 @@
   "spotify" : "spotify:track:4qCzHeR0X0zGK0oT2AOlhW",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 171,
+    "score" : 7.41
+  }, {
     "type" : "FAVORITE",
     "index" : 377,
     "score" : 1
@@ -6226,10 +6230,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 386,
     "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 171,
-    "score" : 7.41
   } ],
   "score" : 9.41,
   "soundtrackPosition" : 76,
@@ -6246,16 +6246,16 @@
   "spotify" : "spotify:track:3k6L0H08zSY5yRDgqI8fqx",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 313,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 415,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 401,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 313,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -6273,13 +6273,13 @@
   "spotify" : "spotify:track:6IVRkthdux8MywUbwRO4Bx",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 135,
-    "score" : 12.88
-  }, {
     "type" : "FAVORITE",
     "index" : 209,
     "score" : 4.07
+  }, {
+    "type" : "SHARED",
+    "index" : 135,
+    "score" : 12.88
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 160,
@@ -6327,17 +6327,17 @@
   "spotify" : "spotify:track:5NI2BHPAsIPR5BqQEmRZ17",
   "youtube" : "http://www.youtube.com/watch?v=u6BesY5Doec",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 157,
-    "score" : 9.12
+    "type" : "REPRESENTATIVE",
+    "index" : 458,
+    "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 466,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 458,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 157,
+    "score" : 9.12
   } ],
   "score" : 11.12,
   "soundtrackPosition" : 76,
@@ -6381,17 +6381,17 @@
   "spotify" : "spotify:track:2uQ4px5SPONsgcUpulywIQ",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 53,
-    "score" : 44.67
+    "type" : "FAVORITE",
+    "index" : 10,
+    "score" : 87.10
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 3,
     "score" : 97.72
   }, {
-    "type" : "FAVORITE",
-    "index" : 10,
-    "score" : 87.10
+    "type" : "SHARED",
+    "index" : 53,
+    "score" : 44.67
   } ],
   "score" : 229.49,
   "soundtrackPosition" : 76,
@@ -6408,6 +6408,10 @@
   "spotify" : "spotify:track:0SB9Dz4zTtk7zsd0ncWqz7",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 91,
+    "score" : 25.12
+  }, {
     "type" : "SHARED",
     "index" : 214,
     "score" : 3.80
@@ -6415,10 +6419,6 @@
     "type" : "FAVORITE",
     "index" : 77,
     "score" : 30.90
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 91,
-    "score" : 25.12
   } ],
   "score" : 59.82,
   "soundtrackPosition" : 76,
@@ -6435,10 +6435,6 @@
   "spotify" : "spotify:track:1t1wXaJQqvQKpATFVEoKf4",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 24,
-    "score" : 70.79
-  }, {
     "type" : "FAVORITE",
     "index" : 388,
     "score" : 1
@@ -6446,6 +6442,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 66,
     "score" : 37.15
+  }, {
+    "type" : "SHARED",
+    "index" : 24,
+    "score" : 70.79
   } ],
   "score" : 108.94,
   "soundtrackPosition" : 76,
@@ -6462,17 +6462,17 @@
   "spotify" : "spotify:track:1n7a6D28s08972ImtPtaxX",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 254,
-    "score" : 2.04
+    "type" : "FAVORITE",
+    "index" : 156,
+    "score" : 9.33
   }, {
     "type" : "SHARED",
     "index" : 245,
     "score" : 2.34
   }, {
-    "type" : "FAVORITE",
-    "index" : 156,
-    "score" : 9.33
+    "type" : "REPRESENTATIVE",
+    "index" : 254,
+    "score" : 2.04
   } ],
   "score" : 13.71,
   "soundtrackPosition" : 76,
@@ -6489,6 +6489,10 @@
   "spotify" : "spotify:track:6FvSJjsxM3o5ctpexdB31e",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 214,
+    "score" : 3.80
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 228,
     "score" : 3.09
@@ -6496,10 +6500,6 @@
     "type" : "SHARED",
     "index" : 48,
     "score" : 48.98
-  }, {
-    "type" : "FAVORITE",
-    "index" : 214,
-    "score" : 3.80
   } ],
   "score" : 55.87,
   "soundtrackPosition" : 76,
@@ -6520,12 +6520,12 @@
     "index" : 342,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 411,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 383,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 411,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -6543,16 +6543,16 @@
   "spotify" : "spotify:track:4EwNG7uCvLEm5a6KgerCHf",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 382,
+    "type" : "FAVORITE",
+    "index" : 373,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 277,
     "score" : 1.45
   }, {
-    "type" : "FAVORITE",
-    "index" : 373,
+    "type" : "REPRESENTATIVE",
+    "index" : 382,
     "score" : 1
   } ],
   "score" : 3.45,
@@ -6570,10 +6570,6 @@
   "spotify" : "spotify:track:73f7HS33i8GmNtMl0SKDsh",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 82,
-    "score" : 28.84
-  }, {
     "type" : "FAVORITE",
     "index" : 25,
     "score" : 69.18
@@ -6581,6 +6577,10 @@
     "type" : "SHARED",
     "index" : 274,
     "score" : 1.51
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 82,
+    "score" : 28.84
   } ],
   "score" : 99.53,
   "soundtrackPosition" : 77,
@@ -6628,12 +6628,12 @@
     "index" : 480,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 464,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 479,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 464,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -6651,16 +6651,16 @@
   "spotify" : "spotify:track:2takcwOaAZWiXQijPHIx7B",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 361,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 358,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 415,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 361,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -6678,12 +6678,12 @@
   "spotify" : "spotify:track:4ijNab1GM0JSZoe0I2KCOd",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 334,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 329,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 334,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -6732,17 +6732,17 @@
   "spotify" : "spotify:track:1lDWb6b6ieDQ2xT7ewTC3G",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 262,
-    "score" : 1.82
+    "type" : "REPRESENTATIVE",
+    "index" : 344,
+    "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 352,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 344,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 262,
+    "score" : 1.82
   } ],
   "score" : 3.82,
   "soundtrackPosition" : 77,
@@ -6786,16 +6786,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=eVa4Zjw2SaQ",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 315,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 454,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 427,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 315,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -6813,16 +6813,16 @@
   "spotify" : "spotify:track:040ZFNnVN3gmnDblmgcQW7",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 400,
+    "type" : "REPRESENTATIVE",
+    "index" : 399,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 386,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 399,
+    "type" : "SHARED",
+    "index" : 400,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -6867,17 +6867,17 @@
   "spotify" : "spotify:track:1tk7gvlaVfEmANvHEPQz8t",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 246,
-    "score" : 2.34
+    "type" : "REPRESENTATIVE",
+    "index" : 144,
+    "score" : 11.22
   }, {
     "type" : "SHARED",
     "index" : 189,
     "score" : 5.62
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 144,
-    "score" : 11.22
+    "type" : "FAVORITE",
+    "index" : 246,
+    "score" : 2.34
   } ],
   "score" : 19.18,
   "soundtrackPosition" : 78,
@@ -6898,12 +6898,12 @@
     "index" : 491,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 369,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 491,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 369,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -6921,10 +6921,6 @@
   "spotify" : "spotify:track:6N7gPTru90HYLRUIVDQ185",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 367,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 171,
     "score" : 7.41
@@ -6932,6 +6928,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 214,
     "score" : 3.80
+  }, {
+    "type" : "SHARED",
+    "index" : 367,
+    "score" : 1
   } ],
   "score" : 12.21,
   "soundtrackPosition" : 78,
@@ -6948,10 +6948,6 @@
   "spotify" : "spotify:track:5JmS4ADcvk5a7eUb247lmP",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 282,
-    "score" : 1.35
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 413,
     "score" : 1
@@ -6959,6 +6955,10 @@
     "type" : "FAVORITE",
     "index" : 412,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 282,
+    "score" : 1.35
   } ],
   "score" : 3.35,
   "soundtrackPosition" : 78,
@@ -7006,13 +7006,13 @@
     "index" : 350,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 180,
-    "score" : 6.46
-  }, {
     "type" : "SHARED",
     "index" : 337,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 180,
+    "score" : 6.46
   } ],
   "score" : 8.46,
   "soundtrackPosition" : 78,
@@ -7029,10 +7029,6 @@
   "spotify" : "spotify:track:3pErM4EiWKf3k8KU3jjbXn",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 283,
-    "score" : 1.32
-  }, {
     "type" : "FAVORITE",
     "index" : 281,
     "score" : 1.35
@@ -7040,6 +7036,10 @@
     "type" : "SHARED",
     "index" : 91,
     "score" : 25.12
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 283,
+    "score" : 1.32
   } ],
   "score" : 27.79,
   "soundtrackPosition" : 78,
@@ -7083,10 +7083,6 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=RYEsEOijyTw",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 54,
-    "score" : 44.67
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 65,
     "score" : 37.15
@@ -7094,6 +7090,10 @@
     "type" : "FAVORITE",
     "index" : 23,
     "score" : 70.79
+  }, {
+    "type" : "SHARED",
+    "index" : 54,
+    "score" : 44.67
   } ],
   "score" : 152.61,
   "soundtrackPosition" : 78,
@@ -7110,17 +7110,17 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=BA7qXff_EzE",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 211,
-    "score" : 3.98
+    "type" : "SHARED",
+    "index" : 267,
+    "score" : 1.70
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 226,
     "score" : 3.16
   }, {
-    "type" : "SHARED",
-    "index" : 267,
-    "score" : 1.70
+    "type" : "FAVORITE",
+    "index" : 211,
+    "score" : 3.98
   } ],
   "score" : 8.84,
   "soundtrackPosition" : 79,
@@ -7141,13 +7141,13 @@
     "index" : 73,
     "score" : 33.11
   }, {
-    "type" : "FAVORITE",
-    "index" : 101,
-    "score" : 21.38
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 25,
     "score" : 69.18
+  }, {
+    "type" : "FAVORITE",
+    "index" : 101,
+    "score" : 21.38
   } ],
   "score" : 123.67,
   "soundtrackPosition" : 79,
@@ -7164,13 +7164,13 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=oMe4kVNKvNk",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 47,
-    "score" : 48.98
-  }, {
     "type" : "SHARED",
     "index" : 99,
     "score" : 22.39
+  }, {
+    "type" : "FAVORITE",
+    "index" : 47,
+    "score" : 48.98
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 76,
@@ -7218,10 +7218,6 @@
   "spotify" : "spotify:track:4mrVwQQiv8AkXoJWehbWsK",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 140,
-    "score" : 11.75
-  }, {
     "type" : "SHARED",
     "index" : 221,
     "score" : 3.39
@@ -7229,6 +7225,10 @@
     "type" : "FAVORITE",
     "index" : 149,
     "score" : 10.23
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 140,
+    "score" : 11.75
   } ],
   "score" : 25.37,
   "soundtrackPosition" : 79,
@@ -7245,17 +7245,17 @@
   "spotify" : "spotify:track:3ZKjrFcZF75QssJd0lNW52",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 167,
-    "score" : 7.76
+    "type" : "REPRESENTATIVE",
+    "index" : 237,
+    "score" : 2.69
   }, {
     "type" : "SHARED",
     "index" : 371,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 237,
-    "score" : 2.69
+    "type" : "FAVORITE",
+    "index" : 167,
+    "score" : 7.76
   } ],
   "score" : 11.45,
   "soundtrackPosition" : 79,
@@ -7272,10 +7272,6 @@
   "spotify" : "spotify:track:7clUVcSOtkNWa58Gw5RfD4",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 264,
-    "score" : 1.78
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 273,
     "score" : 1.55
@@ -7283,6 +7279,10 @@
     "type" : "FAVORITE",
     "index" : 277,
     "score" : 1.45
+  }, {
+    "type" : "SHARED",
+    "index" : 264,
+    "score" : 1.78
   } ],
   "score" : 4.78,
   "soundtrackPosition" : 79,
@@ -7303,13 +7303,13 @@
     "index" : 141,
     "score" : 11.75
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 192,
-    "score" : 5.37
-  }, {
     "type" : "SHARED",
     "index" : 143,
     "score" : 11.22
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 192,
+    "score" : 5.37
   } ],
   "score" : 28.34,
   "soundtrackPosition" : 79,
@@ -7326,6 +7326,10 @@
   "spotify" : "spotify:track:1ObHejnho5bKYtXdmwZoXn",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 338,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 324,
     "score" : 1
@@ -7333,10 +7337,6 @@
     "type" : "FAVORITE",
     "index" : 155,
     "score" : 9.33
-  }, {
-    "type" : "SHARED",
-    "index" : 338,
-    "score" : 1
   } ],
   "score" : 11.33,
   "soundtrackPosition" : 79,
@@ -7353,16 +7353,16 @@
   "spotify" : "spotify:track:5OWHDcyCInbwVO0XXTIRj1",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 429,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 381,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 427,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 429,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -7380,17 +7380,17 @@
   "spotify" : "spotify:track:0fcU1dUwiwIDuO62xvvVvX",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 311,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 114,
+    "score" : 17.78
   }, {
     "type" : "FAVORITE",
     "index" : 270,
     "score" : 1.62
   }, {
-    "type" : "SHARED",
-    "index" : 114,
-    "score" : 17.78
+    "type" : "REPRESENTATIVE",
+    "index" : 311,
+    "score" : 1
   } ],
   "score" : 20.40,
   "soundtrackPosition" : 79,
@@ -7411,12 +7411,12 @@
     "index" : 395,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 393,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 331,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 393,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -7434,6 +7434,10 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=5iSa7-ht33o",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 268,
+    "score" : 1.66
+  }, {
     "type" : "FAVORITE",
     "index" : 305,
     "score" : 1
@@ -7441,10 +7445,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 314,
     "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 268,
-    "score" : 1.66
   } ],
   "score" : 3.66,
   "soundtrackPosition" : 80,
@@ -7488,13 +7488,13 @@
   "spotify" : "spotify:track:3LmvfNUQtglbTrydsdIqFU",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 56,
-    "score" : 42.66
-  }, {
     "type" : "FAVORITE",
     "index" : 40,
     "score" : 54.95
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 56,
+    "score" : 42.66
   }, {
     "type" : "SHARED",
     "index" : 150,
@@ -7515,17 +7515,17 @@
   "spotify" : "spotify:track:4Hff1IjRbLGeLgFgxvHflk",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 320,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 251,
+    "score" : 2.14
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 421,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 251,
-    "score" : 2.14
+    "type" : "FAVORITE",
+    "index" : 320,
+    "score" : 1
   } ],
   "score" : 4.14,
   "soundtrackPosition" : 80,
@@ -7542,16 +7542,16 @@
   "spotify" : "spotify:track:3v3oI0TcyelpENKfDxDrML",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 464,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 469,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 478,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 464,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -7569,10 +7569,6 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=Gf_s8eiXgPU",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 38,
-    "score" : 56.23
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 124,
     "score" : 15.14
@@ -7580,6 +7576,10 @@
     "type" : "SHARED",
     "index" : 2,
     "score" : 97.72
+  }, {
+    "type" : "FAVORITE",
+    "index" : 38,
+    "score" : 56.23
   } ],
   "score" : 169.09,
   "soundtrackPosition" : 80,
@@ -7654,13 +7654,13 @@
     "index" : 125,
     "score" : 14.79
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 251,
-    "score" : 2.14
-  }, {
     "type" : "SHARED",
     "index" : 177,
     "score" : 6.76
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 251,
+    "score" : 2.14
   } ],
   "score" : 23.69,
   "soundtrackPosition" : 80,
@@ -7677,6 +7677,10 @@
   "spotify" : "spotify:track:33Po4wZNmlLhd5VJTkA0RC",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 307,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 48,
     "score" : 48.98
@@ -7684,10 +7688,6 @@
     "type" : "FAVORITE",
     "index" : 31,
     "score" : 63.10
-  }, {
-    "type" : "SHARED",
-    "index" : 307,
-    "score" : 1
   } ],
   "score" : 113.08,
   "soundtrackPosition" : 80,
@@ -7704,12 +7704,12 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=fbDA7bkhe8Q",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 477,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 476,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 477,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -7785,10 +7785,6 @@
   "spotify" : "spotify:track:7yj1fRpVIbcTVLt3ssCFEe",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 152,
-    "score" : 9.77
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 310,
     "score" : 1
@@ -7796,6 +7792,10 @@
     "type" : "SHARED",
     "index" : 87,
     "score" : 26.92
+  }, {
+    "type" : "FAVORITE",
+    "index" : 152,
+    "score" : 9.77
   } ],
   "score" : 37.69,
   "soundtrackPosition" : 81,
@@ -7812,16 +7812,16 @@
   "spotify" : "spotify:track:27BiHcQDEkxVn69zy1t3Es",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 336,
+    "score" : 1
+  }, {
     "type" : "FAVORITE",
     "index" : 287,
     "score" : 1.23
   }, {
     "type" : "SHARED",
     "index" : 314,
-    "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 336,
     "score" : 1
   } ],
   "score" : 3.23,
@@ -7839,10 +7839,6 @@
   "spotify" : "spotify:track:4ypXbu6BqoSBj9RsZ53iDQ",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 134,
-    "score" : 12.88
-  }, {
     "type" : "FAVORITE",
     "index" : 153,
     "score" : 9.77
@@ -7850,6 +7846,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 184,
     "score" : 6.03
+  }, {
+    "type" : "SHARED",
+    "index" : 134,
+    "score" : 12.88
   } ],
   "score" : 28.68,
   "soundtrackPosition" : 81,
@@ -7866,13 +7866,13 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=fqH5J7caIXM",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 114,
-    "score" : 17.78
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 154,
     "score" : 9.55
+  }, {
+    "type" : "FAVORITE",
+    "index" : 114,
+    "score" : 17.78
   }, {
     "type" : "SHARED",
     "index" : 492,
@@ -7893,13 +7893,13 @@
   "spotify" : "spotify:track:2Y2yETTPOFPSLrOaGP1SyK",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 241,
-    "score" : 2.51
-  }, {
     "type" : "FAVORITE",
     "index" : 298,
     "score" : 1.05
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 241,
+    "score" : 2.51
   }, {
     "type" : "SHARED",
     "index" : 51,
@@ -7920,17 +7920,17 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=ycAByDNZYrA",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 67,
-    "score" : 36.31
+    "type" : "FAVORITE",
+    "index" : 36,
+    "score" : 58.88
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 118,
     "score" : 16.60
   }, {
-    "type" : "FAVORITE",
-    "index" : 36,
-    "score" : 58.88
+    "type" : "SHARED",
+    "index" : 67,
+    "score" : 36.31
   } ],
   "score" : 111.79,
   "soundtrackPosition" : 81,
@@ -7947,16 +7947,16 @@
   "spotify" : "spotify:track:4VbV8Zyjuu1qz0QteX1wVC",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 431,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 190,
     "score" : 5.50
   }, {
     "type" : "SHARED",
     "index" : 463,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 431,
     "score" : 1
   } ],
   "score" : 7.50,
@@ -7974,7 +7974,7 @@
   "spotify" : "spotify:track:6F9z8Xe7EKyCSGexzi87ii",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
+    "type" : "REPRESENTATIVE",
     "index" : 1,
     "score" : 100.00
   }, {
@@ -7982,7 +7982,7 @@
     "index" : 57,
     "score" : 42.66
   }, {
-    "type" : "REPRESENTATIVE",
+    "type" : "SHARED",
     "index" : 1,
     "score" : 100.00
   } ],
@@ -8001,16 +8001,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=jL52a4bp7mM",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 345,
+    "type" : "REPRESENTATIVE",
+    "index" : 411,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 397,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 411,
+    "type" : "SHARED",
+    "index" : 345,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8028,16 +8028,16 @@
   "spotify" : "spotify:track:0R0jZeww4CpwrwDXXJ8rqG",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 301,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 402,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 440,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 301,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8059,13 +8059,13 @@
     "index" : 122,
     "score" : 15.49
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 168,
-    "score" : 7.76
-  }, {
     "type" : "SHARED",
     "index" : 246,
     "score" : 2.34
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 168,
+    "score" : 7.76
   } ],
   "score" : 25.59,
   "soundtrackPosition" : 82,
@@ -8082,10 +8082,6 @@
   "spotify" : "spotify:track:2OLuNNKTliuBcRaO36VaZW",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 105,
-    "score" : 20.42
-  }, {
     "type" : "FAVORITE",
     "index" : 61,
     "score" : 39.81
@@ -8093,6 +8089,10 @@
     "type" : "SHARED",
     "index" : 84,
     "score" : 28.18
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 105,
+    "score" : 20.42
   } ],
   "score" : 88.41,
   "soundtrackPosition" : 82,
@@ -8113,12 +8113,12 @@
     "index" : 343,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 347,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 333,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 347,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8136,10 +8136,6 @@
   "spotify" : "spotify:track:30g7tH1rfMratchnaLfgqJ",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 155,
-    "score" : 9.33
-  }, {
     "type" : "FAVORITE",
     "index" : 7,
     "score" : 91.20
@@ -8147,6 +8143,10 @@
     "type" : "SHARED",
     "index" : 46,
     "score" : 50.12
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 155,
+    "score" : 9.33
   } ],
   "score" : 150.65,
   "soundtrackPosition" : 82,
@@ -8167,13 +8167,13 @@
     "index" : 178,
     "score" : 6.61
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 129,
-    "score" : 14.13
-  }, {
     "type" : "SHARED",
     "index" : 19,
     "score" : 75.86
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 129,
+    "score" : 14.13
   } ],
   "score" : 96.60,
   "soundtrackPosition" : 82,
@@ -8190,16 +8190,16 @@
   "spotify" : "spotify:track:4QYV42XR08VCKSkBOjnlUe",
   "youtube" : "http://www.youtube.com/watch?v=-IUSZyjiYuY",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 392,
+    "score" : 1
+  }, {
     "type" : "SHARED",
     "index" : 350,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 460,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 392,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8217,10 +8217,6 @@
   "spotify" : "spotify:track:3iyjOwyySLRDEW2tqP7MhX",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 279,
-    "score" : 1.41
-  }, {
     "type" : "FAVORITE",
     "index" : 280,
     "score" : 1.38
@@ -8228,6 +8224,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 261,
     "score" : 1.86
+  }, {
+    "type" : "SHARED",
+    "index" : 279,
+    "score" : 1.41
   } ],
   "score" : 4.65,
   "soundtrackPosition" : 82,
@@ -8248,12 +8248,12 @@
     "index" : 461,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 468,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 483,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 468,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8275,13 +8275,13 @@
     "index" : 366,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 57,
-    "score" : 42.66
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 308,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 57,
+    "score" : 42.66
   } ],
   "score" : 44.66,
   "soundtrackPosition" : 82,
@@ -8298,16 +8298,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=Q4D1f-6oKJQ",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 477,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 486,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 494,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 477,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8379,10 +8379,6 @@
   "spotify" : "spotify:track:3pD0f7hSJg2XdQ6udw5Tey",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 264,
-    "score" : 1.78
-  }, {
     "type" : "SHARED",
     "index" : 236,
     "score" : 2.69
@@ -8390,6 +8386,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 345,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 264,
+    "score" : 1.78
   } ],
   "score" : 5.47,
   "soundtrackPosition" : 83,
@@ -8406,13 +8406,13 @@
   "spotify" : "spotify:track:1TUCxgxczTjQ0dsVnxsIsa",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 159,
-    "score" : 8.91
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 300,
     "score" : 1.02
+  }, {
+    "type" : "FAVORITE",
+    "index" : 159,
+    "score" : 8.91
   }, {
     "type" : "SHARED",
     "index" : 441,
@@ -8433,16 +8433,16 @@
   "spotify" : "spotify:track:6C7RJEIUDqKkJRZVWdkfkH",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 454,
+    "type" : "FAVORITE",
+    "index" : 449,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 329,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 449,
+    "type" : "REPRESENTATIVE",
+    "index" : 454,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8460,10 +8460,6 @@
   "spotify" : "spotify:track:3gHeBUfAPPUxAJoQ8lsjt2",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 295,
-    "score" : 1.10
-  }, {
     "type" : "FAVORITE",
     "index" : 294,
     "score" : 1.12
@@ -8471,6 +8467,10 @@
     "type" : "SHARED",
     "index" : 210,
     "score" : 4.07
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 295,
+    "score" : 1.10
   } ],
   "score" : 6.29,
   "soundtrackPosition" : 83,
@@ -8545,13 +8545,13 @@
     "index" : 309,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 253,
-    "score" : 2.09
-  }, {
     "type" : "SHARED",
     "index" : 297,
     "score" : 1.07
+  }, {
+    "type" : "FAVORITE",
+    "index" : 253,
+    "score" : 2.09
   } ],
   "score" : 4.16,
   "soundtrackPosition" : 83,
@@ -8599,12 +8599,12 @@
     "index" : 317,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 363,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 432,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 363,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8626,13 +8626,13 @@
     "index" : 164,
     "score" : 8.13
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 275,
-    "score" : 1.48
-  }, {
     "type" : "SHARED",
     "index" : 212,
     "score" : 3.89
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 275,
+    "score" : 1.48
   } ],
   "score" : 13.50,
   "soundtrackPosition" : 84,
@@ -8649,17 +8649,17 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=_MTH0CzU4-8",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 168,
-    "score" : 7.76
+    "type" : "REPRESENTATIVE",
+    "index" : 218,
+    "score" : 3.55
   }, {
     "type" : "SHARED",
     "index" : 90,
     "score" : 25.70
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 218,
-    "score" : 3.55
+    "type" : "FAVORITE",
+    "index" : 168,
+    "score" : 7.76
   } ],
   "score" : 37.01,
   "soundtrackPosition" : 84,
@@ -8676,16 +8676,16 @@
   "spotify" : "spotify:track:7dfK8TiE0krKoX2UnsMtSF",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 391,
+    "score" : 1
+  }, {
     "type" : "SHARED",
     "index" : 308,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 333,
-    "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 391,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8707,12 +8707,12 @@
     "index" : 389,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 403,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 400,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 403,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8734,12 +8734,12 @@
     "index" : 466,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 450,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 437,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 450,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8757,13 +8757,13 @@
   "spotify" : "spotify:track:4SgW8HlnLvdeQPVclwFtFH",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 92,
-    "score" : 24.55
-  }, {
     "type" : "SHARED",
     "index" : 263,
     "score" : 1.78
+  }, {
+    "type" : "FAVORITE",
+    "index" : 92,
+    "score" : 24.55
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 181,
@@ -8784,10 +8784,6 @@
   "spotify" : "spotify:track:7Bcz9UdXqiFh884hOYMPC6",
   "youtube" : "http://www.youtube.com/watch?v=rqr7PFqe4rE",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 436,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 433,
     "score" : 1
@@ -8795,6 +8791,10 @@
     "type" : "SHARED",
     "index" : 204,
     "score" : 4.47
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 436,
+    "score" : 1
   } ],
   "score" : 6.47,
   "soundtrackPosition" : 84,
@@ -8811,16 +8811,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=HS2e24LRkdg",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 490,
+    "score" : 1
+  }, {
     "type" : "SHARED",
     "index" : 309,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 488,
-    "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 490,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8838,13 +8838,13 @@
   "spotify" : "spotify:track:1frWqD5oqa1mukQJKYyzqn",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 39,
-    "score" : 56.23
-  }, {
     "type" : "SHARED",
     "index" : 295,
     "score" : 1.10
+  }, {
+    "type" : "FAVORITE",
+    "index" : 39,
+    "score" : 56.23
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 332,
@@ -8865,13 +8865,13 @@
   "spotify" : "spotify:track:77vYwoC7e3pVoPq8BA9CuL",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 63,
-    "score" : 38.90
-  }, {
     "type" : "SHARED",
     "index" : 40,
     "score" : 54.95
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 63,
+    "score" : 38.90
   }, {
     "type" : "FAVORITE",
     "index" : 186,
@@ -8892,17 +8892,17 @@
   "spotify" : "spotify:track:7jhN0bMvKjHx5OppepYOPf",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 426,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 215,
+    "score" : 3.72
   }, {
     "type" : "SHARED",
     "index" : 450,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 215,
-    "score" : 3.72
+    "type" : "REPRESENTATIVE",
+    "index" : 426,
+    "score" : 1
   } ],
   "score" : 5.72,
   "soundtrackPosition" : 85,
@@ -8919,16 +8919,16 @@
   "spotify" : "spotify:track:54aW03hDcZPHiltGSszZiY",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 316,
+    "type" : "SHARED",
+    "index" : 373,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 368,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 373,
+    "type" : "REPRESENTATIVE",
+    "index" : 316,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -8946,17 +8946,17 @@
   "spotify" : "spotify:track:0lNvrXhFOCbHXmxNLGIC7q",
   "youtube" : "http://www.youtube.com/watch?v=tmk30mvVz3Y",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 33,
-    "score" : 61.66
+    "type" : "REPRESENTATIVE",
+    "index" : 92,
+    "score" : 24.55
   }, {
     "type" : "SHARED",
     "index" : 281,
     "score" : 1.35
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 92,
-    "score" : 24.55
+    "type" : "FAVORITE",
+    "index" : 33,
+    "score" : 61.66
   } ],
   "score" : 87.56,
   "soundtrackPosition" : 85,
@@ -8973,6 +8973,10 @@
   "spotify" : "spotify:track:6YX4TgG7dOFC931bICwE3O",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 34,
+    "score" : 60.26
+  }, {
     "type" : "SHARED",
     "index" : 219,
     "score" : 3.55
@@ -8980,10 +8984,6 @@
     "type" : "FAVORITE",
     "index" : 16,
     "score" : 79.43
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 34,
-    "score" : 60.26
   } ],
   "score" : 143.24,
   "soundtrackPosition" : 85,
@@ -9000,12 +9000,12 @@
   "spotify" : "spotify:track:368S2jjTfDk9Hk9x9YDzwj",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 498,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 499,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 498,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
@@ -9027,16 +9027,16 @@
   "spotify" : "spotify:track:41on8RwRh22IHcChAN2gm8",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 475,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 229,
     "score" : 3.02
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 425,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 475,
     "score" : 1
   } ],
   "score" : 5.02,
@@ -9058,12 +9058,12 @@
     "index" : 496,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 304,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 496,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 304,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9081,16 +9081,16 @@
   "spotify" : "spotify:track:3tvWMBIblzT5FSjKtIeRR1",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 495,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 378,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 387,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 495,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9112,13 +9112,13 @@
     "index" : 312,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 484,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 249,
     "score" : 2.24
+  }, {
+    "type" : "SHARED",
+    "index" : 484,
+    "score" : 1
   } ],
   "score" : 4.24,
   "soundtrackPosition" : 85,
@@ -9135,17 +9135,17 @@
   "spotify" : "spotify:track:46Qfe1Os4r7HH3IY3p9v8A",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 245,
-    "score" : 2.34
+    "type" : "FAVORITE",
+    "index" : 223,
+    "score" : 3.31
   }, {
     "type" : "SHARED",
     "index" : 386,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 223,
-    "score" : 3.31
+    "type" : "REPRESENTATIVE",
+    "index" : 245,
+    "score" : 2.34
   } ],
   "score" : 6.65,
   "soundtrackPosition" : 85,
@@ -9162,10 +9162,6 @@
   "spotify" : "spotify:track:2vVc2G9w2JteBgxpSUVwX5",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 280,
-    "score" : 1.38
-  }, {
     "type" : "SHARED",
     "index" : 141,
     "score" : 11.75
@@ -9173,6 +9169,10 @@
     "type" : "FAVORITE",
     "index" : 376,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 280,
+    "score" : 1.38
   } ],
   "score" : 14.13,
   "soundtrackPosition" : 85,
@@ -9189,6 +9189,10 @@
   "spotify" : "spotify:track:0bHs3ly4Bv5BlzE3KrePfX",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 135,
+    "score" : 12.88
+  }, {
     "type" : "SHARED",
     "index" : 432,
     "score" : 1
@@ -9196,10 +9200,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 247,
     "score" : 2.29
-  }, {
-    "type" : "FAVORITE",
-    "index" : 135,
-    "score" : 12.88
   } ],
   "score" : 16.17,
   "soundtrackPosition" : 86,
@@ -9216,16 +9216,16 @@
   "spotify" : "",
   "youtube" : "http://www.myspace.com/babystrange",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 486,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 220,
     "score" : 3.47
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 357,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 486,
     "score" : 1
   } ],
   "score" : 5.47,
@@ -9247,13 +9247,13 @@
     "index" : 455,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 450,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 95,
     "score" : 23.44
+  }, {
+    "type" : "FAVORITE",
+    "index" : 450,
+    "score" : 1
   } ],
   "score" : 25.44,
   "soundtrackPosition" : 86,
@@ -9297,16 +9297,16 @@
   "spotify" : "",
   "youtube" : "http://www.myspace.com/HeatherRoseAndTheDrama",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 322,
+    "score" : 1
+  }, {
     "type" : "SHARED",
     "index" : 453,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 319,
-    "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 322,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9324,16 +9324,16 @@
   "spotify" : "spotify:track:6u38x61qv7JBIJD4dqztmm",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 431,
+    "type" : "REPRESENTATIVE",
+    "index" : 442,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 356,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 442,
+    "type" : "FAVORITE",
+    "index" : 431,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9355,13 +9355,13 @@
     "index" : 70,
     "score" : 34.67
   }, {
-    "type" : "SHARED",
-    "index" : 49,
-    "score" : 47.86
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 135,
     "score" : 12.88
+  }, {
+    "type" : "SHARED",
+    "index" : 49,
+    "score" : 47.86
   } ],
   "score" : 95.41,
   "soundtrackPosition" : 86,
@@ -9378,17 +9378,17 @@
   "spotify" : "spotify:track:4LcJKxxmYF4DPajxfpPT60",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 74,
-    "score" : 32.36
+    "type" : "SHARED",
+    "index" : 401,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 114,
     "score" : 17.78
   }, {
-    "type" : "SHARED",
-    "index" : 401,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 74,
+    "score" : 32.36
   } ],
   "score" : 51.14,
   "soundtrackPosition" : 86,
@@ -9436,12 +9436,12 @@
     "index" : 70,
     "score" : 34.67
   }, {
-    "type" : "FAVORITE",
-    "index" : 493,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 492,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 493,
     "score" : 1
   } ],
   "score" : 36.67,
@@ -9459,6 +9459,10 @@
   "spotify" : "spotify:track:43BfmeM9RtdETIJHaaSW1Z",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 231,
+    "score" : 2.95
+  }, {
     "type" : "FAVORITE",
     "index" : 261,
     "score" : 1.86
@@ -9466,10 +9470,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 360,
     "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 231,
-    "score" : 2.95
   } ],
   "score" : 5.81,
   "soundtrackPosition" : 86,
@@ -9486,10 +9486,6 @@
   "spotify" : "spotify:track:7sIcYgiHEJ3GEfJzoB7NEG",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 45,
-    "score" : 51.29
-  }, {
     "type" : "SHARED",
     "index" : 161,
     "score" : 8.51
@@ -9497,6 +9493,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 84,
     "score" : 28.18
+  }, {
+    "type" : "FAVORITE",
+    "index" : 45,
+    "score" : 51.29
   } ],
   "score" : 87.98,
   "soundtrackPosition" : 87,
@@ -9513,17 +9513,17 @@
   "spotify" : "spotify:track:407vJkfEQMGDu1MVCWNnMX",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 353,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 140,
+    "score" : 11.75
   }, {
     "type" : "SHARED",
     "index" : 301,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 140,
-    "score" : 11.75
+    "type" : "REPRESENTATIVE",
+    "index" : 353,
+    "score" : 1
   } ],
   "score" : 13.75,
   "soundtrackPosition" : 87,
@@ -9540,6 +9540,10 @@
   "spotify" : "spotify:track:2MadCwJX7HVtlWcrc78OX9",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 243,
+    "score" : 2.45
+  }, {
     "type" : "SHARED",
     "index" : 293,
     "score" : 1.12
@@ -9547,10 +9551,6 @@
     "type" : "FAVORITE",
     "index" : 238,
     "score" : 2.63
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 243,
-    "score" : 2.45
   } ],
   "score" : 6.20,
   "soundtrackPosition" : 87,
@@ -9567,16 +9567,16 @@
   "spotify" : "spotify:track:6PPu2SJkd5XmHU7q4QifbQ",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 471,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 481,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 480,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 471,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9594,17 +9594,17 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=W69GfaXEVeg",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 158,
-    "score" : 8.91
+    "type" : "SHARED",
+    "index" : 58,
+    "score" : 41.69
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 149,
     "score" : 10.23
   }, {
-    "type" : "SHARED",
-    "index" : 58,
-    "score" : 41.69
+    "type" : "FAVORITE",
+    "index" : 158,
+    "score" : 8.91
   } ],
   "score" : 60.83,
   "soundtrackPosition" : 87,
@@ -9625,13 +9625,13 @@
     "index" : 82,
     "score" : 28.84
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 97,
-    "score" : 22.91
-  }, {
     "type" : "FAVORITE",
     "index" : 54,
     "score" : 44.67
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 97,
+    "score" : 22.91
   } ],
   "score" : 96.42,
   "soundtrackPosition" : 87,
@@ -9652,12 +9652,12 @@
     "index" : 488,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 484,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 490,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 484,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9675,16 +9675,16 @@
   "spotify" : "spotify:track:3kQvTzEnhGfnWmEESQVXic",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 459,
+    "type" : "REPRESENTATIVE",
+    "index" : 348,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 410,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 348,
+    "type" : "FAVORITE",
+    "index" : 459,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9702,12 +9702,12 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=rnigyEjr7yc",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 494,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 414,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 494,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -9733,13 +9733,13 @@
     "index" : 406,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 217,
-    "score" : 3.63
-  }, {
     "type" : "FAVORITE",
     "index" : 396,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 217,
+    "score" : 3.63
   } ],
   "score" : 5.63,
   "soundtrackPosition" : 87,
@@ -9760,13 +9760,13 @@
     "index" : 302,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 249,
-    "score" : 2.24
-  }, {
     "type" : "FAVORITE",
     "index" : 2,
     "score" : 97.72
+  }, {
+    "type" : "SHARED",
+    "index" : 249,
+    "score" : 2.24
   } ],
   "score" : 100.96,
   "soundtrackPosition" : 87,
@@ -9787,13 +9787,13 @@
     "index" : 167,
     "score" : 7.76
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 186,
-    "score" : 5.89
-  }, {
     "type" : "FAVORITE",
     "index" : 24,
     "score" : 70.79
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 186,
+    "score" : 5.89
   } ],
   "score" : 84.44,
   "soundtrackPosition" : 88,
@@ -9837,16 +9837,16 @@
   "spotify" : "spotify:track:4oI2qtjY1QHJ7NpYuid5KB",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 310,
+    "score" : 1
+  }, {
     "type" : "SHARED",
     "index" : 336,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 346,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 310,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9864,15 +9864,15 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=5ISjawzxgoE",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 500,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 500,
     "score" : 1
   }, {
     "type" : "SHARED",
-    "index" : 500,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
     "index" : 500,
     "score" : 1
   } ],
@@ -9891,17 +9891,17 @@
   "spotify" : "spotify:track:5cwN1htZyoWqZCc33f3RfE",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 70,
-    "score" : 34.67
+    "type" : "SHARED",
+    "index" : 76,
+    "score" : 31.62
   }, {
     "type" : "FAVORITE",
     "index" : 46,
     "score" : 50.12
   }, {
-    "type" : "SHARED",
-    "index" : 76,
-    "score" : 31.62
+    "type" : "REPRESENTATIVE",
+    "index" : 70,
+    "score" : 34.67
   } ],
   "score" : 116.41,
   "soundtrackPosition" : 88,
@@ -9945,16 +9945,16 @@
   "spotify" : "spotify:track:6rxEjkoar48SssZePbtb2x",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 404,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 433,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 316,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 404,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -9972,12 +9972,12 @@
   "spotify" : "spotify:track:0fiPpwBPIaxxydn4KzX9Tc",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 438,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 409,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 438,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -10003,13 +10003,13 @@
     "index" : 24,
     "score" : 70.79
   }, {
-    "type" : "SHARED",
-    "index" : 80,
-    "score" : 29.51
-  }, {
     "type" : "FAVORITE",
     "index" : 3,
     "score" : 97.72
+  }, {
+    "type" : "SHARED",
+    "index" : 80,
+    "score" : 29.51
   } ],
   "score" : 198.02,
   "soundtrackPosition" : 88,
@@ -10026,10 +10026,6 @@
   "spotify" : "spotify:track:7DQHFUDMBp8akLzq0hCgIE",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 132,
-    "score" : 13.49
-  }, {
     "type" : "FAVORITE",
     "index" : 81,
     "score" : 29.51
@@ -10037,6 +10033,10 @@
     "type" : "SHARED",
     "index" : 184,
     "score" : 6.03
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 132,
+    "score" : 13.49
   } ],
   "score" : 49.03,
   "soundtrackPosition" : 88,
@@ -10053,17 +10053,17 @@
   "spotify" : "spotify:track:4IneeuJD1LXPetGj294ytz",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 93,
-    "score" : 24.55
+    "type" : "SHARED",
+    "index" : 265,
+    "score" : 1.74
   }, {
     "type" : "FAVORITE",
     "index" : 53,
     "score" : 44.67
   }, {
-    "type" : "SHARED",
-    "index" : 265,
-    "score" : 1.74
+    "type" : "REPRESENTATIVE",
+    "index" : 93,
+    "score" : 24.55
   } ],
   "score" : 70.96,
   "soundtrackPosition" : 88,
@@ -10084,13 +10084,13 @@
     "index" : 30,
     "score" : 64.57
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 134,
-    "score" : 12.88
-  }, {
     "type" : "SHARED",
     "index" : 368,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 134,
+    "score" : 12.88
   } ],
   "score" : 78.45,
   "soundtrackPosition" : 89,
@@ -10107,16 +10107,16 @@
   "spotify" : "spotify:track:1m2K0sPmwlktrmsqfSCsvb",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 374,
+    "score" : 1
+  }, {
     "type" : "FAVORITE",
     "index" : 339,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 396,
-    "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 374,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10134,10 +10134,6 @@
   "spotify" : "spotify:track:4SoRvuR09go03chQROV80q",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 152,
-    "score" : 9.77
-  }, {
     "type" : "FAVORITE",
     "index" : 147,
     "score" : 10.72
@@ -10145,6 +10141,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 318,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 152,
+    "score" : 9.77
   } ],
   "score" : 21.49,
   "soundtrackPosition" : 89,
@@ -10219,12 +10219,12 @@
     "index" : 362,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 353,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 469,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 353,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10242,16 +10242,16 @@
   "spotify" : "spotify:track:1eBR9MdLUnRJRoNa3cpC92",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 470,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 448,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 418,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 470,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10269,12 +10269,12 @@
   "spotify" : "spotify:track:7D7eMbbTAvR58NoZm0OsKh",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 416,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 402,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 416,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -10296,10 +10296,6 @@
   "spotify" : "spotify:track:5K872PJdiepsEUwUQCVeCV",
   "youtube" : "http://www.youtube.com/watch?v=tBr96Nx3wgU",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 409,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 157,
     "score" : 9.12
@@ -10307,6 +10303,10 @@
     "type" : "SHARED",
     "index" : 104,
     "score" : 20.42
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 409,
+    "score" : 1
   } ],
   "score" : 30.54,
   "soundtrackPosition" : 89,
@@ -10323,10 +10323,6 @@
   "spotify" : "spotify:track:0QeeVcFYQPpqO4KHeOrzPK",
   "youtube" : "http://www.youtube.com/watch?v=39SjyMvBbk4",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 430,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 115,
     "score" : 17.38
@@ -10334,6 +10330,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 201,
     "score" : 4.68
+  }, {
+    "type" : "SHARED",
+    "index" : 430,
+    "score" : 1
   } ],
   "score" : 23.06,
   "soundtrackPosition" : 89,
@@ -10350,10 +10350,6 @@
   "spotify" : "spotify:track:2rn4HhtFoAB2zjudvM1Iqy",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 239,
-    "score" : 2.57
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 367,
     "score" : 1
@@ -10361,6 +10357,10 @@
     "type" : "FAVORITE",
     "index" : 369,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 239,
+    "score" : 2.57
   } ],
   "score" : 4.57,
   "soundtrackPosition" : 89,
@@ -10377,17 +10377,17 @@
   "spotify" : "spotify:track:3Er1wNuejABz1cau68q6Qd",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 139,
-    "score" : 12.02
+    "type" : "FAVORITE",
+    "index" : 221,
+    "score" : 3.39
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 287,
     "score" : 1.23
   }, {
-    "type" : "FAVORITE",
-    "index" : 221,
-    "score" : 3.39
+    "type" : "SHARED",
+    "index" : 139,
+    "score" : 12.02
   } ],
   "score" : 16.64,
   "soundtrackPosition" : 90,
@@ -10431,10 +10431,6 @@
   "spotify" : "spotify:track:6iimW94XpsCuoeb3tCi5I6",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 332,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 229,
     "score" : 3.02
@@ -10442,6 +10438,10 @@
     "type" : "FAVORITE",
     "index" : 202,
     "score" : 4.57
+  }, {
+    "type" : "SHARED",
+    "index" : 332,
+    "score" : 1
   } ],
   "score" : 8.59,
   "soundtrackPosition" : 90,
@@ -10485,16 +10485,16 @@
   "spotify" : "",
   "youtube" : "http://www.youtube.com/watch?v=h2NFIDnUBi8",
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 354,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 343,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 323,
-    "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 354,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10512,16 +10512,16 @@
   "spotify" : "spotify:track:12qK99skiWreOErDkdmE6O",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 341,
+    "type" : "FAVORITE",
+    "index" : 322,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 365,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 322,
+    "type" : "REPRESENTATIVE",
+    "index" : 341,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10543,12 +10543,12 @@
     "index" : 393,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 398,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 403,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 398,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10593,16 +10593,16 @@
   "spotify" : "spotify:track:6x1eNB6mT6Yg8eO14xvZR6",
   "youtube" : "",
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 429,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 331,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 329,
-    "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 429,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10647,16 +10647,16 @@
   "spotify" : "spotify:track:1tEuta3fSTK7fXyr0kCVi6",
   "youtube" : "http://www.youtube.com/watch?v=YTTVx--i3m0",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 374,
+    "type" : "SHARED",
+    "index" : 477,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 384,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 477,
+    "type" : "FAVORITE",
+    "index" : 374,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10674,12 +10674,12 @@
   "spotify" : "spotify:track:2KEKTzLi2DQwhvlBJXRODd",
   "youtube" : "http://www.youtube.com/watch?v=rVOi5Hdbd7Q",
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 430,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 417,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 430,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -10755,17 +10755,17 @@
   "spotify" : "spotify:track:0WOXGG6XRcGFAQe1liEKQW",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 410,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 148,
+    "score" : 10.47
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 328,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 148,
-    "score" : 10.47
+    "type" : "FAVORITE",
+    "index" : 410,
+    "score" : 1
   } ],
   "score" : 12.47,
   "soundtrackPosition" : 91,
@@ -10782,17 +10782,17 @@
   "spotify" : "spotify:track:0C9uCmroJIKf8ClqMOZ97j",
   "youtube" : "",
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 267,
-    "score" : 1.70
+    "type" : "SHARED",
+    "index" : 144,
+    "score" : 11.22
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 263,
     "score" : 1.78
   }, {
-    "type" : "SHARED",
-    "index" : 144,
-    "score" : 11.22
+    "type" : "FAVORITE",
+    "index" : 267,
+    "score" : 1.70
   } ],
   "score" : 14.70,
   "soundtrackPosition" : 91,
@@ -10809,12 +10809,12 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 441,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 444,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 441,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
@@ -10840,13 +10840,13 @@
     "index" : 157,
     "score" : 9.12
   }, {
-    "type" : "SHARED",
-    "index" : 220,
-    "score" : 3.47
-  }, {
     "type" : "FAVORITE",
     "index" : 127,
     "score" : 14.45
+  }, {
+    "type" : "SHARED",
+    "index" : 220,
+    "score" : 3.47
   } ],
   "score" : 27.04,
   "soundtrackPosition" : 91,
@@ -10867,12 +10867,12 @@
     "index" : 353,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 351,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 465,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 351,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -10917,13 +10917,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 17,
-    "score" : 77.62
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 37,
     "score" : 57.54
+  }, {
+    "type" : "FAVORITE",
+    "index" : 17,
+    "score" : 77.62
   }, {
     "type" : "SHARED",
     "index" : 56,
@@ -10944,10 +10944,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 286,
-    "score" : 1.26
-  }, {
     "type" : "FAVORITE",
     "index" : 446,
     "score" : 1
@@ -10955,6 +10951,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 443,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 286,
+    "score" : 1.26
   } ],
   "score" : 3.26,
   "soundtrackPosition" : 91,
@@ -10971,6 +10971,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 262,
+    "score" : 1.82
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 378,
     "score" : 1
@@ -10978,10 +10982,6 @@
     "type" : "SHARED",
     "index" : 335,
     "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 262,
-    "score" : 1.82
   } ],
   "score" : 3.82,
   "soundtrackPosition" : 92,
@@ -10998,12 +10998,12 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 420,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 327,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 420,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -11052,6 +11052,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 327,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 396,
     "score" : 1
@@ -11059,10 +11063,6 @@
     "type" : "SHARED",
     "index" : 226,
     "score" : 3.16
-  }, {
-    "type" : "FAVORITE",
-    "index" : 327,
-    "score" : 1
   } ],
   "score" : 5.16,
   "soundtrackPosition" : 92,
@@ -11079,6 +11079,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 99,
+    "score" : 22.39
+  }, {
     "type" : "SHARED",
     "index" : 250,
     "score" : 2.19
@@ -11086,10 +11090,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 44,
     "score" : 51.29
-  }, {
-    "type" : "FAVORITE",
-    "index" : 99,
-    "score" : 22.39
   } ],
   "score" : 75.87,
   "soundtrackPosition" : 92,
@@ -11106,6 +11106,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 162,
+    "score" : 8.51
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 55,
     "score" : 43.65
@@ -11113,10 +11117,6 @@
     "type" : "SHARED",
     "index" : 160,
     "score" : 8.71
-  }, {
-    "type" : "FAVORITE",
-    "index" : 162,
-    "score" : 8.51
   } ],
   "score" : 60.87,
   "soundtrackPosition" : 92,
@@ -11160,13 +11160,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 289,
-    "score" : 1.20
-  }, {
     "type" : "FAVORITE",
     "index" : 243,
     "score" : 2.45
+  }, {
+    "type" : "SHARED",
+    "index" : 289,
+    "score" : 1.20
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 383,
@@ -11214,10 +11214,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 81,
-    "score" : 29.51
-  }, {
     "type" : "FAVORITE",
     "index" : 27,
     "score" : 67.61
@@ -11225,6 +11221,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 250,
     "score" : 2.19
+  }, {
+    "type" : "SHARED",
+    "index" : 81,
+    "score" : 29.51
   } ],
   "score" : 99.31,
   "soundtrackPosition" : 92,
@@ -11245,12 +11245,12 @@
     "index" : 483,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 427,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 485,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 427,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -11268,6 +11268,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 146,
+    "score" : 10.72
+  }, {
     "type" : "FAVORITE",
     "index" : 42,
     "score" : 53.70
@@ -11275,10 +11279,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 69,
     "score" : 35.48
-  }, {
-    "type" : "SHARED",
-    "index" : 146,
-    "score" : 10.72
   } ],
   "score" : 99.90,
   "soundtrackPosition" : 93,
@@ -11299,12 +11299,12 @@
     "index" : 370,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 362,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 370,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 362,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -11326,13 +11326,13 @@
     "index" : 223,
     "score" : 3.31
   }, {
-    "type" : "SHARED",
-    "index" : 163,
-    "score" : 8.32
-  }, {
     "type" : "FAVORITE",
     "index" : 210,
     "score" : 4.07
+  }, {
+    "type" : "SHARED",
+    "index" : 163,
+    "score" : 8.32
   } ],
   "score" : 15.70,
   "soundtrackPosition" : 93,
@@ -11376,13 +11376,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 318,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 12,
     "score" : 85.11
+  }, {
+    "type" : "SHARED",
+    "index" : 318,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 83,
@@ -11403,17 +11403,17 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 170,
-    "score" : 7.41
+    "type" : "SHARED",
+    "index" : 416,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 211,
     "score" : 3.98
   }, {
-    "type" : "SHARED",
-    "index" : 416,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 170,
+    "score" : 7.41
   } ],
   "score" : 12.39,
   "soundtrackPosition" : 93,
@@ -11430,6 +11430,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 226,
+    "score" : 3.16
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 298,
     "score" : 1.05
@@ -11437,10 +11441,6 @@
     "type" : "SHARED",
     "index" : 474,
     "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 226,
-    "score" : 3.16
   } ],
   "score" : 5.21,
   "soundtrackPosition" : 93,
@@ -11457,12 +11457,12 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 326,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 432,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 326,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -11484,12 +11484,12 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 434,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 422,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 434,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -11506,11 +11506,15 @@
   "ordinal" : 7,
   "title" : "Get Lucky",
   "artist" : "Daft Punk",
-  "story" : "@bairdo{Bairdo}, @shawn{Shawn}, @billy.t{Billy T}, and I drove together the @toland{John's} bachelor party on the Jersey Shore that @paul{Paul} had set up for about ten or fifteen of us that spring. The first night, after sleeping on the floor for about an hour, it was 10AM -- time to get started again. \n\nOnto the second story front porch, where I encountered John's cousin @ritchie{Ritchie}, carrying around and listening to his own old school boombox. When Get Lucky came blasting out of the speakers, he got so excited, as if it wasn't his own mix he was listening to, even though it was. With a big smile and a sort of head bobbing dance, he was rallying my enthusiasm for a song I had never heard before. I did, however, hear it a dozen more times that weekend, and tons more after that when it became so popular. Brings me back to that weekend and Ritchie's positive energy every time.\n\n#timeline/kingston.1 #media/radio #player/boombox #player/car.black.prius #popular",
+  "story" : "@bairdo{Bairdo}, @shawn{Shawn}, @billy.t{Billy T}, and I drove together the @toland{John's} bachelor party on the Jersey Shore that @paul{Paul} had set up for about ten or fifteen of us that spring. The first night, after sleeping on the floor for about an hour, it was 10AM -- time to get started again. \n\nOnto the second story front porch, where I encountered John's cousin @ritchie{Ritchie} carrying around and listening to his own old school boombox. When Get Lucky came blasting out of the speakers, he got so excited, as if it wasn't his own mix he was listening to, even though it was. With a big smile and an infectious head bobbing, shoulder weaving dance he rallied my enthusiasm for a song I had never heard before. \n\nHowever and of course, I heard it a dozen more times that weekend, and tons more after that when it became super popular. Still brings back that weekend and Ritchie's positivity. Plus the dance.\n\n#timeline/kingston.1 #media/radio #player/boombox #player/car.black.prius #popular",
   "notes" : null,
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 317,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 203,
     "score" : 4.47
@@ -11518,10 +11522,6 @@
     "type" : "SHARED",
     "index" : 65,
     "score" : 37.15
-  }, {
-    "type" : "FAVORITE",
-    "index" : 317,
-    "score" : 1
   } ],
   "score" : 42.62,
   "soundtrackPosition" : 93,
@@ -11538,10 +11538,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 213,
-    "score" : 3.89
-  }, {
     "type" : "FAVORITE",
     "index" : 142,
     "score" : 11.48
@@ -11549,6 +11545,10 @@
     "type" : "SHARED",
     "index" : 344,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 213,
+    "score" : 3.89
   } ],
   "score" : 16.37,
   "soundtrackPosition" : 93,
@@ -11565,17 +11565,17 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 22,
-    "score" : 72.44
+    "type" : "FAVORITE",
+    "index" : 19,
+    "score" : 75.86
   }, {
     "type" : "SHARED",
     "index" : 156,
     "score" : 9.33
   }, {
-    "type" : "FAVORITE",
-    "index" : 19,
-    "score" : 75.86
+    "type" : "REPRESENTATIVE",
+    "index" : 22,
+    "score" : 72.44
   } ],
   "score" : 157.63,
   "soundtrackPosition" : 94,
@@ -11592,6 +11592,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 51,
+    "score" : 46.77
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 94,
     "score" : 23.99
@@ -11599,10 +11603,6 @@
     "type" : "SHARED",
     "index" : 436,
     "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 51,
-    "score" : 46.77
   } ],
   "score" : 71.76,
   "soundtrackPosition" : 94,
@@ -11623,13 +11623,13 @@
     "index" : 394,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 405,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 275,
     "score" : 1.48
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 405,
+    "score" : 1
   } ],
   "score" : 3.48,
   "soundtrackPosition" : 94,
@@ -11646,16 +11646,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 391,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 222,
     "score" : 3.39
   }, {
     "type" : "FAVORITE",
     "index" : 356,
-    "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 391,
     "score" : 1
   } ],
   "score" : 5.39,
@@ -11673,6 +11673,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 6,
+    "score" : 93.33
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 12,
     "score" : 85.11
@@ -11680,10 +11684,6 @@
     "type" : "SHARED",
     "index" : 164,
     "score" : 8.13
-  }, {
-    "type" : "FAVORITE",
-    "index" : 6,
-    "score" : 93.33
   } ],
   "score" : 186.57,
   "soundtrackPosition" : 94,
@@ -11700,17 +11700,17 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 109,
-    "score" : 19.05
+    "type" : "REPRESENTATIVE",
+    "index" : 67,
+    "score" : 36.31
   }, {
     "type" : "SHARED",
     "index" : 388,
     "score" : 1
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 67,
-    "score" : 36.31
+    "type" : "FAVORITE",
+    "index" : 109,
+    "score" : 19.05
   } ],
   "score" : 56.36,
   "soundtrackPosition" : 94,
@@ -11727,12 +11727,12 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 485,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 446,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 485,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -11754,6 +11754,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 210,
+    "score" : 4.07
+  }, {
     "type" : "SHARED",
     "index" : 387,
     "score" : 1
@@ -11761,10 +11765,6 @@
     "type" : "FAVORITE",
     "index" : 197,
     "score" : 4.90
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 210,
-    "score" : 4.07
   } ],
   "score" : 9.97,
   "soundtrackPosition" : 94,
@@ -11785,13 +11785,13 @@
     "index" : 213,
     "score" : 3.89
   }, {
-    "type" : "SHARED",
-    "index" : 266,
-    "score" : 1.70
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 232,
     "score" : 2.88
+  }, {
+    "type" : "SHARED",
+    "index" : 266,
+    "score" : 1.70
   } ],
   "score" : 8.47,
   "soundtrackPosition" : 94,
@@ -11808,6 +11808,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 59,
+    "score" : 40.74
+  }, {
     "type" : "FAVORITE",
     "index" : 15,
     "score" : 81.28
@@ -11815,10 +11819,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 64,
     "score" : 38.02
-  }, {
-    "type" : "SHARED",
-    "index" : 59,
-    "score" : 40.74
   } ],
   "score" : 160.04,
   "soundtrackPosition" : 94,
@@ -11839,13 +11839,13 @@
     "index" : 189,
     "score" : 5.62
   }, {
-    "type" : "SHARED",
-    "index" : 451,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 165,
     "score" : 8.13
+  }, {
+    "type" : "SHARED",
+    "index" : 451,
+    "score" : 1
   } ],
   "score" : 14.75,
   "soundtrackPosition" : 94,
@@ -11862,16 +11862,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 478,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 476,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 443,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 478,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -11889,6 +11889,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 217,
+    "score" : 3.63
+  }, {
     "type" : "FAVORITE",
     "index" : 169,
     "score" : 7.59
@@ -11896,10 +11900,6 @@
     "type" : "SHARED",
     "index" : 394,
     "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 217,
-    "score" : 3.63
   } ],
   "score" : 12.22,
   "soundtrackPosition" : 95,
@@ -11943,13 +11943,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 184,
-    "score" : 6.03
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 363,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 184,
+    "score" : 6.03
   }, {
     "type" : "SHARED",
     "index" : 397,
@@ -11997,16 +11997,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 340,
+    "score" : 1
+  }, {
     "type" : "FAVORITE",
     "index" : 272,
     "score" : 1.55
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 303,
-    "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 340,
     "score" : 1
   } ],
   "score" : 3.55,
@@ -12024,13 +12024,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 133,
-    "score" : 13.18
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 278,
     "score" : 1.41
+  }, {
+    "type" : "SHARED",
+    "index" : 133,
+    "score" : 13.18
   }, {
     "type" : "FAVORITE",
     "index" : 430,
@@ -12051,16 +12051,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 465,
+    "type" : "SHARED",
+    "index" : 327,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 470,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 327,
+    "type" : "FAVORITE",
+    "index" : 465,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -12082,13 +12082,13 @@
     "index" : 458,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 227,
-    "score" : 3.09
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 467,
     "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 227,
+    "score" : 3.09
   } ],
   "score" : 5.09,
   "soundtrackPosition" : 95,
@@ -12109,13 +12109,13 @@
     "index" : 112,
     "score" : 18.20
   }, {
-    "type" : "SHARED",
-    "index" : 426,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 13,
     "score" : 83.18
+  }, {
+    "type" : "SHARED",
+    "index" : 426,
+    "score" : 1
   } ],
   "score" : 102.38,
   "soundtrackPosition" : 95,
@@ -12132,10 +12132,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 101,
-    "score" : 21.38
-  }, {
     "type" : "FAVORITE",
     "index" : 48,
     "score" : 48.98
@@ -12143,6 +12139,10 @@
     "type" : "SHARED",
     "index" : 418,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 101,
+    "score" : 21.38
   } ],
   "score" : 71.36,
   "soundtrackPosition" : 95,
@@ -12213,16 +12213,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 426,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 195,
     "score" : 5.13
   }, {
     "type" : "SHARED",
     "index" : 312,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 426,
     "score" : 1
   } ],
   "score" : 7.13,
@@ -12240,12 +12240,12 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 424,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 428,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 424,
     "score" : 1
   }, {
     "type" : "SHARED",
@@ -12267,16 +12267,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 372,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 321,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 377,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 372,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -12294,10 +12294,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 126,
-    "score" : 14.79
-  }, {
     "type" : "FAVORITE",
     "index" : 83,
     "score" : 28.18
@@ -12305,6 +12301,10 @@
     "type" : "SHARED",
     "index" : 228,
     "score" : 3.09
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 126,
+    "score" : 14.79
   } ],
   "score" : 46.06,
   "soundtrackPosition" : 96,
@@ -12321,10 +12321,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 183,
-    "score" : 6.17
-  }, {
     "type" : "FAVORITE",
     "index" : 72,
     "score" : 33.88
@@ -12332,6 +12328,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 111,
     "score" : 18.62
+  }, {
+    "type" : "SHARED",
+    "index" : 183,
+    "score" : 6.17
   } ],
   "score" : 58.67,
   "soundtrackPosition" : 96,
@@ -12348,6 +12348,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 21,
+    "score" : 74.13
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 23,
     "score" : 70.79
@@ -12355,10 +12359,6 @@
     "type" : "SHARED",
     "index" : 424,
     "score" : 1
-  }, {
-    "type" : "FAVORITE",
-    "index" : 21,
-    "score" : 74.13
   } ],
   "score" : 145.92,
   "soundtrackPosition" : 96,
@@ -12375,6 +12375,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 447,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 98,
     "score" : 22.39
@@ -12382,10 +12386,6 @@
     "type" : "FAVORITE",
     "index" : 44,
     "score" : 51.29
-  }, {
-    "type" : "SHARED",
-    "index" : 447,
-    "score" : 1
   } ],
   "score" : 74.68,
   "soundtrackPosition" : 96,
@@ -12402,10 +12402,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 497,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 497,
     "score" : 1
@@ -12413,6 +12409,10 @@
     "type" : "SHARED",
     "index" : 270,
     "score" : 1.62
+  }, {
+    "type" : "FAVORITE",
+    "index" : 497,
+    "score" : 1
   } ],
   "score" : 3.62,
   "soundtrackPosition" : 96,
@@ -12433,12 +12433,12 @@
     "index" : 495,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 482,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 481,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 482,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -12456,17 +12456,17 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 265,
-    "score" : 1.74
+    "type" : "SHARED",
+    "index" : 354,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 147,
     "score" : 10.72
   }, {
-    "type" : "SHARED",
-    "index" : 354,
-    "score" : 1
+    "type" : "FAVORITE",
+    "index" : 265,
+    "score" : 1.74
   } ],
   "score" : 13.46,
   "soundtrackPosition" : 97,
@@ -12510,10 +12510,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 9,
-    "score" : 89.13
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 14,
     "score" : 81.28
@@ -12521,6 +12517,10 @@
     "type" : "SHARED",
     "index" : 311,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 9,
+    "score" : 89.13
   } ],
   "score" : 171.41,
   "soundtrackPosition" : 97,
@@ -12537,13 +12537,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 103,
-    "score" : 20.89
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 53,
     "score" : 44.67
+  }, {
+    "type" : "SHARED",
+    "index" : 103,
+    "score" : 20.89
   }, {
     "type" : "FAVORITE",
     "index" : 18,
@@ -12564,16 +12564,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 455,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 408,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 417,
-    "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 455,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -12591,12 +12591,12 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 498,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 462,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 498,
     "score" : 1
   }, {
     "type" : "FAVORITE",
@@ -12649,13 +12649,13 @@
     "index" : 256,
     "score" : 2.00
   }, {
-    "type" : "FAVORITE",
-    "index" : 422,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 93,
     "score" : 24.55
+  }, {
+    "type" : "FAVORITE",
+    "index" : 422,
+    "score" : 1
   } ],
   "score" : 27.55,
   "soundtrackPosition" : 97,
@@ -12672,6 +12672,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 161,
+    "score" : 8.51
+  }, {
     "type" : "SHARED",
     "index" : 205,
     "score" : 4.37
@@ -12679,10 +12683,6 @@
     "type" : "FAVORITE",
     "index" : 195,
     "score" : 5.13
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 161,
-    "score" : 8.51
   } ],
   "score" : 18.01,
   "soundtrackPosition" : 97,
@@ -12699,17 +12699,17 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 392,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 247,
+    "score" : 2.29
   }, {
     "type" : "FAVORITE",
     "index" : 341,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 247,
-    "score" : 2.29
+    "type" : "REPRESENTATIVE",
+    "index" : 392,
+    "score" : 1
   } ],
   "score" : 4.29,
   "soundtrackPosition" : 97,
@@ -12726,16 +12726,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 412,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 298,
     "score" : 1.05
   }, {
     "type" : "FAVORITE",
     "index" : 398,
+    "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 412,
     "score" : 1
   } ],
   "score" : 3.05,
@@ -12757,13 +12757,13 @@
     "index" : 262,
     "score" : 1.82
   }, {
-    "type" : "SHARED",
-    "index" : 130,
-    "score" : 13.80
-  }, {
     "type" : "FAVORITE",
     "index" : 91,
     "score" : 25.12
+  }, {
+    "type" : "SHARED",
+    "index" : 130,
+    "score" : 13.80
   } ],
   "score" : 40.74,
   "soundtrackPosition" : 98,
@@ -12780,10 +12780,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 389,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 154,
     "score" : 9.55
@@ -12791,6 +12787,10 @@
     "type" : "FAVORITE",
     "index" : 228,
     "score" : 3.09
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 389,
+    "score" : 1
   } ],
   "score" : 13.64,
   "soundtrackPosition" : 98,
@@ -12807,13 +12807,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 186,
-    "score" : 5.89
-  }, {
     "type" : "FAVORITE",
     "index" : 4,
     "score" : 95.50
+  }, {
+    "type" : "SHARED",
+    "index" : 186,
+    "score" : 5.89
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 30,
@@ -12834,6 +12834,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 75,
+    "score" : 32.36
+  }, {
     "type" : "FAVORITE",
     "index" : 55,
     "score" : 43.65
@@ -12841,10 +12845,6 @@
     "type" : "SHARED",
     "index" : 419,
     "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 75,
-    "score" : 32.36
   } ],
   "score" : 77.01,
   "soundtrackPosition" : 98,
@@ -12861,10 +12861,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 22,
-    "score" : 72.44
-  }, {
     "type" : "SHARED",
     "index" : 60,
     "score" : 40.74
@@ -12872,6 +12868,10 @@
     "type" : "REPRESENTATIVE",
     "index" : 40,
     "score" : 54.95
+  }, {
+    "type" : "FAVORITE",
+    "index" : 22,
+    "score" : 72.44
   } ],
   "score" : 168.13,
   "soundtrackPosition" : 98,
@@ -12888,16 +12888,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "REPRESENTATIVE",
+    "index" : 445,
+    "score" : 1
+  }, {
     "type" : "SHARED",
     "index" : 149,
     "score" : 10.23
   }, {
     "type" : "FAVORITE",
     "index" : 435,
-    "score" : 1
-  }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 445,
     "score" : 1
   } ],
   "score" : 12.23,
@@ -12915,17 +12915,17 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 424,
-    "score" : 1
+    "type" : "SHARED",
+    "index" : 86,
+    "score" : 26.92
   }, {
     "type" : "FAVORITE",
     "index" : 323,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 86,
-    "score" : 26.92
+    "type" : "REPRESENTATIVE",
+    "index" : 424,
+    "score" : 1
   } ],
   "score" : 28.92,
   "soundtrackPosition" : 98,
@@ -12942,16 +12942,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 363,
+    "score" : 1
+  }, {
     "type" : "FAVORITE",
     "index" : 148,
     "score" : 10.47
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 385,
-    "score" : 1
-  }, {
-    "type" : "SHARED",
-    "index" : 363,
     "score" : 1
   } ],
   "score" : 12.47,
@@ -12969,10 +12969,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 207,
-    "score" : 4.27
-  }, {
     "type" : "FAVORITE",
     "index" : 176,
     "score" : 6.76
@@ -12980,6 +12976,10 @@
     "type" : "SHARED",
     "index" : 385,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 207,
+    "score" : 4.27
   } ],
   "score" : 12.03,
   "soundtrackPosition" : 98,
@@ -12996,6 +12996,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "SHARED",
+    "index" : 196,
+    "score" : 5.01
+  }, {
     "type" : "FAVORITE",
     "index" : 64,
     "score" : 38.02
@@ -13003,10 +13007,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 246,
     "score" : 2.34
-  }, {
-    "type" : "SHARED",
-    "index" : 196,
-    "score" : 5.01
   } ],
   "score" : 45.37,
   "soundtrackPosition" : 98,
@@ -13023,6 +13023,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 68,
+    "score" : 35.48
+  }, {
     "type" : "SHARED",
     "index" : 458,
     "score" : 1
@@ -13030,10 +13034,6 @@
     "type" : "REPRESENTATIVE",
     "index" : 108,
     "score" : 19.50
-  }, {
-    "type" : "FAVORITE",
-    "index" : 68,
-    "score" : 35.48
   } ],
   "score" : 55.98,
   "soundtrackPosition" : 98,
@@ -13135,12 +13135,12 @@
     "index" : 337,
     "score" : 1
   }, {
-    "type" : "FAVORITE",
-    "index" : 328,
-    "score" : 1
-  }, {
     "type" : "SHARED",
     "index" : 366,
+    "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 328,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -13158,13 +13158,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 169,
-    "score" : 7.59
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 170,
     "score" : 7.41
+  }, {
+    "type" : "SHARED",
+    "index" : 169,
+    "score" : 7.59
   }, {
     "type" : "FAVORITE",
     "index" : 124,
@@ -13189,12 +13189,12 @@
     "index" : 440,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 445,
-    "score" : 1
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 447,
+    "score" : 1
+  }, {
+    "type" : "SHARED",
+    "index" : 445,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -13216,13 +13216,13 @@
     "index" : 36,
     "score" : 58.88
   }, {
-    "type" : "SHARED",
-    "index" : 439,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 5,
     "score" : 93.33
+  }, {
+    "type" : "SHARED",
+    "index" : 439,
+    "score" : 1
   } ],
   "score" : 153.21,
   "soundtrackPosition" : 99,
@@ -13239,16 +13239,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 318,
+    "type" : "SHARED",
+    "index" : 404,
     "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 359,
     "score" : 1
   }, {
-    "type" : "SHARED",
-    "index" : 404,
+    "type" : "FAVORITE",
+    "index" : 318,
     "score" : 1
   } ],
   "score" : 3.00,
@@ -13266,13 +13266,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 320,
-    "score" : 1
-  }, {
     "type" : "FAVORITE",
     "index" : 224,
     "score" : 3.24
+  }, {
+    "type" : "SHARED",
+    "index" : 320,
+    "score" : 1
   }, {
     "type" : "REPRESENTATIVE",
     "index" : 231,
@@ -13293,16 +13293,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 434,
+    "type" : "FAVORITE",
+    "index" : 309,
     "score" : 1
   }, {
     "type" : "SHARED",
     "index" : 206,
     "score" : 4.27
   }, {
-    "type" : "FAVORITE",
-    "index" : 309,
+    "type" : "REPRESENTATIVE",
+    "index" : 434,
     "score" : 1
   } ],
   "score" : 6.27,
@@ -13320,13 +13320,13 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "SHARED",
-    "index" : 165,
-    "score" : 8.13
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 296,
     "score" : 1.07
+  }, {
+    "type" : "SHARED",
+    "index" : 165,
+    "score" : 8.13
   }, {
     "type" : "FAVORITE",
     "index" : 192,
@@ -13347,17 +13347,17 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 156,
-    "score" : 9.33
+    "type" : "SHARED",
+    "index" : 181,
+    "score" : 6.31
   }, {
     "type" : "FAVORITE",
     "index" : 175,
     "score" : 6.92
   }, {
-    "type" : "SHARED",
-    "index" : 181,
-    "score" : 6.31
+    "type" : "REPRESENTATIVE",
+    "index" : 156,
+    "score" : 9.33
   } ],
   "score" : 22.56,
   "soundtrackPosition" : 100,
@@ -13374,10 +13374,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 74,
-    "score" : 32.36
-  }, {
     "type" : "FAVORITE",
     "index" : 28,
     "score" : 66.07
@@ -13385,6 +13381,10 @@
     "type" : "SHARED",
     "index" : 32,
     "score" : 61.66
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 74,
+    "score" : 32.36
   } ],
   "score" : 160.09,
   "soundtrackPosition" : 100,
@@ -13401,10 +13401,6 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "FAVORITE",
-    "index" : 130,
-    "score" : 13.80
-  }, {
     "type" : "REPRESENTATIVE",
     "index" : 215,
     "score" : 3.72
@@ -13412,6 +13408,10 @@
     "type" : "SHARED",
     "index" : 489,
     "score" : 1
+  }, {
+    "type" : "FAVORITE",
+    "index" : 130,
+    "score" : 13.80
   } ],
   "score" : 18.52,
   "soundtrackPosition" : 100,
@@ -13428,16 +13428,16 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
-    "type" : "REPRESENTATIVE",
-    "index" : 315,
+    "type" : "SHARED",
+    "index" : 392,
     "score" : 1
   }, {
     "type" : "FAVORITE",
     "index" : 85,
     "score" : 27.54
   }, {
-    "type" : "SHARED",
-    "index" : 392,
+    "type" : "REPRESENTATIVE",
+    "index" : 315,
     "score" : 1
   } ],
   "score" : 29.54,
@@ -13455,6 +13455,10 @@
   "spotify" : null,
   "youtube" : null,
   "rankings" : [ {
+    "type" : "FAVORITE",
+    "index" : 361,
+    "score" : 1
+  }, {
     "type" : "REPRESENTATIVE",
     "index" : 307,
     "score" : 1
@@ -13462,10 +13466,6 @@
     "type" : "SHARED",
     "index" : 237,
     "score" : 2.69
-  }, {
-    "type" : "FAVORITE",
-    "index" : 361,
-    "score" : 1
   } ],
   "score" : 4.69,
   "soundtrackPosition" : 100,
@@ -13486,13 +13486,13 @@
     "index" : 90,
     "score" : 25.70
   }, {
-    "type" : "REPRESENTATIVE",
-    "index" : 289,
-    "score" : 1.20
-  }, {
     "type" : "SHARED",
     "index" : 422,
     "score" : 1
+  }, {
+    "type" : "REPRESENTATIVE",
+    "index" : 289,
+    "score" : 1.20
   } ],
   "score" : 27.90,
   "soundtrackPosition" : 100,

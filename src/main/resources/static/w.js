@@ -1,6 +1,6 @@
 $(pageBehavior);
 
-var edit = false;
+var edit = true;
 
 function pageBehavior () {
 
@@ -822,7 +822,7 @@ function showEntry(entry, showStory, count) {
 
     var titleInfoDiv = $(
         "<div class='title-info'>" +
-        "<span class='title'>" + entry.title + " -- " + entry.artist + "</span>" +
+        "<span class='title'>" + entry.title + " -- " + "<span class='read-artist'>" + entry.artist + "</span></span>" +
         "</div>"
     );
 
@@ -1028,6 +1028,7 @@ function readHashTag($$) {
 function readArtist($$) {
 
     var id = $$.attr('id');
+    if (typeof id == typeof undefined || !id) id = $$.text();
     var url = "/entries/artist/" + id;
 
     $.ajax({
