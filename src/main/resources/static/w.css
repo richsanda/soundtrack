@@ -21,6 +21,10 @@ span.title {
     margin-left: 4px;
 }
 
+span.artist-link:hover {
+    opacity: 0.8;
+}
+
 div.story {
     padding-top: 4px;
     margin-top: 4px;

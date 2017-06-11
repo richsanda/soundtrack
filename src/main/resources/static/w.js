@@ -1,6 +1,6 @@
 $(pageBehavior);
 
-var edit = true;
+var edit = false;
 
 function pageBehavior () {
 
@@ -822,7 +822,7 @@ function showEntry(entry, showStory, count) {
 
     var titleInfoDiv = $(
         "<div class='title-info'>" +
-        "<span class='title'>" + entry.title + " -- " + "<span class='read-artist'>" + entry.artist + "</span></span>" +
+        "<span class='title'>" + entry.title + " -- " + "<span class='artist-link read-artist'>" + entry.artist + "</span></span>" +
         "</div>"
     );
 
