@@ -5,8 +5,17 @@ var edit = false;
 function pageBehavior () {
 
     actionsBehavior($(this));
-    showIntroPane();
-    pushState();
+
+    var persons = getUrlParameter("persons");
+    var artist = getUrlParameter("artist");
+    if (typeof persons != typeof undefined && persons) {
+        readNameTag(persons);
+    } else if (typeof artist != typeof undefined && artist) {
+        readArtist(artist);
+    } else {
+        showIntroPane();
+        pushState();
+    }
 }
 
 function refreshEntries(showStory) {
@@ -163,7 +172,10 @@ function actionsClick(e) {
             deleteEntry($$);
         },
         'name-tag' : function ($$) {
-            readNameTag($$);
+            readNameTag(idOrValue($$));
+        },
+        'persons-url' : function ($$) {
+            location.href = "?persons=" + idOrValue($$);
         },
         'hash-tag' : function ($$) {
             readHashTag($$);
@@ -172,7 +184,10 @@ function actionsClick(e) {
             readYear($$);
         },
         'read-artist' : function ($$) {
-            readArtist($$);
+            readArtist(idOrValue($$));
+        },
+        'artist-url' : function ($$) {
+            location.href = "?artist=" + idOrValue($$);
         },
         'show-soundtrack' : function ($$) {
             refreshEntries(true);
@@ -736,7 +751,7 @@ function buildPeoplePane(title, showStories) {
 
     var peoplePaneDiv = $(
         "<div class='soundtrack-pane'>" +
-        "<div class='soundtrack-title'>" + title + "</div>" +
+        "<div class='soundtrack-title persons-url'>" + title + "</div>" +
         "</div>"
     );
 
@@ -762,7 +777,7 @@ function buildArtistPane(title, showStories) {
 
     var artistPaneDiv = $(
         "<div class='soundtrack-pane'>" +
-        "<div class='soundtrack-title'>" + title + "</div>" +
+        "<div class='soundtrack-title artist-url'>" + title + "</div>" +
         "</div>"
     );
 
@@ -996,9 +1011,8 @@ function showTagForEdit(tag) {
     return overlayDiv;
 }
 
-function readNameTag($$) {
+function readNameTag(id) {
 
-    var id = $$.attr('id');
     var url = "/entries?personTags=" + id;
 
     $.ajax({
@@ -1025,10 +1039,8 @@ function readHashTag($$) {
     });
 }
 
-function readArtist($$) {
+function readArtist(id) {
 
-    var id = $$.attr('id');
-    if (typeof id == typeof undefined || !id) id = $$.text();
     var url = "/entries/artist/" + id;
 
     $.ajax({
@@ -1175,4 +1187,26 @@ function pushState(url) {
     url = (!url) ? window.location.href : url;
     var state = { url: url, innerhtml: document.body.innerHTML };
     window.history.pushState(state, url, url);
+}
+
+var getUrlParameter = function getUrlParameter(sParam) {
+
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&&&'), // HACK to include &, obv can't use multiple params now
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+function idOrValue($$) {
+    var id = $$.attr('id');
+    if (typeof id == typeof undefined || !id) id = $$.text();
+    return id;
 }
