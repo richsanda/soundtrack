@@ -20,7 +20,7 @@ function pageBehavior () {
 
 function refreshEntries(showStory) {
 
-    var url = "/soundtrack";
+    var url = "soundtrack";
 
     $.ajax({
         url: url,
@@ -32,7 +32,7 @@ function refreshEntries(showStory) {
 
 function refreshOverall() {
 
-    var url = "/soundtrack/ranked?limit=100";
+    var url = "soundtrack/ranked?limit=100";
 
     $.ajax({
         url: url,
@@ -44,7 +44,7 @@ function refreshOverall() {
 
 function randomizeFavorites() {
 
-    var url = "/soundtrack/random";
+    var url = "soundtrack/random";
 
     $.ajax({
         url: url,
@@ -81,7 +81,7 @@ function refreshShared() {
 
 function refreshRankedList(type, saveDivFunction) {
 
-    var url = "/rankedList?type=" + type;
+    var url = "rankedList?type=" + type;
 
     $.ajax({
         url: url,
@@ -93,7 +93,7 @@ function refreshRankedList(type, saveDivFunction) {
 
 function refreshTags() {
 
-    var url = "/hashTags?sort=FULL";
+    var url = "hashTags?sort=FULL";
 
     $.ajax({
         url: url,
@@ -105,7 +105,7 @@ function refreshTags() {
 
 function refreshArtists() {
 
-    var url = "/artists";
+    var url = "artists";
 
     $.ajax({
         url: url,
@@ -129,7 +129,7 @@ function showPane(paneDiv, soundtrackDiv) {
 
 function refreshPersons() {
 
-    var url = "/persons";
+    var url = "persons";
 
     $.ajax({
         url: url,
@@ -329,7 +329,7 @@ function editEntry($$) {
 
     var entryDiv = $$.closest('div.entry');
     var id = entryDiv.attr('id');
-    var url = "/entry/" + id;
+    var url = "entry/" + id;
 
     $.ajax({
         url: url,
@@ -346,7 +346,7 @@ function editTag($$) {
 
     var tagDiv = $$.closest('div.tag');
     var id = tagDiv.attr('id');
-    var url = "/hashTag/" + id;
+    var url = "hashTag/" + id;
 
     $.ajax({
         url: url,
@@ -374,7 +374,7 @@ function saveEntry($$) {
 
     if (null != id) {
         $.ajax({
-            url: "/entry/" + id,
+            url: "entry/" + id,
             type: "patch",
             contentType: "application/json",
             dataType: "json",
@@ -388,7 +388,7 @@ function saveEntry($$) {
         });
     } else {
         $.ajax({
-            url: "/entry",
+            url: "entry",
             type: "post",
             contentType: "application/json",
             dataType: "json",
@@ -414,7 +414,7 @@ function saveTag($$) {
     };
 
     $.ajax({
-        url: "/hashTag/" + id,
+        url: "hashTag/" + id,
         type: "patch",
         contentType: "application/json",
         dataType: "json",
@@ -438,7 +438,7 @@ function readEntry($$) {
         return
     }
 
-    var url = "/entry/" + id;
+    var url = "entry/" + id;
 
     $.ajax({
         url: url,
@@ -454,7 +454,7 @@ function readTag($$) {
     var tagDiv = $$.closest('div.tag');
     var id = tagDiv.attr('id');
 
-    var url = "/hashTag/" + id;
+    var url = "hashTag/" + id;
 
     $.ajax({
         url: url,
@@ -470,7 +470,7 @@ function deleteEntry($$) {
     var entryDiv = $$.closest('div.entry');
     var id = entryDiv.attr('id');
 
-    var url = "/entry/" + id;
+    var url = "entry/" + id;
 
     $.ajax({
         url: url,
@@ -489,7 +489,7 @@ function deleteTag($$) {
     var tagDiv = $$.closest('div.tag');
     var id = tagDiv.attr('id');
 
-    var url = "/hashTag/" + id;
+    var url = "hashTag/" + id;
 
     $.ajax({
         url: url,
@@ -597,7 +597,7 @@ function updateEntryPosition( event, ui ) {
 
     // TODO: factor all this out into a helper method
     var id = entryDiv.attr('id');
-    var url = "/entry/" + id;
+    var url = "entry/" + id;
     var entry = {
         year: prevEntryYear,
         ordinal: prevEntryOrdinal
@@ -644,7 +644,7 @@ function updateRankedList(type, createDivFunction) {
         entries : entryKeys
     };
 
-    var url = "/rankedList?type=" + type;
+    var url = "rankedList?type=" + type;
 
     $.ajax({
         url: url,
@@ -1013,7 +1013,7 @@ function showTagForEdit(tag) {
 
 function readNameTag(id) {
 
-    var url = "/entries?personTags=" + id;
+    var url = "entries?personTags=" + id;
 
     $.ajax({
         url: url,
@@ -1028,7 +1028,7 @@ function readNameTag(id) {
 function readHashTag($$) {
 
     var id = $$.attr('id');
-    var url = "/entries?hashTags=" + id;
+    var url = "entries?hashTags=" + id;
 
     $.ajax({
         url: url,
@@ -1041,7 +1041,7 @@ function readHashTag($$) {
 
 function readArtist(id) {
 
-    var url = "/entries/artist/" + id;
+    var url = "entries/artist/" + id;
 
     $.ajax({
         url: url,
@@ -1056,7 +1056,7 @@ function readYear($$) {
 
     var id = $$.attr('id');
     if (typeof id == typeof undefined || !id) id = "1992";
-    var url = "/entries/" + id;
+    var url = "entries/" + id;
 
     $.ajax({
         url: url,
